@@ -1,4 +1,4 @@
-# pdr
+# PdRacks
 
 <img src="https://raw.githubusercontent.com/jyg/PdRacks/master/pdr/tutorials/img/PdRacksTrailer.png" alt="PdRacksTrailer" width=491 height=263>
 
