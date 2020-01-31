@@ -1,0 +1,5 @@
+#N canvas 713 56 613 297 10;
+#X obj 62 91 fx_bitcrush;
+#A saved wet 0.716867;
+#A saved depth 6158.64;
+#X text 23 29 bitcrush effect;

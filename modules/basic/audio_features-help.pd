@@ -1,0 +1,58 @@
+#N canvas 361 76 791 528 12;
+#X obj 509 160 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X text 531 158 Instances multiples possibles;
+#X obj 509 180 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X text 531 178 PureData Vanilia;
+#X obj 82 264 audio_features;
+#X text 531 487 voir aussi : audio_pitch_follower;
+#X text 129 386 enveloppe (en dB);
+#X text 129 408 harmonicité : rapport bruit / sons harmoniques;
+#X text 131 431 brillance : hauteur perceptuelle;
+#X msg 50 385 env \$1;
+#X msg 51 409 harmo \$1;
+#X msg 51 433 bright \$1;
+#X obj 86 188 bng 15 250 50 0 \$0-autoscale-edit empty ... 2 7 0 10
+-257985 -1 -1;
+#X obj 84 168 tgl 15 0 \$0-learn \$0-learn-rcv Learn 17 7 0 10 -257985
+-1 -1 0 1;
+#X text 15 168 le bouton;
+#X text 139 167 permet d'activer l'autorange;
+#X text 14 186 le bouton;
+#X text 138 185 permet d'editer l'autorange;
+#X obj 20 80 vsl 25 45 0 100 0 0 \$0-seuil \$0-seuil-rcv seuil 0 14
+0 10 -232576 -1 -1 0 1;
+#X text 23 13 Extraction basique de parametres du son (enveloppe \,
+bruit/harmonicité \, brillance), f 86;
+#X text 56 82 pour ajuster le seuil au dessus du niveau de bruit ambiant
+;
+#X text 81 122 Pour convertir les caractéristiques du son en messages
+ccout \, cocher les cases A \, B ou C et spécifier le canal ccout
+;
+#N canvas 1 56 450 300 meta 0;
+#X text 23 13 <fr> Extraction basique de parametres du son (enveloppe
+\, bruit/harmonicité \, brillance), f 86;
+#X restore 600 25 pd meta;
+#X obj 123 231 adc~;
+#X msg 605 72 \; pd dsp 1;
+#X text 49 452 un message note out est egalement envoyé si send_data
+est coché, f 63;
+#X text 23 342 Si la case send_data est cochée \, les messages suivants
+sont transmis sur le data_outlet;
+#X text 27 385 1);
+#X text 27 408 2);
+#X text 27 431 3);
+#X text 27 452 4);
+#X text 210 261 |;
+#X text 210 270 V;
+#X text 210 251 |;
+#X text 242 262 |;
+#X text 242 271 V;
+#X text 242 252 |;
+#X text 242 247 |;
+#X text 210 238 |;
+#X text 210 228 |;
+#X text 209 214 1) boutons de test;
+#X text 241 232 2) numéros de cc;
+#X text 275 280 <- 3) boutons d'activation du cc;
+#X connect 23 0 4 0;
+#X connect 23 1 4 1;

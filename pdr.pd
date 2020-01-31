@@ -1,0 +1,866 @@
+#N canvas 320 58 1345 708 12;
+#X declare -lib iemlib1;
+#X declare -lib iemlib2;
+#X declare -lib iem_t3_lib;
+#X declare -path iemguts;
+#X declare -lib iemlib;
+#X declare -path iemlib;
+#X declare -path ./modules/basic;
+#X obj 275 732 iemguts/sendcanvas 1;
+#X obj 394 221 spigot;
+#N canvas 596 82 868 804 add&insert 0;
+#N canvas 1 56 1315 674 \$0-ADD/INSERT 0;
+#X msg 276 142 fx_parameq2;
+#X msg 753 298 PdRacks.presets;
+#X msg 276 452 fx_compressor;
+#X msg 276 265 fx_chorus;
+#X msg 276 285 fx_dubdel;
+#X msg 276 82 fx_hip;
+#X msg 276 192 fx_ring;
+#X msg 276 375 fx_freeverb;
+#X msg 276 472 fx_dynproc;
+#X msg 276 102 fx_filter;
+#X msg 276 212 fx_freqshift;
+#X msg 276 232 fx_pitchshift;
+#X msg 276 355 fx_resonator;
+#X msg 276 62 fx_lop;
+#X msg 276 42 fx_lowhip;
+#X msg 276 305 fx_dubdel2;
+#X msg 276 499 fx_sub;
+#X msg 276 325 fx_reverse;
+#X msg 276 395 fx_everb;
+#X msg 276 162 fx_eq3;
+#X msg 276 122 fx_parameq;
+#X msg 46 263 inst_sampler;
+#X msg 46 283 inst_turntable;
+#X msg 46 223 inst_8bits;
+#X msg 46 243 inst_rhodey;
+#X msg 46 163 inst_soundfile;
+#X msg 46 143 inst_headrush;
+#X msg 46 183 inst_tabosc;
+#X msg 46 203 inst_bassdrum;
+#X msg 46 93 inst_modular;
+#X msg 484 51 audio_in;
+#X msg 484 71 audio_out;
+#X msg 484 91 audio_record;
+#X msg 484 111 audio_features;
+#X msg 484 456 data_wintablet;
+#X msg 484 436 data_fidtouch;
+#X msg 484 476 data_fidcontrol;
+#X msg 484 220 data_azerty2midi;
+#X msg 739 71 midi_arpeggiator;
+#X msg 739 91 note_randomize;
+#X msg 739 111 note_2param;
+#X msg 92 451 cancel;
+#X text 39 30 INSTRUMENTS;
+#X text 265 7 AUDIO EFFECTS;
+#X text 477 15 IN OUT;
+#X msg 484 240 note_16steps;
+#X msg 484 260 data_upic;
+#X text 486 186 MIDI NOTE GENERATORS;
+#X text 731 30 MIDI FILTERS;
+#X text 485 403 DATA CONTROL;
+#X text 72 422 CLOSE THIS WINDOW;
+#X text 749 226 GLOBAL;
+#X msg 276 553 fx_bitcrush;
+#X msg 46 303 inst_euclidrums;
+#X msg 484 326 midi_notein;
+#X msg 739 144 note_interpolations;
+#X msg 46 351 inst_pcm;
+#X msg 739 170 note_interpol;
+#X msg 276 529 fx_formant;
+#X text 618 455 interface avec tablettes wacom;
+#X text 119 348 lecteur de sample;
+#X msg 276 415 fx_dattorroverb;
+#X msg 484 502 data_feuille;
+#X msg 484 281 data_cyclogroove;
+#X msg 86 386 inst_pvoc;
+#X text 628 434 interface multitouch;
+#X text 633 475 monotouch to ctlout;
+#X msg 983 278 PdRacks.morphing;
+#X msg 983 258 PdRacks.transport;
+#X msg 401 567 fx_alias;
+#X msg 15 399 inst_oneshot;
+#X msg 663 392 data_ofelia;
+#X msg 914 405 fx_bonkpitch;
+#X obj 46 521 s \$0-ADD;
+#X obj 276 594 s \$0-ADD;
+#X obj 484 588 s \$0-ADD;
+#X obj 484 358 s \$0-ADD;
+#X obj 484 158 s \$0-ADD;
+#X obj 739 201 s \$0-ADD;
+#X obj 753 342 s \$0-ADD;
+#N canvas 794 116 1110 818 objects.list 0;
+#X obj 29 58 basic.objects;
+#X text 54 24 (pending);
+#X restore 1014 56 pd objects.list;
+#X connect 0 0 74 0;
+#X connect 1 0 79 0;
+#X connect 2 0 74 0;
+#X connect 3 0 74 0;
+#X connect 4 0 74 0;
+#X connect 5 0 74 0;
+#X connect 6 0 74 0;
+#X connect 7 0 74 0;
+#X connect 8 0 74 0;
+#X connect 9 0 74 0;
+#X connect 10 0 74 0;
+#X connect 11 0 74 0;
+#X connect 12 0 74 0;
+#X connect 13 0 74 0;
+#X connect 14 0 74 0;
+#X connect 15 0 74 0;
+#X connect 16 0 74 0;
+#X connect 17 0 74 0;
+#X connect 18 0 74 0;
+#X connect 19 0 74 0;
+#X connect 20 0 74 0;
+#X connect 21 0 73 0;
+#X connect 22 0 73 0;
+#X connect 23 0 73 0;
+#X connect 24 0 73 0;
+#X connect 25 0 73 0;
+#X connect 26 0 73 0;
+#X connect 27 0 73 0;
+#X connect 28 0 73 0;
+#X connect 29 0 73 0;
+#X connect 30 0 77 0;
+#X connect 31 0 77 0;
+#X connect 32 0 77 0;
+#X connect 33 0 77 0;
+#X connect 34 0 75 0;
+#X connect 35 0 75 0;
+#X connect 36 0 75 0;
+#X connect 37 0 76 0;
+#X connect 38 0 78 0;
+#X connect 39 0 78 0;
+#X connect 40 0 78 0;
+#X connect 41 0 73 0;
+#X connect 45 0 76 0;
+#X connect 46 0 76 0;
+#X connect 52 0 74 0;
+#X connect 53 0 73 0;
+#X connect 54 0 76 0;
+#X connect 55 0 78 0;
+#X connect 56 0 73 0;
+#X connect 57 0 78 0;
+#X connect 58 0 74 0;
+#X connect 61 0 74 0;
+#X connect 62 0 75 0;
+#X connect 63 0 76 0;
+#X connect 64 0 73 0;
+#X connect 69 0 74 0;
+#X connect 70 0 73 0;
+#X connect 71 0 75 0;
+#X connect 72 0 75 0;
+#X restore 35 129 pd \$0-ADD/INSERT;
+#X obj 225 222 f \$0;
+#X msg 225 245 \; pd-\$1-ADD/INSERT vis 1;
+#X obj 438 420 f \$0;
+#X msg 438 443 \; pd-\$1-ADD/INSERT vis 0;
+#X obj 377 327 r \$0-ADD;
+#X obj 377 350 t a b;
+#X obj 377 373 symbol;
+#X obj 289 409 select cancel;
+#X obj 342 459 list append;
+#X obj 573 218 unpack f f;
+#X obj 573 265 pack f f;
+#X obj 573 241 - 10;
+#X obj 626 246 - 10;
+#X msg 319 483 obj \$2 \$3 \$1;
+#X obj 515 134 route key motion;
+#X obj 493 173 route 1;
+#X obj 448 210 route Insert;
+#X obj 448 233 t b;
+#X obj 513 55 inlet;
+#X obj 295 519 outlet;
+#X obj 194 536 t b;
+#X obj 194 561 delay 10;
+#X obj 194 586 s TRIGGER_LOADBANG;
+#X text 347 582 manually trigger a loadbang message in the created
+abstraction \, that must contain the [triggered_loadbang] object.;
+#X obj 351 652 pdr/core/stuff/triggered_loadbang;
+#X text 600 652 <- see help file;
+#X obj 500 242 route 9;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 3 0;
+#X connect 7 0 8 0;
+#X connect 8 1 9 0;
+#X connect 8 1 21 0;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 10 1 13 0;
+#X connect 11 0 9 1;
+#X connect 12 0 11 0;
+#X connect 13 0 11 1;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 15 1 10 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 1 27 0;
+#X connect 18 0 1 0;
+#X connect 19 0 15 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 27 0 18 0;
+#X restore 490 354 pd add&insert;
+#X obj 826 51 loadbang;
+#X obj 433 191 == 1;
+#X obj 119 308 s \$0-pdr-rcv;
+#X msg 129 272 label autocomplete;
+#X obj 137 195 select 1 0 2;
+#N canvas 0 57 1920 1023 create_dynamic_m_instance 0;
+#X obj 355 103 route 1;
+#X obj 289 337 list append;
+#X obj 352 137 route Insert;
+#X obj 260 374 unpack f f;
+#X obj 228 557 pack f f;
+#X msg 81 685 mouse \$1 \$2 1 0 \, mouseup \$1 \$2 1;
+#X obj 283 511 - 5;
+#X obj 393 519 unpack f f;
+#X obj 449 543 - 10;
+#X obj 295 284 spigot;
+#X msg 326 249 0;
+#X obj 393 542 + 10;
+#X obj 329 25 inlet;
+#X obj 328 860 outlet;
+#X msg 462 217 1;
+#X obj 329 48 t a a;
+#X obj 205 581 t l l l;
+#X msg 605 279 editmode 0 \, editmode 1;
+#X obj 803 494 iemguts/canvasselect 2;
+#X obj 295 309 t b b;
+#X obj 860 387 t b b;
+#X text 927 424 get nb of indexes;
+#X text 891 530 get index of selected canmvasses;
+#X obj 686 650 list append;
+#X obj 686 675 list prepend;
+#X obj 822 275 delay 100;
+#X msg 718 762 connect \$2 0 \$1 0 \, connect \$2 1 \$1 1 \, connect
+\$2 2 \$1 2;
+#X obj 686 700 t l l, f 7;
+#X obj 686 725 spigot;
+#X obj 767 713 list length;
+#X obj 767 738 > 1;
+#X obj 896 445 iemguts/canvasindex 1;
+#X obj 803 519 t l l;
+#X obj 995 484 list split 1;
+#X obj 843 604 unpack f f;
+#X obj 878 696 pack f f;
+#X obj 800 561 iemguts/canvasobjectposition 2;
+#X obj 995 509 t b f;
+#X obj 911 637 + 90;
+#X obj 843 629 - 10;
+#X obj 393 565 pack f f f;
+#X obj 504 402 loadbang;
+#X obj 504 427 f \$0;
+#X obj 170 620 s \$0-m_start_listen;
+#X obj 324 198 s \$0-is_m_alive?;
+#X obj 318 222 r \$0-yes_m_is_alive!;
+#X text 740 212 press <enter>;
+#X msg 317 594 editmode 1 \, obj \$1 \$2 pdr/core/stuff/autocomplete
+\$3;
+#X obj 434 164 route 9;
+#X text 495 145 ctrl+i;
+#X obj 337 167 t b b b b;
+#X msg 697 116 1;
+#X obj 655 157 route 10;
+#X obj 653 189 spigot;
+#X obj 648 227 t b b b;
+#X msg 765 117 0;
+#X obj 361 79 route key motion zoom;
+#X obj 376 485 / 1;
+#X obj 444 486 / 1;
+#X obj 384 395 t f f;
+#X text 427 373 zoom;
+#X obj 249 443 t f f;
+#X obj 332 442 t f f;
+#X obj 241 508 + 25;
+#X obj 465 108 s \$0-zoom;
+#X obj 455 293 r \$0-zoom;
+#X obj 991 621 r \$0-zoom;
+#X obj 843 654 * 1;
+#X obj 911 662 * 1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 50 0;
+#X connect 2 1 48 0;
+#X connect 3 0 61 0;
+#X connect 3 1 62 0;
+#X connect 4 0 16 0;
+#X connect 5 0 13 0;
+#X connect 6 0 4 1;
+#X connect 7 0 11 0;
+#X connect 7 1 8 0;
+#X connect 8 0 40 1;
+#X connect 9 0 19 0;
+#X connect 10 0 9 1;
+#X connect 11 0 40 0;
+#X connect 12 0 15 0;
+#X connect 14 0 9 1;
+#X connect 15 1 56 0;
+#X connect 16 1 43 0;
+#X connect 17 0 13 0;
+#X connect 18 0 32 0;
+#X connect 19 0 1 0;
+#X connect 19 1 20 0;
+#X connect 20 0 18 0;
+#X connect 20 1 31 0;
+#X connect 23 0 24 0;
+#X connect 24 0 27 0;
+#X connect 25 0 23 0;
+#X connect 26 0 13 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 28 1;
+#X connect 31 1 24 1;
+#X connect 32 0 23 1;
+#X connect 32 1 33 0;
+#X connect 33 0 37 0;
+#X connect 34 0 39 0;
+#X connect 34 1 38 0;
+#X connect 35 0 1 1;
+#X connect 36 0 34 0;
+#X connect 37 0 36 0;
+#X connect 37 1 36 1;
+#X connect 38 0 68 0;
+#X connect 39 0 67 0;
+#X connect 40 0 47 0;
+#X connect 41 0 42 0;
+#X connect 42 0 40 2;
+#X connect 45 0 10 0;
+#X connect 47 0 13 0;
+#X connect 48 0 50 0;
+#X connect 48 1 52 0;
+#X connect 50 0 9 0;
+#X connect 50 1 44 0;
+#X connect 50 2 14 0;
+#X connect 50 3 51 0;
+#X connect 51 0 53 1;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;
+#X connect 54 0 17 0;
+#X connect 54 1 25 0;
+#X connect 54 2 55 0;
+#X connect 55 0 53 1;
+#X connect 56 0 0 0;
+#X connect 56 1 1 1;
+#X connect 56 2 64 0;
+#X connect 57 0 7 0;
+#X connect 58 0 8 0;
+#X connect 59 0 57 1;
+#X connect 59 1 58 1;
+#X connect 61 0 63 0;
+#X connect 61 1 57 0;
+#X connect 62 0 6 0;
+#X connect 62 1 58 0;
+#X connect 63 0 4 0;
+#X connect 65 0 59 0;
+#X connect 66 0 68 1;
+#X connect 66 0 67 1;
+#X connect 67 0 35 0;
+#X connect 68 0 35 1;
+#X restore 327 284 pd create_dynamic_m_instance;
+#X obj 816 93 t b b b;
+#X obj 812 215 spigot;
+#X msg 912 175 1;
+#X msg 847 180 0;
+#X obj 491 147 spigot;
+#X obj 531 119 == 2;
+#X msg 728 243 1;
+#X obj 101 121 cnv 5 118 16 empty \$0-pdr-rcv autocomplete 2 8 0 12
+-204786 -66577 0;
+#X obj 139 100 hradio 20 1 0 3 empty empty empty 0 -8 0 10 -4032 -4160
+-1 1;
+#X msg 171 612 vis 1;
+#N canvas 640 301 470 272 \$0-options 0;
+#X obj 7 9 cnv 15 450 250 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X text 34 8 OPTIONS;
+#X obj 38 52 bng 30 250 50 0 \$0-add_modules empty empty 17 7 0 10
+-262144 -1 -1;
+#X obj 38 102 bng 30 250 50 0 \$0-edit_audio_config empty empty 17
+7 0 10 -262144 -1 -1;
+#X text 74 108 edit audio configuration (bus \, DAC/ADC \, ...);
+#X obj 399 199 bng 50 250 50 0 \$0-close empty X 12 25 0 50 -262130
+-1 -1;
+#X text 245 212 close this window ->;
+#X text 72 58 add modules-sets;
+#X text 81 81 (available sets are in the folder pdr/modules/ );
+#X msg 34 153 \; colors click;
+#X text 138 162 edit general gui colors settings;
+#X restore 622 585 pd \$0-options;
+#X obj 169 635 s pd-\$0-options;
+#X obj 200 100 bng 20 250 50 0 empty empty ... 1 9 0 10 -1 -33289 -262144
+;
+#X msg 164 249 label;
+#X obj 1093 344 v PdRacks.declare.y-offset;
+#X obj 842 142 pdr_ping;
+#X obj 1093 142 text define -k \$0-effects;
+#A set fx_alias aliasing \; fx_bitcrush digital distorsion effect \;
+fx_bonkpitch multidelay with variable pitch and time \; fx_chorus classical
+chorus effect \; fx_compressor basic compressor \; fx_dattorroverb
+High quality vanilla reverb (by Dattorro) \; fx_dubdel classical rjdj
+dub delay \; fx_dubdel2 synchronisable dub delay \; fx_dynproc rjdj-based
+dynamics processing (e_dynproc) \; fx_eq3 3 band eq (from DIY2 st-EQ3.pd)
+\; fx_everb rjdj-based reverberation (e_verb) \; fx_filter switchable
+low/highpass filter \; fx_formant 3 formants filter (from automatonism)
+\; fx_freeverb external-based reverberation \; fx_freqshift frequency
+shifter \; fx_hip hi pass filter \; fx_lop low pass filter modulable
+by enveloppe \; fx_lowhip continuous low/high pass filter \; fx_parameq
+external-based parametric filter (iemlib/para_bp2~) \; fx_parameq2
+parametric filter modulable by enveloppe \; fx_pitchshift pitch shifter
+\; fx_ring ring modulator \; fx_sub sub bass generator (needs fiddle~
+external) \;;
+#X obj 1093 172 text define -k \$0-instruments;
+#A set inst_8bits 8bits synth using vexpr~ (experimental) \; inst_bassdrum
+bass/drum attack synth (from DIY2 lib) \; inst_euclidrums generative
+euclidian drums (need iemguts) \; inst_headrush akai headrush sampler
+clone \; inst_headrush2 akai headrush sampler clone \; inst_oneshot
+multisample 'oneshot'filereader (based on readsf~ object) \; inst_pcm
+multisanmple polyphonic player \; inst_pvoc multisample phase vocoder
+player \; inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK
+rhodey) \; inst_sampler monosample loopplayer (with on the fly rec
+feature) \; inst_soundfile basic file reader \; inst_tabosc harmonic
+/ table oscillator (with on the fly rec feature) \; inst_turntable
+turntable player simulator (with on the fly rec feature) \;;
+#X obj 1093 202 text define -k \$0-midi;
+#A set data_azerty2midi converting azerty/querty keyboard into midi
+entry keyb \; midi_arpeggiator ableton-like midi arpeggiator \; midi_notein
+midi-keyboard interface \; note_2param converting note messages into
+parameter \; note_16steps 16 steps modal sequencer \; note_interpol
+midi interpolations (http://poset.labri.fr/interpolations/) \; note_randomize
+midi notein and enveloppe randomizer \;;
+#X obj 1092 238 text define -k \$0-utils;
+#A set audio_in audio input with bus selector \; audio_out audio output
+with bus selector \; audio_record for quick-recording \; PdRacks.midilearn
+midilearn/midi-mapping and midi-interfaces support \; PdRacks.midi
+note to ctl converter \; PdRacks.morphing enabling morphing netween
+2 values \; PdRacks.presets simple 8 presets saving module \; PdRacks.settings
+module for PdRacks session \; PdRacks.transport clock unit (with abl_link~
+external) \; container container for dynamically storing a module \;
+;
+#X obj 1092 275 text define -k \$0-video;
+#A set;
+#X obj 1087 305 text define -k \$0-basic_objects;
+#A set effects fx_alias aliasing \; effects fx_bitcrush digital distorsion
+effect \; effects fx_bonkpitch multidelay with variable pitch and time
+\; effects fx_chorus classical chorus effect \; effects fx_compressor
+basic compressor \; effects fx_dattorroverb High quality vanilla reverb
+(by Dattorro) \; effects fx_dubdel classical rjdj dub delay \; effects
+fx_dubdel2 synchronisable dub delay \; effects fx_dynproc rjdj-based
+dynamics processing (e_dynproc) \; effects fx_eq3 3 band eq (from DIY2
+st-EQ3.pd) \; effects fx_everb rjdj-based reverberation (e_verb) \;
+effects fx_filter switchable low/highpass filter \; effects fx_formant
+3 formants filter (from automatonism) \; effects fx_freeverb external-based
+reverberation \; effects fx_freqshift frequency shifter \; effects
+fx_hip hi pass filter \; effects fx_lop low pass filter modulable by
+enveloppe \; effects fx_lowhip continuous low/high pass filter \; effects
+fx_parameq external-based parametric filter (iemlib/para_bp2~) \; effects
+fx_parameq2 parametric filter modulable by enveloppe \; effects fx_pitchshift
+pitch shifter \; effects fx_ring ring modulator \; effects fx_sub sub
+bass generator (needs fiddle~ external) \; instruments inst_8bits 8bits
+synth using vexpr~ (experimental) \; instruments inst_bassdrum bass/drum
+attack synth (from DIY2 lib) \; instruments inst_euclidrums generative
+euclidian drums (need iemguts) \; instruments inst_headrush akai headrush
+sampler clone \; instruments inst_headrush2 akai headrush sampler clone
+\; instruments inst_oneshot multisample 'oneshot'filereader (based
+on readsf~ object) \; instruments inst_pcm multisanmple polyphonic
+player \; instruments inst_pvoc multisample phase vocoder player \;
+instruments inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK
+rhodey) \; instruments inst_sampler monosample loopplayer (with on
+the fly rec feature) \; instruments inst_soundfile basic file reader
+\; instruments inst_tabosc harmonic / table oscillator (with on the
+fly rec feature) \; instruments inst_turntable turntable player simulator
+(with on the fly rec feature) \; midi data_azerty2midi converting azerty/querty
+keyboard into midi entry keyb \; midi midi_arpeggiator ableton-like
+midi arpeggiator \; midi midi_notein midi-keyboard interface \; midi
+note_2param converting note messages into parameter \; midi note_16steps
+16 steps modal sequencer \; midi note_interpol midi interpolations
+(http://poset.labri.fr/interpolations/) \; midi note_randomize midi
+notein and enveloppe randomizer \; audio_in audio input with bus selector
+\; audio_out audio output with bus selector \; audio_record for quick-recording
+\; utils PdRacks.midilearn midilearn/midi-mapping and midi-interfaces
+support \; utils PdRacks.midi note to ctl converter \; utils PdRacks.morphing
+enabling morphing netween 2 values \; utils PdRacks.presets simple
+8 presets saving module \; utils PdRacks.settings module for PdRacks
+session \; utils PdRacks.transport clock unit (with abl_link~ external)
+\; utils container container for dynamically storing a module \;;
+#X text 1022 118 OBSOLETE;
+#N canvas 319 92 1173 976 startup 1;
+#X obj 317 70 canvasdollarzero 2;
+#X obj 318 10 loadbang;
+#X msg 314 127 symbol \$1-u_glocal;
+#X obj 255 261 text sequence;
+#X obj 318 43 delay 1;
+#X msg 249 221 line 0 \, bang;
+#X obj 270 434 text define \$0-dump;
+#X msg 269 402 clear \, read \$1.txt;
+#X obj 255 470 text size \$0-dump;
+#X obj 259 497 select 0;
+#X obj 256 377 t b s s;
+#X obj 254 530 symbol;
+#X msg 419 588 clear \, read pdr/modules/\$1/\$1.txt;
+#X obj 421 629 s \$0-dump;
+#X obj 257 593 text size \$0-dump;
+#X obj 257 618 select 0;
+#X obj 174 721 print error;
+#X obj 178 667 symbol;
+#X obj 255 559 t b s s;
+#X obj 351 815 s;
+#X msg 400 781 symbol pd-\$1-PdRacks.declare;
+#X obj 270 181 select 1 0;
+#X text 325 150 Est-ce que l'objet pd-pdRacks.declare existe déjà
+?;
+#X text 205 198 oui;
+#N canvas 848 123 776 607 create_PdRacks.declare 0;
+#X obj 54 46 inlet;
+#X obj 447 417 outlet;
+#X obj 28 519 outlet;
+#X obj 131 142 unpack f f;
+#X obj 190 171 + 45;
+#X obj 248 178 + 75;
+#X obj 127 116 iemguts/canvasposition 2;
+#X obj 33 138 f;
+#X obj 81 227 pack f f;
+#X obj 54 70 t b b b;
+#X msg 463 231 obj \$1 \$2 PdRacks.savestate;
+#X obj 33 163 t b f;
+#X obj 24 281 delay 10;
+#X obj 24 306 s TRIGGER_LOADBANG;
+#X obj 271 279 pack f f s 0;
+#X msg 433 377 obj \$1 \$2 pd \$3\$4-PdRacks.declare;
+#X obj 383 159 makefilename %c;
+#X msg 391 103 36;
+#X obj 381 62 loadbang;
+#X text 442 100 $;
+#X msg 57 348 0;
+#X msg 37 435 obj 10 10 declare -path pdr/modules/basic \, obj 10 60
+pdr/core/stuff/u_glocal.enable \$2\$1 \, vis 0 \, loadbang, f 47;
+#X obj 57 374 pack f s;
+#X connect 0 0 9 0;
+#X connect 3 0 7 1;
+#X connect 3 0 14 0;
+#X connect 3 1 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 14 1;
+#X connect 5 0 8 1;
+#X connect 6 0 3 0;
+#X connect 7 0 11 0;
+#X connect 8 0 10 0;
+#X connect 9 0 7 0;
+#X connect 9 1 20 0;
+#X connect 9 2 6 0;
+#X connect 11 0 12 0;
+#X connect 11 1 8 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 16 0 14 2;
+#X connect 16 0 22 1;
+#X connect 17 0 16 0;
+#X connect 18 0 17 0;
+#X connect 20 0 22 0;
+#X connect 21 0 2 0;
+#X connect 22 0 21 0;
+#X restore 574 250 pd create_PdRacks.declare;
+#X obj 745 300 iemguts/sendcanvas 2;
+#X obj 597 315 s;
+#X msg 627 189 symbol pd-\$1-PdRacks.declare;
+#X obj 533 522 text insert;
+#X obj 320 97 t b s s s s s;
+#X text 105 229 lister sequenciellement toutes les extensions, f 19
+;
+#X text 121 346 pour chaque extension \, charger le fichier de description
+, f 17;
+#X text 143 461 Réussite ?;
+#X text 218 509 non;
+#X text 330 514 oui;
+#X msg 177 696 extension \$1 non trouvée dans pdr/modules;
+#X text 65 530 Les objets [declare] requis sont absents dans [pd-\$0-PdRacks.declare]
+, f 24;
+#X text 66 593 charger le fichier de description avec le chemin relatif
+complet, f 22;
+#X text 89 695 Echec;
+#X text 304 647 Réussite;
+#N canvas 0 57 1920 1023 parse_declares+objects 0;
+#X obj 165 19 inlet;
+#X obj 90 338 outlet;
+#X obj 137 59 t b;
+#X msg 137 84 line 0 \, bang;
+#X obj 122 140 list trim;
+#X obj 119 167 route # declare;
+#X obj 154 200 list prepend obj 100 130 declare;
+#X obj 115 231 list trim;
+#X obj 122 115 text sequence \$0-dump;
+#X obj 210 237 outlet;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 1 6 0;
+#X connect 5 2 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 4 0;
+#X restore 351 733 pd parse_declares+objects;
+#N canvas 302 401 598 456 parse_dobjects 0;
+#X obj 165 19 inlet;
+#X obj 137 59 t b;
+#X msg 137 84 line 0 \, bang;
+#X obj 122 140 list trim;
+#X obj 119 167 route # declare;
+#X obj 122 115 text sequence \$0-dump;
+#X obj 245 201 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 2 6 0;
+#X connect 5 0 3 0;
+#X restore 633 735 pd parse_dobjects;
+#X msg 665 827 1e+09;
+#X obj 634 773 list;
+#X obj 613 855 text insert \$0-all_objects;
+#X obj 635 799 t l b l;
+#X obj 881 810 list split 1;
+#X obj 920 871 text search \$0-categories;
+#X obj 881 835 t s s;
+#X msg 872 951 1e+09;
+#X obj 820 979 text insert \$0-categories;
+#X obj 842 923 t s b;
+#X text 560 878 insert objects in struct \$0-all_objects, f 29;
+#X text 943 954 add new category;
+#X obj 920 896 == -1;
+#X obj 854 886 spigot;
+#X text 1011 895 found category ?;
+#X text 864 905 no;
+#X text 571 19 A la création de [pdr] \, controler si des extensions
+sont définies \, et le cas échéant \, charger les listes d'objets
+correspondantes dans les tableaux \$0-all_objects;
+#X text 568 227 non : le créer dynamiquement;
+#X obj 513 205 t b b b;
+#X msg 546 488 1e+09;
+#X obj 458 283 delay 1;
+#X obj 255 286 list trim;
+#X obj 255 311 route #;
+#X text 317 311 skip comments;
+#X obj 516 460 t l b;
+#X obj 413 8 r \$0-update;
+#X msg 357 234 symbol \$1-modules_sets;
+#X msg 593 348 symbol \$1-modules_sets;
+#X obj 252 347 list split 1;
+#X msg 506 393 list # List of modules to load \, list # you can add
+new sets of modules here \, list # (ctrl/cmd + s to save and close)
+\, list basic;
+#X obj 267 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 585 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 1 58 450 300 exists? 0;
+#X obj 36 29 inlet;
+#X obj 46 266 outlet;
+#X obj 239 36 inlet;
+#X obj 77 178 r \$0-feedback;
+#X obj 104 149 s;
+#X obj 59 84 symbol \$0-feedback;
+#X obj 61 221 f;
+#X obj 72 119 t b s b;
+#X msg 198 169 0;
+#X connect 0 0 5 0;
+#X connect 2 0 4 1;
+#X connect 3 0 6 1;
+#X connect 5 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 7 1 4 0;
+#X connect 7 2 8 0;
+#X connect 8 0 6 1;
+#X restore 232 151 pd exists?;
+#X connect 0 0 29 0;
+#X connect 1 0 4 0;
+#X connect 2 0 74 1;
+#X connect 3 0 63 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 9 1 41 0;
+#X connect 10 0 8 0;
+#X connect 10 1 7 0;
+#X connect 10 2 11 1;
+#X connect 11 0 18 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 15 1 40 0;
+#X connect 17 0 35 0;
+#X connect 18 0 14 0;
+#X connect 18 0 15 0;
+#X connect 18 1 17 1;
+#X connect 18 2 12 0;
+#X connect 20 0 19 1;
+#X connect 21 0 5 0;
+#X connect 21 1 60 0;
+#X connect 24 0 26 0;
+#X connect 24 1 25 0;
+#X connect 27 0 26 1;
+#X connect 29 0 74 0;
+#X connect 29 1 68 0;
+#X connect 29 2 2 0;
+#X connect 29 3 20 0;
+#X connect 29 4 27 0;
+#X connect 29 5 69 0;
+#X connect 35 0 16 0;
+#X connect 40 0 19 0;
+#X connect 40 1 43 0;
+#X connect 41 0 43 0;
+#X connect 42 0 44 1;
+#X connect 43 0 45 0;
+#X connect 45 0 44 0;
+#X connect 45 1 42 0;
+#X connect 45 2 46 0;
+#X connect 46 0 48 0;
+#X connect 47 0 54 0;
+#X connect 48 0 55 0;
+#X connect 48 1 47 0;
+#X connect 49 0 50 1;
+#X connect 51 0 50 0;
+#X connect 51 1 49 0;
+#X connect 54 0 55 1;
+#X connect 55 0 51 0;
+#X connect 60 0 62 0;
+#X connect 60 1 71 0;
+#X connect 60 2 24 0;
+#X connect 61 0 28 1;
+#X connect 62 0 0 0;
+#X connect 63 0 64 0;
+#X connect 64 1 70 0;
+#X connect 66 0 28 0;
+#X connect 66 1 61 0;
+#X connect 67 0 4 0;
+#X connect 68 0 3 1;
+#X connect 69 0 28 2;
+#X connect 70 0 10 0;
+#X connect 71 0 66 0;
+#X connect 72 0 4 0;
+#X connect 73 0 24 0;
+#X connect 74 0 21 0;
+#X restore 718 415 pd startup;
+#X text 541 438 Charge les <module>.txt et copie les listes d'objet
+dans le tableau \$0-all_objects \, en ajoutant si besoin des catégories
+;
+#X text 536 484 si les declare -path ne sont pas corrects \, les ajoute
+dynamiquement pour chaque module à charger.;
+#X obj 1093 74 text define \$0-all_objects;
+#X obj 1093 44 text define \$0-categories;
+#X text 554 417 au démarrage;
+#X obj 327 43 receivecanvas 1;
+#X obj 1105 423 declare -lib iemlib1;
+#X obj 1105 443 declare -lib iemlib2;
+#X text 1105 388 for Mac OSX;
+#X obj 1105 462 declare -lib iem_t3_lib;
+#X msg 188 225 label object_list;
+#X text 733 584 <- gestion des options et parametres;
+#N canvas 0 50 450 300 edit_audio_config 0;
+#X obj 107 59 r \$0-edit_audio_config;
+#X obj 111 135 s pd-audio_config;
+#X msg 108 91 vis 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 773 655 pd edit_audio_config;
+#X obj 220 559 r \$0-close;
+#X msg 220 584 vis 0;
+#N canvas 990 218 630 530 modules_sets... 0;
+#X text 54 95 1) L'extension doit être dézippée et son dossier placé
+dans le dossier <PdRacks>/extensions/;
+#X text 51 138 2) Pour installer une extension dans le patch courant
+\, taper son nom ci-dessous \, puis appuyer sur <enter>;
+#X msg 101 342 click;
+#X obj 129 382 s;
+#X msg 240 344 symbol \$1-remote;
+#X obj 121 255 t b s b s;
+#X obj 187 390 f \$0;
+#X obj 223 475 s;
+#X msg 35 328 close;
+#X obj 331 414 r \$0-remote;
+#X obj 331 439 route updated;
+#X obj 331 464 t b b;
+#X obj 332 496 s \$0-update;
+#X msg 183 431 symbol \$1-remote;
+#X obj 115 47 r \$0-add_modules;
+#X obj 114 222 canvasdollarzero 2;
+#X msg 153 302 symbol \$1-modules_sets;
+#X connect 2 0 3 0;
+#X connect 4 0 7 1;
+#X connect 5 0 2 0;
+#X connect 5 1 16 0;
+#X connect 5 2 6 0;
+#X connect 5 3 4 0;
+#X connect 6 0 13 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 8 0;
+#X connect 13 0 7 0;
+#X connect 14 0 15 0;
+#X connect 15 0 5 0;
+#X connect 16 0 3 1;
+#X restore 765 618 pd modules_sets...;
+#X obj 1104 550 declare -path iemguts;
+#X obj 1105 509 declare -lib iemlib;
+#X obj 1104 570 declare -path iemlib;
+#X obj 327 116 route zoom;
+#X msg 327 176 zoom \$1;
+#X obj 821 279 core/glocal/glocal.dollarzero;
+#X obj 821 304 t b f;
+#X msg 854 331 symbol \$1-pdr_dollarzero;
+#X obj 825 367 v;
+#X obj 796 330 f \$0;
+#X obj 1037 627 declare -path ./modules/basic;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 7 1 22 0;
+#X connect 7 2 43 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 9 1 24 0;
+#X connect 9 2 11 0;
+#X connect 10 0 15 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 1;
+#X connect 13 0 2 0;
+#X connect 14 0 13 1;
+#X connect 15 0 17 0;
+#X connect 17 0 4 0;
+#X connect 17 0 7 0;
+#X connect 17 0 14 0;
+#X connect 18 0 20 0;
+#X connect 21 0 18 0;
+#X connect 22 0 5 0;
+#X connect 24 0 12 0;
+#X connect 38 0 13 0;
+#X connect 38 0 52 0;
+#X connect 43 0 5 0;
+#X connect 46 0 47 0;
+#X connect 47 0 20 0;
+#X connect 52 0 53 0;
+#X connect 52 1 1 0;
+#X connect 53 0 8 0;
+#X connect 54 0 55 0;
+#X connect 55 0 58 0;
+#X connect 55 1 56 0;
+#X connect 58 0 57 0;
+#X coords 0 -1 1 1 120 39 1 100 100;

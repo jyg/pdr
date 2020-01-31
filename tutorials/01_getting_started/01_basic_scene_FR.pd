@@ -1,0 +1,262 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 419 375 1174 701 16;
+#X declare -path pdr/modules/basic;
+#X declare -path pdr/modules/basic;
+#X obj 193 426 cnv 15 350 200 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X msg 247 365 \; pd dsp 1;
+#X msg 552 542 vol 100 \, decay 302 \, tone 0.72;
+#X text 544 435 <-- Here \, we just use control inlet to send 'midi-like'
+note messages, f 26;
+#X obj 228 503 inst_rhodey;
+#A saved vol 100;
+#A saved tone 0.72;
+#A saved decay 302;
+#A saved SID 0;
+#X obj 252 593 dac~;
+#X obj 410 592 print;
+#X obj 211 302 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 554 603 You can adjust the parameters of module by using the
+GUI controls or by sending specific messages., f 34;
+#X msg 427 470 note 64 100;
+#X obj 245 320 declare -path pdr/modules/basic;
+#X obj 520 154 container 1;
+#A saved contents fx_chorus;
+#A saved SID 0;
+#A saved dump bypass 1;
+#A saved dump mod 0.648466;
+#A saved dump freq 0.8;
+#X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#N canvas 756 140 1105 768 stuff 0;
+#X msg 276 142 fx_parameq2;
+#X msg 709 278 PdRacks.presets;
+#X msg 276 452 fx_compressor;
+#X msg 276 265 fx_chorus;
+#X msg 276 285 fx_dubdel;
+#X msg 276 82 fx_hip;
+#X msg 276 192 fx_ring;
+#X msg 276 375 fx_freeverb;
+#X msg 276 472 fx_dynproc;
+#X msg 276 102 fx_filter;
+#X msg 276 212 fx_freqshift;
+#X msg 276 232 fx_pitchshift;
+#X msg 276 355 fx_resonator;
+#X msg 276 62 fx_lop;
+#X msg 276 42 fx_lowhip;
+#X msg 276 305 fx_dubdel2;
+#X msg 276 499 fx_sub;
+#X msg 276 325 fx_reverse;
+#X msg 276 395 fx_everb;
+#X msg 276 162 fx_eq3;
+#X msg 276 122 fx_parameq;
+#X msg 46 263 inst_sampler;
+#X msg 46 283 inst_turntable;
+#X msg 46 223 inst_8bits;
+#X msg 46 243 inst_rhodey;
+#X msg 46 163 inst_soundfile;
+#X msg 46 143 inst_headrush;
+#X msg 46 183 inst_tabosc;
+#X msg 46 203 inst_bassdrum;
+#X msg 46 93 inst_modular;
+#X msg 484 51 audio_in;
+#X msg 484 71 audio_out;
+#X msg 484 91 audio_record;
+#X msg 484 111 audio_features;
+#X msg 484 280 data_azerty2midi;
+#X msg 709 71 midi_arpeggiator;
+#X msg 709 91 note_randomize;
+#X msg 709 111 note_2param;
+#X text 39 30 INSTRUMENTS;
+#X text 265 7 AUDIO EFFECTS;
+#X text 477 15 IN OUT;
+#X msg 484 300 note_16steps;
+#X text 486 246 MIDI NOTE GENERATORS;
+#X text 701 30 MIDI FILTERS;
+#X text 773 183 GLOBAL;
+#X msg 276 553 fx_bitcrush;
+#X msg 46 303 inst_euclidrums;
+#X msg 484 326 midi_notein;
+#X msg 46 351 inst_pcm;
+#X msg 276 529 fx_formant;
+#X msg 276 415 fx_dattorroverb;
+#X msg 44 383 inst_pvoc;
+#X msg 709 344 PdRacks.morphing;
+#X msg 709 313 PdRacks.transport;
+#X msg 276 591 fx_alias;
+#X msg 46 422 inst_oneshot;
+#X obj 484 158 s \$0-ADD;
+#X obj 46 521 t a;
+#X obj 276 626 t a;
+#X obj 484 358 t a;
+#X obj 709 644 t a;
+#X msg 709 383 PdRacks.savestate;
+#X msg 709 414 PdRacks.latency;
+#X obj 274 695 list trim;
+#X obj 274 754 outlet;
+#N canvas 0 50 450 300 example 0;
+#X obj 92 28 r \$0-create;
+#X obj 92 57 select 0 1 2 3 4 5;
+#X msg 92 86 clear;
+#X msg 121 117 fx_chorus;
+#X msg 151 146 fx_compressor;
+#X msg 183 174 midi_notein;
+#X msg 207 85 inst_rhodey;
+#X msg 240 117 fx_dattorroverb;
+#X obj 87 245 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 1 4 6 0;
+#X connect 1 5 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X restore 482 567 pd example;
+#X obj 274 666 list prepend contents;
+#X obj 853 645 namecanvas \$0-this;
+#X obj 274 724 t a b;
+#X obj 483 731 s \$0-this;
+#X msg 399 742 vis 0;
+#X obj 689 710 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 689 755 pd \$0-PdRacks.declare;
+#X connect 0 0 58 0;
+#X connect 1 0 60 0;
+#X connect 2 0 58 0;
+#X connect 3 0 58 0;
+#X connect 4 0 58 0;
+#X connect 5 0 58 0;
+#X connect 6 0 58 0;
+#X connect 7 0 58 0;
+#X connect 8 0 58 0;
+#X connect 9 0 58 0;
+#X connect 10 0 58 0;
+#X connect 11 0 58 0;
+#X connect 12 0 58 0;
+#X connect 13 0 58 0;
+#X connect 14 0 58 0;
+#X connect 15 0 58 0;
+#X connect 16 0 58 0;
+#X connect 17 0 58 0;
+#X connect 18 0 58 0;
+#X connect 19 0 58 0;
+#X connect 20 0 58 0;
+#X connect 21 0 57 0;
+#X connect 22 0 57 0;
+#X connect 23 0 57 0;
+#X connect 24 0 57 0;
+#X connect 25 0 57 0;
+#X connect 26 0 57 0;
+#X connect 27 0 57 0;
+#X connect 28 0 57 0;
+#X connect 29 0 57 0;
+#X connect 30 0 56 0;
+#X connect 31 0 56 0;
+#X connect 32 0 56 0;
+#X connect 33 0 56 0;
+#X connect 34 0 59 0;
+#X connect 35 0 60 0;
+#X connect 36 0 60 0;
+#X connect 37 0 60 0;
+#X connect 41 0 59 0;
+#X connect 45 0 58 0;
+#X connect 46 0 57 0;
+#X connect 47 0 59 0;
+#X connect 48 0 57 0;
+#X connect 49 0 58 0;
+#X connect 50 0 58 0;
+#X connect 51 0 57 0;
+#X connect 52 0 60 0;
+#X connect 53 0 60 0;
+#X connect 54 0 58 0;
+#X connect 55 0 57 0;
+#X connect 57 0 66 0;
+#X connect 58 0 66 0;
+#X connect 59 0 66 0;
+#X connect 60 0 66 0;
+#X connect 61 0 60 0;
+#X connect 62 0 60 0;
+#X connect 63 0 68 0;
+#X connect 65 0 66 0;
+#X connect 66 0 63 0;
+#X connect 68 0 64 0;
+#X connect 68 1 70 0;
+#X connect 70 0 69 0;
+#X restore 701 127 pd stuff;
+#X text 405 132 clear;
+#X text 407 153 chorus;
+#X text 406 172 compressor;
+#X text 405 194 note-in;
+#X text 404 212 rhodey;
+#X text 407 234 reverb;
+#X text 59 319 1) use [declare];
+#X text 60 363 2) turn dsp on;
+#X text 57 430 3) patch;
+#X text 46 544 That's all.;
+#X msg 410 436 note 66 100;
+#X obj 29 12 cnv 15 700 60 empty empty empty 20 12 0 14 -4032 -66577
+0;
+#X text 37 272 _________________________________________________________________________
+, f 75;
+#X text 44 267 Let's create a minimal PdRacks patch with only one module
+: inst_rhodey, f 75;
+#N canvas 0 50 716 197 0.48_retrocompatibility 0;
+#X text 37 21 If you want to use PdRacks with pd 0.48 \, you'll have
+to do some adjustments.;
+#X text 41 84 For more info see pdr/tutorials/02_advanced/19_export-pd-48.pd
+;
+#X restore 197 653 pd 0.48_retrocompatibility;
+#X msg 555 575 vol 90 \, decay 602 \, tone 0.3;
+#X scalar comment 31 33 200 \; faciliter la construction de dispositifs
+interactifs \; complex audio/visual effects / instruments / interactions
+\; \;;
+#X scalar comment 32 50 200 \; et d'effets ou instruments audio / visuels.
+\; scenes easier. \; \;;
+#X scalar comment 31 79 200 \; Un module standard PdRacks a 2 inlets~
+et 2 outlets~ \; A standard PdRacks module has 2 inlets~/outlets~ (for
+\; \;;
+#X scalar comment 31 97 200 \; (pour le traitement du son) + une paire
+inlet/outlet pour \; processing stereo audio) and one inlet/outlet
+for controls. \; \;;
+#X scalar comment 31 117 200 \; les messages de contrôle. \; \; \;
+;
+#X scalar comment 755 24 200 \; nécessite pd >= 0.49 \; needs pd >=
+0.49 \; \;;
+#X scalar comment 131 144 200 \; exemple de module \; example of basic
+\; \;;
+#X scalar comment 132 165 200 \; basique : cliquer ici -> \; objects
+: click here -> \; \;;
+#X obj 976 23 pdr/core/stuff/language;
+#X scalar comment 624 313 200 \; <- ce dossier contient une collection
+\; <- this is the basic collection of \; \;;
+#X scalar comment 654 334 200 \; d'objets de base (dont inst_rhodey)
+\; objects (including inst_rhodey) \; \;;
+#X scalar comment 31 15 200 \; PdRacks est un ensemble d'outils et
+de modules destinés à \; PdRacks is a set of tools and modules to
+make patching of \; PdRacks è una colezzione di \;;
+#X scalar comment 792 128 200 \; <- cliquer ici pour \; <- click here
+to \; \\\; \;;
+#X scalar comment 795 149 200 \; voir d'autres objets \; see more objects
+\; \\\; \;;
+#X connect 2 0 4 2;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 4 2 6 0;
+#X connect 9 0 4 2;
+#X connect 13 0 11 2;
+#X connect 24 0 4 2;
+#X connect 29 0 4 2;

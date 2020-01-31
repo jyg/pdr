@@ -1,0 +1,68 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 932 133 1111 654 16;
+#X declare -path pdr/modules/basic;
+#X declare -path pdr/modules/automatonism;
+#X declare -path pdr/modules/automatonism/modular/patch_editor_abs
+;
+#X obj 436 261 PdRacks.midilearn;
+#A saved preset_saving 0;
+#X text 35 14 With this patched version of Automatonism \, it's possible
+to assign midi controls to automatonism parameters., f 42;
+#X text 71 548 https://www.automatonism.com/;
+#X text 58 464 Until now \, only few automatonism object are wrapped
+inside Pdracks;
+#X obj 88 319 audio_out;
+#A saved pan 0;
+#A saved vol 78.2495;
+#A saved out OUT(1/2);
+#X obj 644 113 PdRacks.savestate;
+#A saved scene_name ;
+#A saved lp-filter-0 lp-filter2-cutoff 0;
+#A saved lp-filter-0 lp-filter2-fm--/+ 113;
+#A saved lp-filter-0 lp-filter2-q 0;
+#A saved bwl-osc-0 bwl-osc-pitch 50;
+#A saved bwl-osc-0 bwl-osc-wform 0;
+#A saved bwl-osc-0 bwl-osc-fm-att 18;
+#A saved bwl-osc-0 bwl-osc-cv-att 12;
+#A saved bwl-osc-0 bwl-osc-pwidth 104;
+#A saved audio_out-0 pan 0;
+#A saved audio_out-0 vol 78.2495;
+#A saved audio_out-0 out OUT(1/2);
+#X obj 644 163 PdRacks.savestate;
+#A saved scene_name ;
+#A saved lp-filter-0 lp-filter2-cutoff 0;
+#A saved lp-filter-0 lp-filter2-fm--/+ 113;
+#A saved lp-filter-0 lp-filter2-q 0;
+#A saved bwl-osc-0 bwl-osc-pitch 42;
+#A saved bwl-osc-0 bwl-osc-wform 3;
+#A saved bwl-osc-0 bwl-osc-fm-att 18;
+#A saved bwl-osc-0 bwl-osc-cv-att 12;
+#A saved bwl-osc-0 bwl-osc-pwidth 24;
+#A saved audio_out-0 pan 0;
+#A saved audio_out-0 vol 82.7987;
+#A saved audio_out-0 out OUT(1/2);
+#X obj 509 44 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#A saved modules_set automatonism;
+#X obj 3 123 declare -path pdr/modules/automatonism;
+#X obj 9 166 declare -path pdr/modules/automatonism/modular/patch_editor_abs
+;
+#X restore 509 89 pd \$0-PdRacks.declare;
+#X obj 90 159 bwl-osc;
+#A saved bwl-osc-pitch 50;
+#A saved bwl-osc-wform 0;
+#A saved bwl-osc-fm-att 18;
+#A saved bwl-osc-cv-att 12;
+#A saved bwl-osc-pwidth 104;
+#X obj 397 126 lp-filter;
+#A saved lp-filter2-cutoff 0;
+#A saved lp-filter2-fm--/+ 113;
+#A saved lp-filter2-q 0;
+#X connect 9 0 4 0;

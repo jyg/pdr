@@ -1,0 +1,28 @@
+#N canvas 708 507 972 437 16;
+#X obj 51 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 547 175 glocal.space \$0;
+#X text 506 371 globals : GLOCAL.current \, GLOCAL.base;
+#X text 172 68 defining a global send/receive channel \, that becomes
+local to (gran-)parent patch/abstraction if there is a [glocal.space
+\$0] object inside (gran-)parent patch;
+#X text 720 172 needs iemguts for editing;
+#X obj 47 331 glocal.value value1;
+#X obj 47 221 glocal.value value1;
+#X floatatom 47 360 5 0 0 0 - - -;
+#X floatatom 45 184 5 0 0 0 - - -;
+#X obj 281 270 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 277 359 5 0 0 0 - - -;
+#X obj 277 330 glocal.value value2;
+#X floatatom 276 185 5 0 0 0 - - -;
+#X obj 278 222 glocal.value value2;
+#X msg 405 144 symbol value1;
+#X connect 0 0 5 0;
+#X connect 5 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 14 0 11 1;
+#X connect 14 0 13 1;

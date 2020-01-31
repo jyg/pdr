@@ -1,0 +1,31 @@
+#N canvas 815 305 881 543 16;
+#X declare -path pdr/modules/basic;
+#X obj 462 321 bng 20 250 50 0 empty empty ... 1 9 0 10 -1 -33289 -262144
+;
+#X text 84 95 -effects;
+#X text 86 111 -instruments;
+#X text 86 129 -midi;
+#X text 87 146 -utils;
+#X text 50 54 Les modules disponibles par défaut dans PdRacks appartiennent
+aux catégories de base suivantes :;
+#X text 156 251 ______________________________________;
+#X text 51 231 Il est possible de charger pour un projet d'autres modules
+\, au sein de collections (ou librairies) de modules \, pour ajouter
+des fonctionnalités \, par exemple video.;
+#X text 51 396 La librairie de modules doit exister sous forme d'un
+dossier à l'emplacement pdr/modules/;
+#X text 51 454 Exemple de librairie de modules : automatonism (en cours)
+;
+#X text 50 299 Pour insérer une librairie et ses dépendances dans
+un projet \, cliquer sur le bouton 'options' (__) du module [pdr] \,
+puis cliquer sur "add module-sets" et décommenter / ajouter le nom
+de la librairie de modules choisie.;
+#X obj 608 49 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 608 94 pd \$0-PdRacks.declare;

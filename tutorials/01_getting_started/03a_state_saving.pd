@@ -1,0 +1,16 @@
+#N canvas 73 453 1213 463 16;
+#X declare -path pdr/modules/basic;
+#X obj 51 126 inst_rhodey;
+#A saved vol 73.5327;
+#A saved tone 0.77137;
+#A saved decay 1033.14;
+#X obj 265 126 inst_rhodey;
+#A saved vol 105.877;
+#A saved tone 0.203265;
+#A saved decay 2917.38;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 803 93 pd \$0-PdRacks.declare;
+#X text 60 69 Each module can remember its settings in the parent patch
+when that one is saved.;

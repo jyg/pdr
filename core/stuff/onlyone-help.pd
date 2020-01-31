@@ -1,0 +1,8 @@
+#N canvas 0 50 665 416 16;
+#X obj 75 91 onlyone <abstraction_name>;
+#X text 51 155 if object is already created \, it's not recreated;
+#X text 53 30 object to create one and only one instance of an object
+in all pd namespace;
+#X obj 268 210 exists;
+#X text 346 212 abstraction;
+#X text 152 212 works with;

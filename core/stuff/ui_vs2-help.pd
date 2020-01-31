@@ -1,0 +1,9 @@
+#N canvas 0 50 542 520 10;
+#X declare -path pdr/core/stuff;
+#X declare -path pdr/core/rj;
+#X text 295 61 lineaire;
+#X text 35 69 ui_vs \$0 name min max;
+#X obj 305 120 declare -path pdr/core/stuff;
+#X obj 307 164 declare -path pdr/core/rj;
+#X obj 169 278 ui_vs2 \$0 wet 0 1;
+#X coords 0 520 1 519 135 18 0;

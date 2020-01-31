@@ -1,0 +1,123 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 110 389 1060 528 16;
+#X declare -path pdr/modules/basic;
+#X declare -path ../extensions/automatonism;
+#X declare -path ../extensions/automatonism/modular/patch_editor_abs
+;
+#X declare -path ../extensions/automatonism;
+#X declare -path ../extensions/automatonism/modular/patch_editor_abs
+;
+#X declare -path pdr/modules/automatonism;
+#X declare -path pdr/modules/automatonism/modular/patch_editor_abs
+;
+#X obj 509 44 pdr;
+#X obj 803 188 multitouch.enable;
+#X obj 509 119 PdRacks.savestate;
+#A saved scene_name ;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X obj 100 130 declare -path ../extensions/automatonism;
+#X obj 100 130 declare -path ../extensions/automatonism/modular/patch_editor_abs
+;
+#X obj 100 130 declare -path ../extensions/automatonism;
+#X obj 100 130 declare -path ../extensions/automatonism/modular/patch_editor_abs
+;
+#X obj 100 130 declare -path pdr/modules/automatonism;
+#X obj 100 130 declare -path pdr/modules/automatonism/modular/patch_editor_abs
+;
+#X restore 488 87 pd \$0-PdRacks.declare;
+#X obj 100 158 bwl-osc;
+#A saved bwl-osc-pitch 23;
+#A saved bwl-osc-wform 0;
+#A saved bwl-osc-fm-att 0;
+#A saved bwl-osc-cv-att 0;
+#A saved bwl-osc-pwidth 50;
+#X obj 104 476 audio_out;
+#A saved pan 0;
+#A saved vol 95.1531;
+#A saved out OUT(1/2);
+#X obj 508 214 PdRacks.midilearn;
+#A saved preset_saving 0;
+#X text 386 348 https://www.automatonism.com/;
+#X obj 284 79 bwl-osc;
+#A saved bwl-osc-pitch 62;
+#A saved bwl-osc-wform 0;
+#A saved bwl-osc-fm-att 0;
+#A saved bwl-osc-cv-att 0;
+#A saved bwl-osc-pwidth 0;
+#X obj 77 289 fx_dubdel2;
+#A saved noclick_mode 0;
+#A saved dell 4;
+#A saved delr 4;
+#A saved sync 1;
+#A saved del 362.932;
+#A saved wet 0.640648;
+#A saved fb 0.132653;
+#A saved bq 2;
+#A saved bpitch 60;
+#X obj 103 389 fx_dattorroverb;
+#A saved fbgain 0.8;
+#A saved damping 0.25;
+#A saved bandwidth 0.6;
+#A saved predel 30;
+#A saved wet 0.5;
+#X obj 28 24 note_16steps;
+#A saved ticks 0;
+#A saved vol 100;
+#A saved sustain 0.8;
+#A saved randoms 0 0 0 1 0 1 0 1 0 0 1 1 0 1 0 1;
+#A saved lrandoms <sublist> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+;
+#A saved div 0;
+#A saved cycle 16;
+#A saved lcycle <subset> 16 16 16 16;
+#A saved steps 20.3 13 17.4 13 14.5001 5 12.5666 16 12.5666 12.5666
+20 12 14.5 27 14.5 1;
+#A saved lsteps <sublist> 20.3 13 9.66667 27 9.66667 11 22.7166 18.8499
+13.05 29 12 15.4667 12.5667 13.5333 25 27.0667 20.3 13 9.66667 27 9.66667
+11 22.7166 18.8499 13.05 29 12 15.4667 12.5667 13.5333 25 27.0667 20.3
+13 9.66667 27 9.66667 11 22.7166 18.8499 13.05 29 12 15.4667 12.5667
+13.5333 25 27.0667 20.3 13 9.66667 27 9.66667 11 22.7166 18.8499 13.05
+29 12 15.4667 12.5667 13.5333 25 27.0667;
+#A saved xpose 4.71429;
+#A saved lxpose <subset> 0 0 0 0;
+#A saved offset 53.0612;
+#A saved loffset <subset> 50 50 50 50;
+#A saved scale 1.85714;
+#A saved lscale <subset> 0 0 0 0;
+#X obj 253 8 route note;
+#X obj 253 35 unpack f f;
+#X obj 253 61 spigot;
+#X obj 203 96 / 127;
+#X obj 730 38 PdRacks.transport;
+#X obj 183 120 lop~ 1000;
+#X obj 253 88 - 40;
+#X obj 297 257 PdRacks.morphing;
+#X connect 4 0 9 0;
+#X connect 4 0 9 1;
+#X connect 8 0 4 2;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 10 0 5 0;
+#X connect 10 1 5 1;
+#X connect 11 2 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 1 14 1;
+#X connect 14 0 18 0;
+#X connect 15 0 17 0;
+#X connect 17 0 4 0;
+#X connect 17 0 8 0;
+#X connect 18 0 15 0;

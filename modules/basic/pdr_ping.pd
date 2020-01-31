@@ -1,0 +1,5 @@
+#N canvas 0 50 450 300 10;
+#X obj 142 60 inlet;
+#X obj 142 83 outlet;
+#X text 143 20 object to check basic path is declared;
+#X connect 0 0 1 0;

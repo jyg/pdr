@@ -1,0 +1,55 @@
+#N canvas 156 56 678 486 10;
+#X declare -path ../../core;
+#X declare -path ../../core/stuff;
+#X declare -path ../../core/rj;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 298 15 pd LICENSE-GPL;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv note_2ctl-0 0 7 0
+14 -262144 -1 0;
+#X obj 208 228 route note;
+#X obj 29 260 inlet~;
+#X obj 30 286 outlet~;
+#X obj 99 260 inlet~;
+#X obj 100 286 outlet~;
+#X obj 208 206 inlet data;
+#X obj 202 459 outlet data;
+#X symbolatom 216 120 10 0 0 0 target #0-target-rcv #0-target;
+#X text 351 144 comment;
+#X symbolatom 216 137 10 0 0 0 param_name #0-param_name-rcv #0-param_name
+;
+#X msg 178 392 note \$1 \$2;
+#X floatatom 136 154 5 0 0 0 - - -;
+#X obj 591 139 namecanvas \$0-this;
+#X obj 589 116 triggered_loadbang \$0-this;
+#X text 584 66 manually trigger loadbang if the instance of abstraction
+is created dynamically, f 29;
+#X obj 576 229 savestate;
+#X obj 367 241 module_loader note_2ctl \$0 \$1;
+#X obj 424 8 declare -path ../../core;
+#X obj 424 28 declare -path ../../core/stuff;
+#X obj 424 48 declare -path ../../core/rj;
+#X connect 2 0 12 0;
+#X connect 2 1 8 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 2 0;
+#X connect 7 0 18 0;
+#X connect 12 0 8 0;
+#X connect 17 0 18 1;
+#X connect 17 1 18 2;
+#X connect 18 1 17 0;
+#X coords 0 -1 1 1 190 70 1 100 100;

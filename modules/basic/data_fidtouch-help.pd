@@ -1,0 +1,30 @@
+#N canvas 339 56 1090 774 16;
+#X text 37 345 Un seul fiducial actif à la fois;
+#X obj 110 166 data_fidtouch;
+#X text 310 197 <- dimensions de la zone couverte par le fiducial (centré
+sur la zone qu'il couvre);
+#X text 39 370 Multitouch;
+#X text 260 401 Sortie : sur la data_outlet (touch infos et noteOn/Off)
+;
+#X text 261 423 format des messages touch;
+#X text 380 443 touchEvent <noteId> addCursor <session_id> <xpos> <ypos>
+;
+#X text 382 458 touchEvent <noteId> updateCursor <session_id> <xpos>
+<ypos>;
+#X text 385 475 touchEvent <noteId> removeCursor <session_id>;
+#X text 261 508 le <session_id> est le numéro de session de l'événement
+touch. (fourni par le TuioClient);
+#X text 30 257 fid_min / fid_max : intervale de valeurs de fiducial
+suivies;
+#X text 26 11 Convertit les coordonnées des touchevents (class touch)
+à l'intérieur d'une zone d'interaction activée par l'apparition
+d'un fiducial (listenener). L'apparition / disparition du fiducial
+se manifeste par un événement noteOn/noteOff \, le numéro de note
+envoyé correspond à : (numéro de fiducial-fidmin)+note_out, f 51
+;
+#X text 37 292 Fonctionne avec environnement fid_abs (écoute le canal
+FID_CLASSES émis par [tuio] dans [pd network]), f 59;
+#X text 61 572 compatible avec fx_bonkpitch (non testé);
+#X text 260 544 Le numéro de note est égal à (numéro de fiducial-fidmin)+note_out
+, f 71;
+#X text 308 175 <- affichage nb de touch events simultanés;

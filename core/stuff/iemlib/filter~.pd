@@ -1,0 +1,15 @@
+#N canvas 0 50 801 377 10;
+#X obj 60 40 inlet~;
+#X obj 64 178 outlet~;
+#X obj 255 174 outlet;
+#X obj 171 39 inlet;
+#X obj 241 39 inlet;
+#X obj 291 39 inlet;
+#X obj 361 39 inlet;
+#X obj 337 134 loadbang;
+#X obj 342 187 print iemlib;
+#X msg 342 164 missing lib \, using placebo filter~ abstraction;
+#X text 463 61 to bypass filter~ when iemlib not found;
+#X connect 0 0 1 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;

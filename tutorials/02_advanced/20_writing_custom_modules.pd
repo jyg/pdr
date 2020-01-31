@@ -1,0 +1,16 @@
+#N canvas 545 542 908 393 16;
+#X declare -path pdr/modules/basic;
+#X obj 41 156 cnv 15 260 140 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 39 32 PdRacks lets your write your own modules \, enabling
+midi mapping \, preset saving \, morphing capabilities and other features.
+, f 46;
+#X text 34 121 Start by editing this object : [module_template];
+#X text 230 208 <- right-click here and choose "open";
+#X obj 656 35 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 656 80 pd \$0-PdRacks.declare;
+#X obj 656 110 PdRacks.savestate;
+#X obj 64 187 module_template;

@@ -1,0 +1,11 @@
+06/03/19 local state saving of each module in the containing patch
+05/03/19 modules/basic/inst_sampler
+	amelioration de la fonction de bouclage synchro (passage en mode async quand le grain est très fin)
+05/03/19 core/stuff/ctl-assign3 
+	smothing/interpoling values when cc changes very slowly
+27/01/19 
+	new architecture for embedded automatonism modules
+6/12/18 pdr.pd 
+	prevents edit mode when randomly pressing enter 
+5/12/18	modules/basic/fx_reverse.pd 
+	fadein & fadeout @ 10ms

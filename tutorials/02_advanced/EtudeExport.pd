@@ -1,0 +1,73 @@
+#N canvas 777 162 1046 725 16;
+#X declare -path pdr/modules/basic;
+#X declare -path ../../../pdr/modules/basic;
+#X declare -path ../../../pdr/core;
+#X declare -path ../../../pdr/core/rj;
+#X declare -path ../../../pdr/core/fid_abs_vanilia-0.4;
+#X declare -path ../../../pdr/core/glocal;
+#X declare -path ../../../pdr/core/stuff;
+#X declare -path ./;
+#X obj 899 283 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 815 357 pd \$0-PdRacks.declare;
+#N canvas 239 165 751 488 0.48_declare_paths 0;
+#X text 71 146 According to the path of your main .pd file \, you have
+to adjust the paths below to access to pdr ressources.;
+#X obj 64 213 declare -path ../../../pdr/modules/basic;
+#X obj 60 241 declare -path ../../../pdr/core;
+#X obj 58 296 declare -path ../../../pdr/core/rj;
+#X obj 58 325 declare -path ../../../pdr/core/fid_abs_vanilia-0.4;
+#X obj 59 357 declare -path ../../../pdr/core/glocal;
+#X obj 58 268 declare -path ../../../pdr/core/stuff;
+#X restore 727 77 pd 0.48_declare_paths;
+#X text 86 64 If you need to use PdRacks with pd 0.48 \, you have to
+put manually the following declare objects in your main patch ---->
+, f 64;
+#X obj 117 306 fx_hip;
+#X obj 122 386 fx_ring;
+#X obj 121 468 fx_ring;
+#X obj 130 567 PdRacks.savestate;
+#X obj 130 627 PdRacks.savestate;
+#X obj 818 465 declare -path ./;
+#N canvas 0 50 450 300 savestate 0;
+#X obj 169 45 inlet;
+#X msg 169 74;
+#X obj 169 103 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 335 575 pd savestate;
+#N canvas 0 50 450 300 savestate 0;
+#X obj 169 45 inlet;
+#X msg 169 74;
+#X obj 169 103 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 339 633 pd savestate;
+#X msg 743 110 save;
+#X msg 682 110 load;
+#X msg 539 570 read ../../medias/data/\$1.savestate.0;
+#X msg 547 598 write ../../medias/data/\$1.savestate.0;
+#X msg 514 630 read ../../medias/data/\$1.savestate.1;
+#X msg 522 658 write ../../medias/data/\$1.savestate.1;
+#X text 341 286 you can still use pdr for editing purpose \, but you
+can delete it when you export your patches.;
+#X text 86 7 Some pd-apps (mobmuplat \, camomille \, pof \, etc ...)
+are built on older version of libpd : 0.48;
+#X text 85 146 Then you have to add the pdr 0.48-mode migration module
+->;
+#X text 88 189 Specify the name of the patch as unique argument. This
+way \, you can retrieve in 0.48 the state of objects that pd (>= 0.49)
+saves within the .pd file., f 53;
+#X text 348 536 sauver plutôt dans fichier texte \, comme ća pas
+besoin de sauver;
+#X text 342 334 you can also delete this subpatch that is only for
+pd > 0.49 and multi session features.;
+#X obj 682 154 pdr/0.48 EtudeExport;
+#X connect 7 1 10 0;
+#X connect 8 1 11 0;
+#X connect 10 0 7 1;
+#X connect 11 0 8 1;
+#X connect 12 0 24 0;
+#X connect 13 0 24 0;

@@ -1,0 +1,25 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 713 56 814 628 16;
+#X obj 31 155 fx_bonkpitch;
+#A saved smooth 95.4729;
+#A saved sens 70.1046;
+#A saved vol 75.0597;
+#X scalar comment 376.082 471.844 0 \; Dépendances : external fiddle~
+\; Dependancies : fiddle~ external \; C'è bisogno dell'external fiddle~
+\;;
+#X scalar comment 25.6546 538.201 0 \; Multidelay / pitch variable
+commandé par les messages touch events \; Multidelay with variable
+pitch driven by input touchevents \; Multidelay con variable pitch
+\;;
+#X scalar comment 23.9452 516.082 0 \; recus sur le data_inlet. \;
+received on data_inlet \; \;;
+#X scalar comment 40.1846 322.54 0 \; 8 unités de delay \; 8 delay
+units \; 8 unità di delay \;;
+#X obj 1 0 cnv 15 800 50 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X text 9 5 fx_bonkpitch;
+#X scalar comment 43.6034 279.223 0 \; Fonctionne couplé au module
+data_fidtouch \; Works with data_fidtouch module \; Funzionna collegato
+con il modulo data_fidtouch \;;
+#X obj 600 0 pdr/core/stuff/language;

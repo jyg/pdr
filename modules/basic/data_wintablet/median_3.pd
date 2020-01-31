@@ -1,0 +1,46 @@
+#N canvas 28 3 486 337 12;
+#X floatatom 11 168 5 0 0 0 - - -;
+#X floatatom 11 147 5 0 0 0 - - -;
+#X floatatom 10 189 5 0 0 0 - - -;
+#X obj 58 74 t f b b;
+#X floatatom 107 12 5 0 0 0 - - -;
+#X obj 58 38 f;
+#X msg 58 10 bang;
+#X obj 11 10 inlet;
+#X obj 64 218 outlet;
+#X obj 111 135 max;
+#X obj 83 135 min;
+#X obj 64 162 max;
+#X obj 64 190 min;
+#X floatatom 128 218 5 0 0 0 - - -;
+#X text 147 129 on classe les 2 plus vieux nombres;
+#X text 147 144 du plus petit au plus grand;
+#X obj 55 102 f;
+#X obj 83 102 f;
+#X obj 111 102 f;
+#X text 6 245 principe du median 3 : classer les 3 dernieres mesures
+de la plus petite valeur a la plus grande valeur et renvoyer la 2 ieme
+valeur (appelee mediane) de la liste (dans cette liste classee de 3
+elements \, 1 est plus petit que la mediane et 1 est plus grand);
+#X connect 3 0 16 0;
+#X connect 3 1 17 0;
+#X connect 3 2 18 0;
+#X connect 4 0 5 1;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 8 0;
+#X connect 12 0 13 0;
+#X connect 16 0 1 0;
+#X connect 16 0 11 0;
+#X connect 16 0 17 1;
+#X connect 17 0 0 0;
+#X connect 17 0 10 0;
+#X connect 17 0 9 0;
+#X connect 17 0 18 1;
+#X connect 18 0 2 0;
+#X connect 18 0 10 1;
+#X connect 18 0 9 1;

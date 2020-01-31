@@ -1,0 +1,48 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 157 320 1057 592 16;
+#X declare -path pdr/modules/basic;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 774 36 pd \$0-PdRacks.declare;
+#X obj 186 305 midi_notein;
+#A saved midi_chan 1;
+#A saved factor 127;
+#A saved power 1;
+#X obj 185 394 inst_rhodey;
+#A saved vol 88.0798;
+#A saved tone 0.283465;
+#A saved decay 2157.92;
+#X obj 185 469 dac~;
+#X text 125 77 1) Select a midi-in device with pure data menus.;
+#X text 133 247 3) You can then click on any orange button/slider to
+assign it to your physical knob;
+#X text 406 306 4) You can change mapping values by clicking on [Edit_Mappings]
+;
+#X obj 897 317 bng 30 250 50 0 \$0-mappings empty Edit_Mappings...
+-80 20 0 10 -261682 -1 -1;
+#X text 134 202 2) click on midi-learn toogle. Move your hardware midi
+controler knob. You will see his cc-channel displayed.;
+#X obj 135 100 cnv 15 240 100 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 155 114 PdRacks.midilearn;
+#A saved preset_saving 0;
+#A saved ctl-assign inst_rhodey-0 tone 1 0 1 lin 25;
+#X text 377 122 <-- OR you can click here. (needs mediasettings externals)
+, f 31;
+#X text 56 17 [PdRacks.midilearn] lets you map hardware midi controls
+to parameters of your modules.;
+#X text 404 358 5) To remove a physical assignment \, click midi-learn
+and click immediately (dont touch any physical knob) to the gui-widget
+you want to de-assignate \, or click Edit_Mappings and click on one
+red X of the mapping-list to cancel it.;
+#X text 407 451 6) Save your patch.;
+#X text 405 484 If you want to store different mappings \, you can
+store them in PdRacks.savestate modules. Just check-in the Save_in_presets
+box, f 44;
+#X obj 782 528 tgl 15 0 \$0-enable_preset_saving \$0-enable_preset_saving-rcv
+Save_in_presets 17 7 0 10 -262144 -1 -1 0 1;
+#X connect 1 2 2 2;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;

@@ -1,0 +1,17 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 515 98 1095 603 16;
+#X scalar comment 55 91.866 200 \; Convertit les données du leapmotion
+en ctl-change \; Converts leapmotion data into ctl-change messages
+\; \\\; \;;
+#X obj 0 2 cnv 15 800 50 empty empty data_leapmotion 20 14 0 20 -232576
+-66577 0;
+#X obj 601 2 pdr/core/stuff/language;
+#X obj 275 283 unpack f f;
+#X floatatom 275 312 5 0 0 0 - - -;
+#X floatatom 370 318 5 0 0 0 - - -;
+#X obj 86 169 data_leapmotion;
+#X obj 275 254 route leapmotion;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 7 0 3 0;

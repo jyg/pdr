@@ -1,0 +1,79 @@
+#N canvas 875 125 1044 523 16;
+#X obj 41 26 glocal.space \$0;
+#X obj 36 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 36 411 glocal.receive test;
+#X obj 36 448 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 254 412 glocal.receive test;
+#X obj 254 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 237 32 defines GLOBALity / LOCALity for glocal.send/receive/value
+objects that are inside the patch containing this object or inside
+any subpatch of this parent patch;
+#N canvas 756 211 962 639 global 0;
+#X text 27 18 globals : GLOCAL.instances \, GLOCAL.current \, GLOCAL.base
+;
+#X text 227 82 gives the number of glocal.space instances;
+#X floatatom 28 115 5 0 0 0 - - -;
+#X obj 28 86 v GLOCAL.instances;
+#X obj 31 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 289 109 == 1 : GLOBAL mode for glocal.send \, glocal.receive
+and glocal.value objects;
+#X text 293 150 > 1 : LOCAL mode for glocal.send \, glocal.receive
+and glocal.value objects \, relative to parent patch containing glocal.space
+object;
+#X obj 45 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 41 302 glocal.dollarzero;
+#X floatatom 41 331 5 0 0 0 - - -;
+#X text 273 298 gives the \$0 associated to current glocal space;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X restore 657 420 pd global service variables;
+#X obj 256 374 send test;
+#X obj 257 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 234 125 this allows to play 2 instances ore more of same patch
+with independant global [send]ers \, [receive]rs and [value]s.;
+#X obj 37 373 glocal.send test;
+#X obj 478 373 glocal.value v;
+#X obj 478 445 glocal.value v;
+#X floatatom 466 326 5 0 0 0 - - -;
+#X obj 484 415 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 478 474 5 0 0 0 - - -;
+#X text 256 275 you can still use [send] to send global objects, f
+19;
+#X floatatom 44 166 5 0 0 0 - - -;
+#X obj 56 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 122 f \$0;
+#X text 657 379 needs iemguts for hot patching;
+#X text 234 179 The LOCAL mode for the glocal.send/receive/value objects
+is activated when there are 2 or more main patches containing each
+one exactly 1 instance of [glocal.state] object;
+#X floatatom 843 111 5 0 0 0 - - -;
+#X obj 861 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 855 259 5 0 0 0 - - -;
+#X obj 855 158 glocal.value v2;
+#X obj 855 230 glocal.value v2;
+#X msg 931 37 symbol v;
+#X connect 1 0 11 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 9 0 8 0;
+#X connect 13 0 16 0;
+#X connect 14 0 12 0;
+#X connect 15 0 13 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 23 0 26 0;
+#X connect 24 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 27 1;
+#X connect 28 0 26 1;

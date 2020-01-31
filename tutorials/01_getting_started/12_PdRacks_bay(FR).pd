@@ -1,0 +1,309 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N struct 2982-symarray float x array symbols 2982-sym;
+#N struct 2982-sym symbol name float on;
+#N struct 8482-symarray float x array symbols 8482-sym;
+#N struct 8482-sym symbol name float on;
+#N struct 8607-symarray float x array symbols 8607-sym;
+#N struct 8607-sym symbol name float on;
+#N struct 8856-symarray float x array symbols 8856-sym;
+#N struct 8856-sym symbol name float on;
+#N struct 9387-symarray float x array symbols 9387-sym;
+#N struct 9387-sym symbol name float on;
+#N struct 9443-symarray float x array symbols 9443-sym;
+#N struct 9443-sym symbol name float on;
+#N struct 11624-symarray float x array symbols 11624-sym;
+#N struct 11624-sym symbol name float on;
+#N struct 12414-symarray float x array symbols 12414-sym;
+#N struct 12414-sym symbol name float on;
+#N struct 12415-symarray float x array symbols 12415-sym;
+#N struct 12415-sym symbol name float on;
+#N struct 12416-symarray float x array symbols 12416-sym;
+#N struct 12416-sym symbol name float on;
+#N struct 12733-symarray float x array symbols 12733-sym;
+#N struct 12733-sym symbol name float on;
+#N struct 12734-symarray float x array symbols 12734-sym;
+#N struct 12734-sym symbol name float on;
+#N struct 12735-symarray float x array symbols 12735-sym;
+#N struct 12735-sym symbol name float on;
+#N struct 13040-symarray float x array symbols 13040-sym;
+#N struct 13040-sym symbol name float on;
+#N struct 13492-symarray float x array symbols 13492-sym;
+#N struct 13492-sym symbol name float on;
+#N struct 13865-symarray float x array symbols 13865-sym;
+#N struct 13865-sym symbol name float on;
+#N struct 13866-symarray float x array symbols 13866-sym;
+#N struct 13866-sym symbol name float on;
+#N struct 13867-symarray float x array symbols 13867-sym;
+#N struct 13867-sym symbol name float on;
+#N struct 14455-symarray float x array symbols 14455-sym;
+#N struct 14455-sym symbol name float on;
+#N struct 14456-symarray float x array symbols 14456-sym;
+#N struct 14456-sym symbol name float on;
+#N struct 14457-symarray float x array symbols 14457-sym;
+#N struct 14457-sym symbol name float on;
+#N struct 14657-symarray float x array symbols 14657-sym;
+#N struct 14657-sym symbol name float on;
+#N struct 14658-symarray float x array symbols 14658-sym;
+#N struct 14658-sym symbol name float on;
+#N struct 14659-symarray float x array symbols 14659-sym;
+#N struct 14659-sym symbol name float on;
+#N struct text-help-struct float x float y text z;
+#N struct 15012-symarray float x array symbols 15012-sym;
+#N struct 15012-sym symbol name float on;
+#N canvas 0 57 1920 1023 16;
+#X declare -path pdr/modules/basic;
+#X declare -path pdr/modules/video_ui;
+#X declare -path pdr/modules/video_ui/data_cyclogroove;
+#X declare -lib ofelia;
+#X obj 862 631 PdRacks.transport;
+#X obj 859 547 PdRacks.midilearn;
+#A saved preset_saving 0;
+#X obj 854 124 pdr;
+#X obj 861 311 cnv 15 520 200 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 884 399 hsl 100 100 0 127 0 0 empty empty empty -2 -8 0 10 -261682
+-261682 -261682 0 1;
+#X msg 880 503 vis 1;
+#X text 886 447 CLIQUER ICI, f 8;
+#X text 999 396 CONDUITE SCENES, f 12;
+#X obj 879 523 s pd-conduite;
+#X text 1138 616 TO do : nettoyer gestion dépendances declare;
+#X text 1127 403 Cette utilisation dynamique nécessite des libs externes
+(iemlib \, ... \, faire la liste et vérifier), f 32;
+#X obj 855 194 PdRacks.savestate;
+#A saved scene_name Rhodey;
+#A saved audio_out-3 slot 14;
+#A saved audio_out-3 pan 0;
+#A saved audio_out-3 mute 0;
+#A saved audio_out-3 vol 110.931;
+#A saved audio_out-3 out OUT(1/2);
+#A saved inst_rhodey-0 slot 13;
+#A saved inst_rhodey-0 vol 95.3796;
+#A saved inst_rhodey-0 tone 0.432653;
+#A saved inst_rhodey-0 decay 2449.16;
+#A saved data_azerty2midi-0 az-qw 1;
+#A saved data_azerty2midi-0 slot 12;
+#A saved data_azerty2midi-0 enable 1;
+#A saved data_azerty2midi-0 oct 4;
+#A saved data_azerty2midi-0 velo 100;
+#X obj 7 8 PdRacks.bay;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X obj 90 174 declare -path pdr/modules/video_ui;
+#X obj 79 211 declare -path pdr/modules/video_ui/data_cyclogroove;
+#X obj 100 130 declare -lib ofelia;
+#X restore 859 168 pd \$0-PdRacks.declare;
+#X obj 859 768 pdr/core/stuff/ExportPatch;
+#X obj 861 714 pdr/core/rj/u_loadmeter;
+#X text 886 18 *** HIGHLY EXPERIMENTAL ***;
+#X obj 855 244 PdRacks.savestate;
+#A saved scene_name Euclidrums;
+#A saved audio_out-4 slot 17;
+#A saved audio_out-4 pan 0;
+#A saved audio_out-4 mute 0;
+#A saved audio_out-4 vol 100.563;
+#A saved audio_out-4 out OUT(1/2);
+#A saved inst_euclidrums-0 set 0;
+#A saved inst_euclidrums-0 bd 11.1804;
+#A saved inst_euclidrums-0 sn 17.182;
+#A saved inst_euclidrums-0 hh 25.169;
+#A saved inst_euclidrums-0 slot 14;
+#A saved note_16steps-1 ticks 0;
+#A saved note_16steps-1 vol 100;
+#A saved note_16steps-1 sustain 0.8;
+#A saved note_16steps-1 randoms 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0;
+#A saved note_16steps-1 lrandoms <sublist> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined>;
+#A saved note_16steps-1 div 0;
+#A saved note_16steps-1 slot 23;
+#A saved note_16steps-1 cycle 16;
+#A saved note_16steps-1 lcycle <subset> 16 16 16 16;
+#A saved note_16steps-1 steps 11.6 16 14.5 14.5 -1 7 14.5 -1 5.8 24
+17.4 17.4 10.6333 8.69995 21.2667 20.3;
+#A saved note_16steps-1 lsteps <sublist> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined>;
+#A saved note_16steps-1 xpose 0;
+#A saved note_16steps-1 lxpose <subset> 0 0 0 0;
+#A saved note_16steps-1 offset 50;
+#A saved note_16steps-1 loffset <subset> 50 50 50 50;
+#A saved note_16steps-1 scale 0;
+#A saved note_16steps-1 lscale <subset> 0 0 0 0;
+#A saved note_16steps-1 DeviceFeedback 1;
+#A saved fx_compressor-1 lookahead 0;
+#A saved fx_compressor-1 response 40;
+#A saved fx_compressor-1 gain 7.10204;
+#A saved fx_compressor-1 ratio 5.21857;
+#A saved fx_compressor-1 thresh -10.9796;
+#A saved fx_compressor-1 rmspeak 0;
+#A saved fx_compressor-1 slot 15;
+#A saved audio_out-3 slot 27;
+#A saved audio_out-3 pan 0;
+#A saved audio_out-3 mute 0;
+#A saved audio_out-3 vol 104.71;
+#A saved audio_out-3 out OUT(1/2);
+#A saved note_randomize-1 euclid 24;
+#A saved note_randomize-1 wet 0.999894;
+#A saved note_randomize-1 decay 88.8358;
+#A saved note_randomize-1 slot 25;
+#A saved note_randomize-1 accent 8.16327;
+#A saved note_randomize-1 prob 77.6531;
+#A saved inst_bassdrum-1 slot 24;
+#A saved inst_bassdrum-1 gain 0.542868;
+#A saved inst_bassdrum-1 decay 61.507;
+#A saved inst_bassdrum-1 freq2 112.763;
+#A saved inst_bassdrum-1 square 1000;
+#A saved inst_bassdrum-1 curve 34.0341;
+#A saved inst_bassdrum-1 noize 0.659574;
+#A saved inst_bassdrum-1 lowpass 3085.76;
+#A saved data_wintablet-1 ccz_enable 1;
+#A saved data_wintablet-1 ccy_enable 1;
+#A saved data_wintablet-1 ccx_enable 1;
+#A saved data_wintablet-1 ccz 6;
+#A saved data_wintablet-1 ccy 4;
+#A saved data_wintablet-1 ccx 2;
+#A saved data_wintablet-1 slot 13;
+#A saved fx_dubdel2-2 noclick_mode 0;
+#A saved fx_dubdel2-2 slot 16;
+#A saved fx_dubdel2-2 dell 3;
+#A saved fx_dubdel2-2 delr 3;
+#A saved fx_dubdel2-2 sync 1;
+#A saved fx_dubdel2-2 del 459.508;
+#A saved fx_dubdel2-2 wet 0.42449;
+#A saved fx_dubdel2-2 fb 0.138776;
+#A saved fx_dubdel2-2 bq 2;
+#A saved fx_dubdel2-2 bpitch 60;
+#A saved fx_dubdel2-1 noclick_mode 0;
+#A saved fx_dubdel2-1 slot 26;
+#A saved fx_dubdel2-1 dell 3;
+#A saved fx_dubdel2-1 delr 3;
+#A saved fx_dubdel2-1 sync 1;
+#A saved fx_dubdel2-1 del 462.387;
+#A saved fx_dubdel2-1 wet 0.17551;
+#A saved fx_dubdel2-1 fb 0.0857143;
+#A saved fx_dubdel2-1 bq 2;
+#A saved fx_dubdel2-1 bpitch 88.3143;
+#A saved ctl-assign inst_bassdrum-1 decay 0 10 2000 log;
+#A saved ctl-assign inst_bassdrum-1 freq2 2 1 1000 log;
+#A saved ctl-assign note_randomize-1 prob 4 0 100 lin 0;
+#A saved ctl-assign note_16steps-1 cycle 6 1 16 lin;
+#N canvas 0 50 450 300 refresh 0;
+#X obj 124 67 inlet;
+#X obj 152 109 r pd, f 7;
+#X obj 143 167 list prepend set;
+#X obj 143 192 list trim;
+#X obj 143 267 list trim;
+#X obj 143 292 s pd;
+#X obj 146 139 route audio-dialog;
+#X obj 143 242 list prepend audio-dialog;
+#X msg 143 218 3 0 0 0 2 0 0 0 3 0 0 0 2 0 0 0 44100 30 -1 64;
+#X connect 0 0 8 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X restore 1128 583 pd refresh dacs;
+#X obj 1128 521 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 1175 517 If you hear clics or pops or audio djit \, reload
+audio settings, f 27;
+#X text 1068 222 <- cliquer pour appeler une scène;
+#X text 864 321 Les scènes \, plutôt que d'être stockées dans l'objet
+PdRacks.savestate \, peuvent aussi être stockées dans une conduite
+sous forme de datastructures (cliquer pour en savoir plus)->, f 47
+;
+#X text 1479 367 TO do : Créer une abstraction pour utiliser les datastructures
+indépendamment de Pdracks.bay, f 29;
+#X text 1074 790 <- outil expérimental pour exporter une scène dynamique
+en une session statique (non mis à jour avec les dernières modifications
+- v 0.6.1);
+#X text 845 47 <- PdRacks.bay permet de charger à la volée des configurations
+de racks (scènes) différentes dans une grille de 9x4 \, de la manière
+la plus douce possible (pas de création dynamique d'objets \, tous
+les modules sont déjà chargés.), f 66;
+#X obj 1205 156 multitouch.enable;
+#X scalar text-help-struct 1507 158 \; fx_ring-2 slot 17 \\\; fx_ring-2
+freq 205.956 \\\; fx_ring-2 wet 0.362205 \\\; fx_dattorroverb-0 slot
+22 \\\; fx_dattorroverb-0 fbgain 0.851361 \\\; fx_dattorroverb-0 damping
+0.80938 \\\; fx_dattorroverb-0 bandwidth 0.61195 \\\; fx_dattorroverb-0
+predel 48.2311 \\\; fx_dattorroverb-0 wet 0.881794 \\\; audio_in-4
+slot 11 \\\; audio_in-4 module-slot 0 \\\; audio_in-4 gain 6.26202
+\\\; audio_in-4 in IN1 \\\; audio_out-4 slot 19 \\\; audio_out-4 pan
+0 \\\; audio_out-4 mute 0 \\\; audio_out-4 vol 100.206 \\\; audio_out-4
+out MASTER \\\; fx_sub-0 slot 16 \\\; fx_sub-0 wet 0.889764 \\\; fx_sub-0
+bypass 0 \\\; fx_sub-0 direct 68.9009 \\\; fx_sub-0 oct2 63.1705 \\\;
+fx_sub-0 oct1 62.732 \\\; fx_compressor-1 lookahead 6 \\\; fx_compressor-1
+response 51 \\\; fx_compressor-1 gain 7.27489 \\\; fx_compressor-1
+ratio 19.2766 \\\; fx_compressor-1 thresh -7.78365 \\\; fx_compressor-1
+rmspeak 0 \\\; fx_compressor-1 slot 14 \\\; audio_out-3 slot 23 \\\;
+audio_out-3 pan -0.0102041 \\\; audio_out-3 vol 106.038 \\\; audio_out-3
+out OUT(1/2) \\\; fx_dubdel2-2 noclick_mode 1 \\\; fx_dubdel2-2 slot
+18 \\\; fx_dubdel2-2 dell 4 \\\; fx_dubdel2-2 delr 4 \\\; fx_dubdel2-2
+sync 0 \\\; fx_dubdel2-2 del 105.502 \\\; fx_dubdel2-2 wet 0.510136
+\\\; fx_dubdel2-2 fb 0.217208 \\\; fx_dubdel2-2 bq 2 \\\; fx_dubdel2-2
+bpitch 75.0783 \\\; fx_lowhip-3 slot 13 \\\; fx_lowhip-3 f.Q 0.228346
+\\\; fx_lowhip-3 f.freq 0.141732 \\\; fx_reverse-1 speed 0.5 \\\; fx_reverse-1
+reverse 1 \\\; fx_reverse-1 loop 1 \\\; fx_reverse-1 time 0.60712 \\\;
+fx_reverse-1 rev-att 0.00037813 \\\; fx_reverse-1 slot 15 \\\; audio_in-3
+slot 12 \\\; audio_in-3 module-slot 0 \\\; audio_in-3 mute 0 \\\; audio_in-3
+gain -100 \\\; audio_in-3 in MASTER \\\; audio_in-2 slot 21 \\\; audio_in-2
+module-slot 0 \\\; audio_in-2 mute 0 \\\; audio_in-2 gain -24.8149
+\\\; audio_in-2 in MASTER \\\; ctl-assign fx_sub-0 wet 3 0 1 lin \\\;
+ctl-assign fx_lowhip-3 f.Q 8 0 1 lin \\\; ctl-assign fx_lowhip-3 f.freq
+7 0 1 lin \\\; ctl-assign fx_dubdel2-2 del 4 100 3000 log \\\; ctl-assign
+audio_in-3 gain 1 -100 27 lin \\\; ctl-assign fx_ring-2 wet 6 0 1 lin
+\\\; ctl-assign fx_ring-2 freq 5 0.1 3000 log \\\; \;;
+#X obj 1362 321 pdr/medias/data/conduite_robosonik;
+#X text 1557 160 larsen;
+#X text 1138 635 TO do : abstraction paramétrable (lignes \, colonnes
+\, objets préchargés), f 39;
+#X msg 1644 583 \; colors click;
+#X obj 1671 714 loadbang;
+#X obj 1671 772 t b b b b;
+#X obj 1671 801 realtime;
+#X obj 1671 859 change;
+#X obj 1671 888 select 1;
+#X floatatom 1671 830 5 0 0 0 - - -;
+#X obj 1769 719 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1671 917 delay 200;
+#X obj 1671 743 metro 300;
+#X obj 1763 830 > 360;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 19 0 18 0;
+#X connect 32 0 40 0;
+#X connect 33 0 34 0;
+#X connect 33 1 34 1;
+#X connect 34 0 37 0;
+#X connect 34 0 41 0;
+#X connect 35 0 36 0;
+#X connect 36 0 39 0;
+#X connect 38 0 40 0;
+#X connect 39 0 19 0;
+#X connect 40 0 33 0;
+#X connect 41 0 35 0;

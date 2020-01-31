@@ -1,0 +1,43 @@
+#N canvas 382 384 1251 463 16;
+#X declare -path pdr/modules/basic;
+#X msg 259 333 note 64 100;
+#X text 30 179 You can save your settings by clicking on SAVE red button
+and recall them by clicking on RECALL green one., f 46;
+#X obj 928 14 pdr;
+#X obj 85 369 inst_rhodey;
+#A saved vol 90.6411;
+#A saved tone 0.495136;
+#A saved decay 1819.77;
+#X obj 85 444 dac~;
+#X text 34 258 When using PdRacks.savestate \, the dsp is automatically
+enabled on patch load.;
+#X text 684 289 PdRacks.savestate needs pd > 0.49;
+#X obj 647 17 PdRacks.savestate;
+#A saved scene_name my_preset1;
+#A saved inst_rhodey-0 vol 90.6411;
+#A saved inst_rhodey-0 tone 0.495136;
+#A saved inst_rhodey-0 decay 1819.77;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 928 59 pd \$0-PdRacks.declare;
+#X obj 647 67 PdRacks.savestate;
+#A saved scene_name my_preset2;
+#A saved inst_rhodey-0 vol 48.9446;
+#A saved inst_rhodey-0 tone 0.671466;
+#A saved inst_rhodey-0 decay 2676.56;
+#X text 684 389 pdr/tutorials/02_advanced/19_export-pd-48.pd;
+#X text 681 332 If you need to use instead pd 0.48 \, please check
+PdRacks.settings. Further info in PdRacks.settings-help.pd and in,
+f 40;
+#X text 26 19 Like PdRacks.presets \, PdRacks.savestate objects let
+you store different states for your patch.;
+#X obj 922 194 PdRacks.presets;
+#X text 935 107 for each Pdracks.savestate container \, you can store
+up to 8 sub-presets within 1 module PdRacks.presets., f 26;
+#X text 70 86 Consider PdRacks.savestate like a container where you
+store the state of your patch. Each container can store sub-presets
+in the form of PdRacks.presets modules., f 54;
+#X connect 0 0 3 2;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;

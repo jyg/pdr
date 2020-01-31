@@ -1,0 +1,18 @@
+#N canvas 841 387 802 300 10;
+#X obj 42 220 send;
+#X obj 24 107 inlet;
+#X obj 159 136 + 1;
+#X msg 153 195 symbol \$1-data;
+#X obj 120 80 v \$1-slot;
+#X obj 120 102 select 0;
+#X obj 195 48 loadbang;
+#X obj 73 4 glocal/glocal.receive REFRESH_CONNEXIONS;
+#X obj 159 166 glocal/glocal.tabread SLOTS_MAP;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 0 1;
+#X connect 4 0 5 0;
+#X connect 5 1 2 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;

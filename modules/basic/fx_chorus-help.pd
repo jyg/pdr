@@ -1,0 +1,14 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 873 152 863 468 16;
+#X obj 50 130 fx_chorus;
+#A saved bypass 0;
+#A saved mod 1.8;
+#A saved freq 0.8;
+#X scalar comment 34 320.866 200 \; Effet de Chorus \; Chorus effect
+\; \;;
+#X scalar comment 34 353.866 200 \; mise en oeuvre de l'abstraction
+rjdj e_chorus \; rjdj's e_chorus implementation \; \;;
+#X obj 0 2 cnv 15 800 50 empty empty fx_chorus 20 14 0 20 -232576 -66577
+0;
+#X obj 601 2 pdr/core/stuff/language;

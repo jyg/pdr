@@ -1,0 +1,62 @@
+#N canvas 322 322 732 493 16;
+#X declare -path pdr/modules/basic;
+#X obj 454 38 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 454 83 pd \$0-PdRacks.declare;
+#X obj 88 252 inst_rhodey;
+#A saved vol 77.4487;
+#A saved midiNoteIn 1;
+#A saved tone 0.509879;
+#A saved decay 1641.48;
+#X obj 87 71 PdRacks.transport;
+#X obj 87 173 note_16steps;
+#A saved ticks 0;
+#A saved vol 100;
+#A saved sustain 0.8;
+#A saved lrandoms <sublist> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+;
+#A saved div 0;
+#A saved cycle 16;
+#A saved lcycle <subset> 16 16 16 16;
+#A saved steps 20.3 13 9.66667 9.66667 9.66667 5 29 8.70002 17.8833
+29 9.66669 15.4667 12.5667 13.5333 6 27.0667;
+#A saved lsteps <sublist> 20.3 13 9.66667 9.66667 9.66667 5 29 8.70002
+17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667 20.3 13 9.66667
+9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333
+6 27.0667 20.3 13 9.66667 9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669
+15.4667 12.5667 13.5333 6 27.0667 20.3 13 9.66667 9.66667 9.66667 5
+29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667;
+#A saved xpose 0;
+#A saved lxpose <subset> 0 0 0 0;
+#A saved offset 50;
+#A saved loffset <subset> 50 50 50 50;
+#A saved scale 0;
+#A saved lscale <subset> 0 0 0 0;
+#X obj 88 332 audio_out;
+#A saved pan 0;
+#A saved vol 95.4607;
+#A saved out OUT(1/2);
+#X text 60 18 Here is an example of patch using a step-sequencer,
+f 34;
+#X connect 2 0 5 0;
+#X connect 2 1 5 1;
+#X connect 2 2 5 2;
+#X connect 4 0 2 0;
+#X connect 4 1 2 1;
+#X connect 4 2 2 2;

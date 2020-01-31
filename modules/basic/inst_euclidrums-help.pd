@@ -1,0 +1,70 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 0 57 1920 1023 16;
+#X obj 360 403 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X obj 360 433 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X obj 29 363 inst_euclidrums;
+#A saved vol 95.8725;
+#A saved set 1;
+#A saved bd 20;
+#A saved sn 0;
+#A saved hh 0;
+#X obj 35 461 dac~;
+#X text 83 639 -En mode wintablet \, le choix de l'extrémité du stylet
+permet d'utiliser soit un son de batterie synthétique soit des samples
+pcm. Le premier bouton active la fonction trémolo. Le deuxième bouton
+(à revoir) force le débit en croches (en doubes par défaut);
+#X text 139 542 Jouable avec data_wintablet en entrée \, ou bien avec
+la souris sur le pad virtuel xy;
+#X text 55 755 TO DO : mode contrôleur avec sortie note on/off;
+#X text 95 238 dependancies : needs iemguts (for xypad);
+#N canvas 0 50 655 661 local_clock 0;
+#X obj 211 414 outlet;
+#X obj 266 213 f;
+#X obj 273 249 + 1;
+#X msg 305 78 tempo \$1 permin;
+#X obj 131 120 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 159 151 hsl 128 15 30 220 0 1 empty empty 89_bpm -2 -8 0 10
+-262144 -1 -1 4000 1;
+#X obj 318 307 mod 24;
+#X obj 326 232 mod 2.4e+06;
+#X obj 318 332 select 0;
+#X obj 127 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 279 186 metro 0.0416667 120 permin;
+#X obj 435 124 int;
+#X msg 431 149 label \$1_bpm;
+#X msg 258 364 clock \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 3 0;
+#X connect 5 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 1 1;
+#X connect 7 0 6 0;
+#X connect 7 0 13 0;
+#X connect 8 0 9 0;
+#X connect 10 0 1 0;
+#X connect 11 0 12 0;
+#X connect 12 0 5 0;
+#X connect 13 0 0 0;
+#X coords 0 -1 1 1 190 70 1 100 100;
+#X restore 306 263 pd local_clock;
+#X obj 68 147 data_wintablet;
+#X text 144 469 inst_euclidrums est synchronisé sur le canal CLOCK
+ou par des messages [clock \$1( en entrée \, et ne joue pas tant qu'il
+ne recoit pas ce signal.;
+#X text 85 599 -En mode souris \, la touche '&' permet d'activer la
+fonction trémolo;
+#X obj 596 240 PdRacks.midilearn;
+#A saved preset_saving 0;
+#X obj 87 310 multitouch.enable;
+#X text 79 46 Quick and dirty euclidian drum;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 8 0 2 2;
+#X connect 9 2 2 2;
+#X coords 0 1023 1 1022 190 70 0;

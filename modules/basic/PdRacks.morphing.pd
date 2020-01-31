@@ -1,0 +1,75 @@
+#N canvas 0 57 1920 1023 10;
+#X declare -path ../../core;
+#X declare -path ../../core/stuff;
+#X declare -path ../../core/rj;
+#X obj 135 140 hsl 128 30 0 1 0 0 \$0-morph \$0-morph-rcv A<--------->B
+10 15 0 14 -225271 -1 -1 0 1;
+#X obj 111 119 bng 20 250 50 0 \$0-morph.setA \$0-morph.setA-rcv A
+4 10 0 10 -261681 -1 -1;
+#X obj 266 120 bng 20 250 50 0 \$0-morph.setB \$0-morph.setB-rcv B
+4 10 0 10 -261681 -1 -1;
+#X msg 193 220 set \$1;
+#X obj 378 163 r \$0-morph;
+#X obj 48 340 s \$0-morph-rcv;
+#X obj 49 314 / 127;
+#X obj 541 148 module_loader PdRacks.morphing \$0 \$1;
+#X obj 49 289 midi-colors \$0 morph \$0-morph-rcv 0 0 no_morphing 36
+;
+#X obj 407 487 midi-colors \$0 morph.setB \$0-morph.setB-rcv 0 0 no_morphing
+64;
+#X obj 221 440 midi-colors \$0 morph.setA \$0-morph.setA-rcv 0 0 no_morphing
+64;
+#X obj 378 214 r \$0-morph.setB;
+#X obj 379 276 r \$0-morph.setA;
+#X obj 148 497 change;
+#X obj 148 519 select 1;
+#X obj 134 551 s \$0-morph.setA-rcv;
+#X obj 148 475 > 20;
+#X obj 318 507 change;
+#X obj 318 529 select 1;
+#X obj 318 485 > 20;
+#X obj 304 561 s \$0-morph.setB-rcv;
+#X obj 590 210 r MORPH.TIME;
+#X msg 590 232 set \$1;
+#X obj 590 254 s MORPH.TIME-rcv;
+#X msg 698 290 label MORP.TIME=\$1ms;
+#X obj 687 252 int;
+#X obj 687 274 - 1;
+#X obj 376 187 glocal/glocal.send MORPH;
+#X obj 193 195 glocal/glocal.receive MORPH;
+#X obj 193 245 s \$0-morph-rcv;
+#X obj 378 243 glocal/glocal.send MORPH-setB;
+#X obj 382 299 glocal/glocal.send MORPH-setA;
+#X obj 895 198 namecanvas \$0-this;
+#X obj 893 175 triggered_loadbang \$0-this;
+#X text 888 125 manually trigger loadbang if the instance of abstraction
+is created dynamically, f 29;
+#X obj 722 93 savestate;
+#X obj 904 38 declare -path ../../core;
+#X obj 904 58 declare -path ../../core/stuff;
+#X obj 904 78 declare -path ../../core/rj;
+#X connect 3 0 29 0;
+#X connect 4 0 27 0;
+#X connect 6 0 5 0;
+#X connect 7 1 35 0;
+#X connect 8 0 6 0;
+#X connect 9 0 19 0;
+#X connect 10 0 16 0;
+#X connect 11 0 30 0;
+#X connect 12 0 31 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 19 0 17 0;
+#X connect 21 0 22 0;
+#X connect 21 0 25 0;
+#X connect 22 0 23 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
+#X connect 28 0 3 0;
+#X connect 35 0 7 1;
+#X connect 35 1 7 2;
+#X coords 0 -1 1 1 190 70 1 100 100;

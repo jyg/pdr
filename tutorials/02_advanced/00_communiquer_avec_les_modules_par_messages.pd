@@ -1,0 +1,124 @@
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 234 50 1046 597 10;
+#X declare -path pdr/modules/basic;
+#X obj 800 80 PdRacks.transport;
+#X obj 800 240 PdRacks.midilearn;
+#X obj 800 160 PdRacks.morphing;
+#X obj 800 320 PdRacks.midi;
+#X obj 800 600 text define -k scene_preset;
+#A set main-0 note2cc_chan_out 2 \; main-0 note2cc_chan_in 1 \; main-0
+note2cc_enable 1 \; note_16steps-1 slot 2 \; note_16steps-1 cycle 16
+\; note_16steps-1 lcycle 16 16 16 16 \; note_16steps-1 randoms 0 0
+0 0 1 0 0 0 1 0 0 0 1 0 0 0 \; note_16steps-1 lrandoms 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0
+0 0 1 0 0 0 0 0 \; note_16steps-1 steps 15.4667 6.76668 14.5 3.86667
+28 14.5 2.9 4.83334 17 10.6334 5.8 5.8 0 14.5 12.5667 14.5 \; note_16steps-1
+lsteps 15.4667 6.76668 14.5 3.86667 12 14.5 2.9 4.83334 22.6667 10.6334
+5.8 5.8 4.6333 14.5 12.5667 14.5 15.4667 6.76668 14.5 3.86667 15.6667
+14.5 2.9 4.83334 7.66668 10.6334 5.8 5.8 16.6333 14.5 12.5667 14.5
+15.4667 6.76668 14.5 3.86667 4 14.5 1 4.83334 4 10.6334 5.8 5.8 5.6333
+14.5 12.5667 14.5 <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> \; note_16steps-1
+xpose 3.41478 \; note_16steps-1 lxpose 3.41478 3.41478 6.28435 3.41478
+\; note_16steps-1 offset 68.254 \; note_16steps-1 loffset 58.7302 68.254
+68.254 58.7302 \; note_16steps-1 scale 3.92063 \; note_16steps-1 lscale
+0 3.92063 7.63492 0 \; audio_out-4 slot 5 \; audio_out-4 pan 0 \; audio_out-4
+vol 103.959 \; audio_out-4 out OUT(1/2) \; inst_bassdrum-1 slot 3 \;
+inst_bassdrum-1 gain 0.291948 \; inst_bassdrum-1 decay 96.8625 \; inst_bassdrum-1
+freq2 12.6486 \; inst_bassdrum-1 square 0.0163217 \; inst_bassdrum-1
+curve 5.83388 \; inst_bassdrum-1 noize 0.44098 \; inst_bassdrum-1 lowpass
+1158.32 \; fx_dubdel2-2 noclick_mode 0 \; fx_dubdel2-2 slot 4 \; fx_dubdel2-2
+dell 3 \; fx_dubdel2-2 delr 3 \; fx_dubdel2-2 sync 1 \; fx_dubdel2-2
+del 697.375 \; fx_dubdel2-2 wet 0.342857 \; fx_dubdel2-2 fb 0.0897959
+\; fx_dubdel2-2 bq 2 \; fx_dubdel2-2 bpitch 65.4286 \; ctl-assign audio_out-2
+vol 62 0 100 lin \; ctl-assign fx_sub-0 bypass 132 \; ctl-assign fx_dubdel2-2
+bpitch 30 50 120 lin \; ctl-assign fx_dubdel2-1 wet 31 0 1 lin \; ctl-assign
+fx_reverse-1 rev-att 19 0 1 lin \; ctl-assign fx_freeverb-2 damp 60
+0 100 lin \; ctl-assign fx_freeverb-2 hall 58 0 100 lin \; ctl-assign
+fx_pitchshift-2 fback 55 0 100 lin \; ctl-assign fx_chorus-2 freq 46
+0.05 10 log \; ctl-assign fx_dubdel2-2 wet 52 0 1 lin \; ctl-assign
+fx_sub-0 wet 23 0 1 lin \; ctl-assign fx_pitchshift-2 pitch 54 -12
+12 lin \; ctl-assign fx_sub-0 oct2 21 0 100 lin \; ctl-assign fx_freeverb-2
+wet 61 0 1 lin \; ctl-assign fx_dubdel2-1 del 28 100 3000 log \; ctl-assign
+audio_out-0 vol 53 0 127 lin \; ctl-assign fx_ring-1 freq 24 0.1 3000
+log \; ctl-assign fx_lowhip-1 f.Q 51 0 1 lin \; ctl-assign fx_lowhip-1
+f.freq 50 0 1 lin \; ctl-assign fx_sub-0 oct1 20 0 100 lin \; ctl-assign
+inst_headrush-1 led-play 144 0 0 lin 17 \; ctl-assign fx_ring-1 wet
+27 0 1 lin \; ctl-assign inst_headrush-1 led-rec 146 0 0 lin 19 \;
+ctl-assign fx_reverse-1 reverse 131 \; ctl-assign fx_sub-0 direct 22
+0 100 lin \; ctl-assign fx_lowhip-0 f.freq 28 0 1 lin \; ctl-assign
+fx_pitchshift-2 del 56 1.5 4800 log \; ctl-assign fx_dubdel2-2 del
+28 100 3000 log \; ctl-assign audio_in-3 mute 129 0 1 lin 2 \; ctl-assign
+fx_chorus-2 mod 49 0 2 lin \; ctl-assign fx_lowhip-0 f.Q 29 0 1 lin
+\; ctl-assign fx_dubdel2-1 bpitch 30 50 120 lin \; ctl-assign fx_freeverb-2
+freeze 152 \; ctl-assign fx_dubdel2-1 fb 29 0 1 lin \; ctl-assign fx_dubdel2-2
+fb 29 0 1 lin \; ctl-assign fx_chorus-2 bypass 49 \; ctl-assign audio_in-4
+gain 16 -100 27 lin \; ctl-assign fx_pitchshift-2 wet 57 0 1 lin \;
+;
+#X msg 250 227 \; /inst_bassdrum-1/decay \$1;
+#X obj 253 209 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 400 1;
+#X obj 253 287 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 250 305 \; /note_16steps-1/recall_preset \$1;
+#X msg 256 495 \; fx_dubdel2-2 remote dell \$1;
+#X obj 251 417 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 251 437 select 6 7;
+#X obj 330 457 + 1;
+#X msg 248 469 8;
+#X msg 285 466 16;
+#X text 340 438 transmettre la valeur réelle du paramètre considéré
+;
+#X text 400 192 passer une valeur comprise entre 0 et 1, f 23;
+#X floatatom 612 299 5 0 0 0 - - -;
+#X obj 0 240 inst_bassdrum 2;
+#X obj 0 320 fx_dubdel2 3;
+#X obj 0 400 audio_out 5;
+#X obj 0 160 note_16steps 2;
+#X obj 621 229 r toGUI;
+#X obj 612 277 route /inst_bassdrum-1/decay;
+#X obj 621 251 list trim;
+#X obj 580 19 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 580 64 pd \$0-PdRacks.declare;
+#X obj 797 24 PdRacks.savestate;
+#A saved scene_name ;
+#X text 253 184 EMISSION;
+#X text 625 182 RECEPTION;
+#X text 249 114 A) Pour tous les paramètres pouvant êtres mappés
+par midi \, il est possible de les modifier en suivant la syntaxe type
+osc mise en oeuvre dans la gui mobmuplat;
+#X text 246 363 B) pour les autres \, utiliser la syntaxe avec 'remote'
+;
+#X text 247 389 [ \; <target-module> remote <ctl-name> <real_value>
+(;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 11 1 14 0;
+#X connect 11 2 12 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 18 2 19 2;
+#X connect 19 0 20 0;
+#X connect 19 1 20 1;
+#X connect 19 2 20 2;
+#X connect 21 0 18 0;
+#X connect 21 1 18 1;
+#X connect 21 2 18 2;
+#X connect 22 0 24 0;
+#X connect 23 0 17 0;
+#X connect 24 0 23 0;

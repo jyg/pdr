@@ -1,0 +1,17 @@
+#N canvas 0 50 450 300 10;
+#X obj 81 137 spigot 1;
+#X obj 81 160 t b b;
+#X msg 126 107 0, f 2;
+#X msg 81 183 loadbang;
+#X obj 125 85 loadbang;
+#X obj 81 57 r TRIGGER_LOADBANG;
+#X obj 81 214 s \$1;
+#X text 26 9 manually trigger loadbang in a dynamically-created abstraction
+;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 0 1;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;

@@ -1,0 +1,77 @@
+#N canvas 238 92 981 901 16;
+#X obj 73 259 data_wintablet;
+#A saved device_id 0;
+#A saved velocity_out 0.0405609;
+#A saved wintabmode 0;
+#A saved noteout -1;
+#A saved ccx_enable 0;
+#A saved ccx 34;
+#X text 17 14 Convertit les mouvements du stylet sur tablette graphique
+wacom en messages ctl sur le canal CTLIN;
+#X text 437 358 stylet mode :;
+#X text 76 444 si note_out > -1 \, les événements stylet (appui \,
+appui sur un bouton) génèrent un message note_out en sortie;
+#N canvas 0 50 450 300 linux-dependancies 0;
+#X text 40 58 LINUX;
+#X text 32 109 needs hidio & ggee/shell externals;
+#X text 33 157 xinput must be installed;
+#X restore 694 100 pd linux-dependancies;
+#N canvas 0 50 450 300 windows-dependancies 0;
+#X text 61 59 WINDOWS : wintablet external;
+#X restore 692 68 pd windows-dependancies;
+#X text 180 337 ^;
+#X text 180 339 |;
+#X text 184 356 _;
+#X text 180 355 |;
+#X text 200 337 ^;
+#X text 200 339 |;
+#X text 204 340 _;
+#X text 273 294 <- boutons d'activation du cc;
+#X text 198 362 boutons de test, f 17;
+#X text 218 345 numéros de cc, f 17;
+#X text 16 497 en page 2;
+#X text 72 381 si les cases ccx / ccy / ccz sont cochées \, la position
+du stylet est renvoyée au bus CTLIN sous forme de messages ctl-change
+;
+#X text 72 525 Affectation d'un ctl-change pour les boutons du stylet
+et du pad Wacom;
+#X text 16 573 en page 3;
+#X text 101 632 la sensibilité à la rotation se règle avec vel.out
+;
+#X text 76 662 Affectation d'un ctl-change pour la roue (wheel) du
+pad Wacom., f 63;
+#X text 104 682 - off;
+#X text 104 696 - on : les valeurs des incréments sont renvoyées
+en ccout (1..2 ou 126..127 suivant le sens de rotation);
+#X text 105 732 - sum : la sortie cc renvoie le cumul des incréments
+modulo 128, f 52;
+#X text 76 608 WinTabMode : génère un message scratch_speed;
+#X text 652 616 -> cf inst_turntable;
+#X obj 581 142 bng 30 250 50 0 empty empty start 1 15 0 9 -204786 -1
+-1;
+#X obj 446 194 bng 15 250 50 0 \$0-refresh_devices \$0-select_device-rcv
+.1. 0 7 0 10 -1 -1 -24198;
+#X text 19 171 Rafraichissement de la liste des périphériques : cliquer
+sur le bouton noir, f 42;
+#N canvas 0 50 682 238 data_out 0;
+#X text 21 67 Les messages délivrés par l'objet wintablet sont transférés
+en sortie data_out \, avec les préfixes wintablet \, pad_wheel \,
+pad_buttonl & pad_buttonr;
+#X restore 689 174 pd data_out;
+#X text 18 146 Connexion / sélection de la tablette : cliquer sur
+start;
+#X obj 687 285 inst_euclidrums;
+#A saved bd 7;
+#A saved sn 13;
+#A saved hh 22;
+#X obj 55 343 print;
+#X text 74 784 z-Hysteresis : valeur de pression minimale pour considérer
+que le stylet est en contact avec le pad. (def.=0 \, max =255). Permet
+de corriger un défaut sur certains stylets., f 61;
+#X text 395 865 voir aussi;
+#X text 563 864 pentablet2udp;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X coords 0 1 100 -1 180 30 1 0 0;
+#X restore 545 862 graph;
+#X connect 0 2 33 0;
+#X connect 0 2 32 2;

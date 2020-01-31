@@ -1,0 +1,10 @@
+#N canvas 0 50 652 340 12;
+#X obj 121 99 splitfilename \$1;
+#X obj 122 128 outlet;
+#X obj 212 131 outlet;
+#X obj 123 65 inlet;
+#X text 65 170 to enable loading of [iemlib/splitfilename] in monolithic
+version of iemlib (macosx);
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 3 0 0 0;

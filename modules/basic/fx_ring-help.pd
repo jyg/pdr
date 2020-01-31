@@ -1,0 +1,14 @@
+#N canvas 713 56 740 471 10;
+#X obj 340 163 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X obj 340 200 tgl 15 0 empty empty X 4 8 0 12 -258113 -258113 -1 0
+1;
+#X text 360 159 Instances multiples;
+#X text 11 30 modulateur en anneau;
+#X text 10 50 le signal d'entrée est multiplié par une onde sinus
+pure;
+#X obj 26 161 fx_ring;
+#X text 43 273 "phase" définit le déphasage entre la modulation du
+canal gauche et du canal droit . (0 = cosinus sur les deux canaux \,
+0.25 = sinus sur le canal droit);
+#X text 44 325 "smooth" définit la rapidité avec laquelle le ring-mod
+atteint la nouvelle fréquence affichée.;

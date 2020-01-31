@@ -1,0 +1,95 @@
+#N canvas 1 58 958 1018 12;
+#X declare -path pdr/modules/basic;
+#X text 325 44 peut accueillir une abstraction créée dynamiquement
+et pouvant être changée dynamiquement;
+#X text 483 176 efface le contenu du container;
+#X obj 53 181 container;
+#A saved dump vol 80.898;
+#A saved dump bd 14;
+#A saved dump sn 21;
+#A saved dump hh 29;
+#A saved contents inst_euclidrums;
+#A saved SID 0;
+#X obj 53 261 container;
+#A saved dump noclick_mode 0;
+#A saved dump dell 4;
+#A saved dump delr 4;
+#A saved dump del 1093.67;
+#A saved dump wet 0.615137;
+#A saved dump fb 0;
+#A saved dump bq 2;
+#A saved dump bpitch 60;
+#A saved contents fx_dubdel2;
+#A saved SID 1;
+#X obj 53 341 container;
+#A saved dump r4 0;
+#A saved dump r3 0;
+#A saved dump r2 1;
+#A saved dump r1 0;
+#A saved dump l4 0;
+#A saved dump l3 0;
+#A saved dump l2 0;
+#A saved dump l1 1;
+#A saved dump pan 0.336735;
+#A saved dump vol 83.4898;
+#A saved dump out OUT(1/2);
+#A saved contents audio_out;
+#A saved SID 2;
+#X obj 833 95 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 833 140 pd \$0-PdRacks.declare;
+#X msg 265 154 contents data_azerty2midi;
+#X msg 271 278 contents inst_rhodey;
+#X msg 389 195 contents clear;
+#X msg 279 345 contents audio_out;
+#X obj 638 271 PdRacks.presets;
+#A saved morph.time 1;
+#A saved dump.preset2 @ inst_euclidrums-0 vol 102.281 @ inst_euclidrums-0
+bd 23 @ inst_euclidrums-0 sn 25 @ inst_euclidrums-0 hh 6 @ fx_dubdel2-0
+noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0
+sync 1 @ fx_dubdel2-0 del 1520.81 @ fx_dubdel2-0 wet 0.618793 @ fx_dubdel2-0
+fb 0.871686 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 63.6727 @ audio_out-0
+pan 0 @ audio_out-0 vol 110.704 @ audio_out-0 out OUT(1/2) @ container-2
+contents audio_out @ container-1 contents fx_dubdel2 @ container-0
+contents inst_euclidrums;
+#A saved dump.preset1 @ container-2 contents clear @ container-1 contents
+clear @ container-0 contents clear;
+#A saved dump.preset0 @ inst_euclidrums-0 vol 80.0667 @ inst_euclidrums-0
+bd 7 @ inst_euclidrums-0 sn 13 @ inst_euclidrums-0 hh 22 @ fx_dubdel2-0
+noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0
+sync 1 @ fx_dubdel2-0 del 582.696 @ fx_dubdel2-0 wet 0.389201 @ fx_dubdel2-0
+fb 0.333079 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 60 @ audio_out-0
+pan 0 @ audio_out-0 vol 95.801 @ audio_out-0 out OUT(1/2) @ container-2
+contents audio_out @ container-1 contents fx_dubdel2 @ container-0
+contents inst_euclidrums;
+#A saved SID 0;
+#X msg 266 116 contents inst_euclidrums;
+#X msg 451 240 contents fx_dubdel2;
+#X obj 717 171 PdRacks.transport;
+#X text 71 422 TO DO : Revoir le mecsanisme de sauvegarde de presets
+pour que les valeurs du module contenu soient stockées en interne
+dans le container. c'est deja le cas pour savestate mais ća doit aussi
+l'etre pour PdRacks.Presets et PdRacks.savestate;
+#X obj 638 414 savestate-0.48 container-help;
+#X msg 607 369 save;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 2 2 3 2;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 3 2 4 2;
+#X connect 7 0 2 2;
+#X connect 8 0 3 2;
+#X connect 9 0 2 2;
+#X connect 9 0 3 2;
+#X connect 9 0 4 2;
+#X connect 10 0 4 2;
+#X connect 12 0 2 2;
+#X connect 13 0 3 2;
+#X connect 17 0 16 0;

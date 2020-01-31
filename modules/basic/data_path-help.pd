@@ -1,0 +1,36 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 873 152 926 777 16;
+#X scalar comment 41 264.866 200 \; Mémorisation de l'emplacement
+d'un fichier \; File path reminder \\\; \; \\\; \;;
+#X obj 0 2 cnv 15 800 50 empty empty data_path 20 14 0 20 -232576 -66577
+0;
+#X obj 601 2 pdr/core/stuff/language;
+#X obj 42 136 data_path;
+#A saved fullpath ;
+#X scalar comment 41 294.866 200 \; Fonction Drag & Drop (compatible
+avec dnd-plugin) \; Drag & Drop feature (dnd-plugin enabled) \\\; \;
+\\\; \;;
+#X obj 686 396 data_path;
+#A saved fullpath ;
+#X text 424 333 https://github.com/jyg/pd-dnd-plugin;
+#X scalar comment 23 399.866 200 \; 1) Faire glisser un fichier de
+l'explorateur et le déposer ici -> \; 1) From your file browser :
+drag and drop a file here -> \\\; \; \\\; \;;
+#X scalar comment 164 439.866 200 \; ou cliquer en maintenant appuyé
+le bouton 1/2 s -> \; or click (holding the button down 1/2 s) -> \\\;
+\; \\\; \;;
+#X text 739 486 |;
+#X text 739 502 |;
+#X text 739 516 |;
+#X text 739 532 |;
+#X text 739 540 V;
+#X obj 690 567 data_path;
+#X text 633 114 externals : iemguts;
+#X scalar comment 220 30.866 200 \; Conteneur drag and drop \; Drag
+and Drop container \\\; \; \\\; \;;
+#X obj 0 1000 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 544 514 or drag and drop;
+#X text 47 614 BUGS / LIMITS;
+#X text 48 656 monotouch. Cannot be emmbedded;

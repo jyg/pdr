@@ -1,0 +1,193 @@
+#N struct 3244-symarray float x array symbols 3244-sym;
+#N struct 3244-sym symbol name float on;
+#N struct mappings float y symbol module_name symbol param_name float
+ccnum float min float max symbol mapping;
+#N canvas 542 124 1046 598 10;
+#X declare -path pdr/modules/basic;
+#X obj 90 110 note_16steps 1;
+#X obj 90 270 fx_sub 1;
+#X obj 91 346 note_randomize 1;
+#X obj 88 509 audio_out 3;
+#X obj 290 110 note_16steps 2;
+#X obj 290 190 note_randomize 2;
+#X obj 290 270 inst_bassdrum 2;
+#X obj 290 350 fx_dubdel2 3;
+#X obj 290 430 audio_out 5;
+#X obj 520 110 audio_in 5;
+#X obj 520 190 fx_dattorroverb 1;
+#X obj 520 270 audio_out 4;
+#X obj 836 67 pdr;
+#X obj 836 225 PdRacks.transport;
+#X obj 90 190 inst_tabosc 2;
+#X text 170 51 Press Spacebar to start...;
+#X obj 90 425 fx_reverse;
+#X obj 838 310 PdRacks.midilearn;
+#X obj 836 137 PdRacks.savestate;
+#A saved scene_name ;
+#A saved fx_reverse-0 speed 2;
+#A saved fx_reverse-0 reverse 1;
+#A saved fx_reverse-0 loop 1;
+#A saved fx_reverse-0 time 4.33841;
+#A saved fx_reverse-0 rev-att 0;
+#A saved inst_tabosc-1 harmo8 0.155906;
+#A saved inst_tabosc-1 harmo7 0.205512;
+#A saved inst_tabosc-1 harmo6 0.238583;
+#A saved inst_tabosc-1 harmo5 0.191339;
+#A saved inst_tabosc-1 harmo4 0.191339;
+#A saved inst_tabosc-1 harmo3 0.238583;
+#A saved inst_tabosc-1 harmo2 0.122835;
+#A saved inst_tabosc-1 harmo1 0.252756;
+#A saved inst_tabosc-1 vol 108.55;
+#A saved audio_out-3 pan 0;
+#A saved audio_out-3 vol 90.3223;
+#A saved audio_out-3 out OUT(1/2);
+#A saved fx_dattorroverb-0 fbgain 0.8;
+#A saved fx_dattorroverb-0 damping 0.25;
+#A saved fx_dattorroverb-0 bandwidth 0.6;
+#A saved fx_dattorroverb-0 predel 30;
+#A saved fx_dattorroverb-0 wet 0.5;
+#A saved audio_in-4 module-slot 0;
+#A saved audio_in-4 gain -14.5072;
+#A saved audio_in-4 in MASTER;
+#A saved audio_out-4 pan 0;
+#A saved audio_out-4 mute 0;
+#A saved audio_out-4 vol 98.2968;
+#A saved audio_out-4 out MASTER;
+#A saved fx_dubdel2-2 noclick_mode 0;
+#A saved fx_dubdel2-2 dell 4;
+#A saved fx_dubdel2-2 delr 4;
+#A saved fx_dubdel2-2 del 0;
+#A saved fx_dubdel2-2 wet 0.12575;
+#A saved fx_dubdel2-2 fb 0;
+#A saved fx_dubdel2-2 bq 2;
+#A saved fx_dubdel2-2 bpitch 60;
+#A saved inst_bassdrum-1 gain 1.43812;
+#A saved inst_bassdrum-1 decay 317.776;
+#A saved inst_bassdrum-1 freq2 16.7355;
+#A saved inst_bassdrum-1 square 229.986;
+#A saved inst_bassdrum-1 curve 22.9986;
+#A saved inst_bassdrum-1 noize 0.489362;
+#A saved inst_bassdrum-1 lowpass 7453.16;
+#A saved note_randomize-1 accent 33.0679;
+#A saved note_randomize-1 prob 79.4241;
+#A saved note_16steps-1 ticks 0;
+#A saved note_16steps-1 vol 100;
+#A saved note_16steps-1 sustain 0.8;
+#A saved note_16steps-1 randoms 0 0 1 0 0 1 0 0 1 0 1 0 0 0 0 0;
+#A saved note_16steps-1 lrandoms <sublist> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined>;
+#A saved note_16steps-1 div 0;
+#A saved note_16steps-1 cycle 16;
+#A saved note_16steps-1 lcycle <subset> 16 16 16 16;
+#A saved note_16steps-1 steps 11.6 8.70001 12.7 8.70001 8.70001 11.7
+8.70001 8.70001 15.7 8.70001 13.6667 9.66667 9.66667 9.66667 9.66667
+9.66667;
+#A saved note_16steps-1 lsteps <sublist> 20.3 13 9.66667 9.66667 9.66667
+5 29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667 20.3
+13 9.66667 9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669 15.4667
+12.5667 13.5333 6 27.0667 20.3 13 9.66667 9.66667 9.66667 5 29 8.70002
+17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667 20.3 13 9.66667
+9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333
+6 27.0667;
+#A saved note_16steps-1 xpose 0;
+#A saved note_16steps-1 lxpose <subset> 0 0 0 0;
+#A saved note_16steps-1 offset 50;
+#A saved note_16steps-1 loffset <subset> 50 50 50 50;
+#A saved note_16steps-1 scale 1.32653;
+#A saved note_16steps-1 lscale <subset> 0 0 0 0;
+#A saved audio_out-2 pan 0;
+#A saved audio_out-2 mute 0;
+#A saved audio_out-2 vol 108.054;
+#A saved audio_out-2 out MASTER;
+#A saved note_randomize-0 accent 40.3246;
+#A saved note_randomize-0 prob 63.9534;
+#A saved fx_sub-0 wet 0.313662;
+#A saved fx_sub-0 bypass 0;
+#A saved fx_sub-0 direct 44.4999;
+#A saved fx_sub-0 oct2 48.1678;
+#A saved fx_sub-0 oct1 38.2305;
+#A saved note_16steps-0 ticks 0;
+#A saved note_16steps-0 vol 100;
+#A saved note_16steps-0 sustain 0.8;
+#A saved note_16steps-0 randoms 0 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0;
+#A saved note_16steps-0 lrandoms <sublist> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined> <undefined> <undefined> <undefined> <undefined>
+<undefined> <undefined>;
+#A saved note_16steps-0 div 0;
+#A saved note_16steps-0 cycle 14;
+#A saved note_16steps-0 lcycle <subset> 16 16 16 16;
+#A saved note_16steps-0 steps 7.73333 7.73333 7.73333 7.73333 29 7.73333
+7.73333 7 7.73333 7.73333 26 6.76667 8 5.80001 5.80001 11.6;
+#A saved note_16steps-0 lsteps <sublist> 20.3 13 9.66667 9.66667 9.66667
+5 29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667 20.3
+13 9.66667 9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669 15.4667
+12.5667 13.5333 6 27.0667 20.3 13 9.66667 9.66667 9.66667 5 29 8.70002
+17.8833 29 9.66669 15.4667 12.5667 13.5333 6 27.0667 20.3 13 9.66667
+9.66667 9.66667 5 29 8.70002 17.8833 29 9.66669 15.4667 12.5667 13.5333
+6 27.0667;
+#A saved note_16steps-0 xpose 0;
+#A saved note_16steps-0 lxpose <subset> 0 0 0 0;
+#A saved note_16steps-0 offset 28.5714;
+#A saved note_16steps-0 loffset <subset> 50 50 50 50;
+#A saved note_16steps-0 scale 1.59184;
+#A saved note_16steps-0 lscale <subset> 0 0 0 0;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 835 112 pd \$0-PdRacks.declare;
+#X connect 0 0 14 0;
+#X connect 0 1 14 1;
+#X connect 0 2 14 2;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 1 2 2 2;
+#X connect 2 0 16 0;
+#X connect 2 1 16 1;
+#X connect 2 2 16 2;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 4 2 5 2;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 5 2 6 2;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 6 2 7 2;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 7 2 8 2;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 9 2 10 2;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 10 2 11 2;
+#X connect 14 0 1 0;
+#X connect 14 1 1 1;
+#X connect 14 2 1 2;
+#X connect 16 0 3 0;
+#X connect 16 1 3 1;
+#X connect 16 2 3 2;

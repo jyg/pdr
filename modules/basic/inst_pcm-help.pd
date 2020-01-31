@@ -1,0 +1,120 @@
+#N struct 2539-symarray float x array symbols 2539-sym;
+#N struct 2539-sym symbol name float on;
+#N struct 2540-symarray float x array symbols 2540-sym;
+#N struct 2540-sym symbol name float on;
+#N struct 2541-symarray float x array symbols 2541-sym;
+#N struct 2541-sym symbol name float on;
+#N struct 2955-symarray float x array symbols 2955-sym;
+#N struct 2955-sym symbol name float on;
+#N struct 2956-symarray float x array symbols 2956-sym;
+#N struct 2956-sym symbol name float on;
+#N struct 2957-symarray float x array symbols 2957-sym;
+#N struct 2957-sym symbol name float on;
+#N canvas 91 147 1059 820 12;
+#X declare -path pdr/modules/basic;
+#X obj 82 374 dac~;
+#X obj 267 52 notein;
+#X obj 268 99 pack f f;
+#X msg 268 121 note \$1 \$2;
+#X obj 52 228 inst_pcm;
+#A saved gain 2.39503;
+#A saved lgain <subset> 2.39503 1.88739 2.39503;
+#A saved reverse 1;
+#A saved lreverse <subset> 1 0 0;
+#A saved playmode 1;
+#A saved lplaymode <subset> 1 1 1;
+#A saved high_key 108;
+#A saved lhigh_key <subset> 108 110 112;
+#A saved low_key 108;
+#A saved llow_key <subset> 108 110 112;
+#A saved root_key 108;
+#A saved lroot_key <subset> 108 110 112;
+#A saved sr 44100;
+#A saved lsr <subset> 44100 44100 44100;
+#A saved vol 108.209;
+#A saved end 0.535354;
+#A saved lend <subset> 0.535354 0.191919 0.79798;
+#A saved start 0.484848;
+#A saved lstart <subset> 0.484848 0.161616 0.707071;
+#A saved path others;
+#A saved filename Concret1.wav;
+#A saved lfilename <subset> Concret1.wav Concret1.wav Concret2.wav
+;
+#X text 128 204 0 1 2 3 4;
+#X text 529 470 SampleRate = 44100 par défaut;
+#X text 470 437 1) Choix du sample;
+#X text 528 453 Ajout / modification d'un sample;
+#X text 467 577 2) mapping;
+#X text 467 652 4) gestion des différents samples en mémoire;
+#X text 446 329 Paramètres avancés : ils sont divisés en 4 sections
+;
+#X text 454 349 (pour faire apparaitre le sélecteur d'onglet \, appuyer
+sur EDIT);
+#X text 22 575 TO DO;
+#X text 35 175 inst_pcm : lecteur multisample stereo;
+#X obj 387 30 midi_notein;
+#A saved midi_chan 1;
+#A saved factor 127;
+#A saved power 1;
+#X obj 682 47 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 682 92 pd \$0-PdRacks.declare;
+#X text 467 626 3) réglage des points de lecture et du mode de bouclage
+(pas encore implémenté), f 85;
+#X text 36 692 implémenter attack / decay ?;
+#X text 38 713 Messages Aftertouch : duration ?;
+#X obj 389 168 vsl 35 128 -24 24 0 0 empty empty PITCH_BEND 0 -9 0
+10 -262144 -1 -1 0 0;
+#X msg 390 131 0;
+#X floatatom 453 152 5 0 0 0 - - -;
+#X msg 276 289 pitch_bend \$1;
+#X text 34 470 Messages Pitchbend : OK;
+#X text 33 439 available playmode : normal / one-shot (trigger) / loop
+;
+#X obj 464 516 cnv 15 400 60 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X text 469 520 ATTENTION : les fichiers doivent être obligatoirement
+tous stockés dans un même sous-dossier du dossier PdRacks/medias/sounds/soundfonts/
+, f 55;
+#X text 532 492 Gain;
+#X text 551 593 choix des notes MIDI de début \, de fin et de référence
+;
+#X text 34 623 Mapping en fonction de la dynamique;
+#X text 33 602 Revoir le systeme de presets;
+#X obj 50 57 data_multipad;
+#A saved factor 127;
+#A saved power 0.120679;
+#N canvas 0 50 795 571 get_mapping 0;
+#X msg 107 290 5 119.259 1 1217-sample 44100 248458 0.262626 0.474747
+1 0 2.39503;
+#X obj 43 76 inst_pcm;
+#A saved sr 44100;
+#X text 27 293 example;
+#X msg 245 22 get_mapping <note> <velocity> <target_receive>;
+#X obj 110 244 r <target_receive>;
+#X text 543 244 \$1 nom_midi_note \; \$2 velocity(0-127) \; \$3 speed(normal=1)
+\; \$4 wavtable_name \; \$5 sample_rate \; \$6 samplelength(samples)
+\; \$7 startpoint(0-1) \; \$8 endpoint(0-1) \; \$9 play_mode \; \$10
+reverse \; \$11 gain;
+#X connect 3 0 1 2;
+#X restore 628 197 pd get_mapping;
+#X text 562 175 to use internal inst_pcm sample-mappings into external
+device :;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 2;
+#X connect 4 0 0 0;
+#X connect 4 1 0 1;
+#X connect 15 2 4 2;
+#X connect 21 0 23 0;
+#X connect 21 0 24 0;
+#X connect 22 0 21 0;
+#X connect 24 0 4 2;
+#X connect 33 2 4 2;
