@@ -1,5 +1,6 @@
 # pdr
-<img src="./pdr/tutorials/img/PdRacksTrailer.png" alt="PdRacksTariler" width=491 height=263>
+
+<img src="https://raw.githubusercontent.com/jyg/PdRacks/master/pdr/tutorials/img/PdRacksTrailer.png" alt="PdRacksTrailer" width=491 height=263>
 
 Environnement de traitement sonore temps réel dans pure data.
 
