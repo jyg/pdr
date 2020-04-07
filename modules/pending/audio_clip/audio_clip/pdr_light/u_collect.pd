@@ -1,14 +1,10 @@
-#N canvas 458 362 450 300 10;
-#X obj 130 59 inlet~;
-#X obj 129 260 outlet~;
-#X obj 198 29 inlet;
-#X obj 325 55 inlet;
-#X obj 251 95 loadbang;
-#X obj 263 176 u_lowpassq;
-#X obj 325 139 f \$2;
-#X obj 178 117 f \$1;
-#X obj 251 117 t b b;
-#X obj 129 204 e_beequad;
+#N canvas 0 0 450 300 10;
+#X obj 195 37 inlet;
+#X obj 41 37 inlet;
+#X obj 41 144 outlet;
+#X msg 195 74 set;
+#X obj 41 99 list trim;
+#X obj 41 74 list prepend add2;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -24,21 +20,9 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
 #X text 60 325 See the file LICENSE.txt for the full license text.
 ;
-#X restore 322 19 pd LICENSE-GPL;
-#X obj 129 226 e_beequad;
-#X obj 192 56 route float;
-#X connect 0 0 9 0;
-#X connect 2 0 12 0;
-#X connect 3 0 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 9 1;
-#X connect 5 0 11 1;
-#X connect 6 0 5 1;
-#X connect 7 0 5 0;
-#X connect 8 0 7 0;
-#X connect 8 1 6 0;
-#X connect 9 0 11 0;
-#X connect 11 0 1 0;
-#X connect 12 0 7 0;
-#X connect 12 1 9 1;
-#X connect 12 1 11 1;
+#X restore 292 59 pd LICENSE-GPL;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;

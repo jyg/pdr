@@ -505,18 +505,18 @@ in individual files.;
 #X obj 131 322 outlet~;
 #X obj 205 269 inlet data;
 #X obj 205 291 outlet data;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_pitchshift-0 0
-7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_pitchshift-0
+0 7 0 14 -262144 -1 0;
 #X obj 411 157 vsl 70 17 1 0 0 0 \$0-presets \$0-presets-rcv PRESETS
 2 5 0 10 -232576 -232576 -1 0 1;
-#X obj 210 100 tgl 15 0 \$0-sync \$0-sync-rcv sync 1 5 0 10 -4032 -1
+#X obj 231 100 tgl 15 0 \$0-sync \$0-sync-rcv sync -1 7 0 9 -4032 -1
 -1 0 1;
 #X obj 100 115 ui_vsl \$0 del 1.5 4800;
 #X obj 138 115 ui_vs \$0 pitch -12 12;
 #X obj 176 115 ui_vs \$0 size 1 200;
 #X obj 214 115 ui_vs \$0 fback 0 100;
 #X obj 252 115 ui_vs \$0 wet 0 1;
-#X obj 275 100 tgl 15 0 \$0-semitones \$0-semitones-rcv semitones -38
+#X obj 275 100 tgl 15 0 \$0-semitones \$0-semitones-rcv ½tones -20
 7 0 10 -257985 -1 -1 0 1;
 #X obj 294 261 module_loader fx_pitchshift \$0 \$1;
 #X obj 575 77 s \$0-w;
@@ -526,7 +526,7 @@ in individual files.;
 #X obj 710 77 s \$0-xf;
 #X obj 446 78 r \$0-pitch;
 #X obj 128 117 vsl 10 50 0 127 0 0 empty \$0-bpm_factor-rcv bpm/0 1
-5 0 10 -44926 -1 -1 2129 1;
+5 0 10 -44926 -1 -1 4258 1;
 #N canvas 1 56 450 300 fx_pitchshift/pitchift~ 0;
 #X restore 596 120 pd fx_pitchshift/pitchift~;
 #X text 389 122 autre implementation à étudier ->;

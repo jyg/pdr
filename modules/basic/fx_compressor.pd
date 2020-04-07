@@ -159,6 +159,11 @@
 #X text 97 505 Gain Control;
 #X obj 663 363 select 0;
 #X msg 653 397 10000;
+#X obj 477 35 inlet bypass;
+#X obj 477 58 == 0;
+#X obj 476 120 switch~;
+#X obj 582 94 loadbang;
+#X msg 582 117 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 23 0;
@@ -205,9 +210,13 @@
 #X connect 70 0 71 0;
 #X connect 70 1 52 0;
 #X connect 71 0 52 0;
+#X connect 72 0 73 0;
+#X connect 73 0 74 0;
+#X connect 75 0 76 0;
+#X connect 76 0 74 0;
 #X restore 132 265 pd stuff;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_compressor-0 0
-7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_compressor-0
+0 7 0 14 -262144 -1 0;
 #X obj 366 242 module_loader fx_compressor \$0 \$1;
 #X obj 267 544 r \$0-gain;
 #X obj 441 124 r \$0-rmspeak;
@@ -230,9 +239,9 @@
 #X obj 215 101 cnv 15 74 29 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X obj 214 113 nbx 3 14 0 500 0 0 \$0-response \$0-response-rcv time
-0 -6 0 10 -262144 -1 -1 40 256;
+0 -6 0 10 -262144 -1 -1 21 256;
 #X obj 254 113 nbx 3 14 0 500 0 0 \$0-lookahead \$0-lookahead-rcv lkahd
-0 -6 0 10 -262144 -1 -1 0 256;
+0 -6 0 10 -262144 -1 -1 9 256;
 #X obj 275 140 vradio 15 1 0 2 \$0-rmspeak \$0-rmspeak-rcv RMS -10
 -7 0 10 -262144 -1 -1 0;
 #X text 387 67 60 40;
@@ -349,7 +358,7 @@
 #X connect 18 0 8 0;
 #X connect 19 0 1 0;
 #X restore 25 398 pd animation_point_transfert;
-#X obj 213 166 cnv 2 4 4 empty \$0-curseur empty 20 12 0 14 -258113
+#X obj 213 164 cnv 2 4 4 empty \$0-curseur empty 20 12 0 14 -258113
 -66577 0;
 #X obj 77 197 inlet~;
 #X obj 81 314 outlet~;
@@ -369,6 +378,10 @@ is created dynamically, f 29;
 #X obj 804 33 declare -path ../../core;
 #X obj 804 53 declare -path ../../core/stuff;
 #X obj 804 73 declare -path ../../core/rj;
+#X obj 25 256 *~ 0;
+#X obj 81 258 *~ 0;
+#X obj 240 100 tgl 13 0 empty empty BP 0 7 0 10 -261682 -1 -1 0 1;
+#X obj 26 151 t f f f;
 #X connect 0 0 27 0;
 #X connect 0 0 24 1;
 #X connect 0 1 30 0;
@@ -388,13 +401,21 @@ is created dynamically, f 29;
 #X connect 26 0 24 0;
 #X connect 26 0 0 0;
 #X connect 26 0 0 2;
+#X connect 26 0 42 0;
 #X connect 29 0 0 1;
 #X connect 29 0 0 2;
 #X connect 29 0 24 0;
+#X connect 29 0 43 0;
 #X connect 32 0 2 0;
 #X connect 32 0 31 0;
 #X connect 33 0 5 0;
 #X connect 34 0 33 0;
 #X connect 38 0 2 1;
 #X connect 38 1 2 2;
+#X connect 42 0 27 0;
+#X connect 43 0 30 0;
+#X connect 44 0 45 0;
+#X connect 45 0 42 1;
+#X connect 45 1 43 1;
+#X connect 45 2 0 3;
 #X coords 0 -1 1 1 190 70 1 100 100;

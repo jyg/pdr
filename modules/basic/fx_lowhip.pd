@@ -22,7 +22,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 51 17 embedded rjdj e_beequad abstraction;
 #X obj 416 300 u_dispatch \$0 f.freq;
 #X obj 416 320 u_dispatch \$0 f.Q;
-#N canvas 0 50 989 545 filter 0;
+#N canvas 0 50 989 545 filter 1;
 #X obj 77 38 inlet~;
 #X obj 278 25 inlet~;
 #X obj 70 445 outlet~;
@@ -96,8 +96,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 255 338 e_beequad;
 #X obj 570 231 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 19 256;
-#X obj 350 114 r \$0-f.freq;
+#X obj 355 84 r \$0-f.freq;
 #X obj 579 112 r \$0-f.Q;
+#X obj 369 144 line;
+#X msg 381 114 \$1 90;
 #X connect 0 0 5 0;
 #X connect 1 0 7 0;
 #X connect 4 0 5 1;
@@ -107,16 +109,18 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 6 0 7 1;
 #X connect 7 0 3 0;
 #X connect 8 0 6 0;
-#X connect 9 0 4 0;
+#X connect 9 0 12 0;
 #X connect 10 0 4 1;
+#X connect 11 0 4 0;
+#X connect 12 0 11 0;
 #X restore 32 282 pd filter;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_lowhip-0 0 7 0
-14 -262144 -1 0;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_lowhip-0 0 7 0
-14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_lowhip-0
+0 7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_lowhip-0
+0 7 0 14 -262144 -1 0;
 #X obj 214 115 ui_vs \$0 f.freq 0 1;
 #X obj 252 115 ui_vs \$0 f.Q 0 1;
-#X obj 101 153 cnv 15 100 16 empty \$0-freq-rcv HIP:109Hz 1 10 0 12
+#X obj 101 153 cnv 15 100 16 empty \$0-freq-rcv LOP:109Hz 1 10 0 12
 -233017 -66577 0;
 #X obj 412 273 module_loader fx_lowhip \$0 \$1;
 #X obj 31 246 inlet~;

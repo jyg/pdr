@@ -1,0 +1,82 @@
+#N canvas 0 50 767 687 12;
+#X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 15 40 launch mode;
+#X obj 137 39 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -128992 -1
+-1 0;
+#X text 159 34 trigger;
+#X text 161 50 gate;
+#X text 159 68 toggle;
+#X text 18 6 LAUNCH;
+#X obj 24 94 tgl 15 0 empty empty empty 17 7 0 10 -128992 -1 -1 0 1
+;
+#X text 45 90 legato;
+#X text 14 220 Follow Action;
+#X text 18 195 Vel;
+#X floatatom 59 194 5 0 0 0 - - -;
+#X floatatom 17 257 5 0 0 2 mes - -;
+#X floatatom 74 258 2 0 0 2 beat - -;
+#X floatatom 118 260 2 0 0 2 16th - -;
+#X obj 35 287 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -128992 -1
+-1 0;
+#X text 59 281 stop;
+#X text 58 298 play again;
+#X text 58 314 previous;
+#X text 59 328 next;
+#X text 58 342 first;
+#X text 58 357 last;
+#X text 55 370 any;
+#X obj 335 197 hsl 128 15 0 127 0 0 empty empty start -2 -8 0 10 -128992
+-1 -1 0 1;
+#X obj 334 243 hsl 128 15 0 127 0 0 empty empty End -2 -8 0 10 -128992
+-1 -1 0 1;
+#X floatatom 336 305 5 0 0 2 mes - -;
+#X floatatom 389 305 2 0 0 2 beat - -;
+#X floatatom 436 304 2 0 0 2 16th - -;
+#X text 376 264 Position;
+#X floatatom 336 377 5 0 0 2 mes - -;
+#X floatatom 389 377 2 0 0 2 beat - -;
+#X floatatom 436 376 2 0 0 2 16th - -;
+#X text 336 336 Length;
+#X obj 196 209 bng 60 250 50 0 \$2-open\$1 empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 203 227 file;
+#X obj 131 9 tgl 23 0 \$2-clip\$1 \$2-clip\$1-rcv |> 3 12 0 14 -228992
+-228992 -1 0 1;
+#X obj 168 8 hsl 112 23 0 1 0 0 empty \$2-hsl\$1-rcv empty 2 12 0 14
+-262131 -1 -1 0 1;
+#X obj 279 64 cnv 15 220 120 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 416 119 tgl 20 0 \$2-clip\$1_loop \$2-clip\$1_loop-rcv Loop
+22 7 0 14 -262144 -1 -1 0 1;
+#X obj 292 87 vradio 17 1 0 4 \$2-clip\$1_algorithm \$2-clip\$1_algorithm-rcv
+empty 0 -8 0 10 -262144 -1 -1 0;
+#X text 314 119 playolap;
+#X obj 535 125 s pd-\$2-clip-\$1_edit;
+#X msg 538 86 vis 0;
+#X obj 437 4 bng 60 250 50 0 empty empty X 12 32 0 60 -262144 -1 -1
+;
+#X text 314 102 varispeed;
+#X text 313 136 pvoc (FFT);
+#X text 314 86 OFF;
+#X text 397 100 |;
+#X text 397 112 |;
+#X text 397 124 |;
+#X text 397 136 |;
+#X text 387 88 __;
+#X text 387 137 __;
+#X text 400 112 __;
+#X floatatom 455 162 5 0 0 0 Seg.BPM #2-clip#1_bpm-rcv #2-clip#1_bpm
+;
+#X text 290 63 WRAP MODE;
+#X obj 14 127 cnv 15 260 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 15 123 Quantization;
+#X text 146 140 <-custom / global;
+#X floatatom 105 140 3 0 0 0 q #2-clip#1_quant-rcv #2-clip#1_quant
+;
+#X floatatom 105 160 3 0 0 0 preroll #2-clip#1_preroll-rcv #2-clip#1_preroll
+;
+#X connect 42 0 41 0;
+#X connect 43 0 42 0;
+#X coords 0 -1 1 1 500 420 2 0 0;
