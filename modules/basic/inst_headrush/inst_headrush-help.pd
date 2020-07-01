@@ -1,0 +1,8 @@
+#N canvas 448 85 894 552 10;
+#X obj 26 173 inst_headrush;
+#A saved SID 0;
+#X text 13 21 Emulateur de pédale sampleur Akai Headrush (fonction
+sampleur uniquement), f 43;
+#X text 63 285 TO DO : synchronisation paramétrable \, etc... \, lecture
+à vitesse variable;
+#X coords 0 552 1 551 190 70 0;

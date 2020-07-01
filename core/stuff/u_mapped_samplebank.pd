@@ -52,7 +52,7 @@ suivre à la cellule suivante;
 #X obj 118 697 list append;
 #X msg 124 719 \$2 \$1 \$3;
 #X obj 127 744 list append \$0-sample;
-#X obj 385 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 385 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 370 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -102,7 +102,7 @@ suivre à la cellule suivante;
 #X text 507 906 playmode;
 #X text 508 924 reverse;
 #X text 507 949 gain;
-#N canvas 0 50 1223 786 detect-pdr-relative-path 0;
+#N canvas 0 50 1223 786 detect-pdr-relative-path 1;
 #X obj 93 36 inlet;
 #X obj 60 404 outlet;
 #X obj 97 94 symbol;
@@ -114,29 +114,29 @@ suivre à la cellule suivante;
 #X obj 71 250 list prepend 0;
 #X obj 71 273 route 0 1;
 #X msg 50 367 \$1/\$2;
-#X obj 50 343 list prepend ../../medias/sounds/soundfonts;
 #X obj 97 117 t s s s;
 #X obj 113 310 symbol;
 #X text 255 42 path beginning without "/" -> prepend pdr/media/sounds
 folder path;
 #X text 256 100 path absolute or relative to parent patch : keep unchanged
 ;
+#X obj 50 343 list prepend ../../medias/sounds/soundfonts;
 #X connect 0 0 2 0;
-#X connect 2 0 12 0;
+#X connect 2 0 11 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 7 0;
 #X connect 6 0 8 1;
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
-#X connect 9 0 11 0;
-#X connect 9 1 13 0;
+#X connect 9 0 15 0;
+#X connect 9 1 12 0;
 #X connect 10 0 1 0;
-#X connect 11 0 10 0;
-#X connect 12 0 8 0;
-#X connect 12 1 3 0;
-#X connect 12 2 13 1;
-#X connect 13 0 1 0;
+#X connect 11 0 8 0;
+#X connect 11 1 3 0;
+#X connect 11 2 12 1;
+#X connect 12 0 1 0;
+#X connect 15 0 10 0;
 #X restore 457 536 pd detect-pdr-relative-path;
 #N canvas 0 50 544 499 wait_and_dump 0;
 #X obj 78 110 list append;

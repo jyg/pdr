@@ -1,0 +1,88 @@
+#N canvas 407 237 813 517 12;
+#X declare -path ../../../core;
+#X declare -path ../../../core/stuff;
+#X declare -path ../../../core/rj;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 680 20 pd LICENSE-GPL;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv module_template-0
+0 7 0 14 -262144 -1 0;
+#X obj 337 151 inlet~;
+#X obj 397 150 inlet~;
+#X obj 336 232 outlet~;
+#X obj 397 230 outlet~;
+#X obj 459 152 inlet data;
+#X obj 459 229 outlet data;
+#N canvas 0 50 450 300 your_stuff_here 0;
+#X obj 34 72 inlet~;
+#X obj 119 75 inlet~;
+#X obj 34 245 outlet~;
+#X obj 120 243 outlet~;
+#X obj 206 76 inlet data;
+#X obj 208 241 outlet data;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 4 0 5 0;
+#X restore 336 192 pd your_stuff_here;
+#X text 481 192 <-- Do the job here inside.;
+#X text 60 239 1) rename this file with the name you choose for your
+module, f 40;
+#X text 56 278 2) In your new module file \,;
+#X text 48 460 3) don't forget to document a help-file !;
+#X obj 574 292 cnv 15 100 20 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 476 291 module_loader module_template \$0 \$1;
+#N canvas 0 50 450 300 parameters_saving 0;
+#X obj 85 92 inlet;
+#X obj 85 117 u_dispatch \$0 vol;
+#X connect 0 0 1 0;
+#X restore 475 325 pd parameters_saving;
+#N canvas 0 50 924 478 about_guis 0;
+#X obj 34 145 ui_vs \$0 vol 0 100;
+#X text 85 157 [ui_vs \$0 vol 0 100] : vertical slider with linear
+range between 0 and 100, f 79;
+#X text 43 55 Inside the parent window gop-area (red rectangle) \,
+you can put any type of gui element.;
+#X obj 35 210 ui_vsl \$0 freq 20 20000;
+#X text 89 230 [ui_vsl \$0 freq 20 20000] : vertical slider with logarithm
+range between 20 and 20000, f 86;
+#X restore 471 370 pd about_guis;
+#X text 249 279 replace "module_template" by the name you choose for
+it. -->, f 31;
+#X obj 251 114 ui_vs \$0 vol 0 100;
+#X text 25 10 This a minimal module template. All objects here (except
+comments and guis) have to be kept.;
+#X text 108 126 <put your controls here>, f 16;
+#X obj 751 229 namecanvas \$0-this;
+#X obj 749 206 triggered_loadbang \$0-this;
+#X text 744 156 manually trigger loadbang if the instance of abstraction
+is created dynamically, f 29;
+#X obj 748 291 savestate;
+#X obj 744 78 declare -path ../../../core;
+#X obj 744 98 declare -path ../../../core/stuff;
+#X obj 744 118 declare -path ../../../core/rj;
+#X connect 2 0 8 0;
+#X connect 3 0 8 1;
+#X connect 6 0 8 2;
+#X connect 6 0 14 0;
+#X connect 8 0 4 0;
+#X connect 8 1 5 0;
+#X connect 8 2 7 0;
+#X connect 14 0 15 0;
+#X connect 14 1 24 0;
+#X connect 24 0 14 1;
+#X connect 24 1 14 2;
+#X coords 0 -1 1 1 190 70 1 100 100;

@@ -7,9 +7,19 @@
 #X obj 291 39 inlet;
 #X obj 361 39 inlet;
 #X obj 337 134 loadbang;
-#X obj 342 187 print iemlib;
-#X msg 342 164 missing lib \, using placebo filter~ abstraction;
 #X text 463 61 to bypass filter~ when iemlib not found;
+#X obj 337 157 v ___iemlib/filter_warning;
+#X obj 337 180 select 0;
+#X obj 337 203 t b b;
+#X msg 414 218 1;
+#X obj 336 281 print pdr;
+#X msg 344 244 warning : missing iemlib... using placebo filter~ abstraction
+;
 #X connect 0 0 1 0;
 #X connect 7 0 9 0;
-#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 11 1 12 0;
+#X connect 12 0 9 0;
+#X connect 14 0 13 0;

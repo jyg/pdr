@@ -1,0 +1,4 @@
+#N canvas 713 50 613 297 10;
+#X obj 102 109 inst_soundfile;
+#A saved SID 0;
+#X coords 0 297 1 296 190 70 0;

@@ -1,0 +1,113 @@
+#N canvas 93 56 678 486 10;
+#X declare -path ../../../core;
+#X declare -path ../../../core/stuff;
+#X declare -path ../../../core/rj;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 298 15 pd LICENSE-GPL;
+#X text 35 69 ui_hsl \$0 name min max;
+#X obj 347 374 u_dispatch \$0 wet;
+#X text 51 17 ring modulator abstraction;
+#N canvas 0 50 590 548 ring~ 0;
+#X obj 75 336 outlet~;
+#X obj 64 80 inlet~;
+#X obj 100 232 *~;
+#X obj 400 37 r \$0-freq;
+#X obj 134 334 outlet~;
+#X obj 123 78 inlet~;
+#X obj 159 230 *~;
+#X obj 68 286 c_xfade;
+#X obj 141 285 c_xfade;
+#X obj 214 204 r \$0-wet;
+#X obj 397 114 phasor~;
+#X obj 219 133 cos~;
+#X obj 344 208 cos~;
+#X obj 389 177 +~ 0.25;
+#X obj 446 156 r \$0-phase;
+#X obj 503 43 r \$0-smooth;
+#X msg 503 66 1 \$1;
+#X obj 503 89 /;
+#X obj 401 79 lop~ 100;
+#X msg 228 234 \$1 10;
+#X connect 1 0 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 1;
+#X connect 3 0 18 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 0 0;
+#X connect 8 0 4 0;
+#X connect 9 0 19 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 11 0 2 1;
+#X connect 12 0 6 1;
+#X connect 13 0 12 0;
+#X connect 14 0 13 1;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 10 0;
+#X connect 19 0 8 2;
+#X connect 19 0 7 2;
+#X restore 30 284 pd ring~;
+#X obj 347 352 u_dispatch \$0 freq;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_ring-0
+0 7 0 14 -262144 -1 0;
+#X obj 252 115 ui_vs \$0 wet 0 1;
+#X obj 101 115 ui_vsl \$0 freq 0.1 3000;
+#X obj 345 308 module_loader fx_ring \$0 \$1;
+#X obj 29 200 inlet~;
+#X obj 125 202 inlet~;
+#X obj 93 317 outlet~;
+#X obj 29 306 outlet~;
+#X obj 195 271 inlet data;
+#X obj 195 441 outlet data;
+#X obj 64 230 hip~ 5;
+#X obj 125 224 hip~ 5;
+#X obj 651 279 namecanvas \$0-this;
+#X obj 649 256 triggered_loadbang \$0-this;
+#X text 644 206 manually trigger loadbang if the instance of abstraction
+is created dynamically, f 29;
+#X obj 177 115 ui_vs \$0 phase 0 0.25;
+#X obj 404 207 loadbang;
+#X obj 347 397 u_dispatch \$0 phase;
+#X obj 139 115 ui_vsl \$0 smooth 0.01 1;
+#X msg 404 230 phase 0 \, smooth 0.01;
+#X obj 347 427 u_dispatch \$0 smooth;
+#X obj 529 285 savestate;
+#X obj 494 33 declare -path ../../../core;
+#X obj 494 53 declare -path ../../../core/stuff;
+#X obj 494 73 declare -path ../../../core/rj;
+#X connect 2 0 23 0;
+#X connect 4 0 13 0;
+#X connect 4 1 12 0;
+#X connect 5 0 2 0;
+#X connect 9 0 5 0;
+#X connect 9 1 27 0;
+#X connect 10 0 16 0;
+#X connect 11 0 17 0;
+#X connect 14 0 15 0;
+#X connect 14 0 9 0;
+#X connect 16 0 4 0;
+#X connect 17 0 4 1;
+#X connect 22 0 25 0;
+#X connect 23 0 26 0;
+#X connect 25 0 9 0;
+#X connect 27 0 9 1;
+#X connect 27 1 9 2;
+#X coords 0 -1 1 1 190 70 1 100 100;

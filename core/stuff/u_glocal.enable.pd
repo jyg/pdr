@@ -1,4 +1,4 @@
-#N canvas 80 359 925 367 16;
+#N canvas 80 359 925 600 16;
 #X text 65 7 activate local mode for current patch;
 #N canvas 297 633 859 352 savestate 0;
 #X obj 140 92 savestate;
@@ -81,6 +81,7 @@
 #X obj 578 183 r \$1-u_glocal;
 #X obj 499 257 s;
 #X obj 578 213 t b s;
+#X symbolatom 627 252 10 0 0 0 - - -;
 #X connect 2 0 3 0;
 #X connect 3 0 18 1;
 #X connect 5 0 7 0;
@@ -89,6 +90,7 @@
 #X connect 10 1 9 0;
 #X connect 18 0 20 0;
 #X connect 19 0 21 0;
+#X connect 19 0 22 0;
 #X connect 21 0 18 0;
 #X connect 21 1 20 1;
 #X coords 0 -1 1 1 350 20 1 100 100;

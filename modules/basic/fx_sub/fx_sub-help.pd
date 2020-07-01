@@ -1,0 +1,36 @@
+#N struct 1061-symarray float x array symbols 1061-sym;
+#N struct 1061-sym symbol name float on;
+#N canvas 329 115 1139 551 12;
+#X declare -path ../;
+#X obj 509 131 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#X text 531 129 Instances multiples possibles;
+#X obj 509 151 tgl 15 0 empty empty E 4 8 0 12 -260097 -260097 -1 0
+1;
+#X text 531 149 PureData Vanilia;
+#X obj 62 302 fx_sub;
+#X text 58 178 renvoie en data_outlet un événement note à chaque
+note analysée;
+#X text 318 99 oct2 \, oct1 \, direct déterminent les niveaux de volumes
+respectifs;
+#X text 531 165 necessite l'external fiddle~;
+#X obj 63 392 dac~;
+#X obj 61 262 adc~;
+#X text 412 312 Algo :;
+#X text 496 311 0: sigmund~;
+#X text 499 337 1 gk-3 inspired algorithm;
+#X text 522 357 ( credits https://lists.puredata.info/pipermail/pd-list/2014-04/106747.html
+, f 66;
+#X text 554 391 itensimon@gmail.com );
+#X text 24 6 sub octaveur utilisant soit l'objet sigmund~ pour déterminer
+les hauteurs de notes \, soit un algorithme inspiré du capteur Roland
+Gk-3;
+#X obj 289 391 inst_tabosc;
+#X obj 289 466 dac~;
+#X obj 794 86 declare -path ../;
+#X connect 4 0 8 0;
+#X connect 4 1 8 1;
+#X connect 4 2 16 2;
+#X connect 9 0 4 0;
+#X connect 9 1 4 1;
+#X connect 16 0 17 0;
+#X connect 16 1 17 1;

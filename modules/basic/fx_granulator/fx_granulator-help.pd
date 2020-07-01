@@ -1,0 +1,203 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 523 58 1143 666 16;
+#X declare -path ../../../core/rj;
+#X obj 0 2 cnv 15 800 50 empty empty fx_granulator 20 14 0 20 -232576
+-66577 0;
+#X obj 601 2 pdr/core/stuff/language;
+#X obj 79 205 fx_granulator;
+#X scalar comment 38.0134 649.047 0 \; granulateur \; granulator \;
+granulatore \;;
+#N canvas 0 0 793 336 song 0;
+#X floatatom 163 194 5 0 0 0 - - -, f 5;
+#X floatatom 155 106 5 0 0 0 - - -, f 5;
+#X obj 155 250 pack 0 0;
+#X obj 155 171 m_majorscale 60;
+#X obj 155 271 u_makepoly 8 1 s_rhodey \$0-piano;
+#X obj 155 220 makenote 20 1000;
+#X obj 212 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 359 223 592 507 play-a-little-song-for-me 0;
+#X msg 133 301 0 \, 2 \, 3 \, 5 \, 8 \, 9;
+#X msg 100 326 0 \, 2 \, 4 \, 6 \, 8;
+#X obj 238 223 random 7;
+#X obj 139 237 ==;
+#X obj 100 237 f;
+#X obj 100 266 select 0 1;
+#X obj 100 390 outlet;
+#X obj 206 52 inlet;
+#X obj 272 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 330 244 f;
+#X obj 364 244 + 1;
+#X obj 329 411 outlet;
+#X msg 329 384 60;
+#X msg 365 384 58;
+#X obj 330 363 select 0 1;
+#X obj 330 221 b;
+#X obj 330 336 f;
+#X obj 363 336 ==;
+#X floatatom 396 273 5 0 0 0 - - -, f 5;
+#X obj 203 171 t b b b;
+#X obj 330 305 select 0;
+#X obj 330 274 mod 16;
+#X obj 329 37 loadbang;
+#X msg 329 59 220 180;
+#X obj 206 149 select 0 2 4 5;
+#X obj 206 86 c_multimetro 6 200;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 1;
+#X connect 4 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 25 0;
+#X connect 8 0 25 0;
+#X connect 9 0 18 0;
+#X connect 9 0 21 0;
+#X connect 10 0 9 1;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X connect 14 1 13 0;
+#X connect 15 0 9 0;
+#X connect 16 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 16 1;
+#X connect 19 0 4 0;
+#X connect 19 1 2 0;
+#X connect 19 2 15 0;
+#X connect 20 0 16 0;
+#X connect 21 0 10 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 2;
+#X connect 24 0 19 0;
+#X connect 24 1 2 0;
+#X connect 24 2 2 0;
+#X connect 24 3 2 0;
+#X connect 25 0 24 0;
+#X restore 212 122 pd play-a-little-song-for-me;
+#X floatatom 257 152 5 0 0 0 - - -, f 5;
+#X obj 155 309 outlet~;
+#X obj 212 64 inlet;
+#X obj 470 93 switch~;
+#X obj 490 49 loadbang;
+#X msg 490 70 0;
+#X obj 640 122 declare -path ../../../core/rj;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 9 0;
+#X connect 4 1 9 0;
+#X connect 5 0 2 0;
+#X connect 5 1 2 1;
+#X connect 6 0 7 0;
+#X connect 6 0 11 0;
+#X connect 7 0 3 0;
+#X connect 7 1 8 0;
+#X connect 8 0 3 1;
+#X connect 10 0 6 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X restore 149 99 pd song;
+#X obj 149 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 105 384 dac~;
+#N canvas 0 22 533 592 CPU-load 0;
+#X obj 118 204 cputime;
+#X obj 118 28 loadbang;
+#X obj 118 112 metro 1000;
+#X msg 118 56 1;
+#X floatatom 118 84 0 0 0 0 - - -;
+#X obj 118 140 t b b;
+#X text 163 84 <-- on/off;
+#X obj 116 407 outlet;
+#X obj 125 263 f;
+#X obj 124 306 * 0.1;
+#X connect 0 0 8 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X restore 159 601 pd CPU-load;
+#X obj 54 601 cnv 15 100 30 empty cpu-rcv cpu=2% 5 16 0 20 -233017
+-66577 0;
+#X obj 159 648 s cpu-rcv;
+#X msg 159 624 label cpu=\$1%;
+#X obj 719 266 nbx 8 12 0 171000 0 0 \$0-delay \$0-delayr Delay(ms)
+70 7 2 10 -262144 -1 -1 0 256;
+#X obj 879 265 nbx 8 12 0 171000 0 0 \$0-random-delay \$0-random-delayr
+Random-Delay(ms) 70 7 2 10 -262144 -1 -1 0 256;
+#X obj 739 182 nbx 5 12 -1600 1600 0 0 \$0-size \$0-sizer Grainsize(ms)
+69 7 2 10 -262144 -1 -1 0 256;
+#X obj 738 164 nbx 4 12 1 1e+37 0 0 \$0-trigger-speed \$0-trigger-speedr
+Grain-Distance(ms) 42 7 2 10 -262144 -1 -1 1 256;
+#X obj 880 182 nbx 5 12 0 1e+11 0 0 \$0-random-size \$0-random-sizer
+Random-Grainsize(ms) 70 7 2 10 -262144 -1 -1 0 256;
+#X obj 880 165 nbx 4 12 0 1e+37 0 0 \$0-random-trigger-speed \$0-random-trigger-speedr
+Random-Grain-Distance(ms) 70 7 2 10 -262144 -1 -1 0 256;
+#X obj 739 206 nbx 5 12 -1e+28 1e+28 0 0 \$0-pitch \$0-pitchr Pitch(cents)
+70 7 2 10 -262144 -1 -1 0 256;
+#X obj 880 206 nbx 5 12 0 1e+13 0 0 \$0-random-pitch \$0-random-pitchr
+Random-Pitch(cents) 70 7 2 10 -262144 -1 -1 0 256;
+#X obj 737 224 nbx 4 12 -100 100 0 0 \$0-pan \$0-panr Panorama 70 7
+2 10 -262144 -1 -1 0 256;
+#X obj 876 225 nbx 4 12 0 100 0 0 \$0-random-pan \$0-random-panr Random-Panorama(%)
+70 7 2 10 -262144 -1 -1 0 256;
+#X obj 716 242 nbx 4 12 -100 0 0 0 \$0-amp \$0-ampr Amplitude(db) 70
+7 2 10 -262144 -1 -1 0 256;
+#X obj 885 243 nbx 4 12 0 100 0 0 \$0-random-amp \$0-random-ampr Random-Amplitude(db)
+70 7 2 10 -262144 -1 -1 0 256;
+#X obj 743 147 hsl 92 10 0 1 0 0 \$0-env-bias \$0-env-biasr Bias -2
+-7 2 10 -262144 -1 -1 0 1;
+#X obj 745 117 hsl 92 10 0 1 0 0 \$0-env-shape \$0-env-shaper Shape
+-2 -7 2 10 -262144 -1 -1 0 1;
+#X obj 634 294 nbx 4 12 0 100 0 0 \$0-feedback \$0-feedbackr Feedback(%)
+70 7 2 10 -262144 -1 -1 0 256;
+#X obj 632 331 nbx 4 14 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet(%)
+0 -7 2 10 -262144 -1 -1 0 256;
+#X text 407 157 iot : intervalle entre 2 grains;
+#X text 409 177 dur : durée d'un grain;
+#X text 404 199 pitch : transpositon (semitones);
+#X text 403 136 skw : symétrie de la shape (bias);
+#X text 408 216 pan : panorama;
+#X text 402 238 vol : amplitude;
+#X text 404 262 dly : delay;
+#X obj 871 168 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
+#X obj 871 173 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
+#X obj 873 194 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
+#X obj 865 213 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
+#X obj 865 218 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
+#X obj 865 228 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
+#X obj 865 233 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
+#X text 413 292 fb : feedback;
+#X text 415 322 wet : dry / wet;
+#X text 370 394 -optimiser le patch (supprimer les widgets bng);
+#X text 372 420 -permettre de régler la distribution (gauss) de la
+fonction de hasard pour le pitch \, iot \, pan, f 55;
+#X text 371 470 - quantization variable du pitch \, entre continum
+et tons entiers, f 64;
+#X text 297 365 TODO : -revoir l'interface gui;
+#X text 406 56 shp : forme de la shape;
+#X text 435 94 à droite \, seulement plateau;
+#X text 435 76 à gauche : pas de plateau (sustain) \, seulement montée
+/ descente, f 75;
+#X text 556 538 dlgranulator~ patch for puredata v 0.62 by david golightly
+2/2005;
+#X text 311 536 credits (granulator);
+#X text 567 631 see dlgranulator.readme.txt;
+#X connect 2 0 6 0;
+#X connect 2 1 6 1;
+#X connect 4 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 4 0;
+#X connect 7 0 10 0;
+#X connect 10 0 9 0;

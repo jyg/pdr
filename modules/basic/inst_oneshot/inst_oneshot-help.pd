@@ -1,0 +1,51 @@
+#N struct 1904-symarray float x array symbols 1904-sym;
+#N struct 1904-sym symbol name float on;
+#N struct 1905-symarray float x array symbols 1905-sym;
+#N struct 1905-sym symbol name float on;
+#N struct 1906-symarray float x array symbols 1906-sym;
+#N struct 1906-sym symbol name float on;
+#N canvas 323 161 873 552 12;
+#X declare -path ../;
+#X obj 82 391 dac~;
+#X obj 256 69 notein;
+#X obj 257 116 pack f f;
+#X msg 257 138 note \$1 \$2;
+#X obj 44 86 data_azerty2midi;
+#X text 174 225 0 1 2 3 4;
+#X text 399 326 SampleRate = 44100 par défaut;
+#X text 340 283 1) Choix du sample;
+#X text 398 309 Ajout / modification d'un sample;
+#X text 340 422 2) mapping;
+#X text 340 497 4) gestion des différents samples en mémoire;
+#X text 315 225 Paramètres avancés : ils sont divisés en 4 sections
+;
+#X text 323 247 (pour faire apparaitre le sélecteur d'onglet \, appuyer
+sur EDIT);
+#X text 339 355 ATTENTION : les fichiers doivent être obligatoirement
+tous stockés dans un même sous-dossier du dossier modules/pcm_synth/soundfonts/
+;
+#X text 27 20 inst_oneshot : lecteur oneshot multisample stereo \,
+pour lire une collection de samples directement depuis le disque \,
+sans les charger en mémoire;
+#X text 570 21 64 samples différents;
+#X text 577 47 16 voix de polyhonie;
+#X obj 58 247 inst_oneshot;
+#A saved spread 0;
+#A saved SID 0;
+#X text 311 156 Mode toogle : le sample est joué jusqu'à réception
+de l'événement note off;
+#X text 321 186 Mode trigger : le sample est joué en entier \, sans
+tenir compte de l'événement note off;
+#X text 389 439 choix des notes de début (low) \, de fin (high) et
+de référence (root);
+#X text 340 477 3) points de bouclage (non pris en compte);
+#X text 345 470 ______________________;
+#X text 58 422 spread : pan aleatoire;
+#X obj 588 87 declare -path ../;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 17 2;
+#X connect 4 2 17 2;
+#X connect 17 0 0 0;
+#X connect 17 1 0 1;

@@ -1,0 +1,255 @@
+#N canvas 908 58 678 1018 12;
+#X declare -path ../../../core;
+#X declare -path ../../../core/stuff;
+#X declare -path ../../../core/rj;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X restore 298 15 pd LICENSE-GPL;
+#X obj 347 352 u_dispatch \$0 freq;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_exciter-0
+0 7 0 14 -262144 -1 0;
+#X obj 32 206 inlet~;
+#X obj 104 208 inlet~;
+#X obj 92 407 outlet~;
+#X obj 28 396 outlet~;
+#X obj 195 271 inlet data;
+#X obj 195 441 outlet data;
+#X obj 651 279 namecanvas \$0-this;
+#X obj 649 256 triggered_loadbang \$0-this;
+#X text 644 206 manually trigger loadbang if the instance of abstraction
+is created dynamically, f 29;
+#X obj 404 207 loadbang;
+#X obj 529 285 savestate;
+#X obj 345 308 module_loader fx_exciter \$0 \$1;
+#X obj 138 115 ui_vs \$0 boost 0 6;
+#X obj 181 115 ui_vs \$0 harmo 0 100;
+#X obj 252 115 ui_vs \$0 mxback -100 0;
+#N canvas 0 57 1920 1023 stuff~ 0;
+#X obj 56 607 outlet~;
+#X obj 69 73 inlet~;
+#X obj 126 80 r \$0-freq;
+#X obj 64 186 *~ 1;
+#X obj 204 56 r \$0-boost;
+#X obj 205 95 dbtorms;
+#X obj 204 75 + 100;
+#X obj 296 86 r \$0-harmo;
+#X obj 296 108 / 100;
+#X obj 296 130 min 0.9;
+#X obj 296 152 t f f;
+#X obj 296 205 /;
+#X obj 329 180 - 1;
+#X obj 296 174 * -2;
+#X text 330 203 foo = 2*hdistr/(1-hdistr) \;;
+#X obj 224 206 abs~;
+#X obj 60 402 *~;
+#X obj 174 327 r \$0-mxback;
+#X obj 174 349 + 100;
+#X obj 174 371 dbtorms;
+#X obj 78 381 lop~ 10;
+#X obj 38 424 +~;
+#X obj 296 274 + 1;
+#X obj 223 231 *~;
+#X obj 223 253 +~ 1;
+#X obj 65 271 /~;
+#X obj 65 293 *~;
+#X obj 72 127 lop~;
+#X obj 61 321 hip~;
+#X text 496 264 0.9 : 2*0.9/(0.1)=18;
+#X obj 70 227 clip~ -1 1;
+#X text 1012 149 slider1:2000<100 \, 18000 \, 1>Frequency (Hz) \; slider2:0<0
+\, 6 \, .1>Clip Boost (dB) \; slider3:0<0 \, 100 \, 1>Harmonics (%)
+\; slider4:-6<-120 \, 0 \, .1>Mix Back (dB) \; in_pin:left input \;
+in_pin:right input \; out_pin:left output \; out_pin:right output \;
+@init c_ampDB = 8.65617 \; cDenorm=10^-30 \; @slider clipBoost = exp(slider2/c_ampDB)
+\; mixBack = exp(slider4/c_ampDB) \; hdistr = min(slider3/100 \, .9)
+\; foo = 2*hdistr/(1-hdistr) \; freq = min(slider1 \, srate) \; x =
+exp(-2.0*$pi*freq/srate) \; a0 = 1.0-x \; b1 = -x \; @sample s0 = spl0
+\; s1 = spl1 \; s0 -= (tmplONE = a0*s0 - b1*tmplONE + cDenorm) \; s1
+-= (tmprONE = a0*s1 - b1*tmprONE + cDenorm) \; s0 = min(max(s0*clipBoost
+\, -1) \, 1) \; s1 = min(max(s1*clipBoost \, -1) \, 1) \; s0 = (1+foo)*s0/(1+foo*abs(spl0))
+\; s1 = (1+foo)*s1/(1+foo*abs(spl1)) \; s0 -= (tmplTWO = a0*s0 - b1*tmplTWO
++ cDenorm) \; s1 -= (tmprTWO = a0*s1 - b1*tmprTWO + cDenorm) \; spl0
++= s0 * mixBack \; spl1 += s1 * mixBack \;;
+#X obj 156 170 lop~;
+#X obj 593 75 samplerate~;
+#X obj 593 47 r pd-dsp-started;
+#X obj 593 100 * 0.2;
+#X connect 1 0 21 0;
+#X connect 1 0 27 0;
+#X connect 1 0 32 0;
+#X connect 2 0 27 1;
+#X connect 2 0 28 1;
+#X connect 3 0 30 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 10 1 12 0;
+#X connect 11 0 22 0;
+#X connect 11 0 23 1;
+#X connect 12 0 11 1;
+#X connect 13 0 11 0;
+#X connect 15 0 23 0;
+#X connect 16 0 21 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 16 1;
+#X connect 21 0 0 0;
+#X connect 22 0 26 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 1;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 27 0 3 0;
+#X connect 28 0 16 0;
+#X connect 30 0 25 0;
+#X connect 32 0 15 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 32 1;
+#X restore 33 290 pd stuff~;
+#X obj 347 374 u_dispatch \$0 boost;
+#X obj 347 397 u_dispatch \$0 harmo;
+#X obj 347 427 u_dispatch \$0 mxback;
+#X text 494 380 clip boost;
+#X text 498 402 harmonix;
+#X text 504 428 mix back;
+#X msg 404 230 freq 2000 \, boost 0 \, harmo 0 \, mxback -6;
+#N canvas 0 50 586 237 algorithm-licence 0;
+#X text 23 29 (C) 2007 \, Michael Gruhn. NO WARRANTY IS GRANTED. THIS
+PLUG-IN IS PROVIDED ON AN "AS IS" BASIS \, WITHOUT WARRANTY OF ANY
+KIND. NO LIABILITY IS GRANTED \, INCLUDING \, BUT NOT LIMITED TO \,
+ANY DIRECT OR INDIRECT \, SPECIAL \, INCIDENTAL OR CONSEQUENTIAL DAMAGE
+ARISING OUT OF THE USE OR INABILITY TO USE THIS PLUG-IN \, COMPUTER
+FAILTURE OF MALFUNCTION INCLUDED. THE USE OF THE SOURCE CODE \, EITHER
+PARTIALLY OR IN TOTAL \, IS ONLY GRANTED \, IF USED IN THE SENSE OF
+THE AUTHOR'S INTENTION \, AND USED WITH ACKNOWLEDGEMENT OF THE AUTHOR.
+LAST BUT NOT LEAST \, BY USING THIS PLUG-IN YOU RELINQUISH YOUR CLAIM
+TO SUE IT'S AUTHOR \, AS WELL AS THE CLAIM TO ENTRUST SOMEBODY ELSE
+WITH DOING SO., f 88;
+#X restore 296 43 pd algorithm-licence;
+#X obj 100 115 ui_vsl \$0 freq 100 18000;
+#X obj 494 33 declare -path ../../../core;
+#X obj 494 53 declare -path ../../../core/stuff;
+#X obj 494 73 declare -path ../../../core/rj;
+#N canvas 0 57 1920 1023 stuff~ 0;
+#X obj 56 607 outlet~;
+#X obj 69 73 inlet~;
+#X obj 126 80 r \$0-freq;
+#X obj 64 186 *~ 1;
+#X obj 204 56 r \$0-boost;
+#X obj 205 95 dbtorms;
+#X obj 204 75 + 100;
+#X obj 296 86 r \$0-harmo;
+#X obj 296 108 / 100;
+#X obj 296 130 min 0.9;
+#X obj 296 152 t f f;
+#X obj 296 205 /;
+#X obj 329 180 - 1;
+#X obj 296 174 * -2;
+#X text 330 203 foo = 2*hdistr/(1-hdistr) \;;
+#X obj 224 206 abs~;
+#X obj 60 402 *~;
+#X obj 174 327 r \$0-mxback;
+#X obj 174 349 + 100;
+#X obj 174 371 dbtorms;
+#X obj 78 381 lop~ 10;
+#X obj 38 424 +~;
+#X obj 296 274 + 1;
+#X obj 223 231 *~;
+#X obj 223 253 +~ 1;
+#X obj 65 271 /~;
+#X obj 65 293 *~;
+#X obj 72 127 lop~;
+#X obj 61 321 hip~;
+#X text 496 264 0.9 : 2*0.9/(0.1)=18;
+#X obj 70 227 clip~ -1 1;
+#X text 1012 149 slider1:2000<100 \, 18000 \, 1>Frequency (Hz) \; slider2:0<0
+\, 6 \, .1>Clip Boost (dB) \; slider3:0<0 \, 100 \, 1>Harmonics (%)
+\; slider4:-6<-120 \, 0 \, .1>Mix Back (dB) \; in_pin:left input \;
+in_pin:right input \; out_pin:left output \; out_pin:right output \;
+@init c_ampDB = 8.65617 \; cDenorm=10^-30 \; @slider clipBoost = exp(slider2/c_ampDB)
+\; mixBack = exp(slider4/c_ampDB) \; hdistr = min(slider3/100 \, .9)
+\; foo = 2*hdistr/(1-hdistr) \; freq = min(slider1 \, srate) \; x =
+exp(-2.0*$pi*freq/srate) \; a0 = 1.0-x \; b1 = -x \; @sample s0 = spl0
+\; s1 = spl1 \; s0 -= (tmplONE = a0*s0 - b1*tmplONE + cDenorm) \; s1
+-= (tmprONE = a0*s1 - b1*tmprONE + cDenorm) \; s0 = min(max(s0*clipBoost
+\, -1) \, 1) \; s1 = min(max(s1*clipBoost \, -1) \, 1) \; s0 = (1+foo)*s0/(1+foo*abs(spl0))
+\; s1 = (1+foo)*s1/(1+foo*abs(spl1)) \; s0 -= (tmplTWO = a0*s0 - b1*tmplTWO
++ cDenorm) \; s1 -= (tmprTWO = a0*s1 - b1*tmprTWO + cDenorm) \; spl0
++= s0 * mixBack \; spl1 += s1 * mixBack \;;
+#X obj 156 170 lop~;
+#X obj 593 75 samplerate~;
+#X obj 593 47 r pd-dsp-started;
+#X obj 593 100 * 0.2;
+#X connect 1 0 21 0;
+#X connect 1 0 27 0;
+#X connect 1 0 32 0;
+#X connect 2 0 27 1;
+#X connect 2 0 28 1;
+#X connect 3 0 30 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 10 1 12 0;
+#X connect 11 0 22 0;
+#X connect 11 0 23 1;
+#X connect 12 0 11 1;
+#X connect 13 0 11 0;
+#X connect 15 0 23 0;
+#X connect 16 0 21 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 16 1;
+#X connect 21 0 0 0;
+#X connect 22 0 26 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 1;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 27 0 3 0;
+#X connect 28 0 16 0;
+#X connect 30 0 25 0;
+#X connect 32 0 15 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 32 1;
+#X restore 113 290 pd stuff~;
+#X connect 1 0 19 0;
+#X connect 3 0 18 0;
+#X connect 4 0 31 0;
+#X connect 7 0 8 0;
+#X connect 7 0 14 0;
+#X connect 12 0 25 0;
+#X connect 13 0 14 1;
+#X connect 13 1 14 2;
+#X connect 14 0 1 0;
+#X connect 14 1 13 0;
+#X connect 18 0 6 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 25 0 14 0;
+#X connect 31 0 5 0;
+#X coords 0 -1 1 1 190 70 1 100 100;

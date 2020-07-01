@@ -1,0 +1,19 @@
+#N canvas 0 50 559 437 12;
+#X text 65 165 Seg.BPM : original tempo of sample segment;
+#X text 69 274 Quantization (q) : When the sample can be triggered
+(in 16ths), f 62;
+#X text 71 305 preroll : If the sample starts before a bar (in 16ths)
+;
+#X text 105 117 - playolap : playing overlapped chunks;
+#X text 106 139 -pvoc : using phase vocoder (FFT);
+#X text 95 58 1) by changing speed (and pitch);
+#X text 104 79 - varispeed;
+#X text 92 97 2) by time stretching;
+#X text 131 225 <filename>-###bpm.<extension>;
+#X text 131 245 <filename> ###.<extension>;
+#X text 72 197 Seg.BPM is automatically set for filenames with following
+format :, f 66;
+#X text 64 34 WRAP MODE : There are several modes to synchronize the
+loop;
+#X text 355 225 (ex: ableton);
+#X text 357 245 (ex: musine);
