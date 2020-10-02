@@ -1,12 +1,14 @@
-#N struct 2233-symarray float x array symbols 2233-sym;
-#N struct 2233-sym symbol name float on;
-#N struct 2234-symarray float x array symbols 2234-sym;
-#N struct 2234-sym symbol name float on;
-#N struct 2235-symarray float x array symbols 2235-sym;
-#N struct 2235-sym symbol name float on;
-#N canvas 590 251 894 671 10;
+#N struct 4660-symarray float x array symbols 4660-sym;
+#N struct 4660-sym symbol name float on;
+#N struct 4661-symarray float x array symbols 4661-sym;
+#N struct 4661-sym symbol name float on;
+#N struct 4662-symarray float x array symbols 4662-sym;
+#N struct 4662-sym symbol name float on;
+#N struct 4964-symarray float x array symbols 4964-sym;
+#N struct 4964-sym symbol name float on;
+#N canvas 196 233 894 671 12;
 #X declare -path ../;
-#X text 364 293 quand on joue une note midi \, le sample mappé est
+#X text 379 179 quand on joue une note midi \, le sample mappé est
 joué;
 #X text 449 445 SampleRate = 44100 par défaut;
 #X text 390 402 1) Choix du sample;
@@ -14,7 +16,6 @@ joué;
 #X text 385 505 3) réglage des points de bouclage;
 #X text 437 478 choix des notes de début \, de fin et de référence
 ;
-#X text 388 461 2) mapping;
 #X text 385 538 4) gestion des différents samples en mémoire;
 #X text 364 318 Paramètres avancés : ils sont divisés en 4 sections
 ;
@@ -22,6 +23,10 @@ joué;
 sur EDIT);
 #X text 382 499 __________________________________;
 #X obj 140 179 midi_notein;
+#A saved midi_chan 1;
+#A saved factor 127;
+#A saved power 1;
+#A saved SID 2;
 #X text 16 453 messages gérés sur data_inlet;
 #X text 45 481 note <noteID> <vel>;
 #X text 176 577 ces modifications par note se cumulent avec les régleges
@@ -34,13 +39,26 @@ globaux de pos et de pitch;
 note jouée);
 #X obj 137 359 dac~ 1 2;
 #X obj 137 284 inst_pvoc;
-#A saved SID 0;
+#A saved module-slot 0;
+#A saved SID 1;
 #X obj 132 33 data_azerty2midi;
+#A saved az-qw 1;
+#A saved enable 1;
+#A saved velo 20;
+#A saved SID 1;
 #X obj 566 57 loadbang;
 #X msg 566 80 \; pd dsp 1;
-#X obj 510 184 declare -path ../;
-#X connect 11 2 20 2;
-#X connect 20 0 19 0;
-#X connect 20 1 19 1;
-#X connect 21 2 11 2;
-#X connect 22 0 23 0;
+#X obj 671 62 declare -path ../;
+#X text 388 461 2) mapping MIDI;
+#X text 372 199 Possibilité d 'écraser le dernier sample appelé
+par un enregistrement à la volée (bouton rec)., f 48;
+#X text 376 259 /!\ : Enregistrement perdu à la fermeture du patch)
+;
+#X text 376 259 ___;
+#X text 380 250 /;
+#X text 386 250 ;
+#X connect 10 2 19 2;
+#X connect 19 0 18 0;
+#X connect 19 1 18 1;
+#X connect 20 2 10 2;
+#X connect 21 0 22 0;

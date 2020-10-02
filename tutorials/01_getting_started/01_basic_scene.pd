@@ -28,7 +28,7 @@ processing stereo audio) and one inlet/outlet for controls.;
 #A saved SID 0;
 #X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#N canvas 756 140 1105 768 stuff 1;
+#N canvas 756 140 1105 768 stuff 0;
 #X msg 276 142 fx_parameq2;
 #X msg 709 278 PdRacks.presets;
 #X msg 276 452 fx_compressor;

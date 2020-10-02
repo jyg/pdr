@@ -2,7 +2,7 @@
 # * BASIC MODULE FOR PDR (PdRacks)          *;
 # *******************************************;
 
-# line of comments begins with a # alone;
+# line of comments begins with a # followed by a space;
 # all lines MUST end with a semicolon;
 
 # ********************************************************;
@@ -26,7 +26,7 @@ effects fx_dubdel classical rjdj dub delay;
 effects fx_dubdel2 synchronisable dub delay;
 effects fx_dynproc rjdj-based dynamics processing (e_dynproc);
 effects fx_eq3 3 band eq (from DIY2 st-EQ3.pd);
-effects fx_everb rjdj-based reverberation (e_verb);
+effects fx_everb vanilla rjdj-based reverberation (e_verb);
 effects fx_filter switchable low/highpass filter;
 effects fx_formant 3 formants filter (from automatonism);
 effects fx_freeverb external-based reverberation;
@@ -42,6 +42,7 @@ effects fx_resonator 8 voices karpus-strong resonator;
 effects fx_reverse 10 seconds reverse player; 
 effects fx_ring ring modulator;
 effects fx_sub sub bass generator (vanilla & fiddle~ modes);
+instruments audio_clip synchronisable audio clip player;
 instruments inst_8bits 8bits synth using vexpr~ (experimental);
 instruments inst_bassdrum bass/drum attack synth (from DIY2 lib);
 instruments inst_ep-mk1 Miguel Moreno's electric piano;  

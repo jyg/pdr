@@ -16,5 +16,4 @@ declare -path pdr/modules/pending;
 # * second item : object name                            *;
 # * following items : contextual description of object   *;
 # ********************************************************;
-instruments audio_clip clip container "à la Ableton Live";
 utils audiolab_dump state-saving for audiolab objects;

@@ -1,4 +1,4 @@
-#N canvas 542 86 934 691 10;
+#N canvas 788 328 934 691 10;
 #X obj 47 536 hip~ 20;
 #X obj 106 536 hip~ 20;
 #N canvas 0 50 989 545 filter 0;
@@ -57,7 +57,7 @@
 #X obj 374 163 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 6350 1;
 #X obj 566 171 hsl 128 15 0 1 0 0 empty empty Q -2 -8 0 10 -262144
--1 -1 6350 1;
+-1 -1 6387 1;
 #X obj 46 343 e_beequad;
 #X msg 458 259 interp \$1;
 #X obj 372 139 / 127;
@@ -343,7 +343,7 @@
 #X connect 24 0 3 0;
 #X restore 206 363 pd tosymbol;
 #X text 18 350 avoid white space problems->;
-#N canvas 315 208 973 557 loadsample 1;
+#N canvas 315 208 973 557 loadsample 0;
 #X floatatom 252 177 8 0 0 3 dur_in_smps - -;
 #X floatatom 205 144 8 0 0 3 dur_in_ms - -;
 #X symbolatom 107 205 80 0 0 3 table_name - -;
@@ -379,6 +379,8 @@
 #X connect 16 0 3 0;
 #X connect 16 0 5 0;
 #X restore 204 456 pd loadsample;
+#X obj 52 268 route rec;
+#X obj 29 302 s \$1-rec-rcv;
 #X connect 0 0 29 0;
 #X connect 1 0 30 0;
 #X connect 2 0 0 0;
@@ -407,7 +409,7 @@
 #X connect 47 1 46 0;
 #X connect 48 0 40 0;
 #X connect 49 0 48 0;
-#X connect 51 0 28 0;
+#X connect 51 0 74 0;
 #X connect 55 1 44 0;
 #X connect 57 0 59 0;
 #X connect 58 0 61 0;
@@ -426,3 +428,5 @@
 #X connect 73 2 50 0;
 #X connect 73 2 32 0;
 #X connect 73 2 54 0;
+#X connect 74 0 75 0;
+#X connect 74 1 28 0;
