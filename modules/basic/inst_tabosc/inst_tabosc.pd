@@ -1,4 +1,4 @@
-#N canvas 401 238 981 595 10;
+#N canvas 564 242 981 595 10;
 #X declare -path pdr/core/fid_abs_vanilia-0.4;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
@@ -151,7 +151,7 @@
 #X text 751 347 0=sinus pur \, 1=tabosc;
 #X obj 221 523 route note stop;
 #X msg 274 555 stop;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv inst_tabosc-0
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv inst_tabosc-1
 0 7 0 12 -262144 -1 0;
 #X obj 32 163 notein 1;
 #X obj 252 100 tgl 15 0 \$0-midiNoteIn \$0-midiNoteIn-rcv Midi 16 7
@@ -181,7 +181,7 @@
 #X obj 400 169 vsl 50 128 0 0.3 0 0 \$0-harmo7 \$0-harmo7-rcv empty
 0 -9 0 10 -262144 -1 -1 0 1;
 #X obj 450 169 vsl 50 128 0 0.3 0 0 \$0-harmo8 \$0-harmo8-rcv empty
-0 -9 0 10 -262144 -1 -1 0 1;
+0 -9 0 10 -262144 -1 -1 100 1;
 #X obj 328 21 unpack f f f f f f f f;
 #X msg 313 -136 1 0 0 0 0 0 0 0;
 #X msg 336 -106 0 1 0 0 0 0 0 0;
@@ -198,7 +198,7 @@
 #X obj 300 169 vsl 50 128 0 0.3 0 0 \$0-harmo5 \$0-harmo5-rcv empty
 0 -9 0 10 -262144 -1 -1 0 1;
 #X obj 350 169 vsl 50 128 0 0.3 0 0 \$0-harmo6 \$0-harmo6-rcv empty
-0 -9 0 10 -262144 -1 -1 0 1;
+0 -9 0 10 -262144 -1 -1 300 1;
 #X obj 300 117 bng 50 250 50 0 empty empty 5' 17 20 0 30 -262144 -1
 -1;
 #X obj 350 117 bng 50 250 50 0 empty empty 6' 17 20 0 30 -262144 -1
@@ -206,7 +206,7 @@
 #X obj 200 169 vsl 50 128 0 0.3 0 0 \$0-harmo3 \$0-harmo3-rcv empty
 0 -9 0 10 -262144 -1 -1 0 1;
 #X obj 250 169 vsl 50 128 0 0.3 0 0 \$0-harmo4 \$0-harmo4-rcv empty
-0 -9 0 10 -262144 -1 -1 0 1;
+0 -9 0 10 -262144 -1 -1 2600 1;
 #X obj 200 117 bng 50 250 50 0 empty empty 3' 17 20 0 30 -262144 -1
 -1;
 #X obj 250 117 bng 50 250 50 0 empty empty 4' 17 20 0 30 -262144 -1
@@ -214,7 +214,7 @@
 #X obj 100 169 vsl 50 128 0 0.3 0 0 \$0-harmo1 \$0-harmo1-rcv empty
 0 -9 0 10 -262144 -1 -1 12700 1;
 #X obj 150 169 vsl 50 128 0 0.3 0 0 \$0-harmo2 \$0-harmo2-rcv empty
-0 -9 0 10 -262144 -1 -1 0 1;
+0 -9 0 10 -262144 -1 -1 2000 1;
 #X obj 100 117 bng 50 250 50 0 empty empty 1' 17 20 0 30 -262144 -1
 -1;
 #X obj 150 117 bng 50 250 50 0 empty empty 2' 17 20 0 30 -262144 -1
@@ -293,8 +293,8 @@
 #X text 222 115 92;
 #X text 222 102 46;
 #X text 122 137 sinsum;
-#X obj 121 154 hradio 15 1 0 4 \$0-bank \$0-bank-rcv A 50 8 0 12 -262144
--1 -1 0;
+#X obj 121 154 hradio 15 1 0 4 \$0-bank \$0-bank-rcv A 50 8 0 12 -261682
+-260097 -1 0;
 #X text 119 152 tabosc;
 #N canvas 477 50 802 507 gestion 0;
 #X obj 595 36 r \$0-bank;
@@ -490,7 +490,7 @@
 #X connect 34 0 35 0;
 #X connect 35 0 36 0;
 #X connect 36 0 37 0;
-#X restore 777 17 pd gestion banque_sons;
+#X restore 473 131 pd gestion banque_sons;
 #X obj 418 211 r \$0-bank;
 #X obj 420 231 makefilename \$0-tabosc-%d;
 #X msg 421 252 set \$1;
