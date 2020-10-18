@@ -54,9 +54,6 @@ when looping;
 #X text 26 78 pvoc : add window size parameter;
 #X text 25 102 playolap : add windowing mode \, window size parameters
 ;
-#X text 23 153 terminer la fonction plugandplay;
-#X text 21 197 rappel du dernier repertoire utilise ne fonctionne pas
-avec dnd;
 #X restore 253 670 pd todo;
 #X msg 742 293 1;
 #X msg 742 318 2;
