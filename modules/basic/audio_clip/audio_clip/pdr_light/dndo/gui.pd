@@ -1,7 +1,0 @@
-#N canvas 0 50 559 437 12;
-#X obj 52 77 inlet;
-#X obj 52 130 outlet;
-#X obj 112 130 outlet;
-#X obj 162 130 outlet;
-#X text 98 39 dummy object for vanilla dnd-gui replacement;
-#X coords 0 -1 1 1 100 20 2 100 100;
