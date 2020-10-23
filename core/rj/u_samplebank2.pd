@@ -1,6 +1,6 @@
 #N canvas 346 127 858 647 10;
 #X obj 405 304 openpanel;
-#X obj 405 452 soundfiler;
+#X obj 409 468 soundfiler;
 #X obj 314 208 bng 20 250 50 0 empty empty open-sample 0 -6 1 10 -262144
 -1 -1;
 #X obj 67 54 inlet;

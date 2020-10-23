@@ -519,7 +519,7 @@ session \; utils PdRacks.transport clock unit (with abl_link~ external)
 #X text 325 150 Est-ce que l'objet pd-pdRacks.declare existe déjà
 ?;
 #X text 205 198 oui;
-#N canvas 848 123 776 607 create_PdRacks.declare 0;
+#N canvas 848 123 776 607 create_PdRacks.declare 1;
 #X obj 54 46 inlet;
 #X obj 447 417 outlet;
 #X obj 28 519 outlet;
@@ -541,9 +541,9 @@ session \; utils PdRacks.transport clock unit (with abl_link~ external)
 #X obj 381 62 loadbang;
 #X text 442 100 $;
 #X msg 57 348 0;
-#X msg 37 435 obj 10 10 declare -path pdr/modules/basic \, obj 10 60
-pdr/core/stuff/u_glocal.enable \$2\$1 \, vis 0 \, loadbang, f 47;
 #X obj 57 374 pack f s;
+#X msg 37 435 obj 10 10 declare -path pdr/modules/basic \, obj 10 60
+pdr/core/stuff/PdRacks.init \$2\$1 \, vis 0 \, loadbang, f 47;
 #X connect 0 0 9 0;
 #X connect 3 0 7 1;
 #X connect 3 0 14 0;
@@ -563,12 +563,12 @@ pdr/core/stuff/u_glocal.enable \$2\$1 \, vis 0 \, loadbang, f 47;
 #X connect 14 0 15 0;
 #X connect 15 0 1 0;
 #X connect 16 0 14 2;
-#X connect 16 0 22 1;
+#X connect 16 0 21 1;
 #X connect 17 0 16 0;
 #X connect 18 0 17 0;
-#X connect 20 0 22 0;
-#X connect 21 0 2 0;
-#X connect 22 0 21 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 2 0;
 #X restore 574 250 pd create_PdRacks.declare;
 #X obj 745 300 iemguts/sendcanvas 2;
 #X obj 597 315 s;

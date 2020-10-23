@@ -5,11 +5,13 @@ ccnum float min float max symbol mapping;
 #X obj 26 345 midi_notein;
 #A saved midi_chan 1;
 #A saved factor 127;
-#A saved power 1;
+#A saved power 2.94705;
+#A saved SID 0;
 #X obj 25 434 inst_rhodey;
 #A saved vol 101;
-#A saved tone 0.440945;
+#A saved tone 0.708661;
 #A saved decay 2102.66;
+#A saved SID 0;
 #X obj 25 509 dac~;
 #X text 25 117 1) Select a midi-in device with pure data menus.;
 #X text 33 287 3) You can then click on any orange button/slider to
@@ -24,6 +26,7 @@ controler knob. You will see his cc-channel displayed.;
 0;
 #X obj 55 154 PdRacks.midilearn;
 #A saved preset_saving 0;
+#A saved ctl-assign inst_rhodey-0 tone 0 0 1 lin;
 #X text 277 162 <-- OR you can click here. (needs mediasettings externals)
 , f 31;
 #X text 244 398 5) To remove a physical assignment \, click midi-learn
@@ -44,6 +47,12 @@ Save_in_presets 17 7 0 10 -262144 -1 -1 0 1;
 #X restore 588 88 pd \$0-PdRacks.declare;
 #X text 56 57 [PdRacks.midilearn] lets you map hardware midi controls
 to parameters of your modules.;
+#X obj 677 138 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9000 1;
+#X obj 676 298 s CTLIN;
+#X msg 677 274 \$1 0;
 #X connect 0 2 1 2;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;

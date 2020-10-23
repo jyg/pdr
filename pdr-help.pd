@@ -1,6 +1,6 @@
 #N canvas 564 470 841 439 12;
 #X declare -path pdr/modules/basic;
-#X text 50 351 You can use autocompletion tool in a subpatch. Simply
+#X text 50 391 You can use autocompletion tool in a subpatch. Simply
 add a [pdr] object in this subpatch.;
 #X text 159 179 V V;
 #X text 159 173 | |;
@@ -11,11 +11,11 @@ add a [pdr] object in this subpatch.;
 #X text 148 193 0;
 #X text 163 193 1;
 #X text 178 193 2;
-#X text 53 273 1) autoconmpletion-mode uses a popup menu.;
+#X text 53 313 1) autoconmpletion-mode uses a popup menu.;
 #X text 206 167 object_list-mode;
 #X text 206 149 autoconmpletion-mode;
-#X text 388 219 (needs iemguts + iemlib);
-#X text 53 299 2) object_list mode let you choose objects from a window
+#X text 347 314 (needs iemguts + iemlib);
+#X text 53 339 2) object_list mode let you choose objects from a window
 with list of all objects \, (as in Automatonism);
 #X text 29 70 [pdr] is an autocompletion tool that helps you to choose
 PdRacks modules quickly from a menu list \, sorted by categories. When
@@ -24,55 +24,27 @@ active \, press <Insert> key (or ctrl+i).;
 information about PdRacks \, please refer to files located in pdr/tutorials
 folder.;
 #X obj 96 211 pdr;
-#N canvas 0 50 450 300 \$0-PdRacks.declare 1;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
 #X obj 10 10 declare -path pdr/modules/basic;
 #X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
 #A saved modules_set # List of modules to load;
 #A saved modules_set # you can add new sets of modules here;
 #A saved modules_set # (ctrl/cmd + s to save and close);
 #A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
 #X restore 96 256 pd \$0-PdRacks.declare;
+#X text 51 290 0) insert-mode disactivated;
+#N canvas 0 50 450 300 open_tutorial 1;
+#X obj 90 45 inlet;
+#X obj 165 214 s pd;
+#X obj 78 105 pdcontrol;
+#X msg 84 82 dir;
+#X msg 64 139 open 01_basic_scene.pd \$1/tutorials/01_getting_started
+;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X restore 563 241 pd open_tutorial;
+#X obj 551 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 21 0 20 0;

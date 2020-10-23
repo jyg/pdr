@@ -33,6 +33,7 @@
 #X obj 106 524 outlet;
 #X obj 392 492 outlet;
 #X text 228 24 vanilia implementation of iemlib/splifilename;
+#X obj 221 297 delay 0;
 #X connect 0 0 7 0;
 #X connect 1 0 8 1;
 #X connect 2 0 16 0;
@@ -55,7 +56,7 @@
 #X connect 12 1 11 0;
 #X connect 13 0 31 0;
 #X connect 14 0 32 0;
-#X connect 15 0 9 0;
+#X connect 15 0 34 0;
 #X connect 16 0 17 0;
 #X connect 17 0 13 0;
 #X connect 17 1 19 0;
@@ -75,3 +76,4 @@
 #X connect 28 1 10 0;
 #X connect 29 0 30 0;
 #X connect 30 0 20 0;
+#X connect 34 0 9 0;

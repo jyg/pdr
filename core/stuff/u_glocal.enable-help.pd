@@ -1,0 +1,3 @@
+#N canvas 1147 136 450 300 16;
+#X text 29 13 u_glocal.enable is deprecated.;
+#X text 44 51 use pdr.init instead;
