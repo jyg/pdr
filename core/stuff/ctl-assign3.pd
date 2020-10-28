@@ -1,4 +1,4 @@
-#N canvas 0 57 1920 1023 12;
+#N canvas 0 58 1920 1023 12;
 #X obj 1162 540 list trim;
 #X text 913 201 no de controle;
 #X obj 853 432 route 0, f 10;
@@ -14,7 +14,7 @@
 #X msg 897 149 1;
 #X msg 1255 414 remote \$1;
 #X obj 1162 443 list prepend;
-#N canvas 8 50 1301 641 gui_stuff 1;
+#N canvas 8 50 1301 641 gui_stuff 0;
 #X msg 410 253 list \$1 \$2;
 #X obj 87 382 s \$0-ccnum-rcv;
 #X obj 104 308 r \$0-ccnum;
@@ -687,6 +687,10 @@
 #X connect 15 1 7 1;
 #X restore 802 286 pd smooth_small_changes;
 #X floatatom 755 249 5 0 0 0 - - -;
+#X symbolatom 1068 686 40 0 0 0 - - -;
+#X symbolatom 1298 667 40 0 0 0 - - -;
+#X msg 1404 536 symbol audio_clip-\$1;
+#X floatatom 1408 484 5 0 0 0 - - -;
 #X connect 0 0 60 0;
 #X connect 2 0 3 0;
 #X connect 2 1 35 0;
@@ -713,6 +717,7 @@
 #X connect 23 1 24 0;
 #X connect 24 1 7 0;
 #X connect 24 1 13 0;
+#X connect 24 1 63 0;
 #X connect 24 2 6 1;
 #X connect 24 2 34 0;
 #X connect 24 3 36 0;
@@ -728,6 +733,7 @@
 #X connect 37 0 38 1;
 #X connect 38 0 2 0;
 #X connect 39 0 60 1;
+#X connect 39 0 64 0;
 #X connect 44 0 10 0;
 #X connect 45 0 52 1;
 #X connect 46 0 31 0;
@@ -740,4 +746,6 @@
 #X connect 58 0 22 0;
 #X connect 59 0 5 0;
 #X connect 61 0 38 0;
+#X connect 65 0 60 1;
+#X connect 66 0 65 0;
 #X coords 0 -1 1 1 720 20 2 100 100;

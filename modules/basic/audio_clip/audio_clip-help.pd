@@ -1,4 +1,4 @@
-#N canvas 382 192 841 799 12;
+#N canvas 93 130 841 737 12;
 #X obj 8 148 cnv 15 300 500 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 27 613 s CLOCK;
@@ -64,8 +64,6 @@ when looping;
 #X msg 742 473 7;
 #X msg 742 498 8;
 #X msg 742 523 9;
-#X msg 742 566 launch \$1;
-#X msg 743 590 stop all;
 #X obj 731 655 s messages;
 #X obj 646 251 r messages;
 #X text 735 222 Scenes start with number 1 in top, f 10;
@@ -88,7 +86,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 0;
+#A saved SID 36;
 #X obj 321 291 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -108,7 +106,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 1;
+#A saved SID 37;
 #X obj 321 381 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -128,7 +126,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 2;
+#A saved SID 38;
 #X obj 531 291 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -148,7 +146,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 3;
+#A saved SID 39;
 #X obj 531 381 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -168,7 +166,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 4;
+#A saved SID 40;
 #X obj 531 471 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -188,16 +186,13 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 5;
-#X obj 334 556 audio_clip/help;
-#X text 326 528 settings_properties;
+#A saved SID 41;
 #X text 329 249 several audio_clip objects can be chained :, f 26
 ;
 #X text 14 60 Rackable sample player / looper;
 #X text 170 29 [audio_clip] is part of PdRacks project : https://github.com/jyg/pdr
 , f 69;
 #X text 9 5 AUDIO_CLIP;
-#X msg 743 614 stop 3;
 #X text 629 565 launch a scene;
 #X text 592 588 stop all clip-units;
 #X text 573 614 stop a specified scene;
@@ -222,7 +217,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 6;
+#A saved SID 42;
 #X obj 507 327 audio_clip;
 #A saved clip3_gain 100;
 #A saved clip2_gain 100;
@@ -242,7 +237,7 @@ when looping;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;
-#A saved SID 7;
+#A saved SID 43;
 #X text 328 348 --> drag and drop -->;
 #X text 50 48 requirements :;
 #X text 93 73 pd 0.51 \, iemguts \, dnd-plugin + special vesrion of
@@ -257,7 +252,7 @@ patch;
 #X restore 335 605 pd drag_and_drop;
 #X text 335 582 drag and drop behavior;
 #X text 334 635 clip-launch behavior;
-#N canvas 386 525 694 300 Midi_mapping/clip-launch 0;
+#N canvas 386 525 698 329 Midi_mapping/clip-launch 0;
 #X text 38 121 3 modes ara available : trigger / gate / toggle;
 #X text 47 78 [PdRacks.midimap] is part of PdRacks project : https://github.com/jyg/pdr
 , f 74;
@@ -269,19 +264,152 @@ noteof (or cc = 0) event., f 80;
 to stop manually., f 71;
 #X text 73 222 toggle : start with noteon (or cc > 0) event \, stop
 with next noteon (or cc > 0) event., f 87;
+#X text 39 267 see also : clip_control;
+#X obj 238 269 ../clip_control/clip_control;
+#A saved scene 4;
+#A saved SID 4;
 #X restore 338 662 pd Midi_mapping/clip-launch;
 #X text 472 129 synchro;
 #X text 395 108 properties / status bar: - click to open properties
 window;
 #X text 563 126 - ctrl+click to load file;
 #X text 570 143 - drag and drop to duplicate;
+#X msg 101 464 0;
+#X msg 173 275 96;
+#X obj 174 303 v BAR;
+#X msg 238 271;
+#X obj 238 296 v QUANTIZE;
+#X text 337 529 settings_properties;
+#N canvas 579 108 1239 644 clip_properties 0;
+#X text 975 475 (ex: ableton);
+#X text 977 495 (ex: musine);
+#X text 685 415 Seg.BPM : original tempo of sample segment;
+#X text 689 524 Quantization (q) : When the sample can be triggered
+(in 16ths), f 62;
+#X text 691 555 preroll : If the sample starts before a bar (in 16ths)
+;
+#X text 751 475 <filename>-###bpm.<extension>;
+#X text 751 495 <filename> ###.<extension>;
+#X text 692 447 Seg.BPM is automatically set for filenames with following
+format :, f 66;
+#X obj 0 184 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X text 18 189 LAUNCH;
+#X obj 195 395 bng 60 250 50 0 \$2-\$1-openpanel empty empty 17 7 0
+10 -262144 -1 -1;
+#X text 203 410 file;
+#X obj 20 213 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv |> 5 18 0 20 -228992
+-228992 -1 0 1;
+#X obj 279 247 cnv 15 220 220 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 416 302 tgl 20 0 \$2-clip\$1_loop \$2-clip\$1_loop-rcv Loop
+22 7 0 14 -262144 -1 -1 0 1;
+#X obj 292 270 vradio 17 1 0 4 \$2-clip\$1_algorithm \$2-clip\$1_algorithm-rcv
+empty 0 -8 0 10 -262144 -1 -1 0;
+#X text 314 302 playolap;
+#X obj 437 187 bng 60 250 50 0 empty empty X 12 32 0 60 -262144 -1
+-1;
+#X text 314 285 varispeed;
+#X text 313 319 pvoc (FFT);
+#X text 314 269 OFF;
+#X text 397 283 |;
+#X text 397 295 |;
+#X text 397 307 |;
+#X text 397 319 |;
+#X text 387 271 __;
+#X text 387 320 __;
+#X text 400 295 __;
+#X text 290 246 WRAP MODE;
+#X obj 14 310 cnv 15 260 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 15 306 Quantization;
+#X text 146 323 <-custom / global;
+#X obj 99 577 hsl 395 20 0 1 0 0 empty \$2-clip\$1_to-rcv TO 105 10
+0 14 -261681 -1 -1 0 0;
+#X text 376 447 Position;
+#X obj 99 497 hsl 395 80 0 1 0 0 empty empty DiskO 10 30 0 20 -262130
+-1 -1 0 1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-sample 174 float 0;
+#X coords 0 1.1 173 -1.1 400 80 1 0 0;
+#X restore 96 497 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-sample_ 174 float 0;
+#X coords 0 1.1 173 -1.1 400 80 1 0 0;
+#X restore 96 497 graph;
+#X obj 73 477 tgl 20 0 \$2-clip\$1_snap_from \$2-clip\$1_snap_from-rcv
+SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
+#X obj 99 477 hsl 395 20 0 1 0 0 empty \$2-clip\$1_from-rcv FROM 100
+10 0 14 -257472 -1 -1 0 0;
+#X obj 73 577 tgl 20 0 \$2-clip\$1_snap_to \$2-clip\$1_snap_to-rcv
+SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
+#X obj 24 520 bng 30 250 50 0 \$2-randomize_clip\$1 empty RANDOM -10
+-15 0 12 -232576 -1 -262144;
+#X obj 301 357 hradio 15 1 0 2 \$2-clip\$1_pvoclock \$2-clip\$1_pvoclock-rcv
+FFT_lock_phase 0 -8 0 10 -261234 -1 -1 1;
+#X text 332 353 on;
+#X obj 293 397 vsl 30 50 60 106 0 0 \$2-clip\$1_gain \$2-clip\$1_gain-rcv
+gain 0 -9 0 10 -204786 -1 -1 0 1;
+#X text 327 385 +6dB;
+#X text 322 436 -20dB;
+#X text 284 387 ______;
+#X text 335 399 0;
+#X obj 348 404 bng 10 250 50 0 empty empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 96 324 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
+empty 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 95 323 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1/4 0 14 0
+14 -204800 -66577 0;
+#X obj 97 350 nbx 3 20 0 9999 0 0 \$2-clip\$1_preroll \$2-clip\$1_preroll-rcv
+preroll(ticks) 54 10 0 12 -262144 -1 -1 0 256;
+#X obj 417 359 nbx 5 20 10 300 0 0 \$2-clip\$1_bpm \$2-clip\$1_bpm-rcv
+Seg.BPM 0 -8 0 14 -262144 -1 -1 10 256;
+#X floatatom 37 413 5 0 0 0 - - #2-clip#1_offset;
+#X obj 165 195 cnv 15 100 80 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X text 172 198 launch mode;
+#X obj 177 222 vradio 15 1 0 3 \$2-clip\$1_launch \$2-clip\$1_launch-rcv
+empty 0 -8 0 10 -262144 -1 -1 2;
+#X text 199 217 trigger;
+#X text 201 233 gate;
+#X text 199 251 toggle;
+#X text 721 308 - playolap : playing overlapped chunks;
+#X text 721 327 -pvoc : using phase vocoder (FFT);
+#X text 399 248 <----------------WRAP MODE : There are several modes
+to synchronize the loop, f 79;
+#X text 535 307 2) by time stretching :;
+#X text 534 280 1) by changing speed (and pitch) : - varispeed;
+#X text 196 123 |;
+#X text 196 133 |;
+#X text 196 145 V;
+#X text 197 117 --------------------------------------------- LAUNCH
+MODE (with midi note / ctl event), f 86;
+#X text 46 123 |;
+#X text 46 133 |;
+#X text 46 145 V;
+#X text 46 113 |;
+#X text 46 103 |;
+#X text 46 93 |;
+#X text 46 83 |;
+#X text 48 76 ----------------------------------------------- manually
+launch / stop clip playing, f 85;
+#X text 593 143 There are several modes to launch a clip via midi;
+#X text 655 168 - trigger : fired on noteon (or cc > 0) event;
+#X text 655 188 - gate : fired on noteon (or cc > 0) event \, stopped
+on noteof (or cc = 0) event, f 81;
+#X text 655 208 - toggle : fired / stopped on noteon (or cc > 0) event
+\, according to previous state, f 84;
+#X restore 338 556 pd clip_properties;
+#X msg 742 566 clip launch \$1;
+#X msg 743 590 clip stop all;
+#X msg 743 614 clip stop 3;
 #X connect 2 0 7 0;
 #X connect 3 0 8 0;
+#X connect 3 0 75 0;
 #X connect 4 0 17 0;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
 #X connect 7 0 5 0;
-#X connect 7 0 9 1;
 #X connect 8 0 5 0;
 #X connect 9 0 10 0;
 #X connect 9 0 1 0;
@@ -296,30 +424,34 @@ window;
 #X connect 20 0 18 0;
 #X connect 37 0 38 0;
 #X connect 40 0 39 0;
-#X connect 42 0 51 0;
-#X connect 43 0 51 0;
-#X connect 44 0 51 0;
-#X connect 45 0 51 0;
-#X connect 46 0 51 0;
-#X connect 47 0 51 0;
-#X connect 48 0 51 0;
-#X connect 49 0 51 0;
-#X connect 50 0 51 0;
-#X connect 51 0 53 0;
-#X connect 52 0 53 0;
-#X connect 54 0 59 2;
-#X connect 54 0 57 2;
+#X connect 40 0 76 0;
+#X connect 42 0 82 0;
+#X connect 43 0 82 0;
+#X connect 44 0 82 0;
+#X connect 45 0 82 0;
+#X connect 46 0 82 0;
+#X connect 47 0 82 0;
+#X connect 48 0 82 0;
+#X connect 49 0 82 0;
+#X connect 50 0 82 0;
+#X connect 52 0 57 2;
+#X connect 52 0 55 2;
+#X connect 55 0 56 0;
+#X connect 55 1 56 1;
+#X connect 55 2 56 2;
+#X connect 56 0 22 0;
+#X connect 56 1 22 1;
 #X connect 57 0 58 0;
 #X connect 57 1 58 1;
 #X connect 57 2 58 2;
-#X connect 58 0 22 0;
-#X connect 58 1 22 1;
-#X connect 59 0 60 0;
-#X connect 59 1 60 1;
-#X connect 59 2 60 2;
-#X connect 60 0 61 0;
-#X connect 60 1 61 1;
-#X connect 60 2 61 2;
-#X connect 61 0 21 0;
-#X connect 61 1 21 1;
-#X connect 68 0 53 0;
+#X connect 58 0 59 0;
+#X connect 58 1 59 1;
+#X connect 58 2 59 2;
+#X connect 59 0 21 0;
+#X connect 59 1 21 1;
+#X connect 75 0 9 1;
+#X connect 76 0 77 0;
+#X connect 78 0 79 0;
+#X connect 82 0 51 0;
+#X connect 83 0 51 0;
+#X connect 84 0 51 0;

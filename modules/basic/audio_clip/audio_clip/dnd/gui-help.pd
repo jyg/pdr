@@ -218,6 +218,8 @@ EN text IT;
 #X text 784 942 NO;
 #X text 104 942 OK;
 #X text 232 1 https://github.com/jyg;
+#X scalar comment 389 168.866 200 \; (pas encore pris en charge) \;
+(not yet supported) \; (adesso non ancora valido) \\\; \;;
 #X connect 1 0 23 0;
 #X connect 1 1 4 0;
 #X connect 1 2 22 0;

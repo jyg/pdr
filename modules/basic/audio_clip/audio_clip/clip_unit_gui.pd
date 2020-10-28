@@ -1,6 +1,6 @@
 #N canvas 278 373 1379 462 16;
-#X obj 100 100 tgl 23 0 \$2-clip\$1 \$2-clip\$1-rcv |> 3 12 0 14 -228992
--228992 -1 0 1;
+#X obj 100 100 tgl 23 0 \$2-clip\$1 \$2-clip\$1-rcv ■ 3 10 0 20 -228992
+-1 -1 0 1;
 #X obj 493 26 loadbang;
 #X obj 487 234 s \$2-hsl\$1-rcv;
 #X obj 489 97 f \$1;
@@ -21,14 +21,13 @@
 #X msg 346 403 vis 1;
 #X msg 485 198 color \$1 -1 -1;
 #X obj 346 370 delay 200;
-#X obj 124 100 hsl 112 23 0 1 0 0 \$2-hsl\$1 \$2-hsl\$1-rcv empty 2
-12 0 12 -261681 -1 -1 0 1;
-#X msg 131 44 label;
-#X obj 784 112 keyname;
-#X obj 782 138 list prepend;
-#X obj 786 166 list trim;
-#X obj 786 191 route Control_L Control_R;
-#X text 881 122 CTRL + click to open file;
+#X obj 124 100 hsl 112 23 0 1 0 0 \$2-hsl\$1 \$2-hsl\$1-rcv duu 2 12
+0 12 -262131 -1 -1 0 1;
+#X obj 894 162 keyname;
+#X obj 892 188 list prepend;
+#X obj 896 216 list trim;
+#X obj 896 241 route Control_L Control_R;
+#X text 991 172 CTRL + click to open file;
 #X obj 359 270 list prepend 0;
 #X obj 357 302 route 0 1;
 #X obj 480 338 t b;
@@ -92,9 +91,16 @@
 #X connect 27 0 3 0;
 #X restore 46 225 pd displaying quant;
 #X obj 240 102 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
-empty 0 -8 0 10 -262144 -1 -1 106 256;
+empty 0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 239 101 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1_bar 0 14
 0 14 -204800 -66577 0;
+#X obj 698 160 select 0 1;
+#X obj 704 110 change;
+#X text 713 27 couleur pour indiquer selection de la scene;
+#X obj 710 61 r \$2-highlight\$1;
+#X msg 131 44 label duu;
+#X floatatom 636 101 5 0 0 0 - - -;
+#X msg 682 230 color 19 -1 15;
 #X connect 1 0 5 0;
 #X connect 3 0 4 0;
 #X connect 4 0 11 0;
@@ -108,20 +114,26 @@ empty 0 -8 0 10 -262144 -1 -1 106 256;
 #X connect 10 0 18 0;
 #X connect 11 0 18 0;
 #X connect 12 0 18 0;
-#X connect 14 0 27 0;
+#X connect 14 0 26 0;
 #X connect 15 0 19 0;
 #X connect 17 0 16 0;
 #X connect 18 0 2 0;
 #X connect 19 0 17 0;
-#X connect 21 0 20 0;
+#X connect 21 0 22 0;
+#X connect 21 1 22 1;
 #X connect 22 0 23 0;
-#X connect 22 1 23 1;
 #X connect 23 0 24 0;
-#X connect 24 0 25 0;
-#X connect 25 0 27 1;
-#X connect 25 1 27 1;
-#X connect 27 0 28 0;
-#X connect 28 0 15 0;
-#X connect 28 1 29 0;
-#X connect 29 0 30 0;
+#X connect 24 0 26 1;
+#X connect 24 1 26 1;
+#X connect 26 0 27 0;
+#X connect 27 0 15 0;
+#X connect 27 1 28 0;
+#X connect 28 0 29 0;
+#X connect 33 0 3 0;
+#X connect 33 1 39 0;
+#X connect 34 0 33 0;
+#X connect 36 0 34 0;
+#X connect 37 0 20 0;
+#X connect 38 0 18 0;
+#X connect 39 0 2 0;
 #X coords 0 -1 1 1 190 23 2 100 100;
