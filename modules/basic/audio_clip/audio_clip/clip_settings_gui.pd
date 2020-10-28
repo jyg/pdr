@@ -2,11 +2,11 @@
 #X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X text 18 6 LAUNCH;
-#X obj 195 212 bng 60 250 50 0 \$2-\$1-openpanel empty empty 17 7 0
-10 -262144 -1 -1;
-#X text 203 227 file;
+#X obj 89 11 bng 60 250 50 0 \$2-\$1-openpanel empty empty 17 7 0 10
+-262144 -1 -1;
+#X text 102 30 file;
 #X obj 20 30 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv |> 5 18 0 20 -228992
--228992 -1 0 1;
+-1 -1 0 1;
 #X obj 279 64 cnv 15 220 220 empty empty empty 20 12 0 14 -262130 -66577
 0;
 #X obj 416 119 tgl 20 0 \$2-clip\$1_loop \$2-clip\$1_loop-rcv Loop
@@ -29,12 +29,12 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 #X text 387 137 __;
 #X text 400 112 __;
 #X text 290 63 WRAP MODE;
-#X obj 14 127 cnv 15 260 60 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 2 81 cnv 15 160 80 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X text 15 123 Quantization;
-#X text 146 140 <-custom / global;
+#X text 31 79 Quantization;
+#X text 59 101 <-custom / global, f 9;
 #X obj 99 394 hsl 395 20 0 1 0 0 empty \$2-clip\$1_to-rcv TO 105 10
-0 14 -261681 -1 -1 0 0;
+0 14 -261681 -1 -1 78800 0;
 #X text 376 264 Position;
 #N canvas 430 162 1242 711 compute_enveloppe 0;
 #X obj 75 30 inlet;
@@ -148,7 +148,7 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 ;
 #X text 720 151 destination arrays : sample & sample_, f 21;
 #X obj 550 306 spigot;
-#X obj 99 314 hsl 395 80 0 1 0 0 empty empty DiskO 10 30 0 20 -262130
+#X obj 99 314 hsl 395 80 0 1 0 0 empty empty empty 10 30 0 20 -262130
 -1 -1 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-sample 174 float 0;
@@ -397,7 +397,7 @@ SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
 FFT_lock_phase 0 -8 0 10 -261234 -1 -1 1;
 #X text 332 170 on;
 #X obj 293 214 vsl 30 50 60 106 0 0 \$2-clip\$1_gain \$2-clip\$1_gain-rcv
-gain 0 -9 0 10 -204786 -1 -1 0 1;
+gain 0 -9 0 10 -204786 -1 -1 8522 1;
 #X text 327 202 +6dB;
 #X text 322 253 -20dB;
 #X text 284 204 ______;
@@ -405,14 +405,14 @@ gain 0 -9 0 10 -204786 -1 -1 0 1;
 #X obj 348 221 bng 10 250 50 0 empty empty empty 17 7 0 10 -257985
 -1 -1;
 #X msg 391 219 100;
-#X obj 96 141 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
-empty 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 95 140 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1/4 0 14 0
-14 -204800 -66577 0;
-#X obj 97 167 nbx 3 20 0 9999 0 0 \$2-clip\$1_preroll \$2-clip\$1_preroll-rcv
+#X obj 9 102 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
+empty 0 -8 0 10 -262144 -1 -1 40 256;
+#X obj 8 101 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1/8 0 14 0 14
+-204800 -66577 0;
+#X obj 7 135 nbx 3 20 0 9999 0 0 \$2-clip\$1_preroll \$2-clip\$1_preroll-rcv
 preroll(ticks) 54 10 0 12 -262144 -1 -1 0 256;
 #X obj 417 176 nbx 5 20 10 300 0 0 \$2-clip\$1_bpm \$2-clip\$1_bpm-rcv
-Seg.BPM 0 -8 0 14 -262144 -1 -1 10 256;
+Seg.BPM 0 -8 0 14 -262144 -1 -1 120 256;
 #X obj 303 483 midi-colors \$2 clip\$1_from \$2-clip\$1_from-rcv,
 f 19;
 #X obj 290 445 / 127;
@@ -421,7 +421,7 @@ f 19;
 ;
 #X floatatom 431 450 5 0 0 0 - - -;
 #X floatatom 272 596 5 0 0 0 - - -;
-#X floatatom 37 230 5 0 0 0 - - #2-clip#1_offset;
+#X floatatom 220 268 5 0 0 0 offset - #2-clip#1_offset;
 #X obj 1171 286 r \$2-clip\$1_offset;
 #X obj 1204 356 delay 100;
 #X obj 1187 321 t b;
@@ -430,14 +430,36 @@ f 19;
 #X obj 1126 622 samplerate~;
 #X obj 1092 599 t f b;
 #X obj 1126 647 / 1000;
-#X obj 165 12 cnv 15 100 80 empty empty empty 20 12 0 14 -204800 -66577
+#X obj 173 5 cnv 15 100 120 empty empty empty 20 12 0 14 -204800 -66577
 0;
-#X text 172 15 launch mode;
-#X obj 177 39 vradio 15 1 0 3 \$2-clip\$1_launch \$2-clip\$1_launch-rcv
+#X text 182 7 launch mode;
+#X obj 187 31 vradio 15 1 0 4 \$2-clip\$1_launch \$2-clip\$1_launch-rcv
 empty 0 -8 0 10 -262144 -1 -1 2;
-#X text 199 34 trigger;
-#X text 201 50 gate;
-#X text 199 68 toggle;
+#X text 209 26 trigger;
+#X text 211 42 gate;
+#X text 209 60 toggle;
+#X text 210 75 repeat;
+#X text 209 68 ______;
+#X obj 188 106 tgl 15 0 empty empty LEGATO 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 8 165 cnv 15 240 100 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 23 167 Foloow Action;
+#X text 69 196 <-custom / global, f 9;
+#X obj 19 197 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantFollow \$2-clip\$1_quantFollow-rcv
+empty 0 -8 0 10 -262144 -1 -1 40 256;
+#X obj 18 196 cnv 20 50 21 empty \$2-quant\$1_Follow-rcv 1/8 0 14 0
+14 -204800 -66577 0;
+#X obj 144 164 vradio 13 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 168 159 stop;
+#X text 171 172 play again;
+#X text 171 182 previous;
+#X text 173 196 next;
+#X text 172 212 first;
+#X text 172 227 last;
+#X text 173 238 any;
+#X text 176 248 other;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 26 0 92 0;
