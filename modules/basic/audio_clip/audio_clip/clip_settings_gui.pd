@@ -4,15 +4,15 @@
 #X text 18 6 LAUNCH;
 #X obj 89 11 bng 60 250 50 0 \$2-\$1-openpanel empty empty 17 7 0 10
 -262144 -1 -1;
-#X text 102 30 file;
-#X obj 20 30 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv |> 5 18 0 20 -228992
--1 -1 0 1;
+#X text 100 39 file;
+#X obj 20 30 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv ► 5 18 0 28 -228992
+-228992 -1 0 1;
 #X obj 279 64 cnv 15 220 220 empty empty empty 20 12 0 14 -262130 -66577
 0;
 #X obj 416 119 tgl 20 0 \$2-clip\$1_loop \$2-clip\$1_loop-rcv Loop
-22 7 0 14 -262144 -1 -1 0 1;
+22 7 0 14 -262144 -1 -1 1 1;
 #X obj 292 87 vradio 17 1 0 4 \$2-clip\$1_algorithm \$2-clip\$1_algorithm-rcv
-empty 0 -8 0 10 -262144 -1 -1 1;
+empty 0 -8 0 10 -262144 -1 -1 3;
 #X text 314 119 playolap;
 #X obj 535 125 s pd-\$2-clip-\$1_edit;
 #X msg 538 86 vis 0;
@@ -34,7 +34,7 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 #X text 31 79 Quantization;
 #X text 59 101 <-custom / global, f 9;
 #X obj 99 394 hsl 395 20 0 1 0 0 empty \$2-clip\$1_to-rcv TO 105 10
-0 14 -261681 -1 -1 78800 0;
+0 14 -261681 -1 -1 39400 0;
 #X text 376 264 Position;
 #N canvas 430 162 1242 711 compute_enveloppe 0;
 #X obj 75 30 inlet;
@@ -148,15 +148,15 @@ empty 0 -8 0 10 -262144 -1 -1 1;
 ;
 #X text 720 151 destination arrays : sample & sample_, f 21;
 #X obj 550 306 spigot;
-#X obj 99 314 hsl 395 80 0 1 0 0 empty empty empty 10 30 0 20 -262130
--1 -1 0 1;
+#X obj 99 314 hsl 395 80 0 1 0 0 empty empty konkrete_g4\ 120 10 30
+0 20 -262130 -1 -1 33227 1;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sample 174 float 0;
-#X coords 0 1.1 173 -1.1 400 80 1 0 0;
+#X array \$0-sample 172 float 0;
+#X coords 0 1.1 171 -1.1 400 80 1 0 0;
 #X restore 96 314 graph;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sample_ 174 float 0;
-#X coords 0 1.1 173 -1.1 400 80 1 0 0;
+#X array \$0-sample_ 172 float 0;
+#X coords 0 1.1 171 -1.1 400 80 1 0 0;
 #X restore 96 314 graph;
 #N canvas 761 28 761 733 todo 0;
 #X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
@@ -397,7 +397,7 @@ SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
 FFT_lock_phase 0 -8 0 10 -261234 -1 -1 1;
 #X text 332 170 on;
 #X obj 293 214 vsl 30 50 60 106 0 0 \$2-clip\$1_gain \$2-clip\$1_gain-rcv
-gain 0 -9 0 10 -204786 -1 -1 8522 1;
+gain 0 -9 0 10 -204786 -1 -1 4261 1;
 #X text 327 202 +6dB;
 #X text 322 253 -20dB;
 #X text 284 204 ______;
@@ -438,18 +438,13 @@ empty 0 -8 0 10 -262144 -1 -1 2;
 #X text 209 26 trigger;
 #X text 211 42 gate;
 #X text 209 60 toggle;
-#X text 210 75 repeat;
-#X text 209 68 ______;
-#X obj 188 106 tgl 15 0 empty empty LEGATO 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 8 165 cnv 15 240 100 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 23 167 Foloow Action;
-#X text 69 196 <-custom / global, f 9;
-#X obj 19 197 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantFollow \$2-clip\$1_quantFollow-rcv
-empty 0 -8 0 10 -262144 -1 -1 40 256;
-#X obj 18 196 cnv 20 50 21 empty \$2-quant\$1_Follow-rcv 1/8 0 14 0
-14 -204800 -66577 0;
+#X text 211 73 repeat;
+#X obj 188 106 tgl 15 0 \$2-clip\$1_legato \$2-clip\$1_legato-rcv LEGATO
+17 7 0 10 -262144 -1 -1 1 1;
+#X obj 18 197 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantFollowId \$2-clip\$1_quantFollowId-rcv
+empty 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 18 196 cnv 20 50 21 empty \$2-quant\$1_FollowLabel-rcv 2_bars
+0 14 0 14 -204800 -66577 0;
 #X obj 144 164 vradio 13 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X text 168 159 stop;
@@ -460,6 +455,12 @@ empty 0 -8 0 10 -262144 -1 -1 40 256;
 #X text 172 227 last;
 #X text 173 238 any;
 #X text 176 248 other;
+#X text 70 197 ?;
+#X text 11 175 What to do after;
+#X text 209 72 xxxxxx;
+#X obj 8 165 cnv 15 240 105 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X text 101 22 open;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 26 0 92 0;

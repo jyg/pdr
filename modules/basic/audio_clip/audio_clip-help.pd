@@ -365,8 +365,8 @@ preroll(ticks) 54 10 0 12 -262144 -1 -1 0 256;
 #X obj 417 359 nbx 5 20 10 300 0 0 \$2-clip\$1_bpm \$2-clip\$1_bpm-rcv
 Seg.BPM 0 -8 0 14 -262144 -1 -1 10 256;
 #X floatatom 37 413 5 0 0 0 - - #2-clip#1_offset;
-#X obj 165 195 cnv 15 100 80 empty empty empty 20 12 0 14 -204800 -66577
-0;
+#X obj 165 195 cnv 15 100 100 empty empty empty 20 12 0 14 -204800
+-66577 0;
 #X text 172 198 launch mode;
 #X obj 177 222 vradio 15 1 0 3 \$2-clip\$1_launch \$2-clip\$1_launch-rcv
 empty 0 -8 0 10 -262144 -1 -1 2;
@@ -375,7 +375,7 @@ empty 0 -8 0 10 -262144 -1 -1 2;
 #X text 199 251 toggle;
 #X text 721 308 - playolap : playing overlapped chunks;
 #X text 721 327 -pvoc : using phase vocoder (FFT);
-#X text 399 248 <----------------WRAP MODE : There are several modes
+#X text 389 256 <----------------WRAP MODE : There are several modes
 to synchronize the loop, f 79;
 #X text 535 307 2) by time stretching :;
 #X text 534 280 1) by changing speed (and pitch) : - varispeed;
@@ -399,6 +399,10 @@ launch / stop clip playing, f 85;
 on noteof (or cc = 0) event, f 81;
 #X text 655 208 - toggle : fired / stopped on noteon (or cc > 0) event
 \, according to previous state, f 84;
+#X obj 178 276 tgl 15 0 \$2-clip\$1_legato \$2-clip\$1_legato-rcv LEGATO
+17 7 0 10 -262144 -1 -1 0 1;
+#X text 549 230 LEGATO : to pass from one clip to another keeping the
+current play position, f 83;
 #X restore 338 556 pd clip_properties;
 #X msg 742 566 clip launch \$1;
 #X msg 743 590 clip stop all;
