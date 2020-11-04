@@ -1,0 +1,288 @@
+#N struct struct_frameoval float lx float ty float rx float by float
+width float color;
+#N struct struct_paintoval float lx float ty float rx float by float
+width float color;
+#N canvas 908 186 719 763 16;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X text 103 79 To edit shape \, ctrl+drag on it in edit mode;
+#X text 104 101 To edit properties \, right-click + properties popup
+menu, f 34;
+#X text 338 11 pd 0.49 + iemguts + iemlib;
+#X text 25 9 mob/lcd;
+#X text 98 51 LCD panel for drawing graphics;
+#X obj 26 270 mob/lcd;
+#A saved -back_alpha 0;
+#A saved -front_alpha 0;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 149 127;
+#N canvas 810 58 837 963 drawing_commands 0;
+#X obj 49 835 outlet;
+#X msg 49 58 clear;
+#X msg 49 787 penwidth 3;
+#X text 173 782 penwidth + 1 float (width in pixels), f 22;
+#X text 693 537 "framepoly" + N floats (specify N/2 points as a list
+of x/y pairs) - uses widget's highlight color "framepolyRGBA" + N+4
+floats (specify N/2 points as a list of x/y pairs \, red \, green \,
+blue \, alpha) "paintpoly" + N floats (specify N/2 points as a list
+of x/y pairs) - uses widget's highlight color "paintpolyRGBA" + N+4
+floats (specify N/2 points as a list of x/y pairs \, red \, green \,
+blue \, alpha);
+#X msg 49 198 paintoval 0.4 0.2 0.5 0.4 0.2 0.2 1 1, f 25;
+#X msg 49 88 frameoval 0.6 0.5 0.7 0.9 1 0.5 0 1, f 25;
+#X msg 49 308 framerect 0.1 0.1 0.9 0.9 0.5 0.3 0.1 1, f 25;
+#X msg 49 418 paintrect 0.8 0.2 0.9 0.4 0.9 0.3 0.1 1, f 25;
+#X msg 49 464 paintrect 0.4 0.4 0.6 0.6;
+#X msg 49 681 moveto 0.5 0.5;
+#X msg 49 720 lineto 0.7 0.9 1 0 0 1;
+#X msg 49 746 lineto 0.2 0.4;
+#X text 328 721 lineto + 6 floats (x \, y \, red \, green \, blue.alpha)
+;
+#X text 327 751 lineto + 2 floats (x \, y);
+#X text 326 363 "framerect" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 324 201 "paintoval" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 323 91 "frameoval" + 8 floats (left x \, top y \, right x \,
+bottom y \, red \, green \, blue \, alpha), f 43;
+#X text 323 145 "frameoval" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 323 257 "paintoval" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 323 307 "framerect" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 323 413 "paintrect" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 326 463 "paintrect" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 328 685 moveto + 2 floats (x \, y);
+#X text 113 12 !!! alpha-rendering ignored in tcl/tk !!!;
+#X text 114 12 !!! alpha-rendering ignored in tcl/tk !!!;
+#X text 78 554 !! framepoly and paintpoly messages aren't implemented
+yet;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X restore 24 223 pd drawing_commands;
+#X msg 458 165 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76
+0.5 1 0 1 \, penwidth 3 \, frameoval 0.5 0.5 0.6 0.6 1 0 0 1 \, paintoval
+0.1 0.1 0.2 0.8 0.2 0.2 0.9 1, f 23;
+#X obj 457 134 loadbang;
+#X obj 218 315 mob/lcd;
+#A saved -back_alpha 0;
+#A saved -front_alpha 0;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 215 83;
+#X obj 365 222 tgl 15 0 empty empty AUTO 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 397 239 bng 15 250 50 0 empty empty CLEAR 17 7 0 10 -262144
+-1 -1;
+#X obj 332 206 bng 15 250 50 0 empty empty CIRCLE 17 7 0 10 -262144
+-1 -1;
+#X obj 2 511 cnv 15 700 180 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 30 518 MobMuPlat usage :;
+#X text 87 537 Don't use connexions !, f 12;
+#X obj 539 516 r my_lcd;
+#X obj 473 608 unpack f f;
+#X floatatom 473 637 5 0 0 0 - - -;
+#X floatatom 534 637 5 0 0 0 - - -;
+#X obj 356 608 unpack f f;
+#X floatatom 356 637 5 0 0 0 - - -;
+#X floatatom 417 637 5 0 0 0 - - -;
+#X obj 539 545 route 1 2 0;
+#X obj 588 606 unpack f f;
+#X floatatom 588 635 5 0 0 0 - - -;
+#X floatatom 649 635 5 0 0 0 - - -;
+#X text 603 666 mouseup;
+#X obj 12 634 s my_lcd-rcv;
+#X text 298 545 Use send/receive channels instead, f 16;
+#X obj 224 520 mob/lcd;
+#A saved -back_alpha 0;
+#A saved -front_alpha 0;
+#A saved -front_color 122 189 3;
+#A saved -back_color 164 188 167;
+#A saved -title ;
+#A saved -name my_lcd;
+#A saved -size 60 60;
+#X text 364 660 mousedown;
+#X text 494 664 drag;
+#X msg 12 588 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76
+, f 31;
+#X obj 30 50 mob/lcd;
+#A saved -back_alpha 0;
+#A saved -front_alpha 0;
+#A saved -front_color 0 0 0;
+#A saved -back_color -1 255 255;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 60 60;
+#N canvas 0 50 670 542 demo1 0;
+#X obj 37 208 random 100;
+#X obj 37 233 / 100;
+#X obj 105 208 random 100;
+#X obj 105 233 / 100;
+#X obj 76 257 random 100;
+#X obj 76 282 / 100;
+#X obj 144 257 random 100;
+#X obj 144 282 / 100;
+#X obj 179 206 random 100;
+#X obj 179 231 / 100;
+#X obj 247 206 random 100;
+#X obj 247 231 / 100;
+#X obj 217 258 random 100;
+#X obj 217 283 / 100;
+#X obj 110 128 t b b b b b b b;
+#X obj 189 314 list;
+#X obj 37 310 pack 0 0 0 0 0 0 0;
+#X obj 150 76 metro 250;
+#X obj 36 364 outlet;
+#X msg 36 335 frameoval \$1 \$2 \$3 \$4 \$5 \$6 \$7 0.5;
+#X obj 142 36 inlet;
+#X obj 39 34 inlet;
+#X obj 309 39 inlet;
+#X msg 298 143 clear;
+#X connect 0 0 1 0;
+#X connect 1 0 16 0;
+#X connect 2 0 3 0;
+#X connect 3 0 16 2;
+#X connect 4 0 5 0;
+#X connect 5 0 16 1;
+#X connect 6 0 7 0;
+#X connect 7 0 16 3;
+#X connect 8 0 9 0;
+#X connect 9 0 16 4;
+#X connect 10 0 11 0;
+#X connect 11 0 16 6;
+#X connect 12 0 13 0;
+#X connect 13 0 16 5;
+#X connect 14 0 0 0;
+#X connect 14 1 4 0;
+#X connect 14 2 2 0;
+#X connect 14 3 6 0;
+#X connect 14 4 8 0;
+#X connect 14 5 12 0;
+#X connect 14 6 10 0;
+#X connect 16 0 19 0;
+#X connect 17 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 17 0;
+#X connect 21 0 14 0;
+#X connect 22 0 23 0;
+#X connect 23 0 18 0;
+#X restore 332 261 pd demo1;
+#N canvas 0 50 450 300 demo2 0;
+#N canvas 0 50 597 569 demo2 0;
+#X obj 83 100 route 1 2 0;
+#X obj 83 132 t l b;
+#X obj 94 163 unpack 0 0;
+#X obj 321 274 unpack 0 0;
+#X obj 89 204 t f f;
+#X obj 161 206 t f f;
+#X obj 329 108 unpack 0 0 0 0;
+#X obj 91 305 pack 0 0 0 0 0 0 0 0;
+#X obj 324 335 pack 0 0 0 0 0 0;
+#X obj 81 55 inlet;
+#X obj 84 475 outlet;
+#X msg 79 337 moveto \$1 \$2;
+#X msg 124 406 lineto \$1 \$2 \$3 \$4 \$5 \$6;
+#X obj 59 274 - 0.02;
+#X obj 138 276 + 0.02;
+#X obj 146 240 - 0.02;
+#X obj 218 241 + 0.02;
+#X msg 103 373 paintoval \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8;
+#X connect 0 0 1 0;
+#X connect 0 1 3 0;
+#X connect 0 2 2 0;
+#X connect 1 0 2 0;
+#X connect 1 0 11 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 4 0 13 0;
+#X connect 4 1 14 0;
+#X connect 5 0 15 0;
+#X connect 5 1 16 0;
+#X connect 6 0 7 4;
+#X connect 6 0 8 2;
+#X connect 6 1 8 3;
+#X connect 6 1 7 5;
+#X connect 6 2 7 6;
+#X connect 6 2 8 4;
+#X connect 6 3 7 7;
+#X connect 6 3 8 5;
+#X connect 7 0 17 0;
+#X connect 8 0 12 0;
+#X connect 9 0 0 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 2;
+#X connect 15 0 7 1;
+#X connect 16 0 7 3;
+#X connect 17 0 10 0;
+#X restore 10 173 pd demo2;
+#X msg 118 57 clear;
+#X obj 115 88 mob/lcd;
+#A saved -back_alpha 0;
+#A saved -front_alpha 0;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 225 176;
+#X text 37 16 demo2 : draw with the mouse;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 545 408 pd demo2;
+#X text 19 410 First outlet gives the mouse/touch interaction --->
+, f 52;
+#X text 23 179 Inlet passes the drawing commands;
+#N canvas 0 50 710 350 using_'toGUI'_syntax 0;
+#X obj 47 273 s toGUI;
+#X msg 45 149 list my_lcd clear \, list my_lcd penwidth 5 \, list my_lcd
+frameoval 0.65 0.65 0.96 0.96, f 46;
+#X obj 196 19 mob/listenerLCD my_lcd my_lcd-rcv;
+#X text 50 20 with listener;
+#X text 43 85 mob/lcd accepts also communications with MobMuPlat in
+the legacy way \, through "toGUI" channel :, f 50;
+#X connect 1 0 0 0;
+#X restore 108 663 pd using_'toGUI'_syntax;
+#X text 19 440 Second outlet gives the name of the subpatch that contains
+the datastructures scalars \, for editing purposes (not in MobMuPlat).
+, f 65;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 11 0 36 1;
+#X connect 12 0 36 2;
+#X connect 13 0 36 0;
+#X connect 17 0 24 0;
+#X connect 18 0 19 0;
+#X connect 18 1 20 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 24 0 21 0;
+#X connect 24 1 18 0;
+#X connect 24 2 25 0;
+#X connect 25 0 26 0;
+#X connect 25 1 27 0;
+#X connect 34 0 29 0;
+#X connect 36 0 6 0;
+#X connect 36 0 10 0;
