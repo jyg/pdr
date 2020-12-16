@@ -1,0 +1,26 @@
+#N canvas 0 50 933 507 16;
+#X obj 73 33 inlet;
+#X obj 73 315 outlet;
+#X obj 258 315 outlet;
+#X obj 134 94 loadbang;
+#X obj 133 253 print PdRacks;
+#X obj 134 123 v savestate;
+#X obj 134 152 select 0;
+#X obj 134 181 t b b;
+#X msg 286 137 1;
+#X text 398 25 abstraction that is loaded if pd-0.49-savestate object
+doesn't exist, f 33;
+#X msg 131 217 WARNING : you are using pd < 0.49 : savestate unsupported
+;
+#X obj 616 144 v pd_version;
+#X obj 613 78 loadbang;
+#X msg 613 107 0.48;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 7 1 8 0;
+#X connect 8 0 5 0;
+#X connect 10 0 4 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;

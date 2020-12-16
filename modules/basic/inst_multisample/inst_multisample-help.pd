@@ -1,0 +1,41 @@
+#N canvas 739 123 983 857 16;
+#X declare -path pdr/modules/basic;
+#X text 487 89 1) Selectionner un sample en cliquant sur un chiffre
+ou en le tapant au clavier, f 33;
+#X text 480 55 MODE D'EMPLOI (MAC/PC);
+#X text 487 159 2) Définir une zone de travail à l'intérieur du
+sample en cliquant et déplaçant la souris sur la forme d'onde, f
+33;
+#X text 489 242 3) Placer le curseur dans le carré vert et cliquer
+dessus, f 33;
+#X text 489 282 OU : Placer le curseur dans le carré vert et presser
+l'une des touches A \, Q \, W en fonction du volume sonore désiré
+, f 33;
+#X text 489 362 4) Il est possible de changer la vitesse en actionnant
+le curseur vertical SPEED, f 33;
+#X text 490 434 Les raccourcis clavier (lettres/chiffres indiqués
+entre parenthèses) sont accessibles à tout moment et permettre de
+redéfinir à la volée la zone de travail \, la vitesse \, le sens
+de lecture \, le volume et le numéro de sample tout en gardant le
+curseur à l'intérieur du carré vert, f 33;
+#X obj 15 9 inst_multisample;
+#X obj 56 729 dac~;
+#X obj 402 728 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/PdRacks.init \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 402 773 pd \$0-PdRacks.declare;
+#X obj 15 554 audio_oo;
+#A saved bufsize 20;
+#A saved vol 99.558;
+#A saved group_name <your_group>;
+#A saved player_name <your_name>;
+#A saved SID 0;
+#X connect 7 0 11 0;
+#X connect 7 1 11 1;
+#X connect 11 0 8 0;
+#X connect 11 1 8 1;
