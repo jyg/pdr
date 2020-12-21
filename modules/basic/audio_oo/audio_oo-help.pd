@@ -1,6 +1,6 @@
 #N struct comment float x float y float color text FR text EN text
 IT;
-#N canvas 410 401 863 468 16;
+#N canvas 1020 232 863 468 16;
 #X scalar comment 27 57.866 200 \; Audio via OSC \; Audio Over OSC
 \; Audio via OSC \\\; \;;
 #X scalar comment 27 91.866 200 \; Jouer en groupe via internet \;
@@ -52,7 +52,7 @@ EN text IT;
 #X text 90 28 IT;
 #X text 90 13 EN;
 #X obj 4 30 tgl 15 0 \$0-COMMENT_EDIT empty Edit 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 274 0 r \$0-COMMENT_EDIT;
 #X obj 465 49 r \$0-lang;
 #X obj 361 151 == 0;
@@ -127,14 +127,29 @@ puis cliquer sur Enter \; 2) Type username then press Enter \; 2) Digitare
 il tuo username e poi premi Enter \\\; \;;
 #X scalar comment 70 343.866 200 \; 3) Cliquer sur Connect \; 3) Click
 "Connect" \; 3) Premi il pulsante "Connect" \\\; \;;
-#X scalar comment 70 371.866 200 \; 4) Cocher la case on/off pour émettre
-le son vers les autres utilisateurs \; 4) Check On/Off checkbox to
+#X scalar comment 69 371.866 200 \; 4) Cocher la case ON AIR pour émettre
+le son vers les autres utilisateurs \; 4) Check ON AIR checkbox to
 send your sound to other people \; 4) Attivare la casella di controllo
-On / Off per avviare la tua trasmissione \\\; \;;
+ON AIR per avviare la tua trasmissione \\\; \;;
 #X scalar comment 68 401.866 200 \; 5) Accès aux contrôles de mixage
 des pairs \; 5) Click to show mix-control panel for peers \; 5) Accesso
 ai controlli del volume dei altri utenti \\\; \;;
 #X obj 372 138 audio_oo;
+#A saved pan5 0;
+#A saved pan4 0;
+#A saved pan3 0;
+#A saved pan2 0;
+#A saved pan1 0;
+#A saved vol5 100;
+#A saved vol4 100;
+#A saved vol3 100;
+#A saved vol2 100;
+#A saved vol1 100;
+#A saved bufsize 20;
+#A saved vol 100;
+#A saved group_name <your_group>;
+#A saved player_name <your_name>;
+#A saved SID 2;
 #X obj 396 223 dac~;
 #X obj 395 99 adc~;
 #X text 503 159 <--------(1);
