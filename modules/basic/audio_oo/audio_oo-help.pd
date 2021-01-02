@@ -1,6 +1,6 @@
 #N struct comment float x float y float color text FR text EN text
 IT;
-#N canvas 1020 232 863 468 16;
+#N canvas 526 103 863 654 16;
 #X scalar comment 27 57.866 200 \; Audio via OSC \; Audio Over OSC
 \; Audio via OSC \\\; \;;
 #X scalar comment 27 91.866 200 \; Jouer en groupe via internet \;
@@ -52,7 +52,7 @@ EN text IT;
 #X text 90 28 IT;
 #X text 90 13 EN;
 #X obj 4 30 tgl 15 0 \$0-COMMENT_EDIT empty Edit 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 274 0 r \$0-COMMENT_EDIT;
 #X obj 465 49 r \$0-lang;
 #X obj 361 151 == 0;
@@ -131,10 +131,11 @@ il tuo username e poi premi Enter \\\; \;;
 le son vers les autres utilisateurs \; 4) Check ON AIR checkbox to
 send your sound to other people \; 4) Attivare la casella di controllo
 ON AIR per avviare la tua trasmissione \\\; \;;
-#X scalar comment 68 401.866 200 \; 5) Accès aux contrôles de mixage
-des pairs \; 5) Click to show mix-control panel for peers \; 5) Accesso
-ai controlli del volume dei altri utenti \\\; \;;
+#X scalar comment 68 401.866 200 \; 5) Accès à l'onglet de contrôle
+de mixage des pairs \; 5) Click to show mix-control panel for peers
+\; 5) Accesso ai controlli del volume dei altri utenti \\\; \;;
 #X obj 372 138 audio_oo;
+#A saved listen 1;
 #A saved pan5 0;
 #A saved pan4 0;
 #A saved pan3 0;
@@ -152,8 +153,6 @@ ai controlli del volume dei altri utenti \\\; \;;
 #A saved SID 2;
 #X obj 396 223 dac~;
 #X obj 395 99 adc~;
-#X text 503 159 <--------(1);
-#X text 504 188 <--------(2);
 #X text 480 116 V;
 #X text 480 100 |;
 #X text 470 82 (3);
@@ -163,6 +162,33 @@ ai controlli del volume dei altri utenti \\\; \;;
 Internet (une seule instance de [audio_oo]) : \; On each Internet-connected
 computer (only one [audio_oo] instance) : \; Su ognuno computer collegato
 ad'internet (solo un ogetto [audio_oo]) : \\\; \;;
+#N canvas 392 226 848 445 mix_panel 0;
+#X obj 64 87 audio_oo/aoo_submixer_gui \$0 5;
+#X scalar comment 184 101.866 200 \; <- réglages de mute / vol / pan
+pour chacun des pairs distants \; <- mute / vol / pan controls for
+each remote peers \; <- impostazioni mute / vol / pan per ciascuno
+dei peer remoti \\\; \;;
+#X obj 102 163 tgl 14 0 \$0-listen \$0-listen-rcv listening 17 7 0
+9 -24198 -24198 -1 0 1;
+#X obj 143 182 audio_oo/pdr_light/ui_vs \$0 vol 0 100;
+#X obj 165 182 cnv 4 15 55 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 167 184 cnv 6 11 51 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 167 184 cnv 4 11 51 empty \$0-meter-rcv empty 20 12 0 14 -128992
+-66577 0;
+#X text 194 198 <- master volume;
+#X scalar comment 184 161.866 200 \; <- activation / désactivation
+de l'écoute des pairs distants \; <- enabling / disabling remote pairs
+listening \; <- abilitare / disabilitare l'ascolto dei peer remoti
+\\\; \;;
+#X obj 26 87 audio_oo/aoo_submixer_gui \$0 5;
+#X obj 140 87 audio_oo/aoo_submixer_gui \$0 5;
+#X obj 102 87 audio_oo/aoo_submixer_gui \$0 5;
+#X text 29 28 mix panel;
+#X restore 144 426 pd mix_panel;
+#X text 503 159 <--------(1);
+#X text 504 188 <--------(2);
 #X connect 10 0 11 0;
 #X connect 10 1 11 1;
 #X connect 12 0 10 0;
