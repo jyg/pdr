@@ -81,8 +81,8 @@ f 23;
 #X obj 30 308 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 9 5 CLIP_CONTROL;
-#X obj 656 450 clip_control;
-#A saved scene 1;
+#X obj 657 449 clip_control;
+#A saved scene 2;
 #A saved SID 0;
 #X obj 670 346 s PdRacks.CLIP_HEAD;
 #X obj 670 179 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
@@ -172,6 +172,7 @@ buttons to select the next scene to launch., f 36;
 #A saved clip3_quant 96;
 #A saved clip2_quant 96;
 #A saved clip1_quant 96;
+#A saved clip1_file ;
 #A saved clip3_bpm 120;
 #A saved clip2_bpm 120;
 #A saved clip1_bpm 120;

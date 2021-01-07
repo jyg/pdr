@@ -1,7 +1,11 @@
 #N struct comment float x float y float color text FR text EN text
 IT;
-#N canvas 515 98 1095 603 16;
-#X obj 84 154 data_trackpoint;
+#N canvas 515 98 857 603 16;
+#X obj 72 177 data_trackpoint;
+#A saved ccy_enable 0;
+#A saved ccx_enable 0;
+#A saved ccx 108;
+#A saved SID 0;
 #X scalar comment 55 91.866 200 \; Convertit les données du trackpoint
 en ctl-change \; Converts trackpoint data into ctl-change messages
 \; \\\; \;;
@@ -12,7 +16,16 @@ en ctl-change \; Converts trackpoint data into ctl-change messages
 #X obj 275 283 unpack f f;
 #X floatatom 275 312 5 0 0 0 - - -;
 #X floatatom 370 318 5 0 0 0 - - -;
+#X obj 114 341 r CTLIN;
+#X obj 114 371 unpack f f f;
+#X floatatom 114 399 5 0 0 0 value - -;
+#X floatatom 172 432 5 0 0 0 cc_num - -;
+#X floatatom 231 468 5 0 0 0 midi_channel - -;
 #X connect 0 2 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 1 7 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;

@@ -1,4 +1,4 @@
-drag and drop exetension for pdr audio_clip module
+dnd_behaviour : drag and drop exetension for pdr audio_clip module
 
 A) Installation: 
 

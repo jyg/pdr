@@ -58,7 +58,7 @@ in parent canvas;
 #X connect 13 0 12 0;
 #X connect 14 0 12 0;
 #X restore 533 35 pd ui_multitab \$0;
-#X text 258 61 MASTER;
+#X text 299 30 MASTER;
 #X text 207 201 TRACK;
 #X msg 245 621 1;
 #X obj 230 563 t a b b;
@@ -209,7 +209,7 @@ f 71;
 #X restore 604 335 pd midi_mapping;
 #X obj 768 221 pdr/core/stuff/module_loader clip_control \$0;
 #X obj 324 100 nbx 3 23 1 9999 0 0 \$0-scene \$0-scene-rcv empty 0
--8 0 20 -262131 -1 -1 4 256;
+-8 0 20 -262131 -1 -1 2 256;
 #X obj 768 246 u_parameter \$0 scene;
 #X obj 940 184 savestate;
 #N canvas 0 50 450 300 load_defaults 0;
@@ -272,6 +272,8 @@ f 71;
 #X obj 230 397 route clip;
 #X msg 1110 640 highlight \$1;
 #X obj 343 641 list split 1;
+#X obj 224 101 cnv 15 30 21 empty empty MASTER 1 12 0 8 -232576 -1
+0;
 #X connect 4 0 31 0;
 #X connect 5 0 31 0;
 #X connect 8 0 6 0;

@@ -81,9 +81,9 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 0 10 -203904 -1 -1 0 1;
 #X obj 276 156 tgl 14 0 \$0-ccz_enable \$0-ccz_enable-rcv empty 0 6
 0 10 -203904 -1 -1 0 1;
-#X floatatom 229 128 5 0 127 1 ccx #0-ccx-rcv #0-ccx, f 5;
-#X floatatom 229 142 5 0 127 1 ccy #0-ccy-rcv #0-ccy, f 5;
-#X floatatom 229 155 5 0 127 1 ccz #0-ccz-rcv #0-ccz, f 5;
+#X floatatom 229 128 5 0 127 1 ccx #0-ccx-rcv #0-ccx;
+#X floatatom 229 142 5 0 127 1 ccy #0-ccy-rcv #0-ccy;
+#X floatatom 229 155 5 0 127 1 ccz #0-ccz-rcv #0-ccz;
 #X obj 19 400 inlet~;
 #X obj 19 446 outlet~;
 #X obj 79 400 inlet~;
@@ -116,7 +116,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 245 200 hradio 15 1 0 3 \$0-guitab \$0-guitab-rcv empty 32 7
 0 16 -191407 -1 -4160 0;
 #X floatatom 134 155 5 -1 127 2 note_out #0-noteout-rcv #0-noteout
-, f 5;
+;
 #X obj 889 355 r \$0-wintabmode;
 #X obj 861 379 spigot;
 #X obj 861 466 *;
@@ -126,7 +126,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 0 7 0 14 -262144 -1 0;
 #X obj 205 240 bng 14 250 50 0 \$0-test_btn1 empty empty 17 7 0 10
 -262144 -1 -1;
-#X floatatom 219 240 5 0 127 1 btn1 #0-btn1-rcv #0-btn1, f 5;
+#X floatatom 219 240 5 0 127 1 btn1 #0-btn1-rcv #0-btn1;
 #X obj 790 622 pack f f 1, f 11;
 #X obj 801 571 spigot;
 #X obj 836 545 r \$0-btn1_enable;
@@ -207,12 +207,11 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 397 724 glocal/glocal.send CTLIN;
 #X obj 205 255 bng 14 250 50 0 \$0-test_btn2 empty empty 17 7 0 10
 -262144 -1 -1;
-#X floatatom 219 254 5 0 127 1 btn2 #0-btn2-rcv #0-btn2, f 5;
+#X floatatom 219 254 5 0 127 1 btn2 #0-btn2-rcv #0-btn2;
 #X obj 1211 94 namecanvas \$0-this;
 #X obj 1209 71 triggered_loadbang \$0-this;
 #X text 1204 21 manually trigger loadbang if the instance of abstraction
 is created dynamically, f 29;
-#X obj 386 165 wintablet \$0;
 #X obj 488 143 & 1;
 #X obj 488 161 change;
 #X obj 488 179 select 0 1;
@@ -224,10 +223,10 @@ is created dynamically, f 29;
 #X obj 164 671 r \$0-pad_data;
 #X obj 102 240 bng 14 250 50 0 \$0-test_btn1 empty empty 17 7 0 10
 -262144 -1 -1;
-#X floatatom 116 240 5 0 127 1 padL #0-padl-rcv #0-padl, f 5;
+#X floatatom 116 240 5 0 127 1 padL #0-padl-rcv #0-padl;
 #X obj 102 255 bng 14 250 50 0 \$0-test_btn2 empty empty 17 7 0 10
 -262144 -1 -1;
-#X floatatom 116 254 5 0 127 1 padR #0-padr-rcv #0-padr, f 5;
+#X floatatom 116 254 5 0 127 1 padR #0-padr-rcv #0-padr;
 #X obj 245 100 bng 15 250 50 0 empty empty ... 2 6 0 6 -191407 -1 -1
 ;
 #X obj 285 72 s \$0-guitab;
@@ -237,7 +236,7 @@ is created dynamically, f 29;
 #X obj 171 254 tgl 14 0 \$0-btn2_enable \$0-btn2_enable-rcv empty 0
 6 0 10 -203904 -1 -1 0 1;
 #X obj 145 353 hsl 75 15 0.01 10 1 0 \$0-velocity_out \$0-velocity_out-rcv
-vel.out=0.01 1 7 0 10 -261234 -1 -1 0 1;
+vel.out=0.04 1 7 0 10 -261234 -1 -1 1500 1;
 #X obj 276 239 tgl 14 0 \$0-btn1_enable \$0-btn1_enable-rcv empty 0
 6 0 10 -203904 -1 -1 0 1;
 #X obj 276 254 tgl 14 0 \$0-btn2_enable \$0-btn2_enable-rcv empty 0
@@ -247,7 +246,7 @@ vel.out=0.01 1 7 0 10 -261234 -1 -1 0 1;
 #X text 131 132 OnClick;
 #X obj 208 327 bng 14 250 50 0 \$0-test_btn1 empty empty 17 7 0 10
 -262144 -1 -1;
-#X floatatom 222 327 5 0 127 2 wheel #0-wheel-rcv #0-wheel, f 5;
+#X floatatom 222 327 5 0 127 2 wheel #0-wheel-rcv #0-wheel;
 #X obj 249 329 vradio 13 1 0 3 empty empty empty 0 -8 0 10 -203904
 -1 -1 0;
 #X text 262 327 off;
@@ -274,10 +273,11 @@ vel.out=0.01 1 7 0 10 -261234 -1 -1 0 1;
 #X msg 652 277 set \$1;
 #X obj 652 295 s \$0-x-rcv;
 #X floatatom 171 327 5 0 255 0 z-Hysteresis #0-hysteresis-rcv #0-hysteresis
-, f 5;
+;
 #X obj 960 22 declare -path ../../../core;
 #X obj 960 42 declare -path ../../../core/stuff;
 #X obj 960 62 declare -path ../../../core/rj;
+#X obj 386 165 data_wintablet/wintablet \$0;
 #X connect 1 0 2 0;
 #X connect 2 0 61 0;
 #X connect 3 0 5 0;
@@ -329,10 +329,10 @@ vel.out=0.01 1 7 0 10 -261234 -1 -1 0 1;
 #X connect 39 0 38 1;
 #X connect 40 0 24 0;
 #X connect 41 0 40 1;
-#X connect 43 0 125 0;
+#X connect 43 0 177 0;
 #X connect 56 0 57 0;
 #X connect 58 0 59 0;
-#X connect 60 0 165 0;
+#X connect 60 0 164 0;
 #X connect 62 0 110 0;
 #X connect 62 1 117 0;
 #X connect 63 0 67 0;
@@ -392,34 +392,34 @@ vel.out=0.01 1 7 0 10 -261234 -1 -1 0 1;
 #X connect 117 0 62 1;
 #X connect 117 1 62 2;
 #X connect 118 0 64 0;
-#X connect 125 0 109 0;
-#X connect 125 1 109 1;
-#X connect 125 2 109 2;
-#X connect 125 3 109 3;
-#X connect 125 4 109 4;
-#X connect 125 4 126 0;
+#X connect 125 0 126 0;
 #X connect 126 0 127 0;
-#X connect 127 0 128 0;
-#X connect 128 0 130 0;
-#X connect 128 1 131 0;
-#X connect 130 0 129 0;
-#X connect 131 0 129 0;
-#X connect 133 0 61 0;
-#X connect 138 0 140 0;
-#X connect 140 0 139 0;
-#X connect 159 0 170 0;
+#X connect 127 0 129 0;
+#X connect 127 1 130 0;
+#X connect 129 0 128 0;
+#X connect 130 0 128 0;
+#X connect 132 0 61 0;
+#X connect 137 0 139 0;
+#X connect 139 0 138 0;
+#X connect 158 0 169 0;
+#X connect 159 0 161 0;
 #X connect 160 0 162 0;
-#X connect 161 0 163 0;
-#X connect 162 0 169 0;
-#X connect 163 0 164 1;
-#X connect 164 0 107 0;
-#X connect 165 0 166 0;
-#X connect 165 1 167 0;
-#X connect 165 2 62 0;
-#X connect 168 0 169 0;
-#X connect 169 0 164 0;
-#X connect 170 0 168 0;
-#X connect 170 1 164 4;
+#X connect 161 0 168 0;
+#X connect 162 0 163 1;
+#X connect 163 0 107 0;
+#X connect 164 0 165 0;
+#X connect 164 1 166 0;
+#X connect 164 2 62 0;
+#X connect 167 0 168 0;
+#X connect 168 0 163 0;
+#X connect 169 0 167 0;
+#X connect 169 1 163 4;
+#X connect 170 0 171 0;
 #X connect 171 0 172 0;
-#X connect 172 0 173 0;
+#X connect 177 0 109 0;
+#X connect 177 1 109 1;
+#X connect 177 2 109 2;
+#X connect 177 3 109 3;
+#X connect 177 4 109 4;
+#X connect 177 4 125 0;
 #X coords 0 0 1 1 190 70 1 100 100;

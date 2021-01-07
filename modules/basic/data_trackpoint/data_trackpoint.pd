@@ -2,36 +2,36 @@
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
-#X obj 631 558 r \$0-ccx;
+#X obj 733 460 r \$0-ccx;
 #X obj 581 631 pack f f 1;
-#X obj 744 641 pack f f 1;
-#X obj 766 605 r \$0-ccy;
-#X obj 548 134 t b;
+#X obj 943 647 pack f f 1;
+#X obj 1039 518 r \$0-ccy;
+#X obj 474 730 t b;
 #X msg 559 584 1;
 #X obj 502 690 t b l;
-#X msg 700 604 1;
+#X msg 879 601 1, f 2;
 #X obj 535 548 r \$0-testx;
-#X obj 724 576 r \$0-testy;
-#X obj 676 483 spigot;
-#X obj 747 440 r \$0-ccx_enable;
-#X obj 763 545 spigot;
-#X obj 788 516 r \$0-ccy_enable;
+#X obj 837 508 r \$0-testy;
+#X obj 633 462 spigot;
+#X obj 685 398 r \$0-ccx_enable;
+#X obj 951 446 spigot;
+#X obj 1014 404 r \$0-ccy_enable;
 #X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv data_trackpoint-0
 0 7 0 14 -262144 -1 0;
 #X obj 198 118 cnv 10 90 50 empty empty empty 20 12 0 14 -262138 -66577
 0;
-#X obj 229 119 bng 8 50 10 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 252 103 bng 8 50 10 0 empty empty ctlout 8 3 0 8 -262144 -1
 -1;
-#X obj 276 124 tgl 14 0 \$0-ccx_enable \$0-ccx_enable-rcv empty 0 6
+#X obj 276 127 tgl 14 0 \$0-ccx_enable \$0-ccx_enable-rcv off -4 -5
 0 10 -203904 -1 -1 0 1;
-#X obj 170 124 bng 14 250 50 0 \$0-testx empty empty 17 7 0 10 -262144
+#X obj 170 129 bng 14 250 50 0 \$0-testx empty test -10 -5 0 10 -262144
 -1 -1;
-#X obj 170 155 bng 14 250 50 0 \$0-testy empty empty 17 7 0 10 -262144
+#X obj 170 155 bng 14 250 50 0 \$0-testy empty test -10 -5 0 10 -262144
 -1 -1;
-#X obj 276 155 tgl 14 0 \$0-ccy_enable \$0-ccy_enable-rcv empty 0 6
+#X obj 276 155 tgl 14 0 \$0-ccy_enable \$0-ccy_enable-rcv off -4 -5
 0 10 -203904 -1 -1 0 1;
-#X floatatom 184 124 5 0 127 1 ccx #0-ccx-rcv #0-ccx, f 5;
-#X floatatom 184 147 5 0 127 1 ccy #0-ccy-rcv #0-ccy, f 5;
+#X floatatom 184 121 5 0 127 1 ccx #0-ccx-rcv #0-ccx;
+#X floatatom 184 147 5 0 127 1 ccy #0-ccy-rcv #0-ccy;
 #X obj 19 400 inlet~;
 #X obj 19 446 outlet~;
 #X obj 79 400 inlet~;
@@ -137,11 +137,11 @@
 #X obj 39 286 route x y;
 #X msg 13 304 \$2;
 #X msg 87 322 \$2;
-#X floatatom 39 324 5 0 0 0 - - -, f 5;
+#X floatatom 39 324 5 0 0 0 - - -;
 #N canvas 0 50 450 300 median 0;
-#X floatatom 11 168 5 0 0 0 - - -, f 5;
-#X floatatom 11 147 5 0 0 0 - - -, f 5;
-#X floatatom 10 189 5 0 0 0 - - -, f 5;
+#X floatatom 11 168 5 0 0 0 - - -;
+#X floatatom 11 147 5 0 0 0 - - -;
+#X floatatom 10 189 5 0 0 0 - - -;
 #X obj 58 74 t f b b;
 #X obj 111 135 max;
 #X obj 83 135 min;
@@ -174,9 +174,9 @@
 #X connect 13 0 3 0;
 #X restore 25 376 pd median;
 #N canvas 0 50 450 300 median 0;
-#X floatatom 11 168 5 0 0 0 - - -, f 5;
-#X floatatom 11 147 5 0 0 0 - - -, f 5;
-#X floatatom 10 189 5 0 0 0 - - -, f 5;
+#X floatatom 11 168 5 0 0 0 - - -;
+#X floatatom 11 147 5 0 0 0 - - -;
+#X floatatom 10 189 5 0 0 0 - - -;
 #X obj 58 74 t f b b;
 #X obj 111 135 max;
 #X obj 83 135 min;
@@ -291,6 +291,18 @@ is created dynamically, f 29;
 #X obj 994 17 declare -path ../../../core;
 #X obj 994 37 declare -path ../../../core/stuff;
 #X obj 994 57 declare -path ../../../core/rj;
+#X obj 637 513 * 127;
+#X obj 947 547 * 127;
+#X obj 136 778 r \$0-ccx_enable;
+#X obj 141 813 select 0 1;
+#X msg 131 858 label off;
+#X msg 162 895 label on;
+#X obj 131 941 s \$0-ccx_enable-rcv;
+#X obj 361 823 select 0 1;
+#X msg 351 868 label off;
+#X msg 382 905 label on;
+#X obj 356 788 r \$0-ccy_enable;
+#X obj 351 951 s \$0-ccy_enable-rcv;
 #X connect 0 0 1 1;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;
@@ -302,9 +314,9 @@ is created dynamically, f 29;
 #X connect 7 0 2 0;
 #X connect 8 0 5 0;
 #X connect 9 0 7 0;
-#X connect 10 0 1 0;
+#X connect 10 0 76 0;
 #X connect 11 0 10 1;
-#X connect 12 0 2 0;
+#X connect 12 0 77 0;
 #X connect 13 0 12 1;
 #X connect 23 0 24 0;
 #X connect 25 0 26 0;
@@ -345,4 +357,16 @@ is created dynamically, f 29;
 #X connect 71 0 72 0;
 #X connect 72 0 69 0;
 #X connect 72 1 69 1;
+#X connect 76 0 1 0;
+#X connect 77 0 2 0;
+#X connect 78 0 79 0;
+#X connect 79 0 80 0;
+#X connect 79 1 81 0;
+#X connect 80 0 82 0;
+#X connect 81 0 82 0;
+#X connect 83 0 84 0;
+#X connect 83 1 85 0;
+#X connect 84 0 87 0;
+#X connect 85 0 87 0;
+#X connect 86 0 83 0;
 #X coords 0 0 1 1 190 70 1 100 100;
