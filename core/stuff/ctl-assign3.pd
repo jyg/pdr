@@ -14,7 +14,7 @@
 #X msg 897 149 1;
 #X msg 1255 414 remote \$1;
 #X obj 1162 443 list prepend;
-#N canvas 8 50 1301 641 gui_stuff 0;
+#N canvas 392 224 1301 641 gui_stuff 0;
 #X msg 410 253 list \$1 \$2;
 #X obj 87 382 s \$0-ccnum-rcv;
 #X obj 104 308 r \$0-ccnum;
@@ -289,7 +289,7 @@
 #X obj 630 279 r \$0-feedback;
 #X obj 630 304 t b f;
 #X msg 724 360 set 0 \, range 0 127 \, lin;
-#N canvas 70 60 829 659 get_name-pos/get_range/set-FBchannel 0;
+#N canvas 745 118 829 659 get_name-pos/get_range/set-FBchannel 1;
 #X obj 31 49 inlet;
 #X obj 34 478 outlet;
 #X obj 35 429 s;
@@ -302,14 +302,14 @@
 #X obj 179 178 list prepend getParams;
 #X obj 375 539 s \$0-min-rcv;
 #X obj 485 539 s \$0-max-rcv;
-#X obj 325 351 r \$0-params;
+#X obj 326 277 r \$0-params;
 #X obj 324 374 list split 1;
 #X obj 370 397 route 0;
 #X obj 370 423 route 0;
 #X msg 469 470 0 \$1 \$2;
 #X msg 328 509 range \$1 \$2 \, \$3;
 #X msg 469 501 range \$1 \$2 \, \$3;
-#X text 327 323 range;
+#X text 328 249 range;
 #X obj 501 23 inlet FBchannel;
 #X obj 36 82 t b b b s;
 #X obj 474 153 list append;
@@ -319,6 +319,8 @@
 #X obj 666 65 pipe 1000;
 #X obj 78 394 symbol \$0-nop;
 #X obj 33 350 t a b;
+#X obj 239 335 route symbol;
+#X text 348 335 bypass symbols;
 #X connect 0 0 21 0;
 #X connect 3 0 28 0;
 #X connect 4 0 3 0;
@@ -329,7 +331,7 @@
 #X connect 7 0 9 0;
 #X connect 8 0 3 0;
 #X connect 9 0 8 0;
-#X connect 12 0 13 0;
+#X connect 12 0 29 0;
 #X connect 13 1 14 0;
 #X connect 14 0 15 0;
 #X connect 14 1 18 0;
@@ -352,6 +354,7 @@
 #X connect 27 0 2 1;
 #X connect 28 0 2 0;
 #X connect 28 1 27 0;
+#X connect 29 1 13 0;
 #X restore 30 197 pd get_name-pos/get_range/set-FBchannel;
 #X obj 725 594 noteout;
 #X obj 721 503 t f f;
@@ -483,26 +486,18 @@
 #X connect 65 0 58 0;
 #X connect 65 1 57 1;
 #X restore 1018 58 pd gui_stuff;
-#X obj 195 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 152 100 hsl 100 20 0 100 0 0 \$0-focus empty empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X obj 140 100 cnv 15 150 20 empty \$0-module_cnv-rcv empty 2 10 0
-14 -233017 -1 0;
-#X obj 487 101 nbx 5 18 0 127 0 0 \$0-min \$0-min-rcv empty 0 -8 0
-14 -262144 -1 -1 0 256;
-#X obj 587 101 nbx 5 18 0 127 0 0 \$0-max \$0-max-rcv empty 0 -8 0
-14 -262144 -1 -1 0 256;
+#X obj 195 152 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 152 100 hsl 100 20 0 100 0 0 \$0-focus empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 0;
+#X obj 140 100 cnv 15 150 20 empty \$0-module_cnv-rcv fx_dubdel2-2 2 10 0 14 #e0e0e0 #000000 0;
+#X obj 487 101 nbx 5 18 0 0 0 0 \$0-min \$0-min-rcv empty 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
+#X obj 587 101 nbx 5 18 0 0 0 0 \$0-max \$0-max-rcv empty 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
 #X obj 754 186 outlet;
 #X obj 951 26 t l l;
 #X obj 951 55 t b l;
 #X obj 1008 149 unpack s s f f f s;
-#X obj 468 100 cnv 15 100 20 empty \$0-min_cnv-rcv empty 2 10 0 14
--262130 -66577 0;
-#X obj 287 100 cnv 15 100 20 empty \$0-param_cnv-rcv empty 2 10 0 14
--261682 -66577 0;
-#X obj 424 193 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+#X obj 468 100 cnv 15 100 20 empty \$0-min_cnv-rcv min:0 2 10 0 14 #fcfcc4 #404040 0;
+#X obj 287 100 cnv 15 100 20 empty \$0-param_cnv-rcv sync 2 10 0 14 #fce0c4 #404040 0;
+#X obj 424 193 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 432 349 \; CTLIN \$1 1 1;
 #X obj 855 519 list split 1;
 #X obj 849 26 r \$0-update;
@@ -618,33 +613,24 @@
 #X msg 1010 280 0 0 lin;
 #X obj 853 408 list prepend 0 0 lin;
 #X obj 1178 575 r \$0-module-name;
-#X floatatom 393 101 8 -1 10240 0 - #0-ccnum-rcv #0-ccnum;
-#X obj 671 100 cnv 15 60 20 empty \$0-mapping_cnv-rcv empty 2 10 0
-14 -261234 -66577 0;
-#X obj 100 100 bng 20 250 50 0 \$0-deleteBtn empty X 5 10 0 18 -258113
--1 -1;
-#X obj 100 100 cnv 20 20 20 empty \$0-cancel_cnv-rcv empty 5 10 0 18
--261234 -258113 0;
+#X floatatom 393 101 8 -1 10240 0 - \$0-ccnum-rcv \$0-ccnum 0;
+#X obj 671 100 cnv 15 60 20 empty \$0-mapping_cnv-rcv lin 2 10 0 14 #fcc4c4 #404040 0;
+#X obj 100 100 bng 20 250 50 0 \$0-deleteBtn empty X 5 10 0 18 #fc0400 #000000 #000000;
+#X obj 100 100 cnv 20 20 20 empty \$0-cancel_cnv-rcv X 5 10 0 18 #fcc4c4 #fc0400 0;
 #X obj 954 174 r \$0-clear;
 #X msg 797 129 0;
-#X obj 1261 156 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
--1 -1;
-#X obj 121 100 tgl 20 0 \$0-mute \$0-mute-rcv empty 2 10 0 10 -233017
--233017 -1 1 1;
+#X obj 1261 156 bng 15 250 50 0 empty empty reset 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 121 100 tgl 20 0 \$0-mute \$0-mute-rcv ON 2 10 0 10 #14e814 #14e814 #000000 0 1;
 #X obj 865 89 r \$0-mute;
 #X obj 860 141 == 0;
 #X obj 594 181 r \$0-mute-rcv;
 #X obj 587 219 route set;
 #X obj 752 158 spigot;
 #X obj 836 180 spigot 1;
-#X obj 389 100 cnv 15 80 20 empty \$0-ccnum_cnv-rcv empty 2 10 0 14
--204786 -66577 0;
-#X obj 734 100 nbx 5 20 0 65536 0 0 \$0-feedback \$0-feedback-rcv empty
-32 11 0 12 -262144 -1 -262144 0 256;
-#X obj 570 100 cnv 15 100 20 empty \$0-max_cnv-rcv empty 2 10 0 14
--232576 -66577 0;
-#X obj 730 100 cnv 15 90 20 empty \$0-feedback_cnv-rcv Note:1-1 2 10
-0 14 -44926 -44926 0;
+#X obj 389 100 cnv 15 80 20 empty \$0-ccnum_cnv-rcv cc:2-10 2 10 0 14 #c4fcc4 #404040 0;
+#X obj 734 100 nbx 5 20 0 65536 0 0 \$0-feedback \$0-feedback-rcv empty 32 11 0 12 #fcfcfc #000000 #fcfcfc 0 256;
+#X obj 570 100 cnv 15 100 20 empty \$0-max_cnv-rcv max:0 2 10 0 14 #e0c4fc #404040 0;
+#X obj 730 100 cnv 15 90 20 empty \$0-feedback_cnv-rcv Note:1-12 2 10 0 14 #28f4f4 #28f4f4 0;
 #X obj 952 4 r \$2-ctl-assign3-\$1;
 #X obj 1175 11 r \$2-ctl-assign3.GLOBAL;
 #X obj 1150 620 glocal/glocal.send;
@@ -686,11 +672,11 @@
 #X connect 15 0 7 0;
 #X connect 15 1 7 1;
 #X restore 802 286 pd smooth_small_changes;
-#X floatatom 755 249 5 0 0 0 - - -;
-#X symbolatom 1068 686 40 0 0 0 - - -;
-#X symbolatom 1298 667 40 0 0 0 - - -;
+#X floatatom 755 249 5 0 0 0 - - - 0;
+#X symbolatom 1068 686 40 0 0 0 - - - 0;
+#X symbolatom 1298 667 40 0 0 0 - - - 0;
 #X msg 1404 536 symbol audio_clip-\$1;
-#X floatatom 1408 484 5 0 0 0 - - -;
+#X floatatom 1408 484 5 0 0 0 - - - 0;
 #X connect 0 0 60 0;
 #X connect 2 0 3 0;
 #X connect 2 1 35 0;

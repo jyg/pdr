@@ -1,8 +1,8 @@
 #N canvas 0 50 1094 928 12;
 #X obj 103 145 hsl 15 10 -0.5 0.5 0 0 \$1-pan\$2 \$1-pan\$2-rcv PAN
--1 5 0 8 -4032 -260097 -33289 700 1;
+-1 5 0 8 -4032 -260097 -33289 1400 1;
 #X obj 100 117 vsl 20 25 0 100 0 0 \$1-vol\$2 \$1-vol\$2-rcv empty
-0 -9 0 10 -204786 -1 -1 2400 1;
+0 -9 0 10 -204786 -1 -1 4800 1;
 #X obj 103 100 hsl 30 15 -1 1 0 0 \$1-user\$2 \$1-user\$2-rcv user\$2
 0 8 0 10 -225271 -225271 -233017 0 1;
 #X obj 120 115 cnv 4 15 40 empty empty empty 20 12 0 14 -1 -66577 0
@@ -190,11 +190,11 @@
 #X msg 440 468 color 36 36 10;
 #X obj 390 339 pack f 10;
 #X msg 381 397 color \$1 \$1 \$2;
-#X msg 609 248 -1;
-#X obj 737 91 t b b;
 #X obj 565 96 f;
 #X obj 741 25 r \$1-user\$2-rcv;
-#X obj 741 50 route label;
+#X obj 741 50 route label color;
+#X msg 798 86 \$3;
+#X obj 653 73 t b;
 #X connect 9 0 12 0;
 #X connect 9 0 14 0;
 #X connect 9 1 13 0;
@@ -212,16 +212,16 @@
 #X connect 22 1 19 0;
 #X connect 22 2 21 0;
 #X connect 23 0 19 1;
-#X connect 25 0 32 0;
+#X connect 25 0 30 0;
 #X connect 26 0 16 0;
 #X connect 26 1 17 0;
 #X connect 27 0 15 0;
 #X connect 28 0 29 0;
 #X connect 29 0 15 0;
-#X connect 30 0 28 1;
+#X connect 30 0 26 0;
 #X connect 31 0 32 0;
-#X connect 31 1 30 0;
-#X connect 32 0 26 0;
-#X connect 33 0 34 0;
-#X connect 34 0 31 0;
+#X connect 32 0 34 0;
+#X connect 32 1 33 0;
+#X connect 33 0 28 1;
+#X connect 34 0 30 0;
 #X coords 0 -1 1 1 35 55 2 100 100;

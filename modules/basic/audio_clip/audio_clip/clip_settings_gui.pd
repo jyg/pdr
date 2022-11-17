@@ -1,23 +1,23 @@
 #N canvas 407 114 1487 918 12;
-#X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
+#X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
 #X text 18 6 LAUNCH;
 #X obj 89 11 bng 60 250 50 0 \$2-\$1-openpanel empty empty 17 7 0 10
--262144 -1 -1;
+#fcfcfc #000000 #000000;
 #X text 100 39 file;
-#X obj 20 30 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv ■ 5 18 0 20 -228992
--228992 -1 0 1;
-#X obj 279 64 cnv 15 220 220 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 20 30 tgl 40 0 \$2-clip\$1 \$2-clip\$1-rcv ■ 5 18 0 20 #14e814
+#14e814 #000000 0 1;
+#X obj 279 64 cnv 15 220 220 empty empty empty 20 12 0 14 #fcfcc4 #404040
 0;
 #X obj 416 119 tgl 20 0 \$2-clip\$1_loop \$2-clip\$1_loop-rcv Loop
-22 7 0 14 -262144 -1 -1 0 1;
+22 7 0 14 #fcfcfc #000000 #000000 0 1;
 #X obj 292 87 vradio 17 1 0 4 \$2-clip\$1_algorithm \$2-clip\$1_algorithm-rcv
-empty 0 -8 0 10 -262144 -1 -1 3;
+empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 314 119 playolap;
 #X obj 535 125 s pd-\$2-clip-\$1_edit;
 #X msg 538 86 vis 0;
-#X obj 437 4 bng 60 250 50 0 empty empty X 12 32 0 60 -262144 -1 -1
-;
+#X obj 437 4 bng 60 250 50 0 empty empty X 12 32 0 60 #fcfcfc #000000
+#000000;
 #X text 314 102 varispeed;
 #X text 313 136 pvoc (FFT);
 #X text 314 86 OFF;
@@ -28,13 +28,12 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 #X text 387 88 __;
 #X text 387 137 __;
 #X text 400 112 __;
-#X text 290 63 WRAP MODE;
-#X obj 2 81 cnv 15 160 80 empty empty empty 20 12 0 14 -203904 -66577
+#X obj 2 81 cnv 15 160 80 empty empty empty 20 12 0 14 #c4c4fc #404040
 0;
 #X text 31 79 Quantization;
 #X text 59 101 <-custom / global, f 9;
 #X obj 99 394 hsl 395 20 0 1 0 0 empty \$2-clip\$1_to-rcv TO 105 10
-0 14 -261681 -1 -1 39400 0;
+0 14 #fce0c0 #000000 #000000 0 0;
 #X text 376 264 Position;
 #N canvas 430 162 1242 711 compute_enveloppe 0;
 #X obj 75 30 inlet;
@@ -56,7 +55,7 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 #X obj 342 792 outlet done;
 #X msg 185 679 0;
 #X obj 427 562 log;
-#X floatatom 427 587 5 0 0 0 - - -;
+#X floatatom 427 587 5 0 0 0 - - - 0;
 #X msg 426 460 1;
 #X msg 472 461 0.1;
 #X obj 102 417 switch~ 1024 1 16;
@@ -73,9 +72,9 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 #X msg 520 208 \; sample resize 10;
 #X obj 437 272 list append;
 #X msg 437 297 \; \$2 resize \$1 \; \$2_ resize \$1;
-#X floatatom 106 272 5 0 0 0 - - -;
-#X obj 210 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X floatatom 106 272 5 0 0 0 - - - 0;
+#X obj 210 168 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 618 679 list append;
 #X obj 340 724 t f b;
 #X msg 627 736 \; \$1 normalize \; \$1_ normalize;
@@ -148,8 +147,8 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 ;
 #X text 720 151 destination arrays : sample & sample_, f 21;
 #X obj 550 306 spigot;
-#X obj 99 314 hsl 395 80 0 1 0 0 empty empty empty 10 30 0 20 -262130
--1 -1 0 1;
+#X obj 99 314 hsl 395 80 0 1 0 0 empty empty konkrete_g3\ 120 10 30
+0 20 #fcfcc4 #000000 #000000 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-sample 172 float 0;
 #X coords 0 1.1 171 -1.1 400 80 1 0 0;
@@ -159,25 +158,25 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 #X coords 0 1.1 171 -1.1 400 80 1 0 0;
 #X restore 96 314 graph;
 #N canvas 761 28 761 733 todo 0;
-#X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 -128992 -66577
+#X obj 0 1 cnv 15 500 420 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
 #X text 55 40 launch mode;
-#X obj 177 39 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -128992 -1
--1 0;
+#X obj 177 39 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #7c7c7c #000000
+#000000 0;
 #X text 199 34 trigger;
 #X text 201 50 gate;
 #X text 199 68 toggle;
-#X obj 64 94 tgl 15 0 empty empty empty 17 7 0 10 -128992 -1 -1 0 1
-;
+#X obj 64 94 tgl 15 0 empty empty empty 17 7 0 10 #7c7c7c #000000 #000000
+0 1;
 #X text 85 90 legato;
 #X text 334 200 Follow Action;
 #X text 338 175 Vel;
-#X floatatom 379 174 5 0 0 0 - - -;
-#X floatatom 337 237 5 0 0 2 mes - -;
-#X floatatom 394 238 2 0 0 2 beat - -;
-#X floatatom 438 240 2 0 0 2 16th - -;
-#X obj 355 267 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -128992
--1 -1 0;
+#X floatatom 379 174 5 0 0 0 - - - 0;
+#X floatatom 337 237 5 0 0 2 mes - - 0;
+#X floatatom 394 238 2 0 0 2 beat - - 0;
+#X floatatom 438 240 2 0 0 2 16th - - 0;
+#X obj 355 267 vradio 15 1 0 8 empty empty empty 0 -8 0 10 #7c7c7c
+#000000 #000000 0;
 #X text 379 261 stop;
 #X text 378 278 play again;
 #X text 378 294 previous;
@@ -185,17 +184,17 @@ empty 0 -8 0 10 -262144 -1 -1 3;
 #X text 378 322 first;
 #X text 378 337 last;
 #X text 375 350 any;
-#X floatatom 326 55 5 0 0 2 mes - -;
-#X floatatom 379 55 2 0 0 2 beat - -;
-#X floatatom 426 54 2 0 0 2 16th - -;
-#X floatatom 326 127 5 0 0 2 mes - -;
-#X floatatom 379 127 2 0 0 2 beat - -;
-#X floatatom 426 126 2 0 0 2 16th - -;
+#X floatatom 326 55 5 0 0 2 mes - - 0;
+#X floatatom 379 55 2 0 0 2 beat - - 0;
+#X floatatom 426 54 2 0 0 2 16th - - 0;
+#X floatatom 326 127 5 0 0 2 mes - - 0;
+#X floatatom 379 127 2 0 0 2 beat - - 0;
+#X floatatom 426 126 2 0 0 2 16th - - 0;
 #X text 326 86 Length;
-#X obj 14 351 hsl 50 15 -1 1 0 0 empty empty CENTER 2 8 0 10 -232576
--1 -1 0 1;
+#X obj 14 351 hsl 50 15 -1 1 0 0 empty empty CENTER 2 8 0 10 #e0c4fc
+#000000 #000000 0 1;
 #X obj 14 371 hsl 50 15 0 1 0 0 \$2-var_clip\$1 \$2-var_clip\$1-rcv
-RANGE 2 8 0 10 -232576 -1 -1 0 1;
+RANGE 2 8 0 10 #e0c4fc #000000 #000000 0 1;
 #X restore 618 16 pd todo;
 #X obj 598 238 route vis;
 #X obj 754 262 list append \$2-mytable_clip\$1 \$0-sample;
@@ -205,8 +204,8 @@ RANGE 2 8 0 10 -232576 -1 -1 0 1;
 #X msg 754 287 set \$1-1 \$1-2 \$2;
 #X obj 542 178 r \$2-hsl\$1-rcv;
 #X obj 582 661 v \$2-duration\$1_ms;
-#X obj 597 367 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 597 367 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 480 852 s \$0-sample;
 #X msg 496 677 60000 \$1;
 #X obj 496 702 /;
@@ -216,15 +215,15 @@ RANGE 2 8 0 10 -232576 -1 -1 0 1;
 #X obj 550 434 r \$2-clip\$1_bpm;
 #X obj 534 521 f;
 #X obj 697 419 pipe f 10;
-#X floatatom 584 711 5 0 0 0 - - -;
-#X floatatom 588 751 5 0 0 0 - - -;
+#X floatatom 584 711 5 0 0 0 - - - 0;
+#X floatatom 588 751 5 0 0 0 - - - 0;
 #X obj 864 188 r \$2-\$1-refresh;
 #X obj 610 277 f;
 #X msg 48 482 label;
 #X obj 645 383 select 0;
 #X obj 496 780 / 2;
-#X obj 446 560 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 446 560 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X msg 481 831 xticks 0 \$1 2;
 #X obj 531 557 pipe 20;
 #X obj 491 605 select 0;
@@ -240,9 +239,9 @@ RANGE 2 8 0 10 -232576 -1 -1 0 1;
 #X text 81 12 string in;
 #X obj 91 31 inlet;
 #X obj 91 431 outlet;
-#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 -118750 -66577
+#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 #70fc74 #404040
 0;
-#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 -102336 -66577
+#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 #60f8fc #404040
 0;
 #X obj 91 55 list;
 #X obj 91 193 list store, f 13;
@@ -299,11 +298,11 @@ RANGE 2 8 0 10 -232576 -1 -1 0 1;
 #X obj 508 246 symbol;
 #X msg 508 270 label \$1;
 #X obj 73 294 tgl 20 0 \$2-clip\$1_snap_from \$2-clip\$1_snap_from-rcv
-SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
+SNAP -5 -10 0 10 #c4c4fc #000000 #fcfcfc 0 1;
 #X obj 99 294 hsl 395 20 0 1 0 0 empty \$2-clip\$1_from-rcv FROM 100
-10 0 14 -257472 -1 -1 0 0;
+10 0 14 #f8d8fc #000000 #000000 0 0;
 #X obj 73 394 tgl 20 0 \$2-clip\$1_snap_to \$2-clip\$1_snap_to-rcv
-SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
+SNAP -5 -10 0 10 #c4c4fc #000000 #fcfcfc 0 1;
 #X obj 290 721 r \$2-randomize_clip\$1;
 #X text 238 785 nb of 8 th;
 #X obj 59 831 random;
@@ -392,36 +391,36 @@ SNAP -5 -10 0 10 -203904 -1 -262144 0 1;
 #X restore 131 527 pd snap_to_ticks;
 #X obj 136 554 s \$2-clip\$1_to;
 #X obj 24 337 bng 30 250 50 0 \$2-randomize_clip\$1 empty RANDOM -10
--15 0 12 -232576 -1 -262144;
+-15 0 12 #e0c4fc #000000 #fcfcfc;
 #X obj 301 174 hradio 15 1 0 2 \$2-clip\$1_pvoclock \$2-clip\$1_pvoclock-rcv
-FFT_lock_phase 0 -8 0 10 -261234 -1 -1 1;
+FFT_lock_phase 0 -8 0 10 #fcc4c4 #000000 #000000 0;
 #X text 332 170 on;
 #X obj 293 214 vsl 30 50 60 106 0 0 \$2-clip\$1_gain \$2-clip\$1_gain-rcv
-gain 0 -9 0 10 -204786 -1 -1 4261 1;
+gain 0 -9 0 10 #c4fcc4 #000000 #000000 0 1;
 #X text 327 202 +6dB;
 #X text 322 253 -20dB;
 #X text 284 204 ______;
 #X text 335 216 0;
-#X obj 348 221 bng 10 250 50 0 empty empty empty 17 7 0 10 -257985
--1 -1;
+#X obj 348 221 bng 10 250 50 0 empty empty empty 17 7 0 10 #f8fc00
+#000000 #000000;
 #X msg 391 219 100;
 #X obj 9 102 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
-empty 0 -8 0 10 -262144 -1 -1 100 256;
+empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 8 101 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1_bar 0 14 0
-14 -204800 -66577 0;
+14 #c4fcfc #404040 0;
 #X obj 7 135 nbx 3 20 0 9999 0 0 \$2-clip\$1_preroll \$2-clip\$1_preroll-rcv
-preroll(ticks) 54 10 0 12 -262144 -1 -1 0 256;
+preroll(ticks) 54 10 0 12 #fcfcfc #000000 #000000 0 256;
 #X obj 417 176 nbx 5 20 10 300 0 0 \$2-clip\$1_bpm \$2-clip\$1_bpm-rcv
-Seg.BPM 0 -8 0 14 -262144 -1 -1 120 256;
+Seg.BPM 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
 #X obj 303 483 midi-colors \$2 clip\$1_from \$2-clip\$1_from-rcv,
 f 19;
 #X obj 290 445 / 127;
 #X obj 111 596 / 127;
 #X obj 124 634 midi-colors \$2 clip\$1_to \$2-clip\$1_to-rcv, f 19
 ;
-#X floatatom 431 450 5 0 0 0 - - -;
-#X floatatom 272 596 5 0 0 0 - - -;
-#X floatatom 220 268 5 0 0 0 offset - #2-clip#1_offset;
+#X floatatom 431 450 5 0 0 0 - - - 0;
+#X floatatom 272 596 5 0 0 0 - - - 0;
+#X floatatom 220 268 5 0 0 0 offset - \$2-clip\$1_offset 0;
 #X obj 1171 286 r \$2-clip\$1_offset;
 #X obj 1204 356 delay 100;
 #X obj 1187 321 t b;
@@ -430,23 +429,23 @@ f 19;
 #X obj 1126 622 samplerate~;
 #X obj 1092 599 t f b;
 #X obj 1126 647 / 1000;
-#X obj 173 5 cnv 15 100 120 empty empty empty 20 12 0 14 -204800 -66577
+#X obj 173 5 cnv 15 100 120 empty empty empty 20 12 0 14 #c4fcfc #404040
 0;
 #X text 182 7 launch mode;
 #X obj 187 31 vradio 15 1 0 4 \$2-clip\$1_launch \$2-clip\$1_launch-rcv
-empty 0 -8 0 10 -262144 -1 -1 2;
+empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 209 26 trigger;
 #X text 211 42 gate;
 #X text 209 60 toggle;
 #X text 211 73 repeat;
 #X obj 188 106 tgl 15 0 \$2-clip\$1_legato \$2-clip\$1_legato-rcv LEGATO
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 18 197 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantFollowId \$2-clip\$1_quantFollowId-rcv
-empty 0 -8 0 10 -262144 -1 -1 0 256;
+empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 18 196 cnv 20 50 21 empty \$2-quant\$1_FollowLabel-rcv 2_bars
-0 14 0 14 -204800 -66577 0;
-#X obj 144 164 vradio 13 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+0 14 0 14 #c4fcfc #404040 0;
+#X obj 144 164 vradio 13 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X text 168 159 stop;
 #X text 171 172 play again;
 #X text 171 182 previous;
@@ -458,86 +457,87 @@ empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X text 70 197 ?;
 #X text 11 175 What to do after;
 #X text 209 72 xxxxxx;
-#X obj 8 163 cnv 15 240 105 empty empty empty 20 12 0 14 -133154 -66577
+#X obj 8 163 cnv 15 240 105 empty empty empty 20 12 0 14 #808084 #404040
 0;
 #X text 101 22 open;
+#X text 290 63 WARP MODE;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
-#X connect 26 0 92 0;
-#X connect 28 1 50 0;
-#X connect 31 0 32 0;
-#X connect 36 0 31 1;
-#X connect 36 0 57 0;
-#X connect 37 0 41 0;
-#X connect 38 0 37 0;
-#X connect 39 0 69 0;
-#X connect 40 0 59 0;
-#X connect 41 0 28 0;
-#X connect 42 0 75 0;
-#X connect 43 0 48 1;
+#X connect 25 0 91 0;
+#X connect 27 1 49 0;
+#X connect 30 0 31 0;
+#X connect 35 0 30 1;
+#X connect 35 0 56 0;
+#X connect 36 0 40 0;
+#X connect 37 0 36 0;
+#X connect 38 0 68 0;
+#X connect 39 0 58 0;
+#X connect 40 0 27 0;
+#X connect 41 0 74 0;
+#X connect 42 0 47 1;
+#X connect 45 0 46 0;
 #X connect 46 0 47 0;
+#X connect 46 0 53 0;
 #X connect 47 0 48 0;
 #X connect 47 0 54 0;
-#X connect 48 0 49 0;
-#X connect 48 0 55 0;
-#X connect 49 0 60 0;
-#X connect 50 0 52 0;
-#X connect 50 1 43 0;
-#X connect 50 2 49 1;
-#X connect 51 0 52 1;
-#X connect 51 0 66 0;
-#X connect 52 0 63 0;
-#X connect 53 0 28 0;
-#X connect 56 0 57 0;
-#X connect 57 0 39 0;
-#X connect 57 0 66 1;
-#X connect 58 0 32 0;
-#X connect 59 1 53 0;
-#X connect 60 0 74 0;
-#X connect 61 0 60 0;
-#X connect 62 0 45 0;
-#X connect 63 0 64 0;
-#X connect 64 1 46 0;
-#X connect 65 0 36 0;
-#X connect 66 0 52 0;
-#X connect 67 0 72 0;
-#X connect 68 1 73 0;
-#X connect 69 0 68 0;
-#X connect 70 0 68 1;
-#X connect 71 0 70 0;
-#X connect 72 0 69 1;
-#X connect 73 0 40 0;
-#X connect 73 1 68 1;
-#X connect 74 1 62 0;
+#X connect 48 0 59 0;
+#X connect 49 0 51 0;
+#X connect 49 1 42 0;
+#X connect 49 2 48 1;
+#X connect 50 0 51 1;
+#X connect 50 0 65 0;
+#X connect 51 0 62 0;
+#X connect 52 0 27 0;
+#X connect 55 0 56 0;
+#X connect 56 0 38 0;
+#X connect 56 0 65 1;
+#X connect 57 0 31 0;
+#X connect 58 1 52 0;
+#X connect 59 0 73 0;
+#X connect 60 0 59 0;
+#X connect 61 0 44 0;
+#X connect 62 0 63 0;
+#X connect 63 1 45 0;
+#X connect 64 0 35 0;
+#X connect 65 0 51 0;
+#X connect 66 0 71 0;
+#X connect 67 1 72 0;
+#X connect 68 0 67 0;
+#X connect 69 0 67 1;
+#X connect 70 0 69 0;
+#X connect 71 0 68 1;
+#X connect 72 0 39 0;
+#X connect 72 1 67 1;
+#X connect 73 1 61 0;
+#X connect 74 0 75 0;
+#X connect 74 1 30 0;
 #X connect 75 0 76 0;
-#X connect 75 1 31 0;
-#X connect 76 0 77 0;
-#X connect 77 0 32 0;
-#X connect 79 0 90 0;
-#X connect 81 0 85 0;
+#X connect 76 0 31 0;
+#X connect 78 0 89 0;
+#X connect 80 0 84 0;
+#X connect 82 0 87 0;
 #X connect 83 0 88 0;
-#X connect 84 0 89 0;
-#X connect 85 0 83 0;
-#X connect 85 1 84 0;
+#X connect 84 0 82 0;
+#X connect 84 1 83 0;
+#X connect 87 0 85 0;
 #X connect 88 0 86 0;
-#X connect 89 0 87 0;
-#X connect 90 0 91 0;
-#X connect 92 0 93 0;
-#X connect 102 0 103 0;
-#X connect 103 0 97 0;
-#X connect 108 0 109 0;
-#X connect 109 0 90 0;
-#X connect 110 0 92 0;
-#X connect 111 0 110 0;
-#X connect 112 0 108 1;
-#X connect 113 0 111 1;
-#X connect 115 0 117 0;
-#X connect 116 0 40 0;
-#X connect 117 0 116 0;
-#X connect 118 0 121 0;
-#X connect 119 0 28 1;
-#X connect 120 0 122 0;
-#X connect 121 0 119 0;
-#X connect 121 1 120 0;
-#X connect 122 0 119 1;
+#X connect 89 0 90 0;
+#X connect 91 0 92 0;
+#X connect 101 0 102 0;
+#X connect 102 0 96 0;
+#X connect 107 0 108 0;
+#X connect 108 0 89 0;
+#X connect 109 0 91 0;
+#X connect 110 0 109 0;
+#X connect 111 0 107 1;
+#X connect 112 0 110 1;
+#X connect 114 0 116 0;
+#X connect 115 0 39 0;
+#X connect 116 0 115 0;
+#X connect 117 0 120 0;
+#X connect 118 0 27 1;
+#X connect 119 0 121 0;
+#X connect 120 0 118 0;
+#X connect 120 1 119 0;
+#X connect 121 0 118 1;
 #X coords 0 -1 1 1 500 420 2 0 0;

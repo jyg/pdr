@@ -1,4 +1,4 @@
-#N canvas 1 56 1362 685 10;
+#N canvas 502 96 1362 685 10;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
@@ -67,8 +67,8 @@ in individual files.;
 #X text 57 43 dattorro algorithm : http://tre.ucsd.edu/wordpress/?p=625
 ;
 #X text 58 20 high quality vanilia reverb using;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_dattorroverb-0
-0 7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_dattorroverb-1
+0 7 0 14 #fcfcfc #000000 0;
 #X obj 100 115 ui_vs \$0 predel 0 200;
 #X obj 138 115 ui_vs \$0 bandwidth 0 1;
 #X obj 176 115 ui_vs \$0 damping 0 1;

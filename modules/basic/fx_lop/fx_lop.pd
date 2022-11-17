@@ -28,13 +28,13 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X msg 178 309 interp \$1;
 #X obj 263 350 e_beequad;
 #X obj 290 281 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 21 256;
+#fcfcfc #000000 #000000 21 256;
 #X obj 679 55 r \$0-freq;
 #X obj 781 56 r \$0-Q;
 #X obj 175 199 u_lowpassq;
 #X obj 224 98 f;
-#X floatatom 526 463 5 0 0 0 - - -, f 5;
-#X floatatom 256 496 5 0 0 0 - - -, f 5;
+#X floatatom 526 463 5 0 0 0 - - - 0;
+#X floatatom 256 496 5 0 0 0 - - - 0;
 #X obj 509 228 r \$0-delta;
 #N canvas 0 50 1002 622 lfo 0;
 #X obj 87 500 line;
@@ -146,7 +146,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 552 330 u_dispatch \$0 Q;
 #X text 51 17 embedded rjdj e_lowpass abstraction;
 #X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_lop-0
-0 7 0 14 -262144 -1 0;
+0 7 0 14 #fcfcfc #000000 0;
 #X obj 100 115 ui_vsl \$0 freq 20 20000;
 #X obj 142 115 ui_vs \$0 Q 0 10;
 #X text 58 401 messages transitant entre module_loader et module_declare
@@ -166,8 +166,8 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 214 115 ui_vsl \$0 speed 1 1000;
 #X obj 252 115 ui_vs \$0 delta -30 30;
 #X text 243 115 LFO;
-#X obj 274 102 bng 15 250 50 0 \$0-no_lfo empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 274 102 bng 15 250 50 0 \$0-no_lfo empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 549 352 u_dispatch \$0 freq;
 #X obj 555 405 u_parameter \$0 speed;
 #X msg 692 234 speed 1 \, delta 0 \, freq 20000 \, Q 0.5;
@@ -180,6 +180,18 @@ is created dynamically, f 29;
 #X obj 804 33 declare -path ../../../core;
 #X obj 804 53 declare -path ../../../core/stuff;
 #X obj 804 73 declare -path ../../../core/rj;
+#X obj 626 55 mob/vfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name Untitled_1*;
+#A saved -speed_ratio 100;
+#A saved -label_color 0 0 0;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -size 66 74;
 #X connect 2 0 15 0;
 #X connect 2 1 16 0;
 #X connect 3 0 25 0;

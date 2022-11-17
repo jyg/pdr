@@ -49,7 +49,7 @@ Jamming via internet \; Suonare insieme via internet \; \;;
 #X text 90 28 IT;
 #X text 90 13 EN;
 #X obj 4 30 tgl 15 0 \$0-COMMENT_EDIT empty Edit 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 274 0 r \$0-COMMENT_EDIT;
 #X obj 465 49 r \$0-lang;
 #X obj 361 151 == 0;
@@ -135,10 +135,10 @@ puis cliquer sur Enter \; 2) Type username then press Enter \; 2) Digitare
 il tuo username e poi premi Enter \; \;;
 #X scalar comment 70 343.866 200 \; 3) Cliquer sur Connect \; 3) Click
 "Connect" \; 3) Premi il pulsante "Connect" \; \;;
-#X scalar comment 69 371.866 200 \; 4) Cocher la case ON AIR pour émettre
-le son vers les autres utilisateurs \; 4) Check ON AIR checkbox to
-send your sound to other people \; 4) Attivare la casella di controllo
-ON AIR per avviare la tua trasmissione \; \;;
+#X scalar comment 69 371.866 200 \; 4) La case ON AIR permet d'activer
+le flux sortant \; 4) The ON AIR checkbox enables streaming out \;
+4) La casella di controllo ON AIR avvia la tua trasmissione \;  \\\;
+\;;
 #X scalar comment 68 401.866 200 \; 5) Accès à l'onglet de contrôle
 de mixage des pairs \; 5) Click to show mix-control panel for peers
 \; 5) Accesso ai controlli del volume dei altri utenti \; \;;
@@ -201,14 +201,12 @@ listening \; <- abilitare / disabilitare l'ascolto dei peer remoti
 #X scalar comment 68 471.866 200 \; 6) Accès à l'onglet de réglage
 du serveur \; 6) Click to show server settings panel \; 6) Accesso
 ai controlli del server utilizzato per la connezione \; \;;
-#X text 503 159 <--------(1);
-#X text 504 188 <--------(2);
 #X text 567 131 <---(6);
 #N canvas 1069 425 850 412 server_panel 0;
 #X obj 41 61 cnv 15 188 68 empty empty empty 15 7 0 14 -262144 -1 0
 ;
-#X obj 290 56 hradio 15 1 0 1 \$0-guitab \$0-guitab-rcv OK 2 8 0 10
--232576 -191407 -1 2;
+#X obj 286 40 hradio 15 1 0 1 \$0-guitab \$0-guitab-rcv ESC. 0 8 0
+8 -232576 -191407 -1 2;
 #X obj 55 84 cnv 15 150 65 empty empty empty 20 12 0 14 -232576 -66577
 0;
 #X obj 33 90 vradio 20 1 0 3 \$0-server \$0-server-rcv empty 0 -8 0
@@ -226,22 +224,24 @@ ai controlli del server utilizzato per la connezione \; \;;
 #X text 34 57 CONNECT TO;
 #X scalar comment 19 173.866 200 \; Par défaut le serveur permettant
 de récupérer les adresses IP \; The default server used to get IP
-adresses of \; Il nome del server utilizzato per ottenere gli \;  \\\;
+adresses of \; Il nome del server utilizzato per ottenere gli \; \\\;
 \;;
 #X scalar comment 21 193.866 200 \; de tous les pairs est vrr.iem.at
 \; every peer is vrr.iem.at \; "adress-IP" dei pari è usualmente vrr.iem.at
-\;  \\\; \;;
+\; \\\; \;;
 #X scalar comment 19 223.866 200 \; Il est possible de définir un
 autre serveur. \; You can specify another server. \; Si può pure definire
-un altro server. \;  \\\; \;;
+un altro server. \; \\\; \;;
 #X scalar comment 19 263.866 200 \; Pour démarrer un serveur en local
 sur cette machine: activer Local Server "ON" \; To start a local server
 on this computer: press Local Server "ON" \; Per avviare un local server
-su questo computer: premere Local Server "ON" \;  \\\; \;;
+su questo computer: premere Local Server "ON" \; \\\; \;;
 #X text 157 44 Local Server, f 6;
 #X restore 623 495 pd server_panel;
 #X scalar comment 68 451.866 900 \; Réglages avancés : \; Advanced
 settings : \; Impostazioni avanzate : \; \;;
+#X text 567 170 <---(2);
+#X text 567 152 <---(1);
 #X connect 10 0 11 0;
 #X connect 10 1 11 1;
 #X connect 12 0 10 0;
