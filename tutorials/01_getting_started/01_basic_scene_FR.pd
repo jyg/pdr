@@ -1,14 +1,11 @@
-#N struct comment float x float y float color text FR text EN text
-IT;
+#N struct comment float x float y float color text FR text EN text IT;
 #N canvas 419 375 1174 701 16;
 #X declare -path pdr/modules/basic;
 #X declare -path pdr/modules/basic;
-#X obj 193 426 cnv 15 350 200 empty empty empty 20 12 0 14 -261682
--66577 0;
+#X obj 193 426 cnv 15 350 200 empty empty empty 20 12 0 14 #fce0c4 #404040 0;
 #X msg 247 365 \; pd dsp 1;
 #X msg 552 542 vol 100 \, decay 302 \, tone 0.72;
-#X text 544 435 <-- Here \, we just use control inlet to send 'midi-like'
-note messages, f 26;
+#X text 544 435 <-- Here \, we just use control inlet to send 'midi-like' note messages, f 26;
 #X obj 228 503 inst_rhodey;
 #A saved vol 100;
 #A saved tone 0.72;
@@ -16,20 +13,14 @@ note messages, f 26;
 #A saved SID 0;
 #X obj 252 593 dac~;
 #X obj 410 592 print;
-#X obj 211 302 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
-0;
-#X text 554 603 You can adjust the parameters of module by using the
-GUI controls or by sending specific messages., f 34;
+#X obj 211 302 cnv 15 400 60 empty empty empty 20 12 0 14 #fcfcc4 #404040 0;
+#X text 554 603 You can adjust the parameters of module by using the GUI controls or by sending specific messages., f 34;
 #X msg 427 470 note 64 100;
 #X obj 245 320 declare -path pdr/modules/basic;
 #X obj 520 154 container 1;
-#A saved contents fx_chorus;
+#A saved contents clear;
 #A saved SID 0;
-#A saved dump bypass 1;
-#A saved dump mod 0.648466;
-#A saved dump freq 0.8;
-#X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 -262144
--1 -1 1;
+#X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #N canvas 756 140 1105 768 stuff 0;
 #X msg 276 142 fx_parameq2;
 #X msg 709 278 PdRacks.presets;
@@ -208,50 +199,28 @@ GUI controls or by sending specific messages., f 34;
 #X text 57 430 3) patch;
 #X text 46 544 That's all.;
 #X msg 410 436 note 66 100;
-#X obj 29 12 cnv 15 700 60 empty empty empty 20 12 0 14 -4032 -66577
-0;
-#X text 37 272 _________________________________________________________________________
-, f 75;
-#X text 44 267 Let's create a minimal PdRacks patch with only one module
-: inst_rhodey, f 75;
+#X obj 29 12 cnv 15 700 60 empty empty empty 20 12 0 14 #00f8fc #404040 0;
+#X text 37 272 _________________________________________________________________________, f 75;
+#X text 44 267 Let's create a minimal PdRacks patch with only one module : inst_rhodey, f 75;
 #N canvas 0 50 716 197 0.48_retrocompatibility 0;
-#X text 37 21 If you want to use PdRacks with pd 0.48 \, you'll have
-to do some adjustments.;
-#X text 41 84 For more info see pdr/tutorials/02_advanced/19_export-pd-48.pd
-;
+#X text 37 21 If you want to use PdRacks with pd 0.48 \, you'll have to do some adjustments.;
+#X text 41 84 For more info see pdr/tutorials/02_advanced/19_export-pd-48.pd;
 #X restore 197 653 pd 0.48_retrocompatibility;
 #X msg 555 575 vol 90 \, decay 602 \, tone 0.3;
-#X scalar comment 31 33 200 \; faciliter la construction de dispositifs
-interactifs \; complex audio/visual effects / instruments / interactions
-\; \;;
-#X scalar comment 32 50 200 \; et d'effets ou instruments audio / visuels.
-\; scenes easier. \; \;;
-#X scalar comment 31 79 200 \; Un module standard PdRacks a 2 inlets~
-et 2 outlets~ \; A standard PdRacks module has 2 inlets~/outlets~ (for
-\; \;;
-#X scalar comment 31 97 200 \; (pour le traitement du son) + une paire
-inlet/outlet pour \; processing stereo audio) and one inlet/outlet
-for controls. \; \;;
-#X scalar comment 31 117 200 \; les messages de contrôle. \; \; \;
-;
-#X scalar comment 755 24 200 \; nécessite pd >= 0.49 \; needs pd >=
-0.49 \; \;;
-#X scalar comment 131 144 200 \; exemple de module \; example of basic
-\; \;;
-#X scalar comment 132 165 200 \; basique : cliquer ici -> \; objects
-: click here -> \; \;;
+#X scalar comment 31 33 200 \; faciliter la construction de dispositifs interactifs \; complex audio/visual effects / instruments / interactions \; \;;
+#X scalar comment 32 50 200 \; et d'effets ou instruments audio / visuels. \; scenes easier. \; \;;
+#X scalar comment 31 79 200 \; Un module standard PdRacks a 2 inlets~ et 2 outlets~ \; A standard PdRacks module has 2 inlets~/outlets~ (for \; \;;
+#X scalar comment 31 97 200 \; (pour le traitement du son) + une paire inlet/outlet pour \; processing stereo audio) and one inlet/outlet for controls. \; \;;
+#X scalar comment 31 117 200 \; les messages de contrôle. \; \; \;;
+#X scalar comment 755 24 200 \; nécessite pd >= 0.49 \; needs pd >= 0.49 \; \;;
+#X scalar comment 131 144 200 \; exemple de module \; example of basic \; \;;
+#X scalar comment 132 165 200 \; basique : cliquer ici -> \; objects : click here -> \; \;;
 #X obj 976 23 pdr/core/stuff/language;
-#X scalar comment 624 313 200 \; <- ce dossier contient une collection
-\; <- this is the basic collection of \; \;;
-#X scalar comment 654 334 200 \; d'objets de base (dont inst_rhodey)
-\; objects (including inst_rhodey) \; \;;
-#X scalar comment 31 15 200 \; PdRacks est un ensemble d'outils et
-de modules destinés à \; PdRacks is a set of tools and modules to
-make patching of \; PdRacks è una colezzione di \;;
-#X scalar comment 792 128 200 \; <- cliquer ici pour \; <- click here
-to \; \\\; \;;
-#X scalar comment 795 149 200 \; voir d'autres objets \; see more objects
-\; \\\; \;;
+#X scalar comment 624 313 200 \; <- ce dossier contient une collection \; <- this is the basic collection of \; \;;
+#X scalar comment 654 334 200 \; d'objets de base (dont inst_rhodey) \; objects (including inst_rhodey) \; \;;
+#X scalar comment 31 15 200 \; PdRacks est un ensemble d'outils et de modules destinés à \; PdRacks is a set of tools and modules to make patching of \; PdRacks è una colezzione di \;;
+#X scalar comment 792 128 200 \; <- cliquer ici pour \; <- click here to \; \\\; \;;
+#X scalar comment 795 149 200 \; voir d'autres objets \; see more objects \; \\\; \;;
 #X connect 2 0 4 2;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;

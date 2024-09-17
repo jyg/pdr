@@ -1,4 +1,4 @@
-#N canvas 117 484 1362 721 10;
+#N canvas 123 147 1362 721 10;
 #X declare -path ../../core;
 #X declare -path ../../core/stuff;
 #X declare -path ../../core/rj;
@@ -84,15 +84,14 @@
 #X obj 69 405 int;
 #X obj 94 438 t f f;
 #X obj 69 573 s \$0-bpm-rcv;
-#X text 286 501 si le tempo diverge trop \, passer outre le filtrage
-pour atteindre la nouvelle valeur;
+#X text 286 501 si le tempo diverge trop \, passer outre le filtrage pour atteindre la nouvelle valeur;
 #X obj 47 485 change;
 #X obj 197 568 outlet;
 #X msg 51 536 set \$1;
 #X obj 66 282 * 0.1;
 #X obj 134 327 * 0.9;
-#X floatatom 39 263 5 0 0 0 - - -;
-#X floatatom 32 440 5 0 0 0 - - -;
+#X floatatom 39 263 5 0 0 0 - - - 0;
+#X floatatom 32 440 5 0 0 0 - - - 0;
 #X obj 144 463 -;
 #X obj 148 488 abs;
 #X obj 193 505 > 1;
@@ -152,7 +151,7 @@ pour atteindre la nouvelle valeur;
 #X connect 33 0 1 0;
 #X restore 403 222 pd tempo_calc;
 #X obj 315 155 s PLAY;
-#X floatatom 509 132 5 0 0 0 - - -;
+#X floatatom 509 132 5 0 0 0 - - - 0;
 #X obj 405 279 s BPM;
 #X obj 239 206 r PLAY;
 #X obj 385 163 t b b b;
@@ -162,9 +161,8 @@ pour atteindre la nouvelle valeur;
 #X obj 168 353 +;
 #X msg 22 215 -2;
 #X msg 44 279 2;
-#X obj 169 34 tgl 15 0 \$0-slave \$0-slave-rcv SYNC 17 7 0 10 -4032
--1 -1 0 1;
-#X obj 459 468 t b b;
+#X obj 169 34 tgl 15 0 \$0-slave \$0-slave-rcv SYNC 17 7 0 10 #00f8fc #000000 #000000 0 1;
+#X obj 583 449 t b b;
 #X obj 575 541 s \$0-bang-rcv;
 #X msg 579 502 color 0 0;
 #X obj 467 510 delay 100;
@@ -276,7 +274,7 @@ pour atteindre la nouvelle valeur;
 #X connect 24 0 23 0;
 #X connect 24 1 6 1;
 #X restore 475 187 pd local_clock;
-#N canvas 0 50 762 490 boutonPlayPause_Gui 0;
+#N canvas 1156 87 762 490 boutonPlayPause_Gui 0;
 #X obj 47 86 r STOP;
 #X obj 120 200 r PLAY;
 #X obj 332 420 select 0 1;
@@ -314,8 +312,7 @@ pour atteindre la nouvelle valeur;
 #X obj 914 102 change;
 #X obj 335 235 r \$0-sync-mode;
 #X obj 328 266 == 1;
-#X obj 746 531 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 746 531 bng 15 50 10 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 748 303 spigot;
 #X obj 748 424 spigot;
 #X obj 748 393 spigot;
@@ -323,15 +320,13 @@ pour atteindre la nouvelle valeur;
 #X obj 751 332 t f f;
 #X msg 793 366 1;
 #X obj 261 35 r #abl_link_num_peers;
-#X obj 934 491 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 934 491 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 967 493 spigot;
 #X obj 967 518 t b b;
 #X msg 1052 469 0;
 #X msg 851 263 0;
 #X obj 114 487 r \$0-midiout;
-#X obj 122 527 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 122 527 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 119 583 mod 24;
 #X obj 220 537 t f f f;
 #X obj 407 576 pack f f f;
@@ -347,9 +342,9 @@ pour atteindre la nouvelle valeur;
 #X obj 845 515 + 192;
 #X obj 544 379 s \$0-quantum-rcv;
 #X msg 695 322 0;
-#X floatatom 806 512 5 0 0 0 - - -;
+#X floatatom 806 512 5 0 0 0 - - - 0;
 #X obj 648 620 * 192;
-#X floatatom 648 642 5 0 0 0 - - -;
+#X floatatom 648 642 5 0 0 0 - - - 0;
 #X obj 648 598 div 192;
 #X obj 648 576 r \$0-clock;
 #X msg 553 604 set \$1;
@@ -374,9 +369,9 @@ pour atteindre la nouvelle valeur;
 #X obj 315 541 s BPM;
 #X obj 141 106 t b;
 #X obj 96 59 r TAP;
-#X floatatom 171 531 5 0 0 0 - - -;
+#X floatatom 171 531 5 0 0 0 - - - 0;
 #X obj 405 412 s \$0-bpm;
-#X floatatom 409 373 5 0 0 0 - - -;
+#X floatatom 409 373 5 0 0 0 - - - 0;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -438,44 +433,32 @@ pour atteindre la nouvelle valeur;
 #X obj 781 216 +;
 #X obj 781 238 mod 96;
 #X obj 1147 125 * 0.4;
-#X obj 75 197 bng 15 250 50 0 empty empty + 5 7 0 10 -4032 -1 -1;
-#X obj 50 196 bng 15 250 50 0 empty empty -resync 5 7 0 10 -4032 -1
--1;
+#X obj 75 197 bng 15 250 50 0 empty empty + 5 7 0 10 #00f8fc #000000 #000000;
+#X obj 50 196 bng 15 250 50 0 empty empty -resync 5 7 0 10 #00f8fc #000000 #000000;
 #X text 1146 151 vers curseur offset;
 #X obj 136 213 speed_lim;
 #X obj 136 254 s \$0-clock;
 #X obj 119 605 speed_lim;
-#X obj 101 116 cnv 15 188 53 empty \$0-bang-rcv empty 1 5 0 10 -44926
--99865 0;
+#X obj 101 116 cnv 15 188 53 empty \$0-bang-rcv empty 1 5 0 10 #28f4f4 #606060 0;
 #X obj 310 86 spigot 1;
-#X obj 251 100 tgl 39 0 \$0-playBtn \$0-playBtn-rcv || 2 20 0 30 -24198
--24198 -1 0 1;
+#X obj 251 100 tgl 39 0 \$0-playBtn \$0-playBtn-rcv || 2 20 0 30 #14e814 #14e814 #000000 0 1;
 #X obj 246 141 ui_tgl \$0 midiout 1 -1 18;
-#X obj 203 130 cnv 15 40 40 empty empty empty 20 12 0 14 -257985 -66577
-0;
-#X obj 237 160 hsl 50 10 0 48 0 1 empty empty OFFSET 4 6 0 8 -257985
--1 -1 0 1;
-#X floatatom 207 153 3 0 0 2 peers - -;
+#X obj 203 130 cnv 15 40 40 empty empty empty 20 12 0 14 #f8fc00 #404040 0;
+#X obj 237 160 hsl 50 10 0 48 0 1 empty empty OFFSET 4 6 0 8 #f8fc00 #000000 #000000 0 1;
+#X floatatom 207 153 3 0 0 2 peers - - 0;
 #X text 204 126 LINK;
-#X obj 238 100 vradio 13 1 1 3 \$0-sync-mode empty NO 2 8 0 8 -4032
--1 -33289 2;
+#X obj 238 100 vradio 13 1 1 3 \$0-sync-mode empty NO 2 8 0 8 #00f8fc #000000 #202020 2;
 #X obj 136 191 r \$0-clock-rcv;
-#X obj 104 114 hsl 40 12 0 92 0 0 \$0-click empty CLICK 4 5 0 8 -262144
--1 -1 0 1;
-#X obj 146 112 bng 15 250 50 0 \$0-grv empty G 5 7 0 10 -232576 -1
--1;
-#X obj 165 113 hsl 40 12 6 9 0 1 \$0-swing empty swing 2 6 0 10 -232576
--1 -1 1500 1;
-#X obj 101 149 cnv 15 85 20 empty \$0-transport-rcv 62:2:23 4 12 0
-14 -233017 -66577 0;
-#X obj 101 127 bng 25 250 50 0 TAP empty TAP 2 10 0 14 -232576 -1 -159808
-;
-#X floatatom 129 139 5 20 300 2 bpm #0-bpm-rcv #0-bpm;
-#X floatatom 168 142 5 1 99 2 Beats #0-quantum-rcv QUANTUM;
-#X floatatom 152 236 5 0 0 0 - - -;
+#X obj 104 114 hsl 40 12 0 92 0 0 \$0-click empty CLICK 4 5 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 146 112 bng 15 250 50 0 \$0-grv empty G 5 7 0 10 #e0c4fc #000000 #000000;
+#X obj 165 113 hsl 40 12 6 9 0 1 \$0-swing empty swing 2 6 0 10 #e0c4fc #000000 #000000 1500 1;
+#X obj 101 149 cnv 15 85 20 empty \$0-transport-rcv 15:4:2 4 12 0 14 #e0e0e0 #404040 0;
+#X obj 101 127 bng 25 250 50 0 TAP empty TAP 2 10 0 14 #e0c4fc #000000 #9c00fc;
+#X floatatom 129 139 5 20 300 2 bpm \$0-bpm-rcv \$0-bpm 0;
+#X floatatom 168 142 5 1 99 2 Beats \$0-quantum-rcv QUANTUM 0;
+#X floatatom 152 236 5 0 0 0 - - - 0;
 #X text 222 112 SYNC;
-#X obj 207 112 tgl 15 0 \$0-swing_play \$0-swing_play-rcv [> 1 7 0
-10 -232576 -232576 -1 0 1;
+#X obj 207 112 tgl 15 0 \$0-swing_play \$0-swing_play-rcv [> 1 7 0 10 #e0c4fc #e0c4fc #000000 0 1;
 #N canvas 451 79 780 585 \$0-groove 0;
 #X obj 609 213 t f f;
 #X obj 626 295 mod 24;
@@ -502,38 +485,32 @@ pour atteindre la nouvelle valeur;
 #X obj 498 518 spigot;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-groove 26 float 5;
-#A 0 -0 -0.16129 -0.322581 -0.483871 -0.645161 -0.806452 -0.967742
--1.12903 -0.952381 -0.714286 -0.476191 -0.238095 -0 -0.16129 -0.322581
--0.483871 -0.645161 -0.806452 -0.967742 -1.12903 -0.952381 -0.714286
--0.476191 -0.238095 -0 -0.16129;
+#A 0 -0 -0.16129 -0.322581 -0.483871 -0.645161 -0.806452 -0.967742 -1.12903 -0.952381 -0.714286 -0.476191 -0.238095 -0 -0.16129 -0.322581 -0.483871 -0.645161 -0.806452 -0.967742 -1.12903 -0.952381 -0.714286 -0.476191 -0.238095 -0 -0.16129;
 #X coords 0 3 25 -3 200 140 1 0 0;
 #X restore 143 261 graph;
 #X obj 705 252 * 24;
 #X obj 160 524 s \$0-groove;
 #X msg 154 481 const 0;
 #X obj 507 493 threshold~ 0.1 1 0.999 1;
-#X obj 148 111 tgl 15 0 empty empty GROOVE 17 7 0 10 -262144 -1 -1
-1 1;
+#X obj 148 111 tgl 15 0 empty empty GROOVE 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 320 161 r _CLOCK;
 #X obj 314 194 spigot 1;
 #X obj 318 228 s CLOCK;
 #X obj 313 127 == 0;
 #X obj 248 141 switch~;
-#X obj 453 125 expr if ($f1<$f2 \, (6-$f2)*$f1/$f2 \, (6-$f2)*(12-$f1)/(12-$f2))
-;
+#X obj 453 125 expr if ($f1<$f2 \, (6-$f2)*$f1/$f2 \, (6-$f2)*(12-$f1)/(12-$f2));
 #X obj 462 167 tabwrite \$0-groove;
 #X obj 442 3 t f f;
 #X msg 678 57 7;
 #X obj 456 384 +~ 1;
-#X obj 143 214 hsl 128 15 6 9 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4885 1;
+#X obj 143 214 hsl 128 15 6 9 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 316 43 26;
 #X obj 316 65 until;
 #X obj 336 97 f;
 #X obj 382 105 + 1;
 #X msg 543 25 0;
 #X obj 603 41 t b b f;
-#X floatatom 96 241 5 0 0 0 - - -;
+#X floatatom 96 241 5 0 0 0 - - - 0;
 #X obj 444 51 mod 12;
 #X text 152 266 ou tracer à la main;
 #X text 131 186 2 Reglage du swing;
@@ -550,7 +527,7 @@ pour atteindre la nouvelle valeur;
 #X msg 228 101 label ||;
 #X obj 268 3 t b f;
 #X obj 226 30 f 1;
-#X floatatom 361 19 5 0 0 0 - - -;
+#X floatatom 361 19 5 0 0 0 - - - 0;
 #X obj 275 23 spigot 1;
 #X msg 601 582 1;
 #X obj 420 602 spigot 1;
@@ -632,11 +609,13 @@ pour atteindre la nouvelle valeur;
 #X restore 892 574 pd \$0-groove;
 #X obj 1246 73 namecanvas \$0-this;
 #X obj 1244 50 triggered_loadbang \$0-this;
-#X text 1239 0 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 1239 0 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 1024 -2 declare -path ../../core;
 #X obj 1024 18 declare -path ../../core/stuff;
 #X obj 1024 38 declare -path ../../core/rj;
+#X obj 1209 556 vline~;
+#X obj 1209 622 outlet~;
+#X msg 1209 534 1 0 \, 0 1 1;
 #X connect 0 0 1 0;
 #X connect 1 0 26 0;
 #X connect 1 0 82 0;
@@ -666,6 +645,7 @@ is created dynamically, f 29;
 #X connect 24 0 22 0;
 #X connect 26 0 29 0;
 #X connect 26 1 30 0;
+#X connect 26 1 178 0;
 #X connect 28 0 27 0;
 #X connect 29 0 28 0;
 #X connect 30 0 27 0;
@@ -793,4 +773,6 @@ is created dynamically, f 29;
 #X connect 154 0 140 1;
 #X connect 158 0 146 0;
 #X connect 166 0 147 0;
+#X connect 176 0 177 0;
+#X connect 178 0 176 0;
 #X coords 0 -1 1 1 190 70 1 100 100;

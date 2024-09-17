@@ -1,16 +1,15 @@
 #N canvas 476 254 805 421 16;
 #X declare -path pdr/modules/basic;
-#X obj 206 180 multitouch.enable;
-#X text 17 155 To enable multitouch inside a patch \, add this object
-:, f 36;
-#X text 17 213 (you may have to do some configuration in order to make
-this working), f 38;
+#X text 17 155 To enable multitouch inside a patch \, add this object :, f 36;
+#X text 17 213 (you may have to do some configuration in order to make this working), f 38;
 #N canvas 0 50 450 300 \$0-PdRacks.declare 0;
 #X obj 10 10 declare -path pdr/modules/basic;
 #X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
 #X restore 535 18 pd \$0-PdRacks.declare;
 #X obj 525 119 inst_rhodey;
+#A saved SID 0;
 #X text 13 16 If you have a laptop with multitouch screen \,;
 #X text 12 44 you may use Pdracks with multitouch extension;
 #X text 51 101 https://github.com/jyg/PdMultitouch;
 #X text 43 80 (linux-only) download it at :;
+#X obj 206 180 multitouch;

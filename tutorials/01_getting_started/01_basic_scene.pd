@@ -1,38 +1,22 @@
 #N canvas 42 333 1174 701 16;
 #X declare -path pdr/modules/basic;
-#X obj 193 426 cnv 15 350 200 empty empty empty 20 12 0 14 -261682
--66577 0;
+#X declare -path ../../modules/basic;
+#X obj 193 426 cnv 15 350 200 empty empty empty 20 12 0 14 #fce0c4 #404040 0;
 #X msg 247 365 \; pd dsp 1;
 #X msg 552 542 vol 100 \, decay 302 \, tone 0.72;
-#X text 544 435 <-- Here \, we just use control inlet to send 'midi-like'
-note messages, f 26;
+#X text 544 435 <-- Here \, we just use control inlet to send 'midi-like' note messages, f 26;
 #X obj 228 503 inst_rhodey;
-#A saved vol 100;
-#A saved tone 0.72;
-#A saved decay 302;
-#A saved SID 0;
 #X obj 252 593 dac~;
 #X obj 410 592 print;
-#X obj 211 302 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
-0;
+#X obj 211 302 cnv 15 400 60 empty empty empty 20 12 0 14 #fcfcc4 #404040 0;
 #X obj 551 510 loadbang;
-#X text 554 603 You can adjust the parameters of module by using the
-GUI controls or by sending specific messages., f 34;
+#X text 554 603 You can adjust the parameters of module by using the GUI controls or by sending specific messages., f 34;
 #X msg 427 470 note 64 100;
-#X text 42 76 A standard PdRacks module has 2 inlets~/outlets~ (for
-processing stereo audio) and one inlet/outlet for controls.;
+#X text 42 76 A standard PdRacks module has 2 inlets~/outlets~ (for processing stereo audio) and one inlet/outlet for controls.;
 #X text 132 142 example of basic objects : click here ->, f 23;
 #X obj 245 320 declare -path pdr/modules/basic;
 #X obj 520 154 container 1;
-#A saved dump fbgain 0.8;
-#A saved dump damping 0.25;
-#A saved dump bandwidth 0.6;
-#A saved dump predel 30;
-#A saved dump wet 0.5;
-#A saved contents fx_dattorroverb;
-#A saved SID 0;
-#X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 -262144
--1 -1 5;
+#X obj 380 136 vradio 20 1 0 6 \$0-create empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #N canvas 756 140 1105 768 stuff 0;
 #X msg 276 142 fx_parameq2;
 #X msg 709 278 PdRacks.presets;
@@ -99,7 +83,7 @@ processing stereo audio) and one inlet/outlet for controls.;
 #X msg 709 414 PdRacks.latency;
 #X obj 274 695 list trim;
 #X obj 274 724 outlet;
-#N canvas 0 50 450 300 example 0;
+#N canvas 1196 636 450 300 example 0;
 #X obj 92 28 r \$0-create;
 #X obj 92 57 select 0 1 2 3 4 5;
 #X msg 92 86 clear;
@@ -194,43 +178,23 @@ processing stereo audio) and one inlet/outlet for controls.;
 #X text 59 319 1) use [declare];
 #X text 60 363 2) turn dsp on;
 #X text 57 430 3) patch;
-#X text 609 309 <- this is the basic collection of objects \, including
-inst_rhodey, f 39;
+#X text 609 309 <- this is the basic collection of objects \, including inst_rhodey, f 39;
 #X text 46 544 That's all.;
 #X msg 410 436 note 66 100;
-#X obj 29 12 cnv 15 700 60 empty empty empty 20 12 0 14 -4032 -66577
-0;
-#X text 39 21 PdRacks is a set of tools and modules to make patching
-of complex audio/visual effects / instruments / interactions / scenes
-easier., f 69;
+#X obj 29 12 cnv 15 700 60 empty empty empty 20 12 0 14 #00f8fc #404040 0;
+#X text 39 21 PdRacks is a set of tools and modules to make patching of complex audio/visual effects / instruments / interactions / scenes easier., f 69;
 #X text 40 21 PdRacks;
-#X text 37 272 _________________________________________________________________________
-, f 75;
-#X text 44 267 Let's create a minimal PdRacks patch with only one module
-: inst_rhodey, f 75;
+#X text 37 272 _________________________________________________________________________, f 75;
+#X text 44 267 Let's create a minimal PdRacks patch with only one module : inst_rhodey, f 75;
 #X text 777 28 needs pd >= 0.49;
 #X msg 555 575 vol 90 \, decay 602 \, tone 0.3;
 #X text 60 646 PsRacks needs pd version 0.51.0;
-#N canvas 0 50 562 589 next 0;
-#X obj 68 47 inlet;
-#X obj 60 303 s pd;
-#X obj 111 140 pdcontrol;
-#X msg 116 109 dir;
-#X obj 68 76 t a b;
-#X obj 51 177 list append;
-#X obj 52 259 t b a;
-#X msg 44 215 open \$1 \$2;
-#X msg 25 369 \; pd-01_basic_scene.pd key 4;
-#X connect 0 0 4 0;
-#X connect 2 0 5 1;
-#X connect 3 0 2 0;
-#X connect 4 0 5 0;
-#X connect 4 1 3 0;
-#X connect 5 0 7 0;
-#X connect 6 1 1 0;
-#X connect 7 0 6 0;
-#X restore 977 631 pd next tutorial;
-#X msg 968 596 02_pdr_helper.pd;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X text 0 0 plugdatainfo <?xml version="1.0" encoding="UTF-8"?> <plugdatainfo/>;
+#X coords 0 1 100 -1 1 1 1;
+#X restore 0 0 graph;
+#X text 1044 358 forplugdata, f 7;
+#X obj 1010 409 declare -path ../../modules/basic;
 #X connect 2 0 4 2;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
@@ -240,4 +204,3 @@ easier., f 69;
 #X connect 16 0 14 2;
 #X connect 29 0 4 2;
 #X connect 36 0 4 2;
-#X connect 39 0 38 0;
