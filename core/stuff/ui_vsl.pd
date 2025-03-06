@@ -64,14 +64,14 @@
 #X obj 311 71 t b b b;
 #X obj 67 405 * 100;
 #X obj 76 457 * 0.01;
-#X obj -30 193 midi-colors \$1 \$2 \$0-rcv \$3 \$4 log, f 19;
+#X obj 65 182 midi-colors \$1 \$2 \$0-rcv \$3 \$4 log, f 19;
 #X obj 320 505 list append \$2;
 #X obj 321 480 r \$1-module_name;
 #X obj 164 395 t f f;
 #X msg 85 35 label empty;
 #X msg 426 277 set \$1;
 #X obj 73 529 s \$0-cnv2;
-#N canvas 506 159 632 706 colors 0;
+#N canvas 506 0 632 681 colors 0;
 #X obj 100 30 inlet;
 #X obj 109 67 route color;
 #X msg 177 142 \$1;
