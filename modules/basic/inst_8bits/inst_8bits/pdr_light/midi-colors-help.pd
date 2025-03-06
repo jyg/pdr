@@ -1,0 +1,81 @@
+#N canvas 743 47 1581 937 10;
+#X declare -path pdr/core/stuff;
+#X declare -path pdr/core/rj;
+#X declare -path pdr/core;
+#X declare -path pdr/modules/basic;
+#X obj 54 161 vsl 15 128 0.001 1000 1 0 \$0-square \$0-square-rcv square
+0 -9 0 10 -241291 -1 -1 0 1;
+#X text 22 64 ARGS : \$0 <param_name> <param-rcv_name> [<minval> <maxval>
+[lin|log]], f 76;
+#X obj 399 298 u_parameter \$0 square;
+#X obj 399 318 u_parameter \$0 bypass;
+#X obj 109 391 s \$0-bypass;
+#X obj 109 370 < 1;
+#X obj 27 346 tgl 40 1 \$0-bypass \$0-bypass-rcv BYPASS 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 391 199 à utiliser conjointement avec u_dispatch/u_parameter
+;
+#X text 216 365 si \$4 \$5 \$6 ne sont pas spécifiés \, midi_colors
+renvoie en sortie la valeur midi du ctl-change mappé. Il faut alors
+tisser dans le patch le comportement souhaité (par exemple \, seuil
+\, bascule \, etc....);
+#X text 108 222 si les arguments \$4 \$5 \$6 sont spécifiés (ex 0.001
+1000 log) \, le mapping est assuré automatiquement par le trinôme
+ctl-assign3 + module_loader + u_dispatch/u_parameter --------------->
+, f 40;
+#X obj 109 343 midi-colors \$0 bypass \$0-bypass-rcv;
+#X text 40 19 Midi colors permet la gestion des mappings midi \, du
+feedback midi et du morphing entre deux valeurs;
+#N canvas 0 50 450 300 etude_morphing 0;
+#X obj 125 100 hsl 128 30 0 1 0 0 MORPH MORPH-rcv A<--------->B 10
+15 0 14 -262144 -1 -1 0 1;
+#X obj 101 109 bng 20 250 50 0 MORPH-setA empty A 4 10 0 10 -262144
+-1 -1;
+#X obj 256 108 bng 20 250 50 0 MORPH-setB empty B 4 10 0 10 -262144
+-1 -1;
+#X msg 159 165 set \$1;
+#X obj 157 196 s MORPH-rcv;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 180 30 1 100 100;
+#X restore 53 543 pd etude_morphing;
+#X text 43 514 Gesion du morphing;
+#X text 274 539 messages globaux MORPH \, MORPH-setA \, MORPH-setB
+;
+#X text 85 82 l'argument \$7 est la couleur par défaut du contrôle
+;
+#X floatatom 473 133 5 0 0 0 - - -, f 5;
+#X text 100 96 Le second inlet permet de tester cette couleur;
+#X text 61 431 Le premier inlet permet d'envoyer un message midiout
+(noteon) pour obtenir un feedback visuel (allumage LED) sur un contrôleur
+midi. Le réglage du numéro pour la cible s'effectue dans la fenêtre
+des mappings (dernière colonne : F.B.out), f 63;
+#X text 108 625 Bug : morphing delay not disabled when no_morphing
+arg in midi-colors;
+#X obj 744 24 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 741 157 \; CTLIN \$1 1 1;
+#X obj 526 16 declare -path pdr/core/stuff;
+#X obj 526 46 declare -path pdr/core/rj;
+#X obj 524 68 declare -path pdr/core;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
+#X restore 599 533 pd \$0-PdRacks.declare;
+#X obj 112 164 midi-colors \$0 square \$0-square-rcv 0.001 1000 log
+45;
+#X obj 821 300 print;
+#X obj 821 277 r toGUI;
+#X floatatom 127 196 5 0 0 0 - - -, f 5;
+#X floatatom 92 305 5 0 0 0 - - -, f 5;
+#X obj 399 277 module_loader midi-colors-help \$0 \$1;
+#X obj 597 562 PdRacks.midimap;
+#X connect 2 0 3 0;
+#X connect 5 0 4 0;
+#X connect 10 0 5 0;
+#X connect 10 0 30 0;
+#X connect 16 0 26 1;
+#X connect 20 0 21 0;
+#X connect 26 0 29 0;
+#X connect 28 0 27 0;
+#X connect 31 0 2 0;

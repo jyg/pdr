@@ -1,0 +1,10 @@
+#N canvas 52 52 796 300 10;
+#X floatatom 82 48 5 0 0 0 - - - 0;
+#X floatatom 81 192 5 0 0 0 - - - 0;
+#X msg 149 51 set \$1;
+#X floatatom 155 25 5 0 0 0 - - - 0;
+#X obj 76 101 vfader;
+#X connect 0 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;

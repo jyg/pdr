@@ -1,0 +1,5 @@
+#N canvas 1147 136 450 300 16;
+#X text 18 40 init module for pdr ecosystem;
+#X obj 18 73 pdr/core/stuff/pdr.init \$0;
+#X text 15 117 contains local and global busses;
+#X text 40 151 and paths to enabled modules;

@@ -1,0 +1,19 @@
+#N canvas 0 50 866 671 16;
+#X obj 51 381 namecanvas \$0-this;
+#X obj 50 353 triggered_loadbang \$0-this;
+#X text 47 291 Usage : Put these 2 objects in the abstraction for which
+you want to manually trigger a loadbang event.;
+#X msg 384 494 \; TRIGGER_LOADBANG bang;
+#X text 44 30 Manualy triggers loadbang in a dynamically-created abstraction
+;
+#X text 44 86 When you dynamically (i.e. by message) add an abstraction
+in a patch \, no loadbang event occurs inside this abstraction.;
+#X text 45 133 If you want to init it \, you have to manually generate
+a loadbang event.;
+#X obj 43 238 triggered_loadbang;
+#X text 40 179 You should not send a loadbang to the containing patch
+\, as all other object would be reinitialized.;
+#X text 236 237 let you loadbang only to the objects that have not
+been initialized before., f 41;
+#X text 43 435 After you dynamically created an instance of an object
+\, send a TRIGGER_LOADBANG message :;

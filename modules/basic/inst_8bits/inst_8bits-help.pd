@@ -1,21 +1,34 @@
-#N canvas 448 85 894 552 10;
-#X text 478 460 EXPERIMENTAL ALPHA;
-#X obj 458 462 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
-#X obj 460 515 tgl 15 0 empty empty X 4 8 0 12 -258113 -258113 -1 0
-1;
-#X text 480 484 Instances multiples;
-#X obj 458 485 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
+#N canvas 237 129 894 552 10;
 #X text 24 63 déclenchée par noteEvent;
-#X text 288 168 la vitesse est définie par le numéro de note joué
-au clavier;
-#X text 483 410 utilisable avec contrôleur midi (notein en data_inlet
-ou en omni \, ctlin;
-#X obj 458 412 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
-#X obj 24 183 inst_8bits;
 #X text 22 37 Synthétiseur 8bits;
-#X text 286 193 inspiré par inst_8bits du logiciel caustic (singlecellsoftware)
-;
-#X text 296 272 Fonctionnement : la forme d'onde générée est déterminée
-par une équation;
-#X obj 456 384 tgl 15 0 empty empty V 4 8 0 12 -4034 -4034 -1 0 1;
-#X text 476 382 monodique;
+#X msg 258 109 note 42 100;
+#X msg 268 69 note 42 0;
+#X obj 126 302 dac~;
+#X msg 375 99 note 69 0;
+#X msg 365 69 note 69 50;
+#X obj 24 183 inst_8bits;
+#A saved vol 100;
+#A saved oct 0;
+#A saved SID 0;
+#A saved presets t \; (t*(7+(1^(t>>9)%5))) \; t/(t*5&t>>7)|(t*3&t) \; t*((t>>12|t>>8)&63&t>>4) \; (t*(7+(1^t>>9%5))) \; t*9&t>>4|t*5&t>>7|t*3&t/1024 \; (t>>7|t|t>>6)*10+4*(t&t>>13|t>>9) \; t*((t>>12|t>>8)&63&t>>4) \; \; \; # http://viznut.fi/texts-en/bytebeat_algorithmic_symphonies.html \; # Autres possibilités (seule la première ligne est active) \;;
+#X msg 363 6 note 24 0;
+#X msg 356 33 note 24 90;
+#X obj 294 193 inst_8bits;
+#A saved vol 100;
+#A saved oct 0;
+#A saved SID 1;
+#A saved presets t*(t-1) \; (t*(7+(1^(t>>9)%5))) \; t/(t*5&t>>7)|(t*3&t) \; t*((t>>12|t>>8)&63&t>>4) \; (t*(7+(1^t>>9%5))) \; t*9&t>>4|t*5&t>>7|t*3&t/1024 \; (t>>7|t|t>>6)*10+4*(t&t>>13|t>>9) \; t*((t>>12|t>>8)&63&t>>4) \; \; \; # http://viznut.fi/texts-en/bytebeat_algorithmic_symphonies.html \; # Autres possibilités (seule la première ligne est active) \;;
+#X obj 571 106 keyname;
+#X obj 571 128 list append;
+#X listbox 571 150 20 0 0 0 - - - 0;
+#X connect 2 0 7 2;
+#X connect 3 0 7 2;
+#X connect 5 0 7 2;
+#X connect 6 0 7 2;
+#X connect 7 0 4 0;
+#X connect 7 1 4 1;
+#X connect 8 0 7 2;
+#X connect 9 0 7 2;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 12 0 13 0;

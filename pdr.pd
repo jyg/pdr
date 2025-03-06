@@ -1,4 +1,4 @@
-#N canvas 320 58 1345 708 12;
+#N canvas 0 0 1284 681 12;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
 #X declare -lib iem_t3_lib;
@@ -177,8 +177,7 @@
 #X obj 194 536 t b;
 #X obj 194 561 delay 10;
 #X obj 194 586 s TRIGGER_LOADBANG;
-#X text 347 582 manually trigger a loadbang message in the created
-abstraction \, that must contain the [triggered_loadbang] object.;
+#X text 347 582 manually trigger a loadbang message in the created abstraction \, that must contain the [triggered_loadbang] object.;
 #X obj 351 652 pdr/core/stuff/triggered_loadbang;
 #X text 600 652 <- see help file;
 #X obj 500 242 route 9;
@@ -240,8 +239,7 @@ abstraction \, that must contain the [triggered_loadbang] object.;
 #X obj 686 650 list append;
 #X obj 686 675 list prepend;
 #X obj 822 275 delay 100;
-#X msg 718 762 connect \$2 0 \$1 0 \, connect \$2 1 \$1 1 \, connect
-\$2 2 \$1 2;
+#X msg 718 762 connect \$2 0 \$1 0 \, connect \$2 1 \$1 1 \, connect \$2 2 \$1 2;
 #X obj 686 700 t l l, f 7;
 #X obj 686 725 spigot;
 #X obj 767 713 list length;
@@ -262,8 +260,7 @@ abstraction \, that must contain the [triggered_loadbang] object.;
 #X obj 324 198 s \$0-is_m_alive?;
 #X obj 318 222 r \$0-yes_m_is_alive!;
 #X text 740 212 press <enter>;
-#X msg 317 594 editmode 1 \, obj \$1 \$2 pdr/core/stuff/autocomplete
-\$3;
+#X msg 317 594 editmode 1 \, obj \$1 \$2 pdr/core/stuff/autocomplete \$3;
 #X obj 434 164 route 9;
 #X text 495 145 ctrl+i;
 #X obj 337 167 t b b b b;
@@ -374,22 +371,16 @@ abstraction \, that must contain the [triggered_loadbang] object.;
 #X obj 491 147 spigot;
 #X obj 531 119 == 2;
 #X msg 728 243 1;
-#X obj 101 121 cnv 5 118 16 empty \$0-pdr-rcv autocomplete 2 8 0 12
--204786 -66577 0;
-#X obj 139 100 hradio 20 1 0 3 empty empty empty 0 -8 0 10 -4032 -4160
--1 1;
+#X obj 101 121 cnv 5 118 16 empty \$0-pdr-rcv autocomplete 2 8 0 12 #c4fcc4 #404040 0;
+#X obj 139 100 hradio 20 1 0 3 empty empty empty 0 -8 0 10 #00f8fc #0400fc #000000 0;
 #X msg 171 612 vis 1;
 #N canvas 640 301 470 272 \$0-options 0;
-#X obj 7 9 cnv 15 450 250 empty empty empty 20 12 0 14 -261682 -66577
-0;
+#X obj 7 9 cnv 15 450 250 empty empty empty 20 12 0 14 #fce0c4 #404040 0;
 #X text 34 8 OPTIONS;
-#X obj 38 52 bng 30 250 50 0 \$0-add_modules empty empty 17 7 0 10
--262144 -1 -1;
-#X obj 38 102 bng 30 250 50 0 \$0-edit_audio_config empty empty 17
-7 0 10 -262144 -1 -1;
+#X obj 38 52 bng 30 250 50 0 \$0-add_modules empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 38 102 bng 30 250 50 0 \$0-edit_audio_config empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 74 108 edit audio configuration (bus \, DAC/ADC \, ...);
-#X obj 399 199 bng 50 250 50 0 \$0-close empty X 12 25 0 50 -262130
--1 -1;
+#X obj 399 199 bng 50 250 50 0 \$0-close empty X 12 25 0 50 #fcfcc4 #000000 #000000;
 #X text 245 212 close this window ->;
 #X text 72 58 add modules-sets;
 #X text 81 81 (available sets are in the folder pdr/modules/ );
@@ -397,103 +388,24 @@ abstraction \, that must contain the [triggered_loadbang] object.;
 #X text 138 162 edit general gui colors settings;
 #X restore 622 585 pd \$0-options;
 #X obj 169 635 s pd-\$0-options;
-#X obj 200 100 bng 20 250 50 0 empty empty ... 1 9 0 10 -1 -33289 -262144
-;
+#X obj 200 100 bng 20 250 50 0 empty empty ... 1 9 0 10 #000000 #202020 #fcfcfc;
 #X msg 164 249 label;
 #X obj 1093 344 v PdRacks.declare.y-offset;
 #X obj 842 142 pdr_ping;
 #X obj 1093 142 text define -k \$0-effects;
-#A set fx_alias aliasing \; fx_bitcrush digital distorsion effect \;
-fx_bonkpitch multidelay with variable pitch and time \; fx_chorus classical
-chorus effect \; fx_compressor basic compressor \; fx_dattorroverb
-High quality vanilla reverb (by Dattorro) \; fx_dubdel classical rjdj
-dub delay \; fx_dubdel2 synchronisable dub delay \; fx_dynproc rjdj-based
-dynamics processing (e_dynproc) \; fx_eq3 3 band eq (from DIY2 st-EQ3.pd)
-\; fx_everb rjdj-based reverberation (e_verb) \; fx_filter switchable
-low/highpass filter \; fx_formant 3 formants filter (from automatonism)
-\; fx_freeverb external-based reverberation \; fx_freqshift frequency
-shifter \; fx_hip hi pass filter \; fx_lop low pass filter modulable
-by enveloppe \; fx_lowhip continuous low/high pass filter \; fx_parameq
-external-based parametric filter (iemlib/para_bp2~) \; fx_parameq2
-parametric filter modulable by enveloppe \; fx_pitchshift pitch shifter
-\; fx_ring ring modulator \; fx_sub sub bass generator (needs fiddle~
-external) \;;
+#A set fx_alias aliasing \; fx_bitcrush digital distorsion effect \; fx_bonkpitch multidelay with variable pitch and time \; fx_chorus classical chorus effect \; fx_compressor basic compressor \; fx_dattorroverb High quality vanilla reverb (by Dattorro) \; fx_dubdel classical rjdj dub delay \; fx_dubdel2 synchronisable dub delay \; fx_dynproc rjdj-based dynamics processing (e_dynproc) \; fx_eq3 3 band eq (from DIY2 st-EQ3.pd) \; fx_everb rjdj-based reverberation (e_verb) \; fx_filter switchable low/highpass filter \; fx_formant 3 formants filter (from automatonism) \; fx_freeverb external-based reverberation \; fx_freqshift frequency shifter \; fx_hip hi pass filter \; fx_lop low pass filter modulable by enveloppe \; fx_lowhip continuous low/high pass filter \; fx_parameq external-based parametric filter (iemlib/para_bp2~) \; fx_parameq2 parametric filter modulable by enveloppe \; fx_pitchshift pitch shifter \; fx_ring ring modulator \; fx_sub sub bass generator (needs fiddle~ external) \;;
 #X obj 1093 172 text define -k \$0-instruments;
-#A set inst_8bits 8bits synth using vexpr~ (experimental) \; inst_bassdrum
-bass/drum attack synth (from DIY2 lib) \; inst_euclidrums generative
-euclidian drums (need iemguts) \; inst_headrush akai headrush sampler
-clone \; inst_headrush2 akai headrush sampler clone \; inst_oneshot
-multisample 'oneshot'filereader (based on readsf~ object) \; inst_pcm
-multisanmple polyphonic player \; inst_pvoc multisample phase vocoder
-player \; inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK
-rhodey) \; inst_sampler monosample loopplayer (with on the fly rec
-feature) \; inst_soundfile basic file reader \; inst_tabosc harmonic
-/ table oscillator (with on the fly rec feature) \; inst_turntable
-turntable player simulator (with on the fly rec feature) \;;
+#A set inst_8bits 8bits synth using vexpr~ (experimental) \; inst_bassdrum bass/drum attack synth (from DIY2 lib) \; inst_euclidrums generative euclidian drums (need iemguts) \; inst_headrush akai headrush sampler clone \; inst_headrush2 akai headrush sampler clone \; inst_oneshot multisample 'oneshot'filereader (based on readsf~ object) \; inst_pcm multisanmple polyphonic player \; inst_pvoc multisample phase vocoder player \; inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK rhodey) \; inst_sampler monosample loopplayer (with on the fly rec feature) \; inst_soundfile basic file reader \; inst_tabosc harmonic / table oscillator (with on the fly rec feature) \; inst_turntable turntable player simulator (with on the fly rec feature) \;;
 #X obj 1093 202 text define -k \$0-midi;
-#A set data_azerty2midi converting azerty/querty keyboard into midi
-entry keyb \; midi_arpeggiator ableton-like midi arpeggiator \; midi_notein
-midi-keyboard interface \; note_2param converting note messages into
-parameter \; note_16steps 16 steps modal sequencer \; note_interpol
-midi interpolations (http://poset.labri.fr/interpolations/) \; note_randomize
-midi notein and enveloppe randomizer \;;
+#A set data_azerty2midi converting azerty/querty keyboard into midi entry keyb \; midi_arpeggiator ableton-like midi arpeggiator \; midi_notein midi-keyboard interface \; note_2param converting note messages into parameter \; note_16steps 16 steps modal sequencer \; note_interpol midi interpolations (http://poset.labri.fr/interpolations/) \; note_randomize midi notein and enveloppe randomizer \;;
 #X obj 1092 238 text define -k \$0-utils;
-#A set audio_in audio input with bus selector \; audio_out audio output
-with bus selector \; audio_record for quick-recording \; PdRacks.midilearn
-midilearn/midi-mapping and midi-interfaces support \; PdRacks.midi
-note to ctl converter \; PdRacks.morphing enabling morphing netween
-2 values \; PdRacks.presets simple 8 presets saving module \; PdRacks.settings
-module for PdRacks session \; PdRacks.transport clock unit (with abl_link~
-external) \; container container for dynamically storing a module \;
-;
+#A set audio_in audio input with bus selector \; audio_out audio output with bus selector \; audio_record for quick-recording \; PdRacks.midilearn midilearn/midi-mapping and midi-interfaces support \; PdRacks.midi note to ctl converter \; PdRacks.morphing enabling morphing netween 2 values \; PdRacks.presets simple 8 presets saving module \; PdRacks.settings module for PdRacks session \; PdRacks.transport clock unit (with abl_link~ external) \; container container for dynamically storing a module \;;
 #X obj 1092 275 text define -k \$0-video;
 #A set;
 #X obj 1087 305 text define -k \$0-basic_objects;
-#A set effects fx_alias aliasing \; effects fx_bitcrush digital distorsion
-effect \; effects fx_bonkpitch multidelay with variable pitch and time
-\; effects fx_chorus classical chorus effect \; effects fx_compressor
-basic compressor \; effects fx_dattorroverb High quality vanilla reverb
-(by Dattorro) \; effects fx_dubdel classical rjdj dub delay \; effects
-fx_dubdel2 synchronisable dub delay \; effects fx_dynproc rjdj-based
-dynamics processing (e_dynproc) \; effects fx_eq3 3 band eq (from DIY2
-st-EQ3.pd) \; effects fx_everb rjdj-based reverberation (e_verb) \;
-effects fx_filter switchable low/highpass filter \; effects fx_formant
-3 formants filter (from automatonism) \; effects fx_freeverb external-based
-reverberation \; effects fx_freqshift frequency shifter \; effects
-fx_hip hi pass filter \; effects fx_lop low pass filter modulable by
-enveloppe \; effects fx_lowhip continuous low/high pass filter \; effects
-fx_parameq external-based parametric filter (iemlib/para_bp2~) \; effects
-fx_parameq2 parametric filter modulable by enveloppe \; effects fx_pitchshift
-pitch shifter \; effects fx_ring ring modulator \; effects fx_sub sub
-bass generator (needs fiddle~ external) \; instruments inst_8bits 8bits
-synth using vexpr~ (experimental) \; instruments inst_bassdrum bass/drum
-attack synth (from DIY2 lib) \; instruments inst_euclidrums generative
-euclidian drums (need iemguts) \; instruments inst_headrush akai headrush
-sampler clone \; instruments inst_headrush2 akai headrush sampler clone
-\; instruments inst_oneshot multisample 'oneshot'filereader (based
-on readsf~ object) \; instruments inst_pcm multisanmple polyphonic
-player \; instruments inst_pvoc multisample phase vocoder player \;
-instruments inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK
-rhodey) \; instruments inst_sampler monosample loopplayer (with on
-the fly rec feature) \; instruments inst_soundfile basic file reader
-\; instruments inst_tabosc harmonic / table oscillator (with on the
-fly rec feature) \; instruments inst_turntable turntable player simulator
-(with on the fly rec feature) \; midi data_azerty2midi converting azerty/querty
-keyboard into midi entry keyb \; midi midi_arpeggiator ableton-like
-midi arpeggiator \; midi midi_notein midi-keyboard interface \; midi
-note_2param converting note messages into parameter \; midi note_16steps
-16 steps modal sequencer \; midi note_interpol midi interpolations
-(http://poset.labri.fr/interpolations/) \; midi note_randomize midi
-notein and enveloppe randomizer \; audio_in audio input with bus selector
-\; audio_out audio output with bus selector \; audio_record for quick-recording
-\; utils PdRacks.midilearn midilearn/midi-mapping and midi-interfaces
-support \; utils PdRacks.midi note to ctl converter \; utils PdRacks.morphing
-enabling morphing netween 2 values \; utils PdRacks.presets simple
-8 presets saving module \; utils PdRacks.settings module for PdRacks
-session \; utils PdRacks.transport clock unit (with abl_link~ external)
-\; utils container container for dynamically storing a module \;;
+#A set effects fx_alias aliasing \; effects fx_bitcrush digital distorsion effect \; effects fx_bonkpitch multidelay with variable pitch and time \; effects fx_chorus classical chorus effect \; effects fx_compressor basic compressor \; effects fx_dattorroverb High quality vanilla reverb (by Dattorro) \; effects fx_dubdel classical rjdj dub delay \; effects fx_dubdel2 synchronisable dub delay \; effects fx_dynproc rjdj-based dynamics processing (e_dynproc) \; effects fx_eq3 3 band eq (from DIY2 st-EQ3.pd) \; effects fx_everb rjdj-based reverberation (e_verb) \; effects fx_filter switchable low/highpass filter \; effects fx_formant 3 formants filter (from automatonism) \; effects fx_freeverb external-based reverberation \; effects fx_freqshift frequency shifter \; effects fx_hip hi pass filter \; effects fx_lop low pass filter modulable by enveloppe \; effects fx_lowhip continuous low/high pass filter \; effects fx_parameq external-based parametric filter (iemlib/para_bp2~) \; effects fx_parameq2 parametric filter modulable by enveloppe \; effects fx_pitchshift pitch shifter \; effects fx_ring ring modulator \; effects fx_sub sub bass generator (needs fiddle~ external) \; instruments inst_8bits 8bits synth using vexpr~ (experimental) \; instruments inst_bassdrum bass/drum attack synth (from DIY2 lib) \; instruments inst_euclidrums generative euclidian drums (need iemguts) \; instruments inst_headrush akai headrush sampler clone \; instruments inst_headrush2 akai headrush sampler clone \; instruments inst_oneshot multisample 'oneshot'filereader (based on readsf~ object) \; instruments inst_pcm multisanmple polyphonic player \; instruments inst_pvoc multisample phase vocoder player \; instruments inst_rhodey 4-op FM Rhodey piano based on algorithm 5 (STK rhodey) \; instruments inst_sampler monosample loopplayer (with on the fly rec feature) \; instruments inst_soundfile basic file reader \; instruments inst_tabosc harmonic / table oscillator (with on the fly rec feature) \; instruments inst_turntable turntable player simulator (with on the fly rec feature) \; midi data_azerty2midi converting azerty/querty keyboard into midi entry keyb \; midi midi_arpeggiator ableton-like midi arpeggiator \; midi midi_notein midi-keyboard interface \; midi note_2param converting note messages into parameter \; midi note_16steps 16 steps modal sequencer \; midi note_interpol midi interpolations (http://poset.labri.fr/interpolations/) \; midi note_randomize midi notein and enveloppe randomizer \; audio_in audio input with bus selector \; audio_out audio output with bus selector \; audio_record for quick-recording \; utils PdRacks.midilearn midilearn/midi-mapping and midi-interfaces support \; utils PdRacks.midi note to ctl converter \; utils PdRacks.morphing enabling morphing netween 2 values \; utils PdRacks.presets simple 8 presets saving module \; utils PdRacks.settings module for PdRacks session \; utils PdRacks.transport clock unit (with abl_link~ external) \; utils container container for dynamically storing a module \;;
 #X text 1022 118 OBSOLETE;
-#N canvas 319 92 1173 976 startup 1;
+#N canvas 111 0 1173 681 startup 0;
 #X obj 317 70 canvasdollarzero 2;
 #X obj 318 10 loadbang;
 #X msg 314 127 symbol \$1-u_glocal;
@@ -516,10 +428,9 @@ session \; utils PdRacks.transport clock unit (with abl_link~ external)
 #X obj 351 815 s;
 #X msg 400 781 symbol pd-\$1-PdRacks.declare;
 #X obj 270 181 select 1 0;
-#X text 325 150 Est-ce que l'objet pd-pdRacks.declare existe déjà
-?;
+#X text 325 150 Est-ce que l'objet pd-pdRacks.declare existe déjà ?;
 #X text 205 198 oui;
-#N canvas 848 123 776 607 create_PdRacks.declare 1;
+#N canvas 848 123 776 607 create_PdRacks.declare 0;
 #X obj 54 46 inlet;
 #X obj 447 417 outlet;
 #X obj 28 519 outlet;
@@ -542,8 +453,7 @@ session \; utils PdRacks.transport clock unit (with abl_link~ external)
 #X text 442 100 $;
 #X msg 57 348 0;
 #X obj 57 374 pack f s;
-#X msg 37 435 obj 10 10 declare -path pdr/modules/basic \, obj 10 60
-pdr/core/stuff/PdRacks.init \$2\$1 \, vis 0 \, loadbang, f 47;
+#X msg 37 435 obj 10 10 declare -path pdr/modules/basic \, obj 10 60 pdr/core/stuff/PdRacks.init \$2\$1 \, vis 0 \, loadbang, f 47;
 #X connect 0 0 9 0;
 #X connect 3 0 7 1;
 #X connect 3 0 14 0;
@@ -575,18 +485,14 @@ pdr/core/stuff/PdRacks.init \$2\$1 \, vis 0 \, loadbang, f 47;
 #X msg 627 189 symbol pd-\$1-PdRacks.declare;
 #X obj 533 522 text insert;
 #X obj 320 97 t b s s s s s;
-#X text 105 229 lister sequenciellement toutes les extensions, f 19
-;
-#X text 121 346 pour chaque extension \, charger le fichier de description
-, f 17;
+#X text 105 229 lister sequenciellement toutes les extensions, f 19;
+#X text 121 346 pour chaque extension \, charger le fichier de description, f 17;
 #X text 143 461 Réussite ?;
 #X text 218 509 non;
 #X text 330 514 oui;
 #X msg 177 696 extension \$1 non trouvée dans pdr/modules;
-#X text 65 530 Les objets [declare] requis sont absents dans [pd-\$0-PdRacks.declare]
-, f 24;
-#X text 66 593 charger le fichier de description avec le chemin relatif
-complet, f 22;
+#X text 65 530 Les objets [declare] requis sont absents dans [pd-\$0-PdRacks.declare], f 24;
+#X text 66 593 charger le fichier de description avec le chemin relatif complet, f 22;
 #X text 89 695 Echec;
 #X text 304 647 Réussite;
 #N canvas 0 57 1920 1023 parse_declares+objects 0;
@@ -641,9 +547,7 @@ complet, f 22;
 #X obj 854 886 spigot;
 #X text 1011 895 found category ?;
 #X text 864 905 no;
-#X text 571 19 A la création de [pdr] \, controler si des extensions
-sont définies \, et le cas échéant \, charger les listes d'objets
-correspondantes dans les tableaux \$0-all_objects;
+#X text 571 19 A la création de [pdr] \, controler si des extensions sont définies \, et le cas échéant \, charger les listes d'objets correspondantes dans les tableaux \$0-all_objects;
 #X text 568 227 non : le créer dynamiquement;
 #X obj 513 205 t b b b;
 #X msg 546 488 1e+09;
@@ -656,13 +560,9 @@ correspondantes dans les tableaux \$0-all_objects;
 #X msg 357 234 symbol \$1-modules_sets;
 #X msg 593 348 symbol \$1-modules_sets;
 #X obj 252 347 list split 1;
-#X msg 506 393 list # List of modules to load \, list # you can add
-new sets of modules here \, list # (ctrl/cmd + s to save and close)
-\, list basic;
-#X obj 267 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 585 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X msg 506 393 list # List of modules to load \, list # you can add new sets of modules here \, list # (ctrl/cmd + s to save and close) \, list basic;
+#X obj 267 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 585 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #N canvas 1 58 450 300 exists? 0;
 #X obj 36 29 inlet;
 #X obj 46 266 outlet;
@@ -754,11 +654,8 @@ new sets of modules here \, list # (ctrl/cmd + s to save and close)
 #X connect 73 0 24 0;
 #X connect 74 0 21 0;
 #X restore 718 415 pd startup;
-#X text 541 438 Charge les <module>.txt et copie les listes d'objet
-dans le tableau \$0-all_objects \, en ajoutant si besoin des catégories
-;
-#X text 536 484 si les declare -path ne sont pas corrects \, les ajoute
-dynamiquement pour chaque module à charger.;
+#X text 541 438 Charge les <module>.txt et copie les listes d'objet dans le tableau \$0-all_objects \, en ajoutant si besoin des catégories;
+#X text 536 484 si les declare -path ne sont pas corrects \, les ajoute dynamiquement pour chaque module à charger.;
 #X obj 1093 74 text define \$0-all_objects;
 #X obj 1093 44 text define \$0-categories;
 #X text 554 417 au démarrage;
@@ -779,10 +676,8 @@ dynamiquement pour chaque module à charger.;
 #X obj 220 559 r \$0-close;
 #X msg 220 584 vis 0;
 #N canvas 990 218 630 530 modules_sets... 0;
-#X text 54 95 1) L'extension doit être dézippée et son dossier placé
-dans le dossier <PdRacks>/extensions/;
-#X text 51 138 2) Pour installer une extension dans le patch courant
-\, taper son nom ci-dessous \, puis appuyer sur <enter>;
+#X text 54 95 1) L'extension doit être dézippée et son dossier placé dans le dossier <PdRacks>/extensions/;
+#X text 51 138 2) Pour installer une extension dans le patch courant \, taper son nom ci-dessous \, puis appuyer sur <enter>;
 #X msg 101 342 click;
 #X obj 129 382 s;
 #X msg 240 344 symbol \$1-remote;
@@ -862,5 +757,6 @@ dans le dossier <PdRacks>/extensions/;
 #X connect 54 0 55 0;
 #X connect 55 0 58 0;
 #X connect 55 1 56 0;
+#X connect 56 0 57 1;
 #X connect 58 0 57 0;
 #X coords 0 -1 1 1 120 39 1 100 100;

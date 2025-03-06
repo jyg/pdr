@@ -1,27 +1,16 @@
-#N canvas 646 56 678 486 10;
+#N canvas 606 56 678 486 10;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
-#X text 57 88 This program is free software: you can redistribute it
-and/or modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation \, either version 3 of
-the License \, or (at your option) any later version.;
-#X text 58 168 This program is distributed in the hope that it will
-be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
-of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-General Public License for more details.;
-#X text 57 261 You should have received a copy of the GNU General Public
-License along with this program. If not \, see <http://www.gnu.org/licenses/>.
-;
+#X text 57 88 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation \, either version 3 of the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public License along with this program. If not \, see <http://www.gnu.org/licenses/>.;
 #X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
-#X text 60 325 See the file LICENSE.txt for the full license text.
-;
+#X text 60 325 See the file LICENSE.txt for the full license text.;
 #X restore 298 15 pd LICENSE-GPL;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_eq3-0
-0 7 0 14 -262144 -1 0;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_eq3-0
-0 7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_eq3-0 0 7 0 14 #fcfcfc #000000 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv fx_eq3-0 0 7 0 14 #fcfcfc #000000 0;
 #X obj 31 246 inlet~;
 #X obj 117 245 inlet~;
 #X obj 28 304 outlet~;
@@ -64,22 +53,17 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 225 553 *~;
 #N canvas 211 75 1084 725 using 0;
 #X obj 66 25 inlet~;
-#X obj 66 80 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
+#X obj 66 80 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
 #X text 185 59 lo x3;
-#X obj 66 100 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
-#X obj 66 120 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
+#X obj 66 100 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
+#X obj 66 120 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
 #X obj 194 172 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
 #X text 329 152 mid x3;
 #X obj 194 192 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
 #X obj 194 212 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
-#X obj 336 263 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931
-;
+#X obj 336 263 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931;
 #X text 476 241 hi x2;
-#X obj 336 283 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931
-;
+#X obj 336 283 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931;
 #N canvas 0 50 454 304 scalelog 0;
 #X obj 20 155 exp;
 #X obj 20 107 *;
@@ -222,7 +206,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 38 0 37 1;
 #X connect 39 0 38 0;
 #X restore 89 174 pd using raw biquad~ objects;
-#X floatatom 270 487 5 0 0 0 - - -, f 5;
+#X floatatom 270 487 5 0 0 0 - - - 0;
 #X obj 352 490 r \$0-loadbang;
 #X obj 224 392 line~;
 #X msg 286 346 \$1 10;
@@ -247,15 +231,13 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 412 317 u_dispatch \$0 mid;
 #X obj 412 339 u_dispatch \$0 high;
 #X obj 412 361 u_dispatch \$0 gain;
-#X obj 176 115 ui_vs \$0 mid 0 1;
-#X obj 214 115 ui_vs \$0 high 0 1;
-#X obj 252 115 ui_vs \$0 gain 0 1;
+#X obj 176 114 ui_vs \$0 mid 0 1;
+#X obj 214 114 ui_vs \$0 high 0 1;
+#X obj 252 114 ui_vs \$0 gain 0 1;
 #X obj 462 141 s \$0-loadbang;
-#X obj 434 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 434 105 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 463 66 loadbang;
-#X obj 107 139 bng 15 250 50 0 empty empty flat 2 -8 0 10 -262144 -1
--1;
+#X obj 107 139 bng 15 250 50 0 empty empty flat 2 -8 0 10 #fcfcfc #000000 #000000;
 #X msg 187 228 low 0.5 \, mid 0.5 \, high 0.5 \, gain 0.5;
 #N canvas 294 50 539 663 workings 0;
 #X obj 80 36 inlet~ signal;
@@ -291,22 +273,17 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 225 553 *~;
 #N canvas 41 50 825 716 using 0;
 #X obj 66 25 inlet~;
-#X obj 66 80 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
+#X obj 66 80 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
 #X text 185 59 lo x3;
-#X obj 66 100 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
-#X obj 66 120 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245
-;
+#X obj 66 100 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
+#X obj 66 120 biquad~ 1.86972 -0.872325 0.000650245 0.00130049 0.000650245;
 #X obj 194 172 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
 #X text 329 152 mid x3;
 #X obj 194 192 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
 #X obj 194 212 biquad~ 1.36591 -0.385279 0.307361 0 -0.307361;
-#X obj 336 263 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931
-;
+#X obj 336 263 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931;
 #X text 476 241 hi x2;
-#X obj 336 283 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931
-;
+#X obj 336 283 biquad~ 1.63386 -0.729864 0.840931 -1.68186 0.840931;
 #N canvas 0 50 454 304 scalelog 0;
 #X obj 20 155 exp;
 #X obj 20 107 *;
@@ -449,7 +426,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 38 0 37 1;
 #X connect 39 0 38 0;
 #X restore 89 174 pd using raw biquad~ objects;
-#X floatatom 270 487 5 0 0 0 - - -, f 5;
+#X floatatom 270 487 5 0 0 0 - - - 0;
 #X obj 352 490 r \$0-loadbang;
 #X obj 224 392 line~;
 #X msg 286 346 \$1 10;
@@ -466,11 +443,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 10 0 6 1;
 #X connect 11 0 10 0;
 #X restore 138 269 pd workings;
-#X obj 138 115 ui_vs \$0 low 0 1;
+#X obj 138 114 ui_vs \$0 low 0 1;
 #X obj 1231 279 namecanvas \$0-this;
 #X obj 1229 256 triggered_loadbang \$0-this;
-#X text 1224 206 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 1224 206 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 600 222 savestate;
 #X obj 534 33 declare -path ../../../core;
 #X obj 534 53 declare -path ../../../core/stuff;

@@ -1,0 +1,4 @@
+#N canvas 0 50 559 437 12;
+#X text 98 39 dummy object for lrshift~ replacement;
+#X obj 52 77 inlet~;
+#X obj 52 130 outlet~;

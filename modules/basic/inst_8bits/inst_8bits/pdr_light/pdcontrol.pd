@@ -1,0 +1,10 @@
+#N canvas 0 50 559 437 12;
+#X obj 52 77 inlet;
+#X obj 52 102 route dir;
+#X obj 52 127 t b;
+#X obj 52 152 outlet;
+#X text 98 39 dummy object for pdcontrol replacement (pd pre 0.50)
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

@@ -1,4 +1,4 @@
-#N canvas 0 57 1920 1023 10;
+#N canvas 0 0 1284 681 10;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
@@ -558,71 +558,46 @@
 #X msg 457 423 bright \$1;
 #X obj 720 323 u_parameter \$0 seuil;
 #X obj 545 108 r \$0-busy;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv audio_features-0
-0 7 0 14 -262144 -1 0;
-#X obj 225 123 bng 14 250 50 0 \$0-testx empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 225 139 bng 14 250 50 0 \$0-testy empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 225 155 bng 14 250 50 0 \$0-testz empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 129 131 tgl 15 0 empty \$0-detect-rcv detect 2 7 0 10 -250685
--250685 -1 0 1;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv audio_features-1 0 7 0 14 #fcfcfc #000000 0;
+#X obj 225 123 bng 14 250 50 0 \$0-testx empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 225 139 bng 14 250 50 0 \$0-testy empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 225 155 bng 14 250 50 0 \$0-testz empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 129 131 tgl 15 0 empty \$0-detect-rcv detect 2 7 0 10 #fcfcfc #fcfcfc #000000 0 1;
 #X text 196 124 env.;
 #X text 179 139 harmon.;
 #X text 185 154 brill.;
-#X obj 129 146 tgl 15 0 \$0-send_data \$0-send_data-rcv send 17 7 0
-10 -262144 -1 -1 0 1;
-#X obj 100 122 vsl 25 45 0 100 0 0 \$0-seuil \$0-seuil-rcv seuil 0
-14 0 10 -232576 -1 -1 0 1;
-#X obj 240 122 cnv 2 25 14 empty \$0-cca_cnv-rcv empty 20 12 0 14 -260097
--66577 0;
-#X obj 240 138 cnv 2 13 14 empty \$0-ccb_cnv-rcv empty 20 12 0 14 -260097
--66577 0;
-#X obj 240 154 cnv 2 8 14 empty \$0-ccc_cnv-rcv empty 20 12 0 14 -260097
--66577 0;
-#X floatatom 239 121 5 0 127 1 - #0-ccx-rcv #0-ccx;
-#X floatatom 239 137 5 0 127 1 - #0-ccy-rcv #0-ccy;
-#X floatatom 239 153 5 0 127 1 - #0-ccz-rcv #0-ccz;
+#X obj 129 146 tgl 15 0 \$0-send_data \$0-send_data-rcv send 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 100 122 vsl 25 45 0 100 0 0 \$0-seuil \$0-seuil-rcv seuil 0 14 0 10 #e0c4fc #000000 #000000 0 1;
+#X obj 240 122 cnv 2 25 14 empty \$0-cca_cnv-rcv empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 240 138 cnv 2 25 14 empty \$0-ccb_cnv-rcv empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 240 154 cnv 2 8 14 empty \$0-ccc_cnv-rcv empty 20 12 0 14 #fc8000 #404040 0;
+#X floatatom 239 121 5 0 127 1 - \$0-ccx-rcv \$0-ccx 0;
+#X floatatom 239 137 5 0 127 1 - \$0-ccy-rcv \$0-ccy 0;
+#X floatatom 239 153 5 0 127 1 - \$0-ccz-rcv \$0-ccz 0;
 #N canvas 500 223 525 113 \$0-autoscale_gui 0;
-#X obj 22 12 hsl 128 15 0 127 0 0 \$0-env-min \$0-env-min-rcv env-min:67.5306
-5 7 0 10 -260818 -1 -1 0 1;
-#X obj 22 32 hsl 128 15 0 127 0 0 \$0-env-max \$0-env-max-rcv env-max:103.084
-5 7 0 10 -262144 -1 -1 0 1;
-#X obj 162 12 hsl 128 15 0 127 0 0 \$0-harmo-min \$0-harmo-min-rcv
-harmo-min:54.7169 5 7 0 10 -262144 -1 -1 0 1;
-#X obj 302 12 hsl 128 15 0 127 0 0 \$0-bright-min \$0-bright-min-rcv
-bright-min:54 5 7 0 10 -262144 -1 -1 0 1;
-#X obj 162 32 hsl 128 15 0 127 0 0 \$0-harmo-max \$0-harmo-max-rcv
-harmo-max:109.229 5 7 0 10 -262144 -1 -1 0 1;
-#X obj 302 32 hsl 128 15 0 127 0 0 \$0-bright-max \$0-bright-max-rcv
-bright-max:81 5 7 0 10 -262144 -1 -1 0 1;
-#X obj 22 52 hsl 128 15 0 4000 0 0 \$0-env-filt \$0-env-filt-rcv env-filtering:4000
-5 7 0 10 -262144 -1 -1 0 1;
-#X obj 162 52 hsl 128 15 0 4000 0 0 \$0-harmo-filt \$0-harmo-filt-rcv
-harmo-filtering:0 5 7 0 10 -262144 -1 -1 0 1;
-#X obj 302 52 hsl 128 15 0 4000 0 0 \$0-bright-filt \$0-bright-filt-rcv
-bright-filtering:1000 5 7 0 10 -262144 -1 -1 0 1;
+#X obj 22 12 hsl 128 15 0 127 0 0 \$0-env-min \$0-env-min-rcv env-min:127 5 7 0 10 #fcac44 #000000 #000000 0 1;
+#X obj 22 32 hsl 128 15 0 127 0 0 \$0-env-max \$0-env-max-rcv env-max:0 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 162 12 hsl 128 15 0 127 0 0 \$0-harmo-min \$0-harmo-min-rcv harmo-min:127 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 302 12 hsl 128 15 0 127 0 0 \$0-bright-min \$0-bright-min-rcv bright-min:127 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 162 32 hsl 128 15 0 127 0 0 \$0-harmo-max \$0-harmo-max-rcv harmo-max:0 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 302 32 hsl 128 15 0 127 0 0 \$0-bright-max \$0-bright-max-rcv bright-max:0 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 22 52 hsl 128 15 0 4000 0 0 \$0-env-filt \$0-env-filt-rcv env-filtering:204 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 162 52 hsl 128 15 0 4000 0 0 \$0-harmo-filt \$0-harmo-filt-rcv harmo-filtering:124 5 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 302 52 hsl 128 15 0 4000 0 0 \$0-bright-filt \$0-bright-filt-rcv bright-filtering:103 5 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 31 73 (orange quand en deca / au delà du seuil);
-#X obj 310 72 tgl 15 0 \$0-learn \$0-learn-rcv Learn 17 7 0 10 -257985
--1 -1 0 1;
+#X obj 310 72 tgl 15 0 \$0-learn \$0-learn-rcv Learn 17 7 0 10 #f8fc00 #000000 #000000 0 1;
 #X restore 354 109 pd \$0-autoscale_gui;
 #X msg 340 212 vis 1;
 #X obj 338 247 s pd-\$0-autoscale_gui;
-#X obj 193 114 bng 15 250 50 0 \$0-autoscale-edit empty ... 2 7 0 6
--257985 -1 -1;
-#X obj 144 115 tgl 15 0 \$0-learn \$0-learn-rcv Learn 17 7 0 10 -257985
--1 -1 0 1;
+#X obj 193 114 bng 15 250 50 0 \$0-autoscale-edit empty ... 2 7 0 6 #f8fc00 #000000 #000000;
+#X obj 144 115 tgl 15 0 \$0-learn \$0-learn-rcv Learn 17 7 0 10 #f8fc00 #000000 #000000 0 1;
 #X obj 341 188 r \$0-autoscale-edit;
 #X obj 351 133 r \$0-learn;
 #X obj 351 160 select 1 0;
 #X msg 418 215 vis 0;
-#X obj 274 121 tgl 16 0 \$0-ccx_enable \$0-ccx_enable-rcv A 4 7 0 12
--203904 -1 -1 0 1;
-#X obj 274 137 tgl 16 0 \$0-ccy_enable \$0-ccy_enable-rcv B 4 7 0 12
--203904 -1 -1 0 1;
-#X obj 274 153 tgl 16 0 \$0-ccz_enable \$0-ccz_enable-rcv C 4 7 0 12
--203904 -1 -1 0 1;
+#X obj 274 121 tgl 16 0 \$0-ccx_enable \$0-ccx_enable-rcv A 4 7 0 12 #c4c4fc #000000 #000000 0 1;
+#X obj 274 137 tgl 16 0 \$0-ccy_enable \$0-ccy_enable-rcv B 4 7 0 12 #c4c4fc #000000 #000000 0 1;
+#X obj 274 153 tgl 16 0 \$0-ccz_enable \$0-ccz_enable-rcv C 4 7 0 12 #c4c4fc #000000 #000000 0 1;
 #X obj 449 312 route showLastUsed;
 #X obj 451 287 r RACK_ADMIN;
 #X obj 444 342 == 0;
@@ -634,7 +609,7 @@ bright-filtering:1000 5 7 0 10 -262144 -1 -1 0 1;
 #X obj 169 364 outlet~;
 #X obj 711 118 inlet data;
 #X obj 693 587 outlet data;
-#N canvas 0 50 450 300 sigmund 0;
+#N canvas 26 26 450 300 sigmund 0;
 #X obj 116 93 inlet~;
 #X obj 102 208 outlet;
 #X obj 219 137 block~ 64 1 0.0625;
@@ -647,15 +622,13 @@ bright-filtering:1000 5 7 0 10 -262144 -1 -1 0 1;
 #X obj 580 495 r \$0-send_data;
 #X text 143 154 data;
 #X obj 605 371 r \$0-detect;
-#X obj 588 427 t f f;
 #X obj 558 463 f;
 #X obj 547 380 select 0;
 #X msg 461 479 \$1 100;
 #X msg 558 486 \$1 0;
 #X obj 946 293 namecanvas \$0-this;
 #X obj 944 270 triggered_loadbang \$0-this;
-#X text 939 220 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 939 220 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 891 111 savestate;
 #X obj 460 703 morphing \$0 ccx_enable lin;
 #X obj 470 723 morphing \$0 ccy_enable lin;
@@ -663,6 +636,7 @@ is created dynamically, f 29;
 #X obj 804 33 declare -path ../../../core;
 #X obj 804 53 declare -path ../../../core/stuff;
 #X obj 804 73 declare -path ../../../core/rj;
+#X msg 698 491 detect \$1;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
@@ -694,23 +668,24 @@ is created dynamically, f 29;
 #X connect 53 0 54 0;
 #X connect 54 0 9 1;
 #X connect 55 0 3 0;
-#X connect 55 1 76 0;
+#X connect 55 1 75 0;
 #X connect 56 0 9 0;
 #X connect 56 0 58 0;
 #X connect 57 0 9 0;
 #X connect 57 0 59 0;
 #X connect 57 0 62 0;
 #X connect 60 0 55 0;
-#X connect 62 0 71 0;
+#X connect 62 0 70 0;
 #X connect 63 0 61 0;
 #X connect 64 0 63 0;
 #X connect 65 0 64 1;
-#X connect 67 0 70 0;
-#X connect 68 1 69 1;
-#X connect 69 0 72 0;
-#X connect 70 0 69 0;
+#X connect 67 0 69 0;
+#X connect 67 0 82 0;
+#X connect 68 0 71 0;
+#X connect 69 0 68 0;
+#X connect 70 0 64 0;
 #X connect 71 0 64 0;
-#X connect 72 0 64 0;
-#X connect 76 0 55 1;
-#X connect 76 1 55 2;
+#X connect 75 0 55 1;
+#X connect 75 1 55 2;
+#X connect 82 0 14 0;
 #X coords 0 -1 1 1 190 70 1 100 100;

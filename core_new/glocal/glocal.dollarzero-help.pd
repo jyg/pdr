@@ -1,0 +1,11 @@
+#N canvas 24 495 972 437 16;
+#X obj 171 160 glocal.space-help;
+#X text 366 159 <- click here for more details;
+#X text 342 35 Gets the \$0 of the closest parent patch containing
+a [glocal.space \$0] object.;
+#X obj 134 55 glocal.dollarzero;
+#X floatatom 134 84 5 0 0 0 - - -;
+#X obj 137 32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;

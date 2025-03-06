@@ -1,7 +1,6 @@
-#N canvas 1 58 958 1018 12;
+#N canvas 1 0 958 681 12;
 #X declare -path pdr/modules/basic;
-#X text 325 44 peut accueillir une abstraction créée dynamiquement
-et pouvant être changée dynamiquement;
+#X text 325 44 peut accueillir une abstraction créée dynamiquement et pouvant être changée dynamiquement;
 #X text 483 176 efface le contenu du container;
 #X obj 53 181 container;
 #A saved dump vol 80.898;
@@ -41,32 +40,14 @@ et pouvant être changée dynamiquement;
 #X msg 279 345 contents audio_out;
 #X obj 638 271 PdRacks.presets;
 #A saved morph.time 1;
-#A saved dump.preset2 @ inst_euclidrums-0 vol 102.281 @ inst_euclidrums-0
-bd 23 @ inst_euclidrums-0 sn 25 @ inst_euclidrums-0 hh 6 @ fx_dubdel2-0
-noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0
-sync 1 @ fx_dubdel2-0 del 1520.81 @ fx_dubdel2-0 wet 0.618793 @ fx_dubdel2-0
-fb 0.871686 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 63.6727 @ audio_out-0
-pan 0 @ audio_out-0 vol 110.704 @ audio_out-0 out OUT(1/2) @ container-2
-contents audio_out @ container-1 contents fx_dubdel2 @ container-0
-contents inst_euclidrums;
-#A saved dump.preset1 @ container-2 contents clear @ container-1 contents
-clear @ container-0 contents clear;
-#A saved dump.preset0 @ inst_euclidrums-0 vol 80.0667 @ inst_euclidrums-0
-bd 7 @ inst_euclidrums-0 sn 13 @ inst_euclidrums-0 hh 22 @ fx_dubdel2-0
-noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0
-sync 1 @ fx_dubdel2-0 del 582.696 @ fx_dubdel2-0 wet 0.389201 @ fx_dubdel2-0
-fb 0.333079 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 60 @ audio_out-0
-pan 0 @ audio_out-0 vol 95.801 @ audio_out-0 out OUT(1/2) @ container-2
-contents audio_out @ container-1 contents fx_dubdel2 @ container-0
-contents inst_euclidrums;
+#A saved dump.preset2 @ inst_euclidrums-0 vol 102.281 @ inst_euclidrums-0 bd 23 @ inst_euclidrums-0 sn 25 @ inst_euclidrums-0 hh 6 @ fx_dubdel2-0 noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0 sync 1 @ fx_dubdel2-0 del 1520.81 @ fx_dubdel2-0 wet 0.618793 @ fx_dubdel2-0 fb 0.871686 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 63.6727 @ audio_out-0 pan 0 @ audio_out-0 vol 110.704 @ audio_out-0 out OUT(1/2) @ container-2 contents audio_out @ container-1 contents fx_dubdel2 @ container-0 contents inst_euclidrums;
+#A saved dump.preset1 @ container-2 contents clear @ container-1 contents clear @ container-0 contents clear;
+#A saved dump.preset0 @ inst_euclidrums-0 vol 80.0667 @ inst_euclidrums-0 bd 7 @ inst_euclidrums-0 sn 13 @ inst_euclidrums-0 hh 22 @ fx_dubdel2-0 noclick_mode 0 @ fx_dubdel2-0 dell 4 @ fx_dubdel2-0 delr 4 @ fx_dubdel2-0 sync 1 @ fx_dubdel2-0 del 582.696 @ fx_dubdel2-0 wet 0.389201 @ fx_dubdel2-0 fb 0.333079 @ fx_dubdel2-0 bq 2 @ fx_dubdel2-0 bpitch 60 @ audio_out-0 pan 0 @ audio_out-0 vol 95.801 @ audio_out-0 out OUT(1/2) @ container-2 contents audio_out @ container-1 contents fx_dubdel2 @ container-0 contents inst_euclidrums;
 #A saved SID 0;
 #X msg 266 116 contents inst_euclidrums;
 #X msg 451 240 contents fx_dubdel2;
 #X obj 717 171 PdRacks.transport;
-#X text 71 422 TO DO : Revoir le mecsanisme de sauvegarde de presets
-pour que les valeurs du module contenu soient stockées en interne
-dans le container. c'est deja le cas pour savestate mais ća doit aussi
-l'etre pour PdRacks.Presets et PdRacks.savestate;
+#X text 71 422 TO DO : Revoir le mecsanisme de sauvegarde de presets pour que les valeurs du module contenu soient stockées en interne dans le container. c'est deja le cas pour savestate mais ća doit aussi l'etre pour PdRacks.Presets et PdRacks.savestate;
 #X obj 638 414 savestate-0.48 container-help;
 #X msg 607 369 save;
 #X text 315 605 BUG LE NAVIGATEUR D OBJETS NE FONCTIONNE PAS;
@@ -79,8 +60,7 @@ l'etre pour PdRacks.Presets et PdRacks.savestate;
 #A saved modules_set # (ctrl/cmd + s to save and close);
 #A saved modules_set basic;
 #X restore 833 140 pd \$0-PdRacks.declare;
-#X text 25 95 cliquer dans la barre de titre pour faire apparaitre
-un menu, f 21;
+#X text 25 95 cliquer dans la barre de titre pour faire apparaitre un menu, f 21;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 2 2 3 2;

@@ -1,0 +1,6 @@
+#N canvas 24 495 972 437 16;
+#X text 172 68 defining a global send/receive channel \, that becomes
+local to (gran-)parent patch/abstraction if there is a [localspace
+\$0] object inside (gran-)parent patch, f 58;
+#X text 366 159 <- click here;
+#X obj 171 160 glocal.space-help;

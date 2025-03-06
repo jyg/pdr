@@ -1,0 +1,12 @@
+#N canvas 143 535 972 437 16;
+#X obj 102 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 98 242 5 0 0 0 - - -;
+#X floatatom 77 313 5 0 0 0 - - -;
+#X obj 98 213 glocal.tabread table1;
+#X obj 79 350 glocal.tabwrite table1;
+#X text 139 35 utility to read global tables (table1) or local (<glocal-\$0>-table1)
+;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
