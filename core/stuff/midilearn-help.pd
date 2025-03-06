@@ -1,0 +1,10 @@
+#N canvas 156 156 450 300 12;
+#X obj 28 15 vsl 30 50 0.05 10 1 0 \$0-freq \$0-freq-rcv FREQ 2 4 0 8 #9999de #000000 #000000 0 0;
+#X text 49 153 Arg 1 : \$0;
+#X text 49 173 Arg 2 : send symbol;
+#X text 59 207 other args are optional but need to be all specified;
+#X text 20 256 freq-rcv 0.05 10 log FREQ #9999DE #000000 #000000;
+#X obj 16 105 midilearn \$0 freq;
+#A saved freq symbol 0 0 symbol symbol;
+#X text 207 172 (without \$0- prefix);
+#X text 130 29 Adds midi learn support to any widget;
