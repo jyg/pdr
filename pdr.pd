@@ -149,6 +149,7 @@
 #X connect 62 0 75 0;
 #X connect 63 0 76 0;
 #X connect 64 0 73 0;
+#X connect 67 0 75 0;
 #X connect 69 0 74 0;
 #X connect 70 0 73 0;
 #X connect 71 0 75 0;
@@ -371,7 +372,7 @@
 #X obj 491 147 spigot;
 #X obj 531 119 == 2;
 #X msg 728 243 1;
-#X obj 101 121 cnv 5 118 16 empty \$0-pdr-rcv autocomplete 2 8 0 12 #c4fcc4 #404040 0;
+#X obj 101 121 cnv 5 118 16 empty \$0-pdr-rcv object_list 2 8 0 12 #c4fcc4 #404040 0;
 #X obj 139 100 hradio 20 1 0 3 empty empty empty 0 -8 0 10 #00f8fc #0400fc #000000 0;
 #X msg 171 612 vis 1;
 #N canvas 640 301 470 272 \$0-options 0;

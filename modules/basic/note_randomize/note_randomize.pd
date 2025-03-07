@@ -3,23 +3,13 @@
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
-#X text 57 88 This program is free software: you can redistribute it
-and/or modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation \, either version 3 of
-the License \, or (at your option) any later version.;
-#X text 58 168 This program is distributed in the hope that it will
-be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
-of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-General Public License for more details.;
-#X text 57 261 You should have received a copy of the GNU General Public
-License along with this program. If not \, see <http://www.gnu.org/licenses/>.
-;
+#X text 57 88 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation \, either version 3 of the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public License along with this program. If not \, see <http://www.gnu.org/licenses/>.;
 #X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
-#X text 60 325 See the file LICENSE.txt for the full license text.
-;
+#X text 60 325 See the file LICENSE.txt for the full license text.;
 #X restore 298 15 pd LICENSE-GPL;
-#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv note_randomize-0
-0 7 0 14 -262144 -1 0;
+#X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv note_randomize-0 0 7 0 14 #fcfcfc #000000 0;
 #X obj 208 228 route note;
 #X obj 100 115 ui_vs \$0 prob 0 100;
 #X obj 487 263 u_dispatch \$0 prob;
@@ -208,25 +198,23 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X restore 362 305 pd euclid;
 #X obj 307 171 r \$0-euclid;
 #X obj 176 115 ui_vs \$0 euclid 0 64;
-#X text 126 114 <---MIDI--->;
-#X text 225 118 <--AUDIO-->;
+#X text 225 156 <--AUDIO-->;
 #X obj 660 85 round_param \$0 euclid;
-#X text 180 138 steps;
+#X text 180 129 steps;
 #X obj 170 328 pipe f 0;
-#X obj 691 150 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+#X obj 691 150 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 771 99 namecanvas \$0-this;
 #X obj 769 76 triggered_loadbang \$0-this;
-#X text 764 26 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 764 26 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 592 194 savestate;
 #X obj 474 48 declare -path ../../../core;
 #X obj 474 68 declare -path ../../../core/stuff;
 #X obj 474 88 declare -path ../../../core/rj;
+#X text 126 156 <---MIDI--->;
 #X connect 2 0 6 0;
 #X connect 2 1 18 0;
 #X connect 4 0 10 0;
-#X connect 5 0 35 0;
+#X connect 5 0 34 0;
 #X connect 5 1 26 0;
 #X connect 6 0 5 0;
 #X connect 7 0 18 0;
@@ -240,7 +228,7 @@ is created dynamically, f 29;
 #X connect 15 0 20 1;
 #X connect 17 0 2 0;
 #X connect 19 0 4 0;
-#X connect 19 1 40 0;
+#X connect 19 1 39 0;
 #X connect 20 0 14 0;
 #X connect 20 1 16 0;
 #X connect 21 0 22 0;
@@ -250,8 +238,8 @@ is created dynamically, f 29;
 #X connect 27 1 28 0;
 #X connect 28 0 12 0;
 #X connect 29 0 26 1;
-#X connect 35 0 7 0;
-#X connect 36 0 35 1;
-#X connect 40 0 19 1;
-#X connect 40 1 19 2;
+#X connect 34 0 7 0;
+#X connect 35 0 34 1;
+#X connect 39 0 19 1;
+#X connect 39 1 19 2;
 #X coords 0 -1 1 1 190 70 1 100 100;

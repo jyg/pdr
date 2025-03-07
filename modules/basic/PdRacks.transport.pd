@@ -1,4 +1,4 @@
-#N canvas 123 147 1362 721 10;
+#N canvas 0 0 1284 681 10;
 #X declare -path ../../core;
 #X declare -path ../../core/stuff;
 #X declare -path ../../core/rj;
@@ -439,9 +439,9 @@
 #X obj 136 213 speed_lim;
 #X obj 136 254 s \$0-clock;
 #X obj 119 605 speed_lim;
-#X obj 101 116 cnv 15 188 53 empty \$0-bang-rcv empty 1 5 0 10 #28f4f4 #606060 0;
+#X obj 101 116 cnv 15 188 53 empty \$0-bang-rcv empty 1 5 0 10 #fcfcfc #606060 0;
 #X obj 310 86 spigot 1;
-#X obj 251 100 tgl 39 0 \$0-playBtn \$0-playBtn-rcv || 2 20 0 30 #14e814 #14e814 #000000 0 1;
+#X obj 251 100 tgl 39 0 \$0-playBtn \$0-playBtn-rcv [> 2 20 0 30 #bcbcbc #bcbcbc #000000 0 1;
 #X obj 246 141 ui_tgl \$0 midiout 1 -1 18;
 #X obj 203 130 cnv 15 40 40 empty empty empty 20 12 0 14 #f8fc00 #404040 0;
 #X obj 237 160 hsl 50 10 0 48 0 1 empty empty OFFSET 4 6 0 8 #f8fc00 #000000 #000000 0 1;
@@ -452,7 +452,7 @@
 #X obj 104 114 hsl 40 12 0 92 0 0 \$0-click empty CLICK 4 5 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 146 112 bng 15 250 50 0 \$0-grv empty G 5 7 0 10 #e0c4fc #000000 #000000;
 #X obj 165 113 hsl 40 12 6 9 0 1 \$0-swing empty swing 2 6 0 10 #e0c4fc #000000 #000000 1500 1;
-#X obj 101 149 cnv 15 85 20 empty \$0-transport-rcv 15:4:2 4 12 0 14 #e0e0e0 #404040 0;
+#X obj 101 149 cnv 15 85 20 empty \$0-transport-rcv 50:4:13 4 12 0 14 #e0e0e0 #404040 0;
 #X obj 101 127 bng 25 250 50 0 TAP empty TAP 2 10 0 14 #e0c4fc #000000 #9c00fc;
 #X floatatom 129 139 5 20 300 2 bpm \$0-bpm-rcv \$0-bpm 0;
 #X floatatom 168 142 5 1 99 2 Beats \$0-quantum-rcv QUANTUM 0;
