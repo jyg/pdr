@@ -1,19 +1,17 @@
-#N canvas 713 56 671 498 10;
+#N canvas 613 56 671 498 10;
 #X obj 68 130 fx_resonator;
+#A saved midiNoteIn 1;
+#A saved hold;
 #A saved lpfreq 20000;
 #A saved fdback 0.99;
 #A saved wet 1;
-#A saved SID 0;
-#X text 15 49 de type karpus strong je crois (piqué dans integralive)
-;
-#X text 11 325 les note on/off sont reçues sur le data_inlet ou bien
-par l'objet [notein] en mode midi_omni;
-#X text 46 24 effet de résonateur 8 circuits (commandé par notes
-midi);
+#X text 15 49 de type karpus strong je crois (piqué dans integralive);
+#X text 11 325 les note on/off sont reçues sur le data_inlet ou bien par l'objet [notein] en mode midi_omni;
+#X text 46 24 effet de résonateur 8 circuits (commandé par notes midi);
 #X msg 24 399 aftertouch <noteid> pitchshift <value>;
 #X text 19 371 Messages Aftertouch pris en charge :;
 #X text 22 435 TODO : Aftertouch pour varier feedback;
-#N canvas 0 50 450 300 noise~ 0;
+#N canvas 78 78 450 300 noise~ 0;
 #X obj 90 102 noise~;
 #X obj 150 102 noise~;
 #X obj 92 134 *~ 0.2;
@@ -27,8 +25,7 @@ midi);
 #X restore 66 82 pd noise~;
 #X obj 65 280 dac~;
 #N canvas 0 50 450 300 vol 0;
-#X obj 103 125 hsl 128 15 0 100 0 0 empty empty -100_dB 50 -8 0 10
--204800 -1 -1 0 1;
+#X obj 103 125 hsl 128 15 0 100 0 0 empty empty -10.2362_dB 50 -8 0 10 #c4fcfc #000000 #000000 0 1;
 #X obj 99 145 dbtorms;
 #X obj 99 168 lop~ 1;
 #X obj 44 53 inlet~;
@@ -59,10 +56,12 @@ midi);
 #X msg 560 59 note 67 0;
 #X msg 561 90 note 70 0;
 #X msg 433 237 \; pd dsp 1;
+#X obj 460 315 hsl 128 15 -12 12 0 0 empty empty aftertouch-pitchshift -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 457 335 5 0 0 0 - - - 0;
+#X msg 423 446 pitchshift \$1;
+#X obj 430 405 hsl 128 15 -12 12 0 0 empty empty pitchshift -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 427 425 5 0 0 0 - - - 0;
 #X msg 435 364 aftertouch 67 pitchshift \$1;
-#X obj 460 315 hsl 128 15 -12 12 0 0 empty empty pitchshift -2 -8 0
-10 -262144 -1 -1 3500 1;
-#X floatatom 457 335 5 0 0 0 - - -;
 #X connect 0 0 9 0;
 #X connect 0 1 9 1;
 #X connect 7 0 0 0;
@@ -75,6 +74,9 @@ midi);
 #X connect 13 0 0 2;
 #X connect 14 0 0 2;
 #X connect 15 0 0 2;
-#X connect 17 0 0 2;
-#X connect 18 0 17 0;
-#X connect 18 0 19 0;
+#X connect 17 0 22 0;
+#X connect 17 0 18 0;
+#X connect 19 0 0 2;
+#X connect 20 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 0 2;
