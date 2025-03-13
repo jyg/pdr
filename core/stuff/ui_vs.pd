@@ -57,7 +57,7 @@
 #X obj 100 100 vfader;
 #X obj 166 368 speed_lim 200;
 #X obj 101 100 cnv 1 36 55 empty \$0-slider empty 2 12 0 10 #00bb00 #000000 0;
-#X obj 101 100 cnv 1 36 32 \$0-pos \$0-pos-rcv empty 2 12 0 10 #88cc66 #404040 0;
+#X obj 101 100 cnv 1 36 39 \$0-pos \$0-pos-rcv empty 2 12 0 10 #88cc66 #404040 0;
 #X obj 102 139 cnv 1 1 1 empty \$0-cnv2 empty 0 1 0 10 #e0e0e0 #404040 0;
 #X obj 102 109 cnv 1 1 1 empty \$0-cnv3 empty 0 1 0 10 #e0e0e0 #404040 0;
 #X obj 591 10 r \$1-\$2-rcv;
@@ -67,7 +67,7 @@
 #X obj 617 131 t l l l;
 #X msg 701 203 color \$2 \$2 -1;
 #X obj 609 170 midilearn \$1 \$2 \$2-rcv \$3 \$4 lin \$2 #88CC66 #00BB00 #000000;
-#A saved name name-rcv 0 127 lin name #88CC66 #00BB00 #000000;
+#A saved mod mod-rcv 0 2 lin mod #88CC66 #00BB00 #000000;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 21 0;

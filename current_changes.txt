@@ -1,3 +1,5 @@
+12/03/25	changement de structure - simplification de module_loader  u_dispatch. Sauvegarde décentalisée des presets et du midimapping.
+
 06/03/19 local state saving of each module in the containing patch
 05/03/19 modules/basic/inst_sampler
 	amelioration de la fonction de bouclage synchro (passage en mode async quand le grain est très fin)
