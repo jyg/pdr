@@ -1,4 +1,4 @@
-#N canvas 1468 682 450 300 12;
+#N canvas 834 381 450 300 12;
 #X obj 16 301 outlet;
 #X obj 121 256 ==;
 #X obj 15 264 spigot 1;
@@ -10,6 +10,7 @@
 #X obj 164 203 v ACTIVE_DOLLARZERO;
 #X obj 17 9 r \$1;
 #X text 72 41 receive on ACTIVE_DOLLARZERO condition;
+#X text 103 10 5from automatonism reloaded);
 #X connect 1 0 2 1;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
