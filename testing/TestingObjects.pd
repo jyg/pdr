@@ -1,0 +1,16 @@
+#N canvas 130 130 450 300 12;
+#X declare -path pdr/modules/basic;
+#X obj 62 48 pdr;
+#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
+#X obj 10 10 declare -path pdr/modules/basic;
+#X obj 10 60 pdr/core/stuff/PdRacks.init \$0;
+#A saved modules_set # List of modules to load;
+#A saved modules_set # you can add new sets of modules here;
+#A saved modules_set # (ctrl/cmd + s to save and close);
+#A saved modules_set basic;
+#X restore 62 93 pd \$0-PdRacks.declare;
+#X obj 228 8 PdRacks.midimap;
+#X obj 197 218 inst_8bits;
+#A saved presets t*(t-1) \; (t*(7+(1^(t>>9)%5))) \; t/(t*5&t>>7)|(t*3&t) \; t*((t>>12|t>>8)&63&t>>4) \; (t*(7+(1^t>>9%5))) \; t*9&t>>4|t*5&t>>7|t*3&t/1024 \; (t>>7|t|t>>6)*10+4*(t&t>>13|t>>9) \; t*((t>>12|t>>8)&63&t>>4) \; \; \; # http://viznut.fi/texts-en/bytebeat_algorithmic_symphonies.html \; # Autres possibilités (seule la première ligne est active) \;;
+#A saved vol 83.403;
+#A saved oct 0;

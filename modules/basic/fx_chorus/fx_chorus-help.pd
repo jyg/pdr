@@ -5,7 +5,7 @@
 #X obj 0 2 cnv 15 800 50 empty empty fx_chorus 20 14 0 20 #e0c4fc #404040 0;
 #X obj 601 2 ../../../core/stuff/language;
 #X obj 25 93 fx_chorus;
+#A saved freq 0.314767;
 #A saved bypass 0;
-#A saved mod 1.19273;
-#A saved freq 0.05;
-#A saved SID 0;
+#A saved mod 0.961234;
+#X obj 359 100 ../../../modules/basic/PdRacks.midimap;

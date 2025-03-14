@@ -1,6 +1,5 @@
-#N canvas 278 373 1379 462 16;
-#X obj 100 100 tgl 23 0 \$2-clip\$1 \$2-clip\$1-rcv ■ 3 10 0 20 -228992
--1 -1 0 1;
+#N canvas 0 52 1284 462 16;
+#X obj 100 100 tgl 23 0 \$2-clip\$1 \$2-clip\$1-rcv ■ 3 10 0 20 #dce4fc #dce4fc #000000 0 1;
 #X obj 493 26 loadbang;
 #X obj 487 234 s \$2-hsl\$1-rcv;
 #X obj 489 97 f \$1;
@@ -13,16 +12,14 @@
 #X msg 522 160 5;
 #X msg 485 157 4;
 #X msg 570 167 6;
-#X obj 26 164 bng 23 250 50 0 \$2-open\$1 empty load_file 17 7 0 10
--262144 -1 -1;
+#X obj 26 164 bng 23 250 50 0 \$2-open\$1 empty load_file 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 361 227 r \$2-hsl\$1;
 #X obj 356 338 t b;
 #X obj 331 432 s pd-\$2-clip-\$1_edit;
 #X msg 346 403 vis 1;
 #X msg 485 198 color \$1 -1 -1;
 #X obj 346 370 delay 200;
-#X obj 124 100 hsl 112 23 0 1 0 0 \$2-hsl\$1 \$2-hsl\$1-rcv empty 2
-12 0 12 -261681 -1 -1 0 1;
+#X obj 124 100 hsl 112 23 0 1 0 0 \$2-hsl\$1 \$2-hsl\$1-rcv empty 2 12 0 12 #fce0c0 #000000 #000000 0 1;
 #X obj 894 162 keyname;
 #X obj 892 188 list prepend;
 #X obj 896 216 list trim;
@@ -44,14 +41,13 @@
 #X obj 369 205 change;
 #X obj 66 343 * 10;
 #X obj 325 128 / 10;
-#X floatatom 99 95 5 0 0 0 - - -;
-#X floatatom 423 125 5 0 0 0 - - -;
+#X floatatom 99 95 5 0 0 0 - - - 0;
+#X floatatom 423 125 5 0 0 0 - - - 0;
 #X obj 582 230 s \$2-clip\$1_quantId-rcv;
 #X obj 522 69 max 0;
 #X obj 635 55 text size \$2-quantiz;
 #X obj 622 23 loadbang;
-#X obj 718 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 718 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 643 200 set \$1;
 #X obj 667 113 * 10;
 #X obj 643 171 min 150;
@@ -90,42 +86,39 @@
 #X connect 25 0 26 0;
 #X connect 27 0 3 0;
 #X restore 46 225 pd displaying quant;
-#X obj 240 102 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv
-empty 0 -8 0 10 -262144 -1 -1 103 256;
-#X obj 239 101 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1_bar 0 14
-0 14 -204800 -66577 0;
+#X obj 240 102 nbx 4 20 -1e+37 1e+37 0 0 \$2-clip\$1_quantId \$2-clip\$1_quantId-rcv empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 239 101 cnv 20 50 21 empty \$2-quant\$1_label-rcv 1_bar 0 14 0 14 #c4fcfc #404040 0;
 #X obj 698 160 select 0 1;
 #X obj 704 110 change;
 #X text 713 27 couleur pour indiquer selection de la scene;
 #X obj 710 61 r \$2-highlight\$1;
-#X floatatom 636 101 5 0 0 0 - - -;
+#X floatatom 636 101 5 0 0 0 - - - 0;
 #X msg 682 230 color 19 -1 15;
-#N canvas 0 50 1444 763 gui.play/stop_button 0;
+#N canvas 0 0 1284 681 gui.play/stop_button 1;
 #X obj 56 424 s \$2-clip\$1-rcv;
-#X obj 117 50 select 0 1 2;
-#X msg 151 316 set 0 \, label_font 0 28 \, label ► \, color 8 8 -1
-;
-#X msg 144 388 set 0 \, label_font 0 14 \, label |> \, color 8 8 -1
-;
-#X msg 454 106 set 1 \, label_font 0 14 \, label >. \, color 15 15
--1;
-#X msg 608 350 set 1 \, label_font 0 20 \, label ■ \, color 16 16
--1;
-#X msg 149 349 set 0 \, label_font 0 20 \, label ■ \, color 8 8 -1
-;
+#X obj 117 80 select 0 1 2;
+#X msg 151 316 set 0 \, label_font 0 28 \, label ► \, color 8 8 -1;
+#X msg 144 388 set 0 \, label_font 0 14 \, label |> \, color 8 8 -1;
+#X msg 454 106 set 1 \, label_font 0 14 \, label >. \, color 15 15 -1;
+#X msg 608 350 set 1 \, label_font 0 20 \, label ■ \, color 16 16 -1;
+#X msg 149 349 set 0 \, label_font 0 20 \, label ■ \, color 8 8 -1;
 #X obj 146 181 r \$2-duration\$1_ms;
 #X obj 146 255 == 0;
 #X obj 218 209 == 0;
-#X obj 116 25 t f f;
+#X obj 116 55 t f f;
 #X obj 145 205 f;
 #X obj 145 229 spigot 1;
 #X obj 144 282 select 1 0;
 #X obj 612 212 == 0;
 #X obj 610 239 select 1 0;
 #X obj 612 188 v \$2-duration\$1_ms;
-#X msg 604 316 set 1 \, label_font 0 20 \, label ■ \, color 8 8 -1
-;
+#X msg 604 316 set 1 \, label_font 0 20 \, label ■ \, color 8 8 -1;
 #X obj 115 1 r \$2-clip\$1_mode;
+#X obj 115 28 f;
+#X obj 523 13 r MIDI_LEARN;
+#X obj 644 16 r MIDI_MAP_TO;
+#X obj 797 20 r MIDI_MAP_FROM;
+#X obj 523 42 select 0;
 #X connect 1 0 11 0;
 #X connect 1 1 5 0;
 #X connect 1 1 16 0;
@@ -149,7 +142,12 @@ empty 0 -8 0 10 -262144 -1 -1 103 256;
 #X connect 15 1 5 0;
 #X connect 16 0 14 0;
 #X connect 17 0 0 0;
-#X connect 18 0 10 0;
+#X connect 18 0 19 0;
+#X connect 19 0 10 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 0;
+#X connect 23 0 19 0;
 #X restore 44 265 pd gui.play/stop_button;
 #N canvas 144 438 450 300 gui.displaying_filename 0;
 #X text 179 76 vanilla version of splitfilename;
@@ -162,10 +160,8 @@ empty 0 -8 0 10 -262144 -1 -1 103 256;
 #X text 81 12 string in;
 #X obj 91 31 inlet;
 #X obj 91 431 outlet;
-#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 -118750 -66577
-0;
-#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 -102336 -66577
-0;
+#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 #70fc74 #404040 0;
+#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 #60f8fc #404040 0;
 #X obj 91 55 list;
 #X obj 91 193 list store, f 13;
 #X obj 91 102 until;
@@ -233,7 +229,7 @@ empty 0 -8 0 10 -262144 -1 -1 103 256;
 #X connect 11 0 1 0;
 #X restore 44 307 pd gui.displaying_filename;
 #X msg 131 44 label;
-#N canvas 0 50 1615 884 displaying 1;
+#N canvas 0 50 1615 884 displaying 0;
 #X obj 414 248 text get \$2-quantiz;
 #X obj 414 277 unpack f s;
 #X obj 64 205 text search \$2-quantiz;
@@ -242,13 +238,12 @@ empty 0 -8 0 10 -262144 -1 -1 103 256;
 #X obj 369 205 change;
 #X obj 66 343 * 10;
 #X obj 325 128 / 10;
-#X floatatom 99 95 5 0 0 0 - - -;
-#X floatatom 423 125 5 0 0 0 - - -;
+#X floatatom 99 95 5 0 0 0 - - - 0;
+#X floatatom 423 125 5 0 0 0 - - - 0;
 #X obj 522 69 max 0;
 #X obj 635 55 text size \$2-quantiz;
 #X obj 622 23 loadbang;
-#X obj 718 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 718 25 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 643 200 set \$1;
 #X obj 667 113 * 10;
 #X obj 643 171 min 150;

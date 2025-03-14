@@ -1,24 +1,15 @@
-#N canvas 1 58 1475 1018 12;
+#N canvas 0 0 1284 681 12;
 #X declare -path ../../../core;
 #X declare -path ../../../core/rj;
 #X declare -path ../../../core/stuff;
 #X declare -path ./audio_clip;
 #X declare -path ./audio_clip/pdr_light;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
-#X text 57 88 This program is free software: you can redistribute it
-and/or modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation \, either version 3 of
-the License \, or (at your option) any later version.;
-#X text 58 168 This program is distributed in the hope that it will
-be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
-of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-General Public License for more details.;
-#X text 57 261 You should have received a copy of the GNU General Public
-License along with this program. If not \, see <http://www.gnu.org/licenses/>.
-;
+#X text 57 88 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation \, either version 3 of the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public License along with this program. If not \, see <http://www.gnu.org/licenses/>.;
 #X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
-#X text 60 325 See the file LICENSE.txt for the full license text.
-;
+#X text 60 325 See the file LICENSE.txt for the full license text.;
 #X restore 298 15 pd LICENSE-GPL;
 #X obj 355 356 inlet~;
 #X obj 411 357 inlet~;
@@ -28,12 +19,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 1286 955 outlet data;
 #X obj 1041 279 namecanvas \$0-this;
 #X obj 1039 256 triggered_loadbang \$0-this;
-#X text 1034 206 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 1034 206 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 718 396 savestate;
 #X obj 592 418 module_loader audio_clip \$0 \$1;
-#X obj 592 398 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 592 398 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 614 387 MASTER;
 #N canvas 0 57 1920 1023 slave_send/receive 0;
 #X obj 75 23 inlet send;
@@ -202,8 +191,8 @@ is created dynamically, f 29;
 #X obj 743 216 s \$0-clock;
 #X obj 833 198 r STOP;
 #X obj 833 221 s \$0-stop;
-#X floatatom -274 28 5 0 0 0 - - -;
-#X floatatom -274 50 5 0 0 0 - - -;
+#X floatatom -274 28 5 0 0 0 - - - 0;
+#X floatatom -274 50 5 0 0 0 - - - 0;
 #X text 49 372 popup editing windows;
 #X msg 297 291 vis 2 1;
 #X obj 424 34 declare -path ../../../core;
@@ -211,14 +200,12 @@ is created dynamically, f 29;
 #X obj 424 94 declare -path ../../../core/stuff;
 #X obj 424 125 declare -path ./audio_clip;
 #X obj 423 150 declare -path ./audio_clip/pdr_light;
-#N canvas 887 441 533 448 \$0-clip-1_edit 1;
+#N canvas 887 441 533 448 \$0-clip-1_edit 0;
 #X obj 2 2 clip_settings_gui 1 \$0;
 #N canvas 0 50 651 429 help 0;
 #X text 65 165 Seg.BPM : original tempo of sample segment;
-#X text 69 274 Quantization (q) : When the sample can be triggered
-(in 16ths), f 62;
-#X text 71 305 preroll : If the sample starts before a bar (in 16ths)
-;
+#X text 69 274 Quantization (q) : When the sample can be triggered (in 16ths), f 62;
+#X text 71 305 preroll : If the sample starts before a bar (in 16ths);
 #X text 105 117 - playolap : playing overlapped chunks;
 #X text 106 139 -pvoc : using phase vocoder (FFT);
 #X text 95 58 1) by changing speed (and pitch);
@@ -226,10 +213,8 @@ is created dynamically, f 29;
 #X text 92 97 2) by time stretching;
 #X text 131 225 <filename>-###bpm.<extension>;
 #X text 131 245 <filename> ###.<extension>;
-#X text 72 197 Seg.BPM is automatically set for filenames with following
-format :, f 66;
-#X text 64 34 WRAP MODE : There are several modes to synchronize the
-loop;
+#X text 72 197 Seg.BPM is automatically set for filenames with following format :, f 66;
+#X text 64 34 WRAP MODE : There are several modes to synchronize the loop;
 #X text 355 225 (ex: ableton);
 #X text 357 245 (ex: musine);
 #X restore 436 72 pd help;
@@ -238,10 +223,8 @@ loop;
 #X obj 2 3 clip_settings_gui 2 \$0;
 #N canvas 0 50 651 429 help 0;
 #X text 65 165 Seg.BPM : original tempo of sample segment;
-#X text 69 274 Quantization (q) : When the sample can be triggered
-(in 16ths), f 62;
-#X text 71 305 preroll : If the sample starts before a bar (in 16ths)
-;
+#X text 69 274 Quantization (q) : When the sample can be triggered (in 16ths), f 62;
+#X text 71 305 preroll : If the sample starts before a bar (in 16ths);
 #X text 105 117 - playolap : playing overlapped chunks;
 #X text 106 139 -pvoc : using phase vocoder (FFT);
 #X text 95 58 1) by changing speed (and pitch);
@@ -249,10 +232,8 @@ loop;
 #X text 92 97 2) by time stretching;
 #X text 131 225 <filename>-###bpm.<extension>;
 #X text 131 245 <filename> ###.<extension>;
-#X text 72 197 Seg.BPM is automatically set for filenames with following
-format :, f 66;
-#X text 64 34 WRAP MODE : There are several modes to synchronize the
-loop;
+#X text 72 197 Seg.BPM is automatically set for filenames with following format :, f 66;
+#X text 64 34 WRAP MODE : There are several modes to synchronize the loop;
 #X text 355 225 (ex: ableton);
 #X text 357 245 (ex: musine);
 #X restore 436 72 pd help;
@@ -261,10 +242,8 @@ loop;
 #X obj 3 3 clip_settings_gui 3 \$0;
 #N canvas 0 50 651 429 help 0;
 #X text 65 165 Seg.BPM : original tempo of sample segment;
-#X text 69 274 Quantization (q) : When the sample can be triggered
-(in 16ths), f 62;
-#X text 71 305 preroll : If the sample starts before a bar (in 16ths)
-;
+#X text 69 274 Quantization (q) : When the sample can be triggered (in 16ths), f 62;
+#X text 71 305 preroll : If the sample starts before a bar (in 16ths);
 #X text 105 117 - playolap : playing overlapped chunks;
 #X text 106 139 -pvoc : using phase vocoder (FFT);
 #X text 95 58 1) by changing speed (and pitch);
@@ -272,10 +251,8 @@ loop;
 #X text 92 97 2) by time stretching;
 #X text 131 225 <filename>-###bpm.<extension>;
 #X text 131 245 <filename> ###.<extension>;
-#X text 72 197 Seg.BPM is automatically set for filenames with following
-format :, f 66;
-#X text 64 34 WRAP MODE : There are several modes to synchronize the
-loop;
+#X text 72 197 Seg.BPM is automatically set for filenames with following format :, f 66;
+#X text 64 34 WRAP MODE : There are several modes to synchronize the loop;
 #X text 355 225 (ex: ableton);
 #X text 357 245 (ex: musine);
 #X restore 436 72 pd help;
@@ -291,8 +268,7 @@ loop;
 #X obj 365 260 list prepend 1;
 #X obj 385 291 list prepend 2;
 #X obj 405 320 list prepend 3;
-#X text 398 79 workaround because pdcontrol [dir \$1( msg doesn't work
-properly within clone;
+#X text 398 79 workaround because pdcontrol [dir \$1( msg doesn't work properly within clone;
 #X obj 111 67 route all;
 #X obj 114 103 route 1 2 3;
 #X connect 0 0 11 0;
@@ -436,11 +412,8 @@ properly within clone;
 #X connect 15 0 5 1;
 #X restore 129 799 pd clip3_trigger/gate/toogle_midi;
 #X obj 410 856 text define -k \$0-quantiz;
-#A set 3 1/32 \; 4 1/16T \; 6 1/16 \; 8 1/8T \; 12 1/8 \; 16 1/4T \;
-24 1/4 \; 32 1/2T \; 48 1/2 \; 72 3x1/4 \; 96 1_bar \; 120 5x1/4 \;
-192 2_bars \; 394 4_bars \; 788 8_bars;
-#X text 1234 344 8 bars 4 bars 2 bars 1 bar 1/2 1/2T 1/4 1/4T 1/8 1/8T
-1/16 1/16T 1/32, f 7;
+#A set 3 1/32 \; 4 1/16T \; 6 1/16 \; 8 1/8T \; 12 1/8 \; 16 1/4T \; 24 1/4 \; 32 1/2T \; 48 1/2 \; 72 3x1/4 \; 96 1_bar \; 120 5x1/4 \; 192 2_bars \; 394 4_bars \; 788 8_bars;
+#X text 1234 344 8 bars 4 bars 2 bars 1 bar 1/2 1/2T 1/4 1/4T 1/8 1/8T 1/16 1/16T 1/32, f 7;
 #X text 1303 435 4;
 #X text 1297 462 2;
 #X text 1300 492 1;
@@ -455,15 +428,13 @@ properly within clone;
 #X obj 101 853 loadbang;
 #X msg 101 878 1;
 #X obj 100 932 text define -k \$0-PdRacks.colors;
-#A set clip1_from 9 9 \; clip2_from 9 9 \; clip3_from 9 9 \; clip1_to
-64 64 \; clip2_to 64 64 \; clip3_to 64 64 \; clip1 8 8 \; clip2 8 8
-\; clip3 8 8 \;;
-#X floatatom 192 223 5 0 0 0 - - -;
+#A set clip1_from 9 9 \; clip2_from 9 9 \; clip3_from 9 9 \; clip1_to 64 64 \; clip2_to 64 64 \; clip3_to 64 64 \; clip1 8 8 \; clip2 8 8 \; clip3 8 8 \;;
+#X floatatom 192 223 5 0 0 0 - - - 0;
 #X obj 355 211 r \$0-clip_position;
 #X obj 355 236 * 3;
 #X obj 355 261 + 1;
-#X floatatom 192 245 5 0 0 0 - - -;
-#X floatatom 192 268 5 0 0 0 - - -;
+#X floatatom 192 245 5 0 0 0 - - - 0;
+#X floatatom 192 268 5 0 0 0 - - - 0;
 #X obj 402 264 + 2;
 #X obj 453 267 + 3;
 #N canvas 0 50 723 825 parameters 0;
