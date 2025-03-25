@@ -1,0 +1,16 @@
+#N struct comment float x float y float color text FR text EN text
+IT;
+#N canvas 0 50 771 465 16;
+#X obj 556 129 pdr/core/stuff/language;
+#X scalar comment 159 321 200 \; FR Cliquer ici \; EN Click here \;
+IT Clicka qui \;;
+#X text 23 22 [linguage] module : enabling multilanguage comments;
+#X text 24 69 use a datastructure "comment" to store multilanguage
+text;
+#X text 36 153 Example :;
+#X text 49 261 To edit a multilanguage comment \, enable the Edit checkbox
+and click on the comment to edit (in run mode);
+#X scalar comment 175 175 200 \; Ce commentaire est en francais \;
+This comment is in english \; Questo commento è in italiano \;;
+#X text 50 369 A text box appears \, with on line per language. Edit
+\, then type ctrl + s to validate your changes.;

@@ -1,10 +1,6 @@
 #N canvas 241 53 880 575 16;
 #X declare -path pdr/modules/basic;
 #X text 10 1 Pour se connecter à une entrée audio physique ou à un bus;
-#X obj 28 282 bng 18 250 50 0 empty empty Module 0 10 0 10 #fce0c4 #000000 #000000;
-#X obj 79 397 pdr/core/stuff/slot~ 5;
-#X text 24 303 En dynamique \, permet de choisir comme entrée audio la sortie d'un autre module en cliquant sur son emplacement (slot);
-#X text 25 339 En statique \, le numéro spécifié connecte audio_in à un objet slot~ correspondant \, s'il existe.;
 #X text 262 27 <- accès direct à des config de bus prédéfinies, f 19;
 #X text 27 172 MASTER (M1/M2) : global bus (commun à tous les patches);
 #X text 56 240 AUX (A1/A2) : local bus (commun aux objets d'un même patch);
@@ -22,7 +18,6 @@
 #A saved in no-in;
 #X text 181 81 <--- matrice de connexion directe aux ADC~;
 #X text 370 384 voir;
-#X obj 25 385;
 #X obj 483 390 audio_out;
 #A saved A2 0;
 #A saved A1 0;
@@ -40,5 +35,5 @@
 #A saved pan 0;
 #A saved mute 0;
 #A saved vol 0;
-#A saved out 0;
+#A saved out no-out;
 #X obj 670 30 declare -path pdr/modules/basic;

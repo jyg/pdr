@@ -1,4 +1,4 @@
-#N canvas 181 134 1005 927 12;
+#N canvas 181 0 1005 681 12;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
 #X declare -path ../../../core/rj;
@@ -14,21 +14,18 @@
 #X obj 923 46 ui_multitab \$0;
 #X obj 1241 299 namecanvas \$0-this;
 #X obj 1239 276 triggered_loadbang \$0-this;
-#X text 1234 226 manually trigger loadbang if the instance of abstraction
-is created dynamically, f 29;
+#X text 1234 226 manually trigger loadbang if the instance of abstraction is created dynamically, f 29;
 #X obj 670 44 module_loader inst_scratcher \$0 \$1;
-#N canvas 0 50 1263 963 openpanel 0;
+#N canvas 1 0 1263 681 openpanel 1;
 #X obj 283 15 inlet;
 #X obj 160 809 outlet;
 #X obj 191 59 openpanel;
 #X obj 209 670 soundfiler;
 #X msg 202 562 read -resize \$1 \$2 \$3;
 #X obj 202 537 list append \$0-l \$0-r;
-#X obj 160 46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 160 46 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 336 44 set symbol \$1;
-#X msg 336 69 symbol /home/jyg/Documents/Pd/externals/pdr/medias/sounds/soundfonts/others/Dj.wav
-;
+#X msg 336 69 symbol D:/home/jyg/Documents/pd/Externals_winux/automatonism/samples/sample7.wav;
 #X obj 142 22 inlet;
 #X obj 178 134 s \$0-filename;
 #X obj 198 164 r \$0-filename;
@@ -168,7 +165,7 @@ is created dynamically, f 29;
 #X obj 581 177 array define \$0-r;
 #X obj 818 373 loadbang;
 #X obj 200 244 symbol;
-#N canvas 3 432 819 560 sndfiler_with_readsf~ 0;
+#N canvas 3 121 819 560 sndfiler_with_readsf~ 0;
 #X obj 51 8 inlet;
 #X obj 223 523 outlet;
 #X obj 53 34 route read;
@@ -257,17 +254,15 @@ is created dynamically, f 29;
 #X obj 245 318 array define \$0-sndfile;
 #X obj 110 328 soundfiler;
 #X obj 77 233 list append \$0-sndfile;
-#X floatatom 77 381 5 0 0 0 - - -;
+#X floatatom 77 381 5 0 0 0 - - - 0;
 #X obj 50 435 array get \$0-sndfile;
 #X msg 50 414 0 -1;
 #X obj 90 292 list trim;
 #X obj 50 196 t b s;
 #X obj 50 141 inlet filename;
 #X obj 50 458 outlet 16bit/floatnorm;
-#X text 43 68 read (any) file as 16bit soundfile \, and output samples
-;
-#X text 45 92 read maxsize bytes at most (actually maxsize+1 \, since
-we are reading in pairs);
+#X text 43 68 read (any) file as 16bit soundfile \, and output samples;
+#X text 45 92 read maxsize bytes at most (actually maxsize+1 \, since we are reading in pairs);
 #X msg 88 256 read -resize -maxsize 10 -raw 0 1 2 b \$1 \$2;
 #X connect 1 0 3 0;
 #X connect 2 0 12 0;
@@ -279,13 +274,10 @@ we are reading in pairs);
 #X connect 8 0 7 0;
 #X connect 12 0 6 0;
 #X restore 198 98 pd file-to-16bit;
-#X obj 83 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 292 11 https://www.isip.piconepress.com/projects/speech/software/tutorials/production/fundamentals/v1.0/section_02/s02_01_p05.html
-;
+#X obj 83 72 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X text 292 11 https://www.isip.piconepress.com/projects/speech/software/tutorials/production/fundamentals/v1.0/section_02/s02_01_p05.html;
 #X obj 512 68 dnd/openpanel;
-#X obj 778 21 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 778 21 bng 50 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #N canvas 0 50 450 300 check_RIFF 0;
 #X obj 141 16 inlet;
 #X obj 95 311 outlet;
@@ -295,7 +287,7 @@ we are reading in pairs);
 #X obj 129 228 list prepend;
 #X obj 129 251 list trim;
 #X obj 129 274 route RIFF riff;
-#X symbolatom 222 139 10 0 0 0 - - -;
+#X symbolatom 222 139 10 0 0 0 - - - 0;
 #X obj 143 46 t b l;
 #X obj 110 192 list append;
 #X connect 0 0 9 0;
@@ -322,7 +314,7 @@ we are reading in pairs);
 #X obj 153 174 list prepend;
 #X obj 153 197 list trim;
 #X obj 153 220 route WAVE;
-#X symbolatom 280 173 10 0 0 0 - - -;
+#X symbolatom 280 173 10 0 0 0 - - - 0;
 #X obj 387 261 outlet;
 #X connect 0 0 2 0;
 #X connect 2 0 6 0;
@@ -349,7 +341,7 @@ we are reading in pairs);
 #X obj 219 431 +;
 #X obj 855 722 * 256;
 #X obj 827 762 +;
-#X floatatom 104 459 10 0 0 0 filesize - -;
+#X floatatom 104 459 10 0 0 0 filesize - - 0;
 #X obj 96 676 outlet;
 #X obj 82 330 - 36;
 #X text 30 299 header size;
@@ -379,25 +371,23 @@ we are reading in pairs);
 #X connect 10 0 9 0;
 #X restore 372 29 pd parsing wav header;
 #X obj 6 91 t b s s s;
-#X floatatom 375 57 10 0 0 0 - - -;
-#X text 443 59 Right outlet outputs info as a list: samplerate \, headersize
-\, num channels \, bytespersample \, & endianness ("b" or "l").;
+#X floatatom 375 57 10 0 0 0 - - - 0;
+#X text 443 59 Right outlet outputs info as a list: samplerate \, headersize \, num channels \, bytespersample \, & endianness ("b" or "l").;
 #X obj 481 162 soundfiler;
 #X obj 473 120 list append \$0-tab;
 #X obj 547 189 unpack f f f f;
 #X obj 605 226 *;
-#X floatatom 605 272 5 0 0 0 - - -;
+#X floatatom 605 272 5 0 0 0 - - - 0;
 #X obj 487 250 /;
-#X floatatom 647 208 5 0 0 0 - - -;
+#X floatatom 647 208 5 0 0 0 - - - 0;
 #X obj 533 287 t f f;
 #X msg 60 151 1;
 #X obj 8 147 t b b;
 #X msg 479 143 read -maxsize 1 \$1 \$2 \$2;
 #X obj 679 146 table \$0-tab;
-#X floatatom 611 366 10 0 0 0 - - -;
-#X floatatom 537 530 10 0 0 0 - - -;
-#X obj 520 477 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X floatatom 611 366 10 0 0 0 - - - 0;
+#X floatatom 537 530 10 0 0 0 - - - 0;
+#X obj 520 477 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X connect 2 0 26 0;
 #X connect 3 0 39 0;
 #X connect 3 1 8 0;
@@ -461,12 +451,10 @@ we are reading in pairs);
 #X obj 179 136 t l l l b;
 #X obj 120 462 t b;
 #X obj 120 487 f;
-#X floatatom 54 278 5 0 0 0 - - -;
-#X floatatom 53 228 5 0 0 0 - - -;
-#X obj 285 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 173 209 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X floatatom 54 278 5 0 0 0 - - - 0;
+#X floatatom 53 228 5 0 0 0 - - - 0;
+#X obj 285 184 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 173 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X connect 0 0 2 0;
 #X connect 2 0 5 0;
 #X connect 3 0 15 0;
@@ -502,10 +490,8 @@ we are reading in pairs);
 #X text 81 12 string in;
 #X obj 91 31 inlet;
 #X obj 91 431 outlet;
-#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 -118750 -66577
-0;
-#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 -102336 -66577
-0;
+#X obj 85 31 cnv 5 5 17 empty empty empty 20 12 0 14 #70fc74 #404040 0;
+#X obj 85 431 cnv 5 5 17 empty empty empty 20 12 0 14 #60f8fc #404040 0;
 #X obj 91 55 list;
 #X obj 91 193 list store, f 13;
 #X obj 91 102 until;
@@ -576,8 +562,8 @@ we are reading in pairs);
 #X restore 47 175 pd getdir 3;
 #X msg 47 200 set \$1;
 #X msg 47 225 /home/jyg/Documents/Pd/patches;
-#X obj 49 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 49 114 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 537 626 print chargement-fichier;
 #X connect 0 0 10 0;
 #X connect 2 0 7 0;
 #X connect 2 0 10 0;
@@ -590,6 +576,7 @@ we are reading in pairs);
 #X connect 11 0 33 0;
 #X connect 13 0 32 0;
 #X connect 14 0 31 0;
+#X connect 14 0 40 0;
 #X connect 15 1 19 0;
 #X connect 18 0 17 0;
 #X connect 19 0 18 0;
@@ -620,15 +607,11 @@ we are reading in pairs);
 #X connect 37 0 38 0;
 #X connect 39 0 36 0;
 #X restore 280 331 pd openpanel;
-#X obj 274 100 bng 15 250 50 0 empty empty o 4 7 0 13 -262144 -1 -258113
-;
+#X obj 274 100 bng 15 250 50 0 empty empty o 4 7 0 13 #fcfcfc #000000 #fc0400;
 #X obj 547 220 t b f;
-#X obj 103 115 hsl 146 20 0.001 1 0 0 \$0-to \$0-to-rcv empty -2 -8
-0 10 -261682 -1 -1 0 1;
-#X obj 104 150 hsl 146 20 0 1 0 0 \$0-from \$0-from-rcv empty -2 -8
-0 10 -261682 -1 -1 0 1;
-#X obj 105 135 hsl 146 15 0 1 0 0 \$0-seek \$0-seek-rcv 0:0 12 0 0
-40 -204786 -1 -159808 0 0;
+#X obj 103 115 hsl 146 20 0.001 1 0 0 \$0-to \$0-to-rcv empty -2 -8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 104 150 hsl 146 20 0 1 0 0 \$0-from \$0-from-rcv empty -2 -8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 105 135 hsl 146 15 0 1 0 0 \$0-seek \$0-seek-rcv 0:0 12 0 0 40 #c4fcc4 #000000 #9c00fc 0 0;
 #X obj 672 69 u_dispatch \$0 filename;
 #X obj 252 115 ui_vs \$0 vol 0 127;
 #X obj 670 94 u_dispatch \$0 vol;
@@ -638,8 +621,7 @@ we are reading in pairs);
 #X obj 368 589 r \$0-vol;
 #X obj 368 614 dbtorms;
 #X obj 351 748 *~;
-#X obj 101 153 cnv 1 1 1 empty \$0-displayname-rcv empty 2 8 0 14 -233017
--66577 0;
+#X obj 101 153 cnv 1 1 1 empty \$0-displayname-rcv sample7 2 8 0 14 #e0e0e0 #404040 0;
 #X obj 641 -12 loadbang;
 #X obj 442 463 s \$0-nb_revolutions;
 #N canvas 0 50 450 300 display_index 0;
@@ -692,10 +674,8 @@ we are reading in pairs);
 #X obj 758 623 * 1;
 #X obj 758 648 s \$0-set;
 #X obj 785 596 r \$0-nb_revolutions;
-#X obj 212 100 bng 15 250 50 0 \$0-in empty IN 2 8 0 9 -1 -1 -257985
-;
-#X obj 228 100 bng 15 250 50 0 \$0-out empty OUT 0 8 0 9 -1 -1 -261234
-;
+#X obj 212 100 bng 15 250 50 0 \$0-in empty IN 2 8 0 9 #000000 #000000 #f8fc00;
+#X obj 228 100 bng 15 250 50 0 \$0-out empty OUT 0 8 0 9 #000000 #000000 #fcc4c4;
 #X obj 58 294 r \$0-index;
 #X obj 41 354 f;
 #X obj 112 359 f;
@@ -734,10 +714,8 @@ we are reading in pairs);
 #X obj 61 642 lop~ 8;
 #X obj 62 665 lop~ 8;
 #X obj 61 618 lop~ 3;
-#X text 366 427 facteur de conmpensation inversement proportionnel
-à la taille du saut entre debut et fin du sample;
-#X obj 265 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X text 366 427 facteur de conmpensation inversement proportionnel à la taille du saut entre debut et fin du sample;
+#X obj 265 335 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 165 75 / 1000;
 #X obj 61 452 vline~;
 #X msg 98 376 \$1 20;
@@ -774,35 +752,30 @@ we are reading in pairs);
 #X obj 399 762 > 200;
 #X obj 826 625 noise~;
 #X obj 833 766 *~ 0;
-#X obj 913 725 hsl 128 15 0 1000 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 913 725 hsl 128 15 0 1000 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 830 663 lop~ 1;
 #X obj 831 690 lop~ 1;
 #X obj 831 721 lop~ 1;
-#X obj 921 630 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 2500 1;
-#X floatatom 918 650 5 0 0 0 - - -;
-#X floatatom 910 745 5 0 0 0 - - -;
+#X obj 921 630 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 2500 1;
+#X floatatom 918 650 5 0 0 0 - - - 0;
+#X floatatom 910 745 5 0 0 0 - - - 0;
 #X obj 1084 637 noise~;
 #X obj 1089 802 *~ 0;
-#X obj 1197 751 hsl 128 15 0.001 100 1 1 empty empty empty -2 -8 0
-10 -262144 -1 -1 0 1;
-#X obj 1200 611 hsl 128 15 20 20000 1 1 empty empty bp -2 -8 0 10 -262144
--1 -1 4500 1;
-#X floatatom 1197 631 5 0 0 0 - - -;
-#X floatatom 1195 772 5 0 0 0 - - -;
+#X obj 1197 751 hsl 128 15 0.001 100 1 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 1200 611 hsl 128 15 20 20000 1 1 empty empty bp -2 -8 0 10 #fcfcfc #000000 #000000 4500 1;
+#X floatatom 1197 631 5 0 0 0 - - - 0;
+#X floatatom 1195 772 5 0 0 0 - - - 0;
 #X obj 1088 675 bp~ 1;
 #X obj 1089 702 bp~ 1;
 #X obj 1089 733 bp~ 1;
-#X obj 1203 676 hsl 128 15 0 20 0 1 empty empty q -2 -8 0 10 -262144
--1 -1 3200 1;
-#X floatatom 1200 696 5 0 0 0 - - -;
+#X obj 1203 676 hsl 128 15 0 20 0 1 empty empty q -2 -8 0 10 #fcfcfc #000000 #000000 3200 1;
+#X floatatom 1200 696 5 0 0 0 - - - 0;
 #X obj 190 155 t f f f f;
 #X obj 330 305 f;
 #X text 613 29 wavtable length (samples @ 44.1kHz);
 #X obj 326 351 * 1000;
 #X obj 328 328 abs;
-#X floatatom 435 386 5 0 0 0 - - -;
+#X floatatom 435 386 5 0 0 0 - - - 0;
 #X obj 834 888 +~ 0;
 #X obj 998 49 inlet active;
 #X obj 1328 58 inlet set_array;
@@ -939,7 +912,7 @@ we are reading in pairs);
 #X obj 878 271 s \$0-seek;
 #X obj 668 229 s \$0-in;
 #X obj 732 229 s \$0-out;
-#X obj 251 100 bng 15 250 50 0 empty empty g 4 5 0 12 -4034 -1 -1;
+#X obj 251 100 bng 15 250 50 0 empty empty g 4 5 0 12 #00fc04 #000000 #000000;
 #X obj 147 217 s pd-inst_scratcher_gui_(\$0);
 #X msg 154 192 vis 1;
 #N canvas 0 50 450 300 remote_gui 0;
@@ -950,8 +923,7 @@ we are reading in pairs);
 #X obj 54 152 t a a;
 #X obj 181 266 outlet to_module_declare;
 #X obj 55 106 r \$0-from_gui;
-#X obj 263 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 263 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 206 50 filter from previous cascaded modules;
 #X obj 167 154 list append \$0-from_gui \$0;
 #X msg 167 177 feedback_gui \$1 \, dollarzero \$2;
@@ -972,17 +944,14 @@ we are reading in pairs);
 #X obj 14 133 inlet;
 #X obj 13 233 outlet;
 #N canvas 0 50 657 604 speed 0;
-#X obj 160 120 hsl 200 40 0.8 1.2 1 0 empty empty MOTOR_SPEED_=_1 0
-32 0 18 -262144 -1 -1 10952 1;
+#X obj 160 120 hsl 200 40 0.8 1.2 1 0 empty empty MOTOR_SPEED_=_1 0 32 0 18 #fcfcfc #000000 #000000 0 1;
 #X msg 147 303 speed \$1;
 #X msg 258 302 speed 0;
-#X obj 383 120 tgl 40 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 383 120 tgl 40 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 139 260 f;
 #X obj 262 216 select 1 0;
 #X obj 139 221 spigot;
-#X obj 100 120 bng 40 250 50 0 empty empty x1 5 20 0 20 -262144 -1
--1;
+#X obj 100 120 bng 40 250 50 0 empty empty x1 5 20 0 20 #fcfcfc #000000 #000000;
 #X msg 110 160 1;
 #X obj 127 356 outlet;
 #X obj 102 34 loadbang;
@@ -1023,8 +992,7 @@ we are reading in pairs);
 #X connect 19 0 0 0;
 #X coords 0 -1 1 1 323 61 2 100 100;
 #X restore 289 59 pd speed;
-#X obj 17 152 hsl 800 80 -3.14159 3.14159 0 0 empty empty DROP_A_FILE_HERE_AND_SCRATCH
-50 40 0 40 -262144 -1 -4032 0 1;
+#X obj 17 152 hsl 800 80 -3.14159 3.14159 0 0 empty empty DROP_A_FILE_HERE_AND_SCRATCH 50 40 0 40 #fcfcfc #000000 #00f8fc 0 1;
 #X obj 289 38 inlet;
 #X obj 290 119 outlet;
 #X text 511 212 (drop n'click feature requires dnd pluggin);
@@ -1077,12 +1045,11 @@ we are reading in pairs);
 #X obj 403 120 r \$0-seek;
 #X text 401 85 dnd;
 #X obj 850 7 savestate;
-#X obj 340 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 340 272 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 361 279 dnd/target;
 #X obj 368 639 lop~ 50;
 #X obj 28 137 s \$0-seek-rcv;
-#X floatatom 167 298 5 0 0 0 - - -;
+#X floatatom 167 298 5 0 0 0 - - - 0;
 #X obj 315 557 r \$0-busy;
 #X obj 443 649 list append \$0-l \$0-r;
 #X obj 280 435 t f f;
@@ -1101,7 +1068,7 @@ we are reading in pairs);
 #X obj 769 677 t f f;
 #X obj 678 791 change;
 #X msg 675 844 0 5;
-#X floatatom 680 769 5 0 0 0 - - -;
+#X floatatom 680 769 5 0 0 0 - - - 0;
 #X obj 762 742 +;
 #X obj 762 767 t f f;
 #X obj 762 717 * 0.99;
@@ -1111,8 +1078,7 @@ we are reading in pairs);
 #X obj 436 336 list append;
 #X obj 442 308 delay 5;
 #X obj 881 238 pipe 10;
-#X obj 575 192 route touch rotate speed in out seek set_ext_array mute
-;
+#X obj 575 192 route touch rotate speed in out seek set_ext_array mute;
 #X obj 916 389 == 0;
 #X msg 916 414 \$1 5;
 #N canvas 0 50 450 300 convert->(-pi..pi) 0;
@@ -1205,7 +1171,7 @@ we are reading in pairs);
 #X msg 290 242 1;
 #X obj 449 123 t f f b;
 #X obj 203 375 select 0;
-#X floatatom 451 825 5 0 0 0 - - -;
+#X floatatom 451 825 5 0 0 0 - - - 0;
 #X obj 577 632 pack f f 100;
 #X connect 0 0 23 0;
 #X connect 1 0 11 1;

@@ -1,0 +1,17 @@
+#N canvas 0 50 450 300 16;
+#X obj 101 134 r \$1-exists!;
+#X obj 73 33 inlet;
+#X obj 73 62 t b b b;
+#X obj 97 220 f;
+#X msg 177 168 0;
+#X obj 105 103 s \$1-exists?;
+#X msg 101 163 1;
+#X obj 97 249 outlet;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 0;
+#X connect 2 2 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 6 0 3 1;

@@ -198,7 +198,7 @@
 #X obj 418 277 s \$0-map_from;
 #X obj 474 305 s \$0-map_to;
 #X obj 132 207 t l b l;
-#N canvas 93 183 660 498 savestate-midimapping 0;
+#N canvas 93 183 660 498 savestate-midimapping 1;
 #X obj 101 120 r \$0-midi_map_status;
 #X obj 101 144 unpack f f f f f;
 #X obj 106 245 pack f f f f f;
@@ -239,7 +239,6 @@
 #X obj 143 67 t b b s, f 33;
 #X msg 254 293 1;
 #X text 314 384 dump data to specified target;
-#X obj 263 27 print midimapping:dump;
 #X connect 0 0 1 0;
 #X connect 1 0 5 1;
 #X connect 1 0 12 1;
@@ -257,7 +256,6 @@
 #X connect 12 0 5 0;
 #X connect 13 0 15 0;
 #X connect 13 1 18 0;
-#X connect 13 1 22 0;
 #X connect 14 0 8 0;
 #X connect 14 1 17 0;
 #X connect 15 0 12 0;

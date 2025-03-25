@@ -1,40 +1,29 @@
-#N canvas 807 249 904 869 16;
-#X obj 169 205 inst_scratcher;
+#N canvas 380 0 904 681 16;
+#X obj 169 17 inst_scratcher;
 #A saved inertia 100;
 #A saved from 0.317231;
 #A saved to 0.564987;
 #A saved vol 100.43;
-#A saved filename /home/jyg/Documents/Pd/externals/pdr/medias/sounds/soundfonts/others/GrooveDarkness.wav
-;
-#A saved SID 6;
-#X obj 170 279 dac~;
-#X msg 404 110 speed 1;
-#X msg 405 143 speed 0;
-#N canvas 257 500 635 541 deluxe_interface 0;
+#A saved filename D:/home/jyg/Documents/pd/Externals_winux/automatonism/samples/sample7.wav;
+#X obj 170 91 dac~;
+#X msg 404 -78 speed 1;
+#X msg 405 -45 speed 0;
+#N canvas 257 140 635 541 deluxe_interface 0;
 #X obj 255 88 jogzone;
-#A saved -back_color 1;
-#A saved -front_color 1;
-#A saved -cursor_color -1;
-#A saved -jump_on_click 0;
-#A saved -size 319;
-#A saved -mode 1;
 #X obj 46 13 inlet;
 #X msg 94 253 touch \$1;
 #X msg 117 294 rotate \$1;
 #X msg 46 129 set \$1;
 #X msg 66 211 speed \$1;
 #N canvas 0 50 657 604 speed 0;
-#X obj 160 120 hsl 200 40 0.8 1.2 1 0 empty empty MOTOR_SPEED_=_1 0
-32 0 18 -262144 -1 -1 10952 1;
+#X obj 160 120 hsl 200 40 0.8 1.2 1 0 empty empty MOTOR_SPEED_=_1 0 32 0 18 #fcfcfc #000000 #000000 0 1;
 #X msg 147 303 speed \$1;
 #X msg 258 302 speed 0;
-#X obj 383 120 tgl 40 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 383 120 tgl 40 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 139 260 f;
 #X obj 262 216 select 1 0;
 #X obj 139 221 spigot;
-#X obj 100 120 bng 40 250 50 0 empty empty x1 5 20 0 20 -262144 -1
--1;
+#X obj 100 120 bng 40 250 50 0 empty empty x1 5 20 0 20 #fcfcfc #000000 #000000;
 #X msg 110 160 1;
 #X obj 127 356 outlet;
 #X obj 102 34 loadbang;
@@ -103,26 +92,23 @@
 #X connect 8 0 4 0;
 #X connect 8 1 6 0;
 #X connect 8 2 7 1;
-#X restore 509 372 pd deluxe_interface;
-#X text 48 84 inst_scratcher : platine à scratcher basique;
-#X msg 661 109 \; pd dsp 1;
-#X msg 633 208 inertia 100;
-#X msg 633 235 inertia 300;
-#X msg 635 181 inertia 50;
-#X text 765 210 (in ms);
-#X text 95 371 Interfacing : you can use this interface;
-#X obj 724 408 bng 15 250 50 0 empty empty g 4 5 0 12 -4034 -1 -1;
-#X text 125 405 or the internal interface \, clicking on the green
-'g' button, f 61;
-#N canvas 147 240 1082 867 simplified_scratcher_for_embedded_platforms
-0;
+#X restore 509 184 pd deluxe_interface;
+#X text 48 -104 inst_scratcher : platine à scratcher basique;
+#X msg 661 -79 \; pd dsp 1;
+#X msg 633 20 inertia 100;
+#X msg 633 47 inertia 300;
+#X msg 635 -7 inertia 50;
+#X text 765 22 (in ms);
+#X text 95 183 Interfacing : you can use this interface;
+#X obj 724 220 bng 15 250 50 0 empty empty g 4 5 0 12 #00fc04 #000000 #000000;
+#X text 125 217 or the internal interface \, clicking on the green 'g' button, f 61;
+#N canvas 147 0 1082 681 simplified_scratcher_for_embedded_platforms 1;
 #N canvas 0 50 450 300 loadsample 0;
 #X obj 40 339 outlet;
 #X obj 85 246 soundfiler;
 #X obj 82 152 list append \$0-l \$0-r;
 #X obj 73 111 openpanel;
-#X obj 94 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 94 26 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 84 188 read -resize \$1 \$2 \$3;
 #X obj 78 69 inlet;
 #X obj 62 292 list append;
@@ -136,13 +122,12 @@
 #X connect 7 0 0 0;
 #X restore 201 492 pd loadsample;
 #X msg 209 338 speed \$1;
-#X obj 201 457 bng 15 250 50 0 empty empty load_file 17 7 0 10 -262144
--1 -1;
+#X obj 201 457 bng 15 250 50 0 empty empty load_file 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 193 275 1;
 #X msg 250 274 1.2;
 #X msg 116 272 0.8;
 #X msg 440 421 \$1 \$2;
-#N canvas 773 92 1310 982 scratcher 0;
+#N canvas 0 0 1284 681 scratcher 0;
 #X obj 341 213 / 80181;
 #X obj 114 494 *~;
 #X obj 235 337 r \$0-vol;
@@ -181,10 +166,8 @@
 #X obj 61 642 lop~ 8;
 #X obj 62 665 lop~ 8;
 #X obj 61 618 lop~ 3;
-#X text 366 427 facteur de conmpensation inversement proportionnel
-à la taille du saut entre debut et fin du sample;
-#X obj 265 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X text 366 427 facteur de conmpensation inversement proportionnel à la taille du saut entre debut et fin du sample;
+#X obj 265 335 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 196 53 / 1000;
 #X obj 61 452 vline~;
 #X msg 98 376 \$1 20;
@@ -224,7 +207,7 @@
 #X text 613 29 wavtable length (samples @ 44.1kHz);
 #X obj 326 351 * 1000;
 #X obj 328 328 abs;
-#X floatatom 435 386 5 0 0 0 - - -;
+#X floatatom 435 386 5 0 0 0 - - - 0;
 #X obj 998 49 inlet active;
 #X obj 1328 58 inlet set_array;
 #X obj 1328 83 unpack s s;
@@ -349,18 +332,15 @@
 #X msg 889 207 0 5 \, 1 5 5;
 #X msg 1058 491 1 5;
 #X obj 1040 193 r \$0-index;
-#X text 1126 371 simple precision mechanism for automute when speed=0
-, f 19;
-#X obj 792 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X text 1126 371 simple precision mechanism for automute when speed=0, f 19;
+#X obj 792 26 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 149 78 list split 1;
 #X obj 500 96 list append 44100;
 #X obj 500 125 unpack f;
 #X obj 500 154 / 44100;
 #X obj 347 254 / 1;
 #X text 223 4 wavtable length;
-#X text 224 32 Input : float <nb_samples> or list <nb_samples> <samplerate>
-, f 31;
+#X text 224 32 Input : float <nb_samples> or list <nb_samples> <samplerate>, f 31;
 #X connect 0 0 39 0;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
@@ -406,7 +386,7 @@
 #X connect 39 0 5 0;
 #X restore 214 577 pd scratcher;
 #X obj 213 618 dac~;
-#N canvas 0 50 753 485 rec 0;
+#N canvas 52 52 753 485 rec 0;
 #X obj 100 46 adc~;
 #X obj 125 158 tabwrite~ \$0-r;
 #X obj 98 201 tabwrite~ \$0-l;
@@ -439,7 +419,7 @@
 #X connect 10 0 12 0;
 #X connect 12 0 11 0;
 #X restore 250 544 pd rec;
-#N canvas 873 58 1012 804 circularScratchControl 0;
+#N canvas 272 0 1012 681 circularScratchControl 0;
 #X obj 106 135 atan2;
 #X obj 389 285 -;
 #X obj 436 229 spigot 1;
@@ -475,11 +455,11 @@
 #X obj 370 189 t f f f b b;
 #X obj 643 340 change;
 #X msg 643 369 touch \$1;
-#X floatatom 257 586 5 0 0 0 - - -;
+#X floatatom 257 586 5 0 0 0 - - - 0;
 #X obj 81 100 - 0.5;
 #X obj 153 100 - 0.5;
 #X msg 653 416 touch 0;
-#X floatatom 558 371 5 0 0 0 - - -;
+#X floatatom 558 371 5 0 0 0 - - - 0;
 #X obj 56 36 inlet scratchControl;
 #X connect 0 0 18 0;
 #X connect 1 0 3 0;
@@ -515,8 +495,7 @@
 #X connect 24 0 9 0;
 #X connect 26 0 12 0;
 #X restore 440 468 pd circularScratchControl;
-#X obj 797 407 hsl 200 50 -3.14159 3.14159 0 0 empty empty empty 50
-40 0 40 -262144 -1 -4032 0 1;
+#X obj 797 407 hsl 200 50 -3.14159 3.14159 0 0 empty empty empty 50 40 0 40 #fcfcfc #000000 #00f8fc 0 1;
 #N canvas 0 50 805 742 linearScratchControl 0;
 #X obj 96 41 inlet;
 #X obj 108 261 outlet;
@@ -541,20 +520,19 @@
 #X text 794 418 -pi;
 #X text 962 416 pi;
 #X msg 795 377 set \$1;
-#X floatatom 446 561 5 0 0 1 rotation - -;
+#X floatatom 446 561 5 0 0 1 rotation - - 0;
 #X obj 382 38 r \$0-index;
-#X floatatom 382 67 5 0 0 0 - - -;
+#X floatatom 382 67 5 0 0 0 - - - 0;
 #X obj 163 719 table \$0-l;
 #X obj 166 748 table \$0-r;
 #X obj 617 169 r \$0-nb_revolutions;
 #X obj 391 191 r \$0-to;
-#X floatatom 391 220 5 0 0 0 - - -;
+#X floatatom 391 220 5 0 0 0 - - - 0;
 #X obj 385 127 r \$0-from;
-#X floatatom 388 157 5 0 0 0 - - -;
-#X floatatom 617 198 5 0 0 0 - - -;
+#X floatatom 388 157 5 0 0 0 - - - 0;
+#X floatatom 617 198 5 0 0 0 - - - 0;
 #X text 380 101 looping points;
-#X text 394 342 x \, y controller (range 0..1 for x & y axes), f 30
-;
+#X text 394 342 x \, y controller (range 0..1 for x & y axes), f 30;
 #X text 789 339 linear controller;
 #X obj 618 95 s \$0-vol;
 #N canvas 0 50 450 300 init 0;
@@ -577,7 +555,7 @@
 #X msg 618 53 80;
 #X msg 681 54 100;
 #X text 720 94 volume;
-#N canvas 587 658 1093 835 motor 0;
+#N canvas 191 0 1093 681 motor 0;
 #N canvas 76 100 958 1018 motor_stuff 0;
 #X obj 110 43 inlet;
 #X obj 654 403 == 0;
@@ -645,7 +623,7 @@
 #X msg 290 242 1;
 #X obj 449 123 t f f b;
 #X obj 203 375 select 0;
-#X floatatom 451 825 5 0 0 0 - - -;
+#X floatatom 451 825 5 0 0 0 - - - 0;
 #X obj 577 632 pack f f 100;
 #X connect 0 0 23 0;
 #X connect 1 0 11 1;
@@ -812,6 +790,7 @@
 #X connect 37 0 38 0;
 #X connect 40 0 39 0;
 #X restore 449 518 pd motor;
+#X msg 193 220 0;
 #X connect 0 0 7 0;
 #X connect 1 0 36 0;
 #X connect 2 0 0 0;
@@ -834,7 +813,9 @@
 #X connect 34 0 30 0;
 #X connect 36 0 15 0;
 #X connect 36 0 16 0;
-#X restore 395 527 pd simplified_scratcher_for_embedded_platforms;
+#X connect 37 0 1 0;
+#X restore 395 339 pd simplified_scratcher_for_embedded_platforms;
+#X obj 562 -84 loadbang;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 2 4 0;
@@ -843,4 +824,5 @@
 #X connect 7 0 0 2;
 #X connect 8 0 0 2;
 #X connect 9 0 0 2;
-#X coords 0 869 1 868 190 70 0;
+#X connect 15 0 6 0;
+#X coords 0 681 1 680 190 70 0;

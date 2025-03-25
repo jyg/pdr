@@ -1,0 +1,52 @@
+#N canvas 473 537 1184 392 12;
+#X declare -path pdr/core;
+#X declare -path pdr/core/stuff;
+#X declare -path pdr/core/rj;
+#X msg 640 123 get \$1;
+#X msg 639 205 append;
+#X msg 640 243 reset;
+#X msg 640 271 delete \$1;
+#X obj 467 356 s \$0-subset;
+#X msg 641 303 update;
+#X text 708 121 pour rappeler la nième liste de la collection;
+#X text 710 245 pour effacer la collection entière;
+#X text 727 272 pour supprimer la nièeme liste d'une collection;
+#X msg 641 340 set \$1;
+#X text 706 337 pour mettre à jour la nième liste de la collection
+;
+#X text 102 74 Pour pouvoir utiliser set \, il faut que l'index spécifié
+ait déjà été initialisé (avec append);
+#X obj 917 19 declare -path pdr/core;
+#X obj 917 39 declare -path pdr/core/stuff;
+#X obj 917 59 declare -path pdr/core/rj;
+#X text 102 16 u_sublist s'utilise comme u_subset mais permet de sauvegarder
+des collections (subsets) de listes pouvant être rappelées individuellement.
+;
+#X text 101 67 ____________________________________________________________________________________________________
+;
+#X msg 641 155 next;
+#X msg 640 180 prev;
+#X text 700 153 obtenir la valeur de liste pour l'index suivant;
+#X text 700 177 obtenir la valeur de liste pour l'index précédent
+;
+#X text 622 90 Méthodes (envoyées via [send \$0-subset] );
+#X floatatom 347 194 5 0 0 0 - - -;
+#X text 391 192 index actuel;
+#X text 56 239 \$3 = taille (fixe) de la liste;
+#X text 56 259 \$4 = valeur de remplissage par défaut;
+#X obj 56 166 u_sublist \$0 <list_name> 8 <default_value>;
+#X text 56 218 \$2 = nom de la liste;
+#X text 56 199 \$1 - identifiant unique;
+#X text 713 298 pour mettre à jour la liste courante de la collection
+avec la liste envoyée sur le canal \$0-<list_name>;
+#X text 716 204 pour ajouter une autre liste (envoyée sur le canal
+\$0-<list_name>) à la fin de la collection;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 9 0 4 0;
+#X connect 17 0 4 0;
+#X connect 18 0 4 0;
+#X connect 26 1 22 0;

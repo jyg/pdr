@@ -1,7 +1,6 @@
 #N canvas 613 56 671 498 10;
 #X obj 68 130 fx_resonator;
 #A saved midiNoteIn 1;
-#A saved hold;
 #A saved lpfreq 20000;
 #A saved fdback 0.99;
 #A saved wet 1;
@@ -25,7 +24,7 @@
 #X restore 66 82 pd noise~;
 #X obj 65 280 dac~;
 #N canvas 0 50 450 300 vol 0;
-#X obj 103 125 hsl 128 15 0 100 0 0 empty empty -10.2362_dB 50 -8 0 10 #c4fcfc #000000 #000000 0 1;
+#X obj 103 125 hsl 128 15 0 100 0 0 empty empty -19.685_dB 50 -8 0 10 #c4fcfc #000000 #000000 0 1;
 #X obj 99 145 dbtorms;
 #X obj 99 168 lop~ 1;
 #X obj 44 53 inlet~;

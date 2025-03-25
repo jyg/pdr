@@ -1,0 +1,55 @@
+#N canvas 812 58 1266 668 12;
+#X declare -path ../rj;
+#X msg 609 127 get \$1;
+#X msg 610 218 append;
+#X text 667 264 pour effacer la collection;
+#X msg 607 265 reset;
+#X msg 603 299 delete \$1;
+#X text 685 297 pour supprimer le nièeme élément d'une collection
+;
+#X obj 798 28 declare -path ../rj;
+#X obj 78 178 print;
+#X msg 611 156 next;
+#X msg 610 181 prev;
+#X text 38 30 De la même manière que u_dispatch permet de sauvegarder
+un atome \, u_subset permet de sauvegarder une collections d'atomes
+pouvant être rappelés individuellement;
+#X text 43 91 Utile par exemple pour sauvegarder le jeu de samples
+d'un instrument.;
+#X text 668 118 pour se positionner sur le nième élément de la collection
+et récupérer sa valeur, f 46;
+#X floatatom 609 103 5 0 0 0 - - -;
+#X floatatom 304 186 5 0 0 0 - - -;
+#X text 348 184 index actuel;
+#X text 670 154 obtenir la valeur pour l'index suivant;
+#X text 670 178 obtenir la valeur pour l'index précédent;
+#X text 602 78 Méthodes (envoyées via [send \$0-subset] );
+#X obj 78 155 u_subset \$0 <param_name> <default_value>;
+#X msg 602 332 update;
+#X text 673 328 pour mettre à jour l'élément courant de la collection
+avec l'élément envoyé sur le canal \$0-<param_name>;
+#X text 672 218 pour ajouter une autre valeur (envoyée sur le canal
+\$0-<param_name>) à la fin de la collection;
+#X msg 601 369 set \$1;
+#X text 666 366 pour mettre à jour le nième élément de la collection
+;
+#X obj 459 517 s \$0-subset;
+#X obj 462 459 list prepend 0;
+#X obj 462 484 route 0 1;
+#X obj 562 431 tgl 15 0 empty empty local_mode 17 7 0 10 -262144 -1
+-1 0 1;
+#X connect 0 0 26 0;
+#X connect 1 0 26 0;
+#X connect 3 0 26 0;
+#X connect 4 0 26 0;
+#X connect 8 0 26 0;
+#X connect 9 0 26 0;
+#X connect 13 0 0 0;
+#X connect 19 0 7 0;
+#X connect 19 1 14 0;
+#X connect 20 0 26 0;
+#X connect 23 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 27 1 19 1;
+#X connect 28 0 26 1;
