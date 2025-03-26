@@ -1,4 +1,4 @@
-#N canvas 233 62 1280 677 10;
+#N canvas 633 0 638 668 10;
 #X obj 188 8 loadbang;
 #X obj 189 38 list append \$2;
 #X msg 275 61 label \$1;
@@ -57,7 +57,7 @@
 #X obj 100 100 vfader;
 #X obj 166 368 speed_lim 200;
 #X obj 101 100 cnv 1 36 55 empty \$0-slider empty 2 12 0 10 #00bb00 #000000 0;
-#X obj 101 100 cnv 1 36 39 \$0-pos \$0-pos-rcv empty 2 12 0 10 #88cc66 #404040 0;
+#X obj 101 100 cnv 1 36 53 \$0-pos \$0-pos-rcv empty 2 12 0 10 #88cc66 #404040 0;
 #X obj 102 139 cnv 1 1 1 empty \$0-cnv2 empty 0 1 0 10 #e0e0e0 #404040 0;
 #X obj 102 109 cnv 1 1 1 empty \$0-cnv3 empty 0 1 0 10 #e0e0e0 #404040 0;
 #X obj 591 10 r \$1-\$2-rcv;

@@ -16,7 +16,7 @@
 #X msg 554 548 label \$1;
 #X obj 507 518 list split \$2;
 #X obj 368 580 s \$0-\$1-menu-rcv;
-#X obj 100 102 vsl 70 17 0 1 0 0 \$0-\$1-menu \$0-\$1-menu-rcv u_rollmenu 2 5 0 10 #b8b8b8 #b8b8b8 #000000 0 1;
+#X obj 100 102 vsl 70 17 0 1 0 0 \$0-\$1-menu \$0-\$1-menu-rcv empty 2 5 0 10 #b8b8b8 #b8b8b8 #000000 0 1;
 #X obj 189 90 t f b b b;
 #X msg 496 357 label u_rollmenu;
 #X obj 288 542 t a a b;
@@ -38,8 +38,8 @@
 #X msg 355 416 set 0.1;
 #X obj 170 174 * 0.2;
 #X obj 362 191 change;
-#X obj 346 101 delay 10;
 #X msg 654 563 label;
+#X obj 335 115 delay 0;
 #X connect 0 0 30 0;
 #X connect 0 0 18 0;
 #X connect 1 0 38 0;
@@ -69,7 +69,7 @@
 #X connect 26 0 25 1;
 #X connect 27 0 3 0;
 #X connect 28 0 3 0;
-#X connect 29 0 39 0;
+#X connect 29 0 40 0;
 #X connect 31 0 32 0;
 #X connect 32 0 33 0;
 #X connect 33 0 31 1;
@@ -81,6 +81,6 @@
 #X connect 37 0 31 0;
 #X connect 38 0 26 0;
 #X connect 38 0 28 1;
-#X connect 39 0 1 0;
-#X connect 40 0 16 0;
+#X connect 39 0 16 0;
+#X connect 40 0 1 0;
 #X coords 0 -1 1 1 70 22 2 100 100;
