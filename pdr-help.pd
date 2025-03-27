@@ -1,50 +1,27 @@
-#N canvas 564 470 841 439 12;
+#N canvas 633 0 638 668 12;
 #X declare -path pdr/modules/basic;
-#X text 50 391 You can use autocompletion tool in a subpatch. Simply
-add a [pdr] object in this subpatch.;
-#X text 159 179 V V;
-#X text 159 173 | |;
-#X text 159 160 |;
-#X text 177 159 ___;
-#X text 162 146 ______;
-#X text 32 133 Insertion mode;
-#X text 148 193 0;
-#X text 163 193 1;
-#X text 178 193 2;
-#X text 53 313 1) autoconmpletion-mode uses a popup menu.;
-#X text 206 167 object_list-mode;
-#X text 206 149 autoconmpletion-mode;
-#X text 347 314 (needs iemguts + iemlib);
-#X text 53 339 2) object_list mode let you choose objects from a window
-with list of all objects \, (as in Automatonism);
-#X text 29 70 [pdr] is an autocompletion tool that helps you to choose
-PdRacks modules quickly from a menu list \, sorted by categories. When
-active \, press <Insert> key (or ctrl+i).;
-#X text 29 12 [pdr] is part of PdRacks modular ecosystem. For more
-information about PdRacks \, please refer to files located in pdr/tutorials
-folder.;
-#X obj 96 211 pdr;
-#N canvas 0 50 450 300 \$0-PdRacks.declare 0;
-#X obj 10 10 declare -path pdr/modules/basic;
-#X obj 10 60 pdr/core/stuff/u_glocal.enable \$0;
-#A saved modules_set # List of modules to load;
-#A saved modules_set # you can add new sets of modules here;
-#A saved modules_set # (ctrl/cmd + s to save and close);
-#A saved modules_set basic;
-#X restore 96 256 pd \$0-PdRacks.declare;
-#X text 51 290 0) insert-mode disactivated;
-#N canvas 0 50 450 300 open_tutorial 1;
+#X text 24 11 [pdr] is an autocompletion tool that helps you to choose PdRacks modules quickly from a menu list \, sorted by categories. When active \, press <Insert> key (or ctrl+i).;
+#X text 25 71 [pdr] is part of PdRacks modular ecosystem. For more information about PdRacks \, please refer to files located in pdr/tutorials folder.;
+#N canvas 78 78 450 300 open_tutorial 0;
 #X obj 90 45 inlet;
 #X obj 165 214 s pd;
 #X obj 78 105 pdcontrol;
 #X msg 84 82 dir;
-#X msg 64 139 open 01_basic_scene.pd \$1/tutorials/01_getting_started
-;
+#X msg 64 139 open 01_basic_scene.pd \$1/tutorials/01_getting_started;
 #X connect 0 0 3 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
-#X restore 563 241 pd open_tutorial;
-#X obj 551 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X connect 21 0 20 0;
+#X restore 69 546 pd open_tutorial;
+#X obj 57 517 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 226 135 declare -path pdr/modules/basic;
+#X obj 266 252 namecanvas \$0-this;
+#X obj 264 343 namecanvas \$0-this;
+#X text 46 193 USAGE;
+#X text 75 219 Vanilla + iemguts lib : just type [pdr] in your patch;
+#X text 74 253 Vanilla : type [pdr \$0] +;
+#X text 73 343 PlugData : type [pdr \$0] +;
+#X obj 125 387 pdr;
+#X text 61 468 When you finished editing objects \, you can delete [pdr], f 63;
+#X text 46 136 this object is needed ->;
+#X connect 3 0 2 0;

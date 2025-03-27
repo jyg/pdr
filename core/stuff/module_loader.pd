@@ -60,7 +60,7 @@
 #X obj 282 321 s \$2-busy;
 #X obj 279 269 loadbang;
 #X msg 279 293 1;
-#N canvas 151 14 1133 667 preset_manager 1;
+#N canvas 151 14 1133 667 preset_manager 0;
 #X obj 307 299 text define \$0-savestate_dump;
 #X msg 313 274 clear;
 #X obj 524 523 text insert \$0-savestate_dump;
@@ -166,7 +166,7 @@
 #X text 315 300 for compatibility issues;
 #X obj 10 156 spigot 0;
 #X obj 91 92 t a a;
-#X obj 14 393 outlet;
+#X obj 10 393 outlet;
 #X obj 21 49 loadbang;
 #X msg 25 114 1;
 #X obj 23 82 delay 10;

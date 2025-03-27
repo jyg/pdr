@@ -34,8 +34,9 @@
 #X connect 11 1 7 1;
 #X connect 11 1 8 1;
 #X restore 129 180 pd speed_lim 100;
-#X obj 651 140 speed_lim;
+#X obj 332 193 outlet;
 #X connect 0 0 2 0;
+#X connect 0 1 8 0;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;

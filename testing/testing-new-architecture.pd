@@ -25,7 +25,7 @@
 #X obj 130 125 inst_8bits;
 #A saved presets t*(t-1) \; (t*(7+(1^(t>>9)%5))) \; t/(t*5&t>>7)|(t*3&t) \; t*((t>>12|t>>8)&63&t>>4) \; (t*(7+(1^t>>9%5))) \; t*9&t>>4|t*5&t>>7|t*3&t/1024 \; (t>>7|t|t>>6)*10+4*(t&t>>13|t>>9) \; t*((t>>12|t>>8)&63&t>>4) \; \; \; # http://viznut.fi/texts-en/bytebeat_algorithmic_symphonies.html \; # Autres possibilités (seule la première ligne est active) \;;
 #A saved vol-midi_mapping 1 11 1 0 127;
-#A saved vol 46;
+#A saved vol 64;
 #A saved oct;
 #X connect 6 0 7 0;
 #X connect 6 1 10 0;

@@ -1,6 +1,5 @@
-#N canvas 413 82 803 659 10;
-#X obj 426 338 hsl 128 15 0 1 0 0 empty empty tone_(0...1) 20 7 1 10
--262144 -1 -1 6200 1;
+#N canvas 413 22 803 659 10;
+#X obj 426 338 hsl 128 15 0 1 0 0 empty empty tone_(0...1) 20 7 1 10 #fcfcfc #000000 #000000 0 1;
 #X obj 179 371 makenote 100 100;
 #X obj 179 394 pack 0 0;
 #X obj 178 531 soundoutput;
@@ -52,11 +51,10 @@
 #X connect 20 0 2 1;
 #X connect 21 0 4 0;
 #X restore 179 335 pd random notes;
-#X obj 179 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X floatatom 195 417 5 0 0 3 pitch - -;
-#X floatatom 288 415 5 0 0 3 velocity - -;
-#X floatatom 281 313 5 0 0 0 - - -;
+#X obj 179 313 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 195 417 5 0 0 3 pitch - - 0;
+#X floatatom 288 415 5 0 0 3 velocity - - 0;
+#X floatatom 281 313 5 0 0 0 - - - 0;
 #X text 162 40 Rhodes piano realised with a 4-operator FM synth;
 #X text 168 96 Inlet 0: midi note/velocity pairs;
 #X text 159 615 It's a clone of the STK Rhodey.;
@@ -64,12 +62,12 @@
 #X obj 423 383 s \$0-in1;
 #X msg 423 359 tone \$1;
 #X obj 423 468 s \$0-in1;
-#X floatatom 423 423 5 0 0 0 - - -;
+#X floatatom 423 423 5 0 0 0 - - - 0;
 #X obj 535 467 s \$0-in1;
-#X floatatom 535 422 5 0 0 0 - - -;
+#X floatatom 535 422 5 0 0 0 - - - 0;
 #X msg 304 488 help;
 #X obj 424 566 s \$0-in1;
-#X floatatom 424 521 5 0 0 0 - - -;
+#X floatatom 424 521 5 0 0 0 - - - 0;
 #X msg 424 543 mod \$1;
 #X msg 423 444 vib-freq \$1;
 #X msg 535 444 vib-depth \$1;
@@ -80,15 +78,13 @@
 #X obj 179 488 s_rhodey mypiano;
 #X text 167 65 Args: <Name>;
 #X obj 538 564 s \$0-in1;
-#X floatatom 538 519 5 0 127 0 - - -;
+#X floatatom 538 519 5 0 127 0 - - - 0;
 #X msg 538 541 adsr24 \$1;
-#X text 231 243 adsr24: depth of the modulating operator's (2 and 4)
-envelopes (0-127 \, default 127) (this is an exotic parameter...);
-#X text 231 222 mod: modulation index for first operator pair (default
-1);
+#X text 231 243 adsr24: depth of the modulating operator's (2 and 4) envelopes (0-127 \, default 127) (this is an exotic parameter...);
+#X text 231 222 mod: modulation index for first operator pair (default 1);
 #X obj 79 39 s_rhodey;
 #X obj 592 383 s \$0-in1;
-#X floatatom 592 338 5 0 0 0 - - -;
+#X floatatom 592 338 5 0 0 0 - - - 0;
 #X msg 592 360 decay \$1;
 #X text 230 155 decay: decay of note in msec (default: 1500);
 #X connect 0 0 14 0;

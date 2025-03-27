@@ -1,4 +1,4 @@
-#N canvas 896 93 1106 642 10;
+#N canvas 178 39 1106 642 10;
 #N canvas 424 366 478 366 pmosc 0;
 #X obj 119 199 cos~;
 #X obj 119 167 +~;
@@ -152,20 +152,11 @@
 #X obj 840 207 u_dispatch \$0 decay;
 #X obj 479 301 r \$0-decay;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
-#X text 57 88 This program is free software: you can redistribute it
-and/or modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation \, either version 3 of
-the License \, or (at your option) any later version.;
-#X text 58 168 This program is distributed in the hope that it will
-be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
-of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-General Public License for more details.;
-#X text 57 261 You should have received a copy of the GNU General Public
-License along with this program. If not \, see <http://www.gnu.org/licenses/>.
-;
+#X text 57 88 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation \, either version 3 of the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public License along with this program. If not \, see <http://www.gnu.org/licenses/>.;
 #X text 61 54 Copyright (C) 2009 \, Reality Jockey Ltd.;
-#X text 60 325 See the file LICENSE.txt for the full license text.
-;
+#X text 60 325 See the file LICENSE.txt for the full license text.;
 #X restore 972 29 pd LICENSE-GPL;
 #X obj 223 563 outlet~;
 #X obj 133 537 e_pan;
@@ -173,7 +164,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 235 164 t b f;
 #X obj 253 130 r \$0-pbend;
 #X obj 840 230 u_dispatch \$0 pbend;
-#X floatatom 266 194 5 0 0 0 - - -;
+#X floatatom 266 194 5 0 0 0 - - - 0;
 #X obj 102 146 * 1;
 #X connect 0 0 1 1;
 #X connect 1 0 41 1;
