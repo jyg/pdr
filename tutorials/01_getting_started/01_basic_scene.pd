@@ -1,6 +1,5 @@
 #N canvas 42 0 1174 681 16;
 #X declare -path pdr/modules/basic;
-#X declare -path ../../modules/basic;
 #X obj 193 316 cnv 15 350 200 empty empty empty 20 12 0 14 #fce0c4 #404040 0;
 #X msg 247 255 \; pd dsp 1;
 #X msg 552 432 vol 100 \, decay 302 \, tone 0.72;
@@ -28,9 +27,6 @@
 #X text 0 0 plugdatainfo <?xml version="1.0" encoding="UTF-8"?> <plugdatainfo/>;
 #X coords 0 1 100 -1 1 1 1;
 #X restore 0 0 graph;
-#X obj 825 249 declare -path ../../modules/basic;
-#X text 624 250 * for plugdata \, add;
-#X obj 698 274 cnv 24 300 2 empty empty empty 20 12 0 16 #ff0400 #404040 0;
 #X text 777 28 needs pd >= 0.55.2;
 #X obj 176 550 hradio 15 1 0 16 preset-manager-scan empty RECALL 0 -8 0 10 #c4fcc4 #0c4410 #000000 0;
 #X obj 426 577 bng 15 250 50 0 STORE-S! empty STORE! 17 7 0 10 #fcc4c4 #fc0400 #000000;
@@ -45,8 +41,8 @@
 #A saved noize 0.574468;
 #A saved lowpass 324.07;
 #X msg 406 266 note 30 100;
-#X connect 8 0 31 2;
-#X connect 16 0 31 2;
-#X connect 31 0 4 0;
-#X connect 31 1 4 1;
-#X connect 32 0 31 2;
+#X connect 8 0 28 2;
+#X connect 16 0 28 2;
+#X connect 28 0 4 0;
+#X connect 28 1 4 1;
+#X connect 29 0 28 2;

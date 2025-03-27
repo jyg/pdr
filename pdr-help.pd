@@ -1,4 +1,4 @@
-#N canvas 633 0 638 668 12;
+#N canvas 4 0 1280 677 12;
 #X declare -path pdr/modules/basic;
 #X text 24 11 [pdr] is an autocompletion tool that helps you to choose PdRacks modules quickly from a menu list \, sorted by categories. When active \, press <Insert> key (or ctrl+i).;
 #X text 25 71 [pdr] is part of PdRacks modular ecosystem. For more information about PdRacks \, please refer to files located in pdr/tutorials folder.;
@@ -15,13 +15,12 @@
 #X restore 69 546 pd open_tutorial;
 #X obj 57 517 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 226 135 declare -path pdr/modules/basic;
-#X obj 266 252 namecanvas \$0-this;
-#X obj 264 343 namecanvas \$0-this;
-#X text 46 193 USAGE;
-#X text 75 219 Vanilla + iemguts lib : just type [pdr] in your patch;
-#X text 74 253 Vanilla : type [pdr \$0] +;
-#X text 73 343 PlugData : type [pdr \$0] +;
-#X obj 125 387 pdr;
+#X obj 225 162 namecanvas \$0-this;
+#X text 27 190 USAGE;
+#X text 56 216 Vanilla + iemguts lib : just type [pdr] in your patch;
 #X text 61 468 When you finished editing objects \, you can delete [pdr], f 63;
-#X text 46 136 this object is needed ->;
+#X obj 465 12 pdr \$0;
+#X text 26 136 those objects are needed ->;
+#X text 55 250 Vanilla : type [pdr \$0];
+#X text 54 276 PlugData : type [pdr \$0];
 #X connect 3 0 2 0;
