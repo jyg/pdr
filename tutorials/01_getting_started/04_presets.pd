@@ -10,8 +10,8 @@
 #A saved mod;
 #A saved tone 0.47833;
 #A saved decay 1145.68;
-#A saved preset 0 decay 1955.65 \; tone 0.792503 \; mod \; vib-freq \; vib-depth \; adsr24 \; midiNoteIn \; vol 70.9084 \; pbend \;;
 #A saved preset 1 decay 1145.68 \; tone 0.47833 \; mod \; vib-freq \; vib-depth \; adsr24 \; midiNoteIn \; vol 89.1085 \; pbend \;;
+#A saved preset 0 decay 1955.65 \; tone 0.792503 \; mod \; vib-freq \; vib-depth \; adsr24 \; midiNoteIn \; vol 70.9084 \; pbend \;;
 #X obj 83 212 dac~;
 #X msg 269 98 note 64 100;
 #X text 52 467 * To recall a preset \, click one of the green h-radios buttons.;
@@ -21,6 +21,7 @@
 #X obj 291 342 hradio 15 1 0 16 preset-manager-store-slot empty STORE-SLOT 0 -8 0 10 #fcc4c4 #000000 #000000 0;
 #X obj 291 374 hradio 15 1 0 16 preset-manager-scan empty RECALL 0 -8 0 10 #c4fcc4 #0c4410 #000000 0;
 #X text 295 282 Presets;
+#X text 42 524 ------------------------------------------------------------------------------------, f 43;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 2 0 0 2;

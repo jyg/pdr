@@ -19,7 +19,7 @@
 #X text 27 190 USAGE;
 #X text 56 216 Vanilla + iemguts lib : just type [pdr] in your patch;
 #X text 61 468 When you finished editing objects \, you can delete [pdr], f 63;
-#X obj 465 12 pdr \$0;
+#X obj 255 288 pdr \$0;
 #X text 26 136 those objects are needed ->;
 #X text 55 250 Vanilla : type [pdr \$0];
 #X text 54 276 PlugData : type [pdr \$0];

@@ -275,9 +275,9 @@
 #X obj 233 314 r \$0-delay;
 #X obj 533 301 r \$0-delay;
 #X obj 159 398 - 5;
-#N canvas 0 57 1920 1023 mode_synchro 0;
+#N canvas 0 0 1284 681 mode_synchro 0;
 #X obj 402 106 /;
-#X msg 122 306 60000 \$1;
+#X msg 122 366 60000 \$1;
 #X obj 443 33 r \$0-del;
 #X obj 429 163 /;
 #X obj 412 190 moses 1;
@@ -303,9 +303,11 @@
 #X floatatom 495 338 5 0 0 0 - - - 0;
 #X floatatom 367 329 5 0 0 0 - - - 0;
 #X obj 184 297 spigot 1;
-#X obj 54 283 r \$0-bpm;
+#X obj 54 343 r \$0-bpm;
 #X obj 114 265 v BPM;
 #X obj 70 237 r BPM;
+#X obj 110 294 select 0;
+#X msg 110 316 120;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -340,8 +342,11 @@
 #X connect 23 1 22 0;
 #X connect 26 0 16 0;
 #X connect 27 0 1 0;
-#X connect 28 0 1 0;
+#X connect 28 0 30 0;
 #X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 30 1 1 0;
+#X connect 31 0 1 0;
 #X restore 714 61 pd mode_synchro;
 #X obj 119 343 / 4;
 #X obj 142 373 *;

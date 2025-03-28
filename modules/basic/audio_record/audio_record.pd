@@ -108,8 +108,8 @@
 #X obj 558 297 mod 60;
 #X obj 101 101 cnv 15 188 68 \$0-background \$0-background-rcv audio_record-1 0 7 0 14 #fcfcfc #000000 0;
 #X obj 250 129 tgl 40 0 empty empty REC 5 20 0 15 #fce0e0 #fce0e0 #000000 0 1;
-#X obj 118 147 cnv 15 100 20 empty \$0-time 00:02 20 12 0 14 #fce0c4 #404040 0;
-#X obj 189 123 cnv 2 94 2 empty \$0-vu -6db 20 5 0 10 #14e814 #000000 0;
+#X obj 118 147 cnv 15 100 20 empty \$0-time 00:00 20 12 0 14 #fce0c4 #404040 0;
+#X obj 189 123 cnv 2 1 2 empty \$0-vu -100db 20 5 0 10 #14e814 #000000 0;
 #X obj 1314 199 div 10;
 #X floatatom 1314 93 5 0 0 0 - - - 0;
 #X msg 1314 112 12;
@@ -412,7 +412,7 @@
 #X connect 14 0 4 0;
 #X connect 15 0 7 0;
 #X restore 405 146 pd unvalid_dir;
-#N canvas 440 91 748 497 meter 1;
+#N canvas 440 91 748 497 meter 0;
 #X obj 22 27 inlet~;
 #X obj 192 113 f;
 #X msg 191 76 0;
@@ -475,6 +475,7 @@
 #X connect 26 0 22 0;
 #X connect 27 0 13 0;
 #X restore 253 683 pd meter;
+#X obj 872 588 onlyone AUDIO_BUS PdRacks.audio_bus;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;

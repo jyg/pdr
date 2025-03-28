@@ -3,7 +3,7 @@
 #X text 919 96 dummy sends~;
 #X text 911 141 dummy busses;
 #X obj 173 119 declare -path ../../core/rj;
-#N canvas 1 151 1083 443 audio_config 0;
+#N canvas 1 151 1083 443 audio_config 1;
 #X obj 808 157 c_bus no-out;
 #X obj 808 134 c_bus no-in;
 #X obj 338 208 c_bus IN1;
@@ -36,6 +36,8 @@
 #X obj 355 350 c_bus A2-l;
 #X obj 472 320 c_bus A1-r;
 #X obj 476 349 c_bus A2-r;
+#X obj 707 276 c_bus MASTER-l;
+#X obj 707 298 c_bus MASTER-r;
 #X connect 2 0 11 0;
 #X connect 3 0 12 0;
 #X connect 4 0 13 0;
@@ -50,12 +52,14 @@
 #X connect 6 3 10 0;
 #X connect 11 0 22 0;
 #X connect 12 0 23 0;
+#X connect 14 0 30 0;
 #X connect 22 0 24 0;
 #X connect 23 0 25 0;
 #X connect 24 0 26 0;
 #X connect 25 0 28 0;
 #X connect 26 0 27 0;
 #X connect 28 0 29 0;
+#X connect 30 0 31 0;
 #X restore 34 171 pd audio_config;
 #X obj 207 204 loadbang;
 #X msg 207 227 \; pd dsp 1;
