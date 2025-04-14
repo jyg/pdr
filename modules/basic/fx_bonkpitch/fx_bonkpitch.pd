@@ -1,5 +1,5 @@
-#N struct rectangle float width float height;
-#N struct 1047-menu-item float x float y symbol label;
+#N struct 1064-rectangle float width float height;
+#N struct 1064-menu-item float x float y symbol label;
 #N canvas 474 31 810 553 10;
 #X declare -path ../../../core;
 #X declare -path ../../../core/stuff;
@@ -246,8 +246,8 @@
 #X msg 253 389 resync;
 #X msg 338 57 vis 1;
 #X obj 214 131 bng 17 250 50 0 empty empty Edit 0 -9 0 10 #dfdfdf #000000 #000000;
-#X obj 352 93 multipad \$0 points 8 600 400;
 #X obj 678 135 declare -path ./fx_bonkpitch;
+#X obj 352 93 multipad \$0 points 8 600 400;
 #X connect 0 0 23 1;
 #X connect 0 1 23 3;
 #X connect 0 2 34 0;
@@ -274,7 +274,7 @@
 #X connect 33 1 0 3;
 #X connect 33 2 7 0;
 #X connect 34 0 11 0;
-#X connect 35 0 37 0;
+#X connect 35 0 38 0;
 #X connect 36 0 35 0;
-#X connect 37 0 30 0;
+#X connect 38 0 30 0;
 #X coords 0 -1 1 1 190 70 1 100 100;

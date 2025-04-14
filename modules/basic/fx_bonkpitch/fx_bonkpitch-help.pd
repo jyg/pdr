@@ -1,6 +1,6 @@
-#N struct 1047-rectangle float width float height;
-#N struct 1047-menu-item float x float y symbol label;
-#N struct 1047-circle float ID float x float y float size float color;
+#N struct 1046-rectangle float width float height;
+#N struct 1046-menu-item float x float y symbol label;
+#N struct 1046-circle float ID float x float y float size float color;
 #N canvas 633 0 638 668 16;
 #X obj 1 0 cnv 15 800 50 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
 #X text 9 5 fx_bonkpitch;
@@ -9,15 +9,15 @@
 #X msg 220 318 trigger;
 #X text 39 146 ou par message [resync( sur l'entrée data;
 #X obj 35 359 fx_bonkpitch;
-#A saved points 1 add 136 77 20 400 \; 2 add 373 50 20 400 \; 3 add 113 246 20 400 \;;
+#A saved points 1 add 415 333 20 400 \; 2 add 373 50 20 400 \; 3 add 113 246 20 400 \;;
 #A saved oct 0;
 #A saved wet 0;
 #A saved smooth 0;
 #A saved sens 0;
 #A saved vol 0;
-#A saved preset 2 vol 0 \; sens 0 \; smooth 0 \; wet 0 \; oct 0 \; points 1 add 507 59 20 400 \\\; 2 add 390 249 20 400 \\\; 3 add 494 294 20 400 \\\; \;;
-#A saved preset 1 vol 0 \; sens 0 \; smooth 0 \; wet 0 \; oct 0 \; points 1 add 136 77 20 400 \\\; 2 add 255 198 20 400 \\\; 3 add 113 246 20 400 \\\; \;;
 #A saved preset 0 vol 0 \; sens 0 \; smooth 0 \; wet 0 \; oct 0 \; points 1 add 528 190 20 400 \\\; 2 add 512 213 20 400 \\\; 3 add 530 233 20 400 \\\; \;;
+#A saved preset 1 vol 0 \; sens 0 \; smooth 0 \; wet 0 \; oct 0 \; points 1 add 136 77 20 400 \\\; 2 add 255 198 20 400 \\\; 3 add 113 246 20 400 \\\; \;;
+#A saved preset 2 vol 0 \; sens 0 \; smooth 0 \; wet 0 \; oct 0 \; points 1 add 507 59 20 400 \\\; 2 add 390 249 20 400 \\\; 3 add 494 294 20 400 \\\; \;;
 #X obj 536 417 bng 15 250 50 0 STORE-S! empty STORE! 17 7 0 10 #fcc4c4 #fc0400 #000000;
 #X obj 291 432 hradio 15 1 0 16 preset-manager-store-slot empty STORE-SLOT 0 -8 0 10 #fcc4c4 #000000 #000000 0;
 #X obj 291 464 hradio 15 1 0 16 preset-manager-scan empty RECALL 0 -8 0 10 #c4fcc4 #0c4410 #000000 0;

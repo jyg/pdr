@@ -1,6 +1,6 @@
-#N canvas 0 50 577 453 12;
+#N canvas 104 104 577 453 12;
 #X obj 110 61 inlet;
-#N canvas 0 57 1920 1023 vd_line 1;
+#N canvas 0 0 1284 681 vd_line 1;
 #X obj 114 380 *~;
 #X obj 185 248 line~;
 #X obj 295 120 == 0;
@@ -41,6 +41,7 @@
 #X obj 157 94 * -0.1;
 #X obj 110 300 *~ 10000;
 #X obj 258 299 *~ 10000;
+#X obj 60 249 +~ 50;
 #X connect 0 0 17 0;
 #X connect 1 0 0 1;
 #X connect 1 0 18 1;
@@ -75,8 +76,8 @@
 #X connect 25 0 8 0;
 #X connect 26 0 0 0;
 #X connect 27 0 3 0;
-#X connect 28 0 29 1;
 #X connect 28 0 30 1;
+#X connect 28 0 40 0;
 #X connect 29 0 23 0;
 #X connect 29 0 26 0;
 #X connect 30 0 24 0;
@@ -92,6 +93,7 @@
 #X connect 37 0 34 0;
 #X connect 38 0 29 0;
 #X connect 39 0 30 0;
+#X connect 40 0 29 1;
 #X restore 198 238 pd vd_line;
 #N canvas 0 50 494 446 volpan 0;
 #X obj 132 163 * -1;
@@ -150,8 +152,7 @@
 #X obj 353 177 t b;
 #X obj 171 283 hip~ 5;
 #X obj 248 310 hip~ 5;
-#X obj 23 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 23 254 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 119 123 route add delay speed vol pan remove;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
